@@ -175,7 +175,6 @@ Obs.: Lembre-se de ter Models, Tools e a main devidamente importada no seu drive
            -a,  --use_aim               Opção para utilizar a ferramenta de rastreamento Aimstack
            -ml, --use_mlflow            Opção para utilizar a ferramenta de rastreamento mlflow
            -rid, --run_id              Opção ligado ao mlflow, utilizada para resumir uma execução não terminada 
-           -np', --use_neptune          Opção para utilizar a ferramenta de rastreamento Neptune 
            -tb, --use_tensorboard       Opção para utilizar a ferramenta de rastreamento Tensorboard
 
         --------------------------------------------------------------
@@ -205,5 +204,4 @@ A ferramenta foi executada e testada na prática nos seguintes ambientes:
    Python = 3.8.10<br/>
    Módulos Python conforme [requirements](requirements.txt).
 
-## Link para o repositorio com os datasets
-[datasets](https://github.com/MalwareDataLab/Datasets)
+
