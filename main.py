@@ -61,10 +61,7 @@ try:
     USE_MLFLOW=False
     USE_NEPTUNE=False
     USE_TENSORBOARD=False
-    #import xgboost as xgb
-   # if USE_AIM:
-    #import aim
-     # from aim import Run
+
 
     os.environ["KERAS_BACKEND"] = "tensorflow"
 except ImportError as error:
@@ -72,8 +69,8 @@ except ImportError as error:
     print(error)
     print()
     print("1. (optional) Setup a virtual environment: ")
-    print("  python3 - m venv ~/Python3env/DroidAugmentor ")
-    print("  source ~/Python3env/DroidAugmentor/bin/activate ")
+    print("  python3 - m venv ~/Python3env/SynTabData ")
+    print("  source ~/Python3env/SynTabData/bin/activate ")
     print()
     print("2. Install requirements:")
     print("  pip3 install --upgrade pip")
@@ -85,10 +82,6 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 tf_logger = logging.getLogger('tensorflow')
 tf_logger.setLevel(logging.ERROR)
 warnings.filterwarnings("ignore", category=FutureWarning)
-os.environ["MLFLOW_ENABLE_SYSTEM_METRICS_LOGGING"] = "true"
-#os.environ['MLFLOW_TRACKING_SERVER_CERT_PATH'] = '/droidaugmentor/teste_angelo_real.crt'
-#os.environ['MLFLOW_TRACKING_CLIENT_CERT_PATH'] = '/droidaugmentor/client_test.pem'
-#os.environ['MLFLOW_TRACKING_INSECURE_TLS'] = 'true'
 
 with warnings.catch_warnings():
     warnings.filterwarnings("ignore", message=".*the default value of `keepdims` will become False.*")
@@ -135,9 +128,7 @@ aim_run=None
 nept_run=None
 callbacks=None
 file_writer=None
-#mlflow.fastai.autolog(log_models=False)
-#mlflow.autolog(log_models=False)
-#ssl._create_default_https_context = ssl._create_unverified_context
+
 # Define a custom argument type for a list of integers
 def list_of_ints(arg):
     return list(map(int, arg.split(',')))
@@ -190,21 +181,21 @@ def comparative_data(fold, x_synthetic, real_data,label):
     return [synthetic_mean_squared_error,synthetic_cosine_similarity,synthetic_maximum_mean_discrepancy]
 
 
-def evaluate_synthetic_data(list_classifiers, x_synthetic, y_synthetic, fold, k, generate_confusion_matrix,
+def evaluate_TRTS_data(list_classifiers, x_TRTS, y_TRTS, fold, k, generate_confusion_matrix,
                             output_dir, classifier_type, out_label, path_confusion_matrix, verbose_level,dict,syn_aucs,dict_log_likehood_syn):
     instance_metrics = ProbabilisticMetrics()
-    accuracy_synthetic_list, precision_synthetic_list, recall_synthetic_list, f1_score_synthetic_list = [], [], [], []
+    accuracy_TRTS_list, precision_TRTS_list, recall_TRTS_list, f1_score_TRTS_list = [], [], [], []
     y_predict_prob=[]
-    logging.info(f"Synthetic Fold {fold + 1}/{k} results\n")
+    logging.info(f"TRTS Fold {fold + 1}/{k} results\n")
   
     for index, classifier_model in enumerate(list_classifiers):
 
         if classifier_type[index] == "Perceptron":
-            y_predicted_synthetic = classifier_model.predict(x_synthetic, verbose=DEFAULT_VERBOSE_LIST[verbose_level])
-            y_predicted_synthetic = np.rint(np.squeeze(y_predicted_synthetic, axis=1))
-            y_predict_prob=y_predicted_synthetic
+            y_predicted_TRTS = classifier_model.predict(x_TRTS, verbose=DEFAULT_VERBOSE_LIST[verbose_level])
+            y_predicted_TRTS = np.rint(np.squeeze(y_predicted_TRTS, axis=1))
+            y_predict_prob=y_predicted_TRTS
            
-            #y_predict_prob=y_predicted_synthetic.argmax(axis=-1)
+            #y_predict_prob=y_predicted_TRTS.argmax(axis=-1)
            # y_predict_prob=np.argmax(y_predict_prob,axis=1, keepdims=True)
              
           #  y_predicted_prob = np.rint(np.squeeze(y_predicted_prob, axis=1))
@@ -212,42 +203,42 @@ def evaluate_synthetic_data(list_classifiers, x_synthetic, y_synthetic, fold, k,
            # print(len(y_predicted_prob),"len")
         else:
 
-            y_predicted_synthetic = classifier_model.predict(x_synthetic)
-            y_predict_prob=classifier_model.predict_proba(x_synthetic)[::,1]
+            y_predicted_TRTS = classifier_model.predict(x_TRTS)
+            y_predict_prob=classifier_model.predict_proba(x_TRTS)[::,1]
             #y_predict_prob=np.argmax(y_predict_prob,axis=1, keepdims=True)
-        y_predicted_synthetic = y_predicted_synthetic.astype(int)
-        y_synthetic = y_synthetic.astype(int)
+        y_predicted_TRTS = y_predicted_TRTS.astype(int)
+        y_TRTS = y_TRTS.astype(int)
 
-        confusion_matrix_synthetic = confusion_matrix(y_synthetic, y_predicted_synthetic)
-        accuracy_synthetic = instance_metrics.get_accuracy(y_synthetic, y_predicted_synthetic)
-        precision_synthetic = instance_metrics.get_precision(y_synthetic, y_predicted_synthetic)
-        recall_synthetic = instance_metrics.get_recall(y_synthetic, y_predicted_synthetic)
-        f1_score_synthetic = instance_metrics.get_f1_score(y_synthetic, y_predicted_synthetic)
+        confusion_matrix_TRTS = confusion_matrix(y_TRTS, y_predicted_TRTS)
+        accuracy_TRTS = instance_metrics.get_accuracy(y_TRTS, y_predicted_TRTS)
+        precision_TRTS = instance_metrics.get_precision(y_TRTS, y_predicted_TRTS)
+        recall_TRTS = instance_metrics.get_recall(y_TRTS, y_predicted_TRTS)
+        f1_score_TRTS = instance_metrics.get_f1_score(y_TRTS, y_predicted_TRTS)
         logging.info(f" Classifier Model: {classifier_type[index]}")
-        logging.info(f"   Synthetic Fold {fold + 1} - Confusion Matrix:")
-        logging.info(confusion_matrix_synthetic)
+        logging.info(f"   TRTS Fold {fold + 1} - Confusion Matrix:")
+        logging.info(confusion_matrix_TRTS)
         logging.info(f"\n   Classifier Metrics:")
-        logging.info(f"     Synthetic Fold {fold + 1} - Accuracy: " + str(accuracy_synthetic))
-        logging.info(f"     Synthetic Fold {fold + 1} - Precision: " + str(precision_synthetic))
-        logging.info(f"     Synthetic Fold {fold + 1} - Recall: " + str(recall_synthetic))
-        logging.info(f"     Synthetic Fold {fold + 1} - F1 Score: " + str(f1_score_synthetic) + "\n")
-        ac='Synthetic Accuracy '+f' Classifier Model {classifier_type[index]}'
-        pc='Synthetic Precision '+f' Classifier Model {classifier_type[index]}'
-        rr='Synthetic Recall '+f' Classifier Model {classifier_type[index]}'
-        f1='Synthetic f1 Score '+f' Classifier Model {classifier_type[index]}'
+        logging.info(f"     TRTS Fold {fold + 1} - Accuracy: " + str(accuracy_TRTS))
+        logging.info(f"     TRTS Fold {fold + 1} - Precision: " + str(precision_TRTS))
+        logging.info(f"     TRTS Fold {fold + 1} - Recall: " + str(recall_TRTS))
+        logging.info(f"     TRTS Fold {fold + 1} - F1 Score: " + str(f1_score_TRTS) + "\n")
+        ac='TRTS Accuracy '+f' Classifier Model {classifier_type[index]}'
+        pc='TRTS Precision '+f' Classifier Model {classifier_type[index]}'
+        rr='TRTS Recall '+f' Classifier Model {classifier_type[index]}'
+        f1='TRTS f1 Score '+f' Classifier Model {classifier_type[index]}'
 
-        values={ac:accuracy_synthetic,pc:precision_synthetic,rr:recall_synthetic,f1:f1_score_synthetic}
-        dict["Synthetic accuracy"][classifier_type[index]].append(accuracy_synthetic)
-        dict["Synthetic precision"][classifier_type[index]].append(precision_synthetic)
-        dict["Synthetic F1 score"][classifier_type[index]].append(f1_score_synthetic)
-        dict["Synthetic recall"][classifier_type[index]].append(recall_synthetic)
-        fpr, tpr,thresholds=sklearn.metrics.roc_curve(y_synthetic,   y_predict_prob)
-        log_likehood=log_loss(y_synthetic,y_predict_prob)
+        values={ac:accuracy_TRTS,pc:precision_TRTS,rr:recall_TRTS,f1:f1_score_TRTS}
+        dict["TRTS accuracy"][classifier_type[index]].append(accuracy_TRTS)
+        dict["TRTS precision"][classifier_type[index]].append(precision_TRTS)
+        dict["TRTS F1 score"][classifier_type[index]].append(f1_score_TRTS)
+        dict["TRTS recall"][classifier_type[index]].append(recall_TRTS)
+        fpr, tpr,thresholds=sklearn.metrics.roc_curve(y_TRTS,   y_predict_prob)
+        log_likehood=log_loss(y_TRTS,y_predict_prob)
         dict_log_likehood_syn[classifier_type[index]].append(log_likehood)
         plt.figure()  
         Path(os.path.join(output_dir, path_confusion_matrix)).mkdir(parents=True, exist_ok=True)
-        roc_file = os.path.join(output_dir, path_confusion_matrix,f'Roc_curve_Synthetic_{classifier_type[index]}_k{fold + 1}.jpg')
-        auc=metrics.roc_auc_score(y_synthetic,   y_predict_prob)
+        roc_file = os.path.join(output_dir, path_confusion_matrix,f'Roc_curve_TRTS_{classifier_type[index]}_k{fold + 1}.jpg')
+        auc=metrics.roc_auc_score(y_TRTS,   y_predict_prob)
         plt.plot(fpr, tpr)
         plt.savefig(roc_file, bbox_inches="tight")
         syn_aucs[classifier_type[index]].append(auc)
@@ -256,54 +247,48 @@ def evaluate_synthetic_data(list_classifiers, x_synthetic, y_synthetic, fold, k,
             plt.figure()
             selected_color_map = plt.colormaps.get_cmap(DEFAULT_COLOR_NAME[(fold + 2) % len(DEFAULT_COLOR_NAME)])
             confusion_matrix_instance = PlotConfusionMatrix()
-            confusion_matrix_instance.plot_confusion_matrix(confusion_matrix_synthetic, out_label, selected_color_map)
+            confusion_matrix_instance.plot_confusion_matrix(confusion_matrix_TRTS, out_label, selected_color_map)
             Path(os.path.join(output_dir, path_confusion_matrix)).mkdir(parents=True, exist_ok=True)
             matrix_file = os.path.join(output_dir, path_confusion_matrix,
-                                       f'CM_Synthetic_{classifier_type[index]}_k{fold + 1}.jpg')
+                                       f'CM_TRTS_{classifier_type[index]}_k{fold + 1}.jpg')
             plt.savefig(matrix_file, bbox_inches='tight')
             if USE_AIM:
                aim_run.track(values)
                plt.savefig(matrix_file, bbox_inches='tight')
                aim_image = Image(matrix_file)
-               aim_run.track(value=aim_image,name= f'CM_Synthetic_{classifier_type[index]}_k{fold + 1}')
+               aim_run.track(value=aim_image,name= f'CM_TRTS_{classifier_type[index]}_k{fold + 1}')
             if USE_MLFLOW:
                   mlflow.log_metrics(values,step=fold+1)
                   mlflow.log_artifact(matrix_file, 'images')
             if USE_TENSORBOARD:
                with file_writer.as_default():
                   cm_image = plot_to_image(matrix_file)
-                  tf.summary.image(f'CM_Real_{classifier_type[index]}_k{fold + 1}', cm_image,step=fold+1)
-                  tf.summary.scalar(ac, data=accuracy_synthetic, step=fold+1)
-                  tf.summary.scalar(pc, data=precision_synthetic, step=fold+1)
-                  tf.summary.scalar(rr, data=recall_synthetic, step=fold+1)
-                  tf.summary.scalar(f1, data=f1_score_synthetic, step=fold+1)
-            if USE_NEPTUNE:
-                nept_run[ac].append(accuracy_synthetic)
-                nept_run[pc].append(precision_synthetic)
-                nept_run[rr].append(recall_synthetic)
-                nept_run[f1].append(f1_score_synthetic)
-                nept_run[ f'CM_Synthetic_{classifier_type[index]}_k{fold + 1}'].upload(matrix_file)
-        accuracy_synthetic_list.append(accuracy_synthetic)
-        precision_synthetic_list.append(precision_synthetic)
-        recall_synthetic_list.append(recall_synthetic)
-        f1_score_synthetic_list.append(f1_score_synthetic)
+                  tf.summary.image(f'CM_TSTR_{classifier_type[index]}_k{fold + 1}', cm_image,step=fold+1)
+                  tf.summary.scalar(ac, data=accuracy_TRTS, step=fold+1)
+                  tf.summary.scalar(pc, data=precision_TRTS, step=fold+1)
+                  tf.summary.scalar(rr, data=recall_TRTS, step=fold+1)
+                  tf.summary.scalar(f1, data=f1_score_TRTS, step=fold+1)
+        accuracy_TRTS_list.append(accuracy_TRTS)
+        precision_TRTS_list.append(precision_TRTS)
+        recall_TRTS_list.append(recall_TRTS)
+        f1_score_TRTS_list.append(f1_score_TRTS)
 
-    return [accuracy_synthetic_list, precision_synthetic_list, recall_synthetic_list, f1_score_synthetic_list]
+    return [accuracy_TRTS_list, precision_TRTS_list, recall_TRTS_list, f1_score_TRTS_list]
 
 
-def evaluate_real_data(list_classifiers, x_real, y_real, fold, k, generate_confusion_matrix, output_dir,
-                       classifier_type, out_label, path_confusion_matrix, verbose_level,dict,real_aucs,dict_log_likehood_real):
-    logging.info(f"Real Fold {fold + 1}/{k} results")
+def evaluate_TSTR_data(list_classifiers, x_TSTR, y_TSTR, fold, k, generate_confusion_matrix, output_dir,
+                       classifier_type, out_label, path_confusion_matrix, verbose_level,dict,TSTR_aucs,dict_log_likehood_TSTR):
+    logging.info(f"TSTR Fold {fold + 1}/{k} results")
     instance_metrics = ProbabilisticMetrics()
     y_predict_prob=[]
-    accuracy_real_list, precision_real_list, recall_real_list, f1_real_list = [], [], [], []
+    accuracy_TSTR_list, precision_TSTR_list, recall_TSTR_list, f1_TSTR_list = [], [], [], []
     for index, classifier_model in enumerate(list_classifiers):
 
         if classifier_type[index] == "Perceptron":
-            y_predicted_real = classifier_model.predict(x_real, verbose=DEFAULT_VERBOSE_LIST[verbose_level])
-            y_predicted_real = np.rint(np.squeeze(y_predicted_real, axis=1))
-            y_predict_prob=y_predicted_real
-            #y_predict_prob=y_predicted_real.argmax(axis=-1)
+            y_predicted_TSTR = classifier_model.predict(x_TSTR, verbose=DEFAULT_VERBOSE_LIST[verbose_level])
+            y_predicted_TSTR = np.rint(np.squeeze(y_predicted_TSTR, axis=1))
+            y_predict_prob=y_predicted_TSTR
+            #y_predict_prob=y_predicted_TSTR.argmax(axis=-1)
             #calibrated_clf = CalibratedClassifierCV(classifier_model, cv="prefit")
             #calibrated_clf.fit(X_calib, y_calib)
            # y_predict_prob=np.argmax(y_predict_prob,axis=1)
@@ -311,93 +296,87 @@ def evaluate_real_data(list_classifiers, x_real, y_real, fold, k, generate_confu
 
         else:
             print(classifier_type[index])
-            y_predicted_real = classifier_model.predict(x_real)
-            y_predict_prob=classifier_model.predict_proba(x_real)[::,1]
+            y_predicted_TSTR = classifier_model.predict(x_TSTR)
+            y_predict_prob=classifier_model.predict_proba(x_TSTR)[::,1]
             #y_predict_prob=np.argmax(y_predict_prob,axis=1)
 
-        y_predicted_real = y_predicted_real.astype(int)
+        y_predicted_TSTR = y_predicted_TSTR.astype(int)
         
-        y_sample_real = y_real.astype(int)
-        confusion_matrix_real = confusion_matrix(y_sample_real, y_predicted_real)
-        accuracy_real = instance_metrics.get_accuracy(y_sample_real, y_predicted_real)
-        precision_real = instance_metrics.get_precision(y_sample_real, y_predicted_real)
-        recall_real = instance_metrics.get_recall(y_sample_real, y_predicted_real)
-        f1_real = instance_metrics.get_f1_score(y_sample_real, y_predicted_real)
+        y_sample_TSTR = y_TSTR.astype(int)
+        confusion_matrix_TSTR = confusion_matrix(y_sample_TSTR, y_predicted_TSTR)
+        accuracy_TSTR = instance_metrics.get_accuracy(y_sample_TSTR, y_predicted_TSTR)
+        precision_TSTR = instance_metrics.get_precision(y_sample_TSTR, y_predicted_TSTR)
+        recall_TSTR = instance_metrics.get_recall(y_sample_TSTR, y_predicted_TSTR)
+        f1_TSTR = instance_metrics.get_f1_score(y_sample_TSTR, y_predicted_TSTR)
  
         logging.info(f" Classifier Model: {classifier_type[index]}")
-        logging.info(f"   Real Fold {fold + 1} - Confusion Matrix:")
-        logging.info(confusion_matrix_real)
+        logging.info(f"   TSTR Fold {fold + 1} - Confusion Matrix:")
+        logging.info(confusion_matrix_TSTR)
         logging.info(f"\n   Classifier Metrics:")
-        logging.info(f"     Real Fold {fold + 1} - Accuracy: " + str(accuracy_real))
-        logging.info(f"     Real Fold {fold + 1} - Precision: " + str(precision_real))
-        logging.info(f"     Real Fold {fold + 1} - Recall: " + str(recall_real))
-        logging.info(f"     Real Fold {fold + 1} - F1 Score: " + str(f1_real) + "\n")
+        logging.info(f"     TSTR Fold {fold + 1} - Accuracy: " + str(accuracy_TSTR))
+        logging.info(f"     TSTR Fold {fold + 1} - Precision: " + str(precision_TSTR))
+        logging.info(f"     TSTR Fold {fold + 1} - Recall: " + str(recall_TSTR))
+        logging.info(f"     TSTR Fold {fold + 1} - F1 Score: " + str(f1_TSTR) + "\n")
         logging.info("")
-        ac='Real Accuracy '+f' Classifier Model {classifier_type[index]}'
-        pc='Real precision '+f' Classifier Model {classifier_type[index]}'
-        rr='Real Recall '+f' Classifier Model {classifier_type[index]}'
-        f1='Real f1 Score '+f' Classifier Model {classifier_type[index]}'
-        values={ac:accuracy_real,pc:precision_real,rr:recall_real,f1:f1_real}
+        ac='TSTR Accuracy '+f' Classifier Model {classifier_type[index]}'
+        pc='TSTR precision '+f' Classifier Model {classifier_type[index]}'
+        rr='TSTR Recall '+f' Classifier Model {classifier_type[index]}'
+        f1='TSTR f1 Score '+f' Classifier Model {classifier_type[index]}'
+        values={ac:accuracy_TSTR,pc:precision_TSTR,rr:recall_TSTR,f1:f1_TSTR}
 
-        dict["Real accuracy"][classifier_type[index]].append(accuracy_real)
-        dict["Real precision"][classifier_type[index]].append(precision_real)
-        dict["Real F1 score"][classifier_type[index]].append(f1_real)
-        dict["Real recall"][classifier_type[index]].append(recall_real)
+        dict["TSTR accuracy"][classifier_type[index]].append(accuracy_TSTR)
+        dict["TSTR precision"][classifier_type[index]].append(precision_TSTR)
+        dict["TSTR F1 score"][classifier_type[index]].append(f1_TSTR)
+        dict["TSTR recall"][classifier_type[index]].append(recall_TSTR)
 
-        fpr, tpr,thresholds=metrics.roc_curve(y_sample_real, y_predict_prob)
-        log_likehood=log_loss(y_sample_real,y_predict_prob)
-        dict_log_likehood_real[classifier_type[index]].append(log_likehood)
+        fpr, tpr,thresholds=metrics.roc_curve(y_sample_TSTR, y_predict_prob)
+        log_likehood=log_loss(y_sample_TSTR,y_predict_prob)
+        dict_log_likehood_TSTR[classifier_type[index]].append(log_likehood)
         plt.figure()  
         Path(os.path.join(output_dir, path_confusion_matrix)).mkdir(parents=True, exist_ok=True)
-        roc_file = os.path.join(output_dir, path_confusion_matrix,f'Roc_curve_Real_{classifier_type[index]}_k{fold + 1}.jpg')
-        auc=metrics.roc_auc_score(y_sample_real,  y_predict_prob)
+        roc_file = os.path.join(output_dir, path_confusion_matrix,f'Roc_curve_TSTR_{classifier_type[index]}_k{fold + 1}.jpg')
+        auc=metrics.roc_auc_score(y_sample_TSTR,  y_predict_prob)
         plt.plot(fpr, tpr)
         plt.savefig(roc_file, bbox_inches="tight")
-        real_aucs[classifier_type[index]].append(auc)
+        TSTR_aucs[classifier_type[index]].append(auc)
         if generate_confusion_matrix:
             plt.figure()
             selected_color_map = plt.colormaps.get_cmap(DEFAULT_COLOR_NAME[(fold + 2) % len(DEFAULT_COLOR_NAME)])
             confusion_matrix_instance = PlotConfusionMatrix()
-            confusion_matrix_instance.plot_confusion_matrix(confusion_matrix_real, out_label, selected_color_map)
+            confusion_matrix_instance.plot_confusion_matrix(confusion_matrix_TSTR, out_label, selected_color_map)
             Path(os.path.join(output_dir, path_confusion_matrix)).mkdir(parents=True, exist_ok=True)
             matrix_file = os.path.join(output_dir, path_confusion_matrix,
-                                       f'CM_Real_{classifier_type[index]}_k{fold + 1}.jpg')
+                                       f'CM_TSTR_{classifier_type[index]}_k{fold + 1}.jpg')
             matrix=plt.savefig(matrix_file, bbox_inches='tight')
             cm_image = plot_to_image(matrix_file)
 
             if USE_TENSORBOARD:
                with file_writer.as_default():
-                  tf.summary.image(f'CM_Real_{classifier_type[index]}_k{fold + 1}', cm_image,step=fold+1)
-                  tf.summary.scalar(ac, data=accuracy_real, step=fold+1)
-                  tf.summary.scalar(pc, data=precision_real, step=fold+1)
-                  tf.summary.scalar(rr, data=recall_real, step=fold+1)
-                  tf.summary.scalar(f1, data=f1_real, step=fold+1)
+                  tf.summary.image(f'CM_TSTR_{classifier_type[index]}_k{fold + 1}', cm_image,step=fold+1)
+                  tf.summary.scalar(ac, data=accuracy_TSTR, step=fold+1)
+                  tf.summary.scalar(pc, data=precision_TSTR, step=fold+1)
+                  tf.summary.scalar(rr, data=recall_TSTR, step=fold+1)
+                  tf.summary.scalar(f1, data=f1_TSTR, step=fold+1)
 
             if USE_AIM:
                aim_run.track(values)
                plt.savefig(matrix_file, bbox_inches='tight')
                aim_image = Image(matrix_file)
-               aim_run.track(value=aim_image, name=f'CM_Real_{classifier_type[index]}_k{fold + 1}')
+               aim_run.track(value=aim_image, name=f'CM_TSTR_{classifier_type[index]}_k{fold + 1}')
      #                 context={'classifier_type': classifier_type[index]})
             if USE_MLFLOW:
                   mlflow.log_metrics(values,step=fold+1)
                   mlflow.log_artifact(matrix_file, 'images')
-            if USE_NEPTUNE:
-                nept_run[ac].append(accuracy_real)
-                nept_run[pc].append(precision_real)
-                nept_run[rr].append(recall_real)
-                nept_run[f1].append(f1_real)
-                nept_run[f'CM_Real_{classifier_type[index]}_k{fold + 1}'].upload(matrix_file)
 
-        accuracy_real_list.append(accuracy_real)
-        precision_real_list.append(precision_real)
-        recall_real_list.append(recall_real)
-        f1_real_list.append(f1_real)
+        accuracy_TSTR_list.append(accuracy_TSTR)
+        precision_TSTR_list.append(precision_TSTR)
+        recall_TSTR_list.append(recall_TSTR)
+        f1_TSTR_list.append(f1_TSTR)
 
 
-    return [accuracy_real_list, precision_real_list, recall_real_list, f1_real_list]
+    return [accuracy_TSTR_list, precision_TSTR_list, recall_TSTR_list, f1_TSTR_list]
 
-def p_value_test (real_label,false_label,type_of_metric,classifier_type):
+def p_value_test (Real_label,false_label,type_of_metric,classifier_type):
     real=[]
     synt=[]
     estaticts=0
@@ -408,8 +387,6 @@ def p_value_test (real_label,false_label,type_of_metric,classifier_type):
     #for index in range(len(classifier_type)):
     aux1=np.asfarray(real_label[classifier_type])
     aux2=np.asfarray(false_label[classifier_type])   
-    print(aux1)
-    print(aux2)
     estaticts, p_value = stats.wilcoxon(aux1,aux2,alternative='two-sided')
     logging.info("  P_value of {}  {} and stats {} of {} \n".format(type_of_metric,p_value,estaticts,classifier_type))
     return p_value
@@ -425,156 +402,139 @@ def wilcoxon_test_per_fold(list_syn,list_real):
       aux_false.append(j)
     estaticts, p_value = stats.wilcoxon(aux_real,aux_false,zero_method="zsplit")
     return p_value
-def show_and_export_results(dict_similarity,classifier_type,output_dir,title_output_label,dict_metrics,dict_syn_auc,dict_real_auc,dict_log_likehood_real,dict_log_likehood_syn):
+def show_and_export_results(dict_similarity,classifier_type,output_dir,title_output_label,dict_metrics,dict_syn_auc,dict_TSTR_auc,dict_log_likehood_TSTR,dict_log_likehood_TSTR):
     plot_classifier_metrics = PlotClassificationMetrics()
     plot_regressive_metrics = PlotRegressiveMetrics()
     p_metrics=P_values_metrics()
     #dict_list=[dict_metrics,dict_metrics]
     dict_to_csv={}
-    analysis_type_list=["Treinado com real","Treinado com sint"]
+    analysis_type_list=["Treinado com TSTR","Treinado com sint"]
     
     for index in range(len(classifier_type)):
         #for analysis_type in zip(analysis_type_list):
-        logging.info("Overall Synthetic Results: Classifier {}\n".format(classifier_type[index]))
-        logging.info("  Synthetic List of Accuracies: {} ".format(dict_metrics["Synthetic accuracy"][classifier_type[index]]))
-        logging.info("  Synthetic List of Precisions: {} ".format(dict_metrics["Synthetic precision"][classifier_type[index]]))
-        logging.info("  Synthetic List of Recalls: {} ".format(dict_metrics["Synthetic recall"][classifier_type[index]]))
-        logging.info("  Synthetic List of F1-scores: {} ".format(dict_metrics["Synthetic F1 score"][classifier_type[index]]))
-        logging.info("  Synthetic list log_likehood Score: {} ".format((dict_log_likehood_real[classifier_type[index]])))
-        logging.info("  Synthetic Mean Accuracy: {} ".format(np.mean(dict_metrics["Synthetic accuracy"][classifier_type[index]])))
-        logging.info("  Synthetic Mean Precision: {} ".format(np.mean(dict_metrics["Synthetic precision"][classifier_type[index]])))
-        logging.info("  Synthetic Mean Recall: {} ".format(np.mean(dict_metrics["Synthetic recall"][classifier_type[index]])))
-        logging.info("  Synthetic Mean F1 Score: {} ".format(np.mean(dict_metrics["Synthetic F1 score"][classifier_type[index]])))
-        logging.info("  Synthetic Mean log_likehood Score: {} ".format(np.mean(dict_log_likehood_real[classifier_type[index]])))
-        logging.info("  Synthetic Standard Deviation of Accuracy: {} ".format(np.std(dict_metrics["Synthetic accuracy"][classifier_type[index]])))
-        logging.info("  Synthetic Standard Deviation of Precision: {} ".format(np.std(dict_metrics["Synthetic precision"][classifier_type[index]])))
-        logging.info("  Synthetic Standard Deviation of Recall: {} ".format(np.std(dict_metrics["Synthetic recall"][classifier_type[index]])))
-        logging.info("  Synthetic Standard Deviation of F1 Score: {} \n".format(np.std(dict_metrics["Synthetic F1 score"][classifier_type[index]])))
-        logging.info("  Synthetic Standard Deviation of log_likehood Score: {} ".format(np.std(dict_log_likehood_real[classifier_type[index]])))
-        plot_filename = os.path.join(output_dir, f'{classifier_type[index]}treiando_com_real_testado_com_sint.pdf.pdf')
+        logging.info("Overall TRTS Results: Classifier {}\n".format(classifier_type[index]))
+        logging.info("  TRTS List of Accuracies: {} ".format(dict_metrics["TRTS accuracy"][classifier_type[index]]))
+        logging.info("  TRTS List of Precisions: {} ".format(dict_metrics["TRTS precision"][classifier_type[index]]))
+        logging.info("  TRTS List of Recalls: {} ".format(dict_metrics["TRTS recall"][classifier_type[index]]))
+        logging.info("  TRTS List of F1-scores: {} ".format(dict_metrics["TRTS F1 score"][classifier_type[index]]))
+        logging.info("  TRTS list log_likehood Score: {} ".format((dict_log_likehood_TRTS[classifier_type[index]])))
+        logging.info("  TRTS Mean Accuracy: {} ".format(np.mean(dict_metrics["TRTS accuracy"][classifier_type[index]])))
+        logging.info("  TRTS Mean Precision: {} ".format(np.mean(dict_metrics["TRTS precision"][classifier_type[index]])))
+        logging.info("  TRTS Mean Recall: {} ".format(np.mean(dict_metrics["TRTS recall"][classifier_type[index]])))
+        logging.info("  TRTS Mean F1 Score: {} ".format(np.mean(dict_metrics["TRTS F1 score"][classifier_type[index]])))
+        logging.info("  TRTS Mean log_likehood Score: {} ".format(np.mean(dict_log_likehood_TRTS[classifier_type[index]])))
+        logging.info("  TRTS Standard Deviation of Accuracy: {} ".format(np.std(dict_metrics["TRTS accuracy"][classifier_type[index]])))
+        logging.info("  TRTS Standard Deviation of Precision: {} ".format(np.std(dict_metrics["TRTS precision"][classifier_type[index]])))
+        logging.info("  TRTS Standard Deviation of Recall: {} ".format(np.std(dict_metrics["TRTS recall"][classifier_type[index]])))
+        logging.info("  TRTS Standard Deviation of F1 Score: {} \n".format(np.std(dict_metrics["TRTS F1 score"][classifier_type[index]])))
+        logging.info("  TRTS Standard Deviation of log_likehood Score: {} ".format(np.std(dict_log_likehood_TRTS[classifier_type[index]])))
+        plot_filename = os.path.join(output_dir, f'{classifier_type[index]}_treinado_com_TSTR_testado_com_sint.pdf')
 
-        plot_classifier_metrics.plot_classifier_metrics(classifier_type[index], dict_metrics["Synthetic accuracy"][classifier_type[index]],
-                                                        dict_metrics["Synthetic precision"][classifier_type[index]], dict_metrics["Synthetic recall"][classifier_type[index]],dict_metrics["Synthetic F1 score"][classifier_type[index]],plot_filename,
+        plot_classifier_metrics.plot_classifier_metrics(classifier_type[index], dict_metrics["TRTS accuracy"][classifier_type[index]],
+                                                        dict_metrics["TRTS precision"][classifier_type[index]], dict_metrics["TRTS recall"][classifier_type[index]],dict_metrics["TRTS F1 score"][classifier_type[index]],plot_filename,
                                                         f'{title_output_label}_TRTS',"TRTS")
 
 
 
        
-        ac='Synthetic Mean Accuracy '+f' Classifier Model {classifier_type[index]}'
-        pc='Synthetic Mean Precision '+f' Classifier Model {classifier_type[index]}'
-        rr='Synthetic Mean Recall '+f' Classifier Model {classifier_type[index]}'
-        f1='Synthetic Mean F1 Score '+f' Classifier Model {classifier_type[index]}'
-        pct='Synthetic Standard Deviation of Precision '+f'Classifier Model {classifier_type[index]}'
-        act='Synthetic Standard Deviation of Accuracy '+f' Classifier Model {classifier_type[index]}'
-        rrt='Synthetic Standard Deviation of Recall '+f' Classifier Model {classifier_type[index]}'
-        f1t='Synthetic Standard Deviation of f1 Score '+f' Classifier Model {classifier_type[index]}'
+        ac='TRTS Mean Accuracy '+f' Classifier Model {classifier_type[index]}'
+        pc='TRTS Mean Precision '+f' Classifier Model {classifier_type[index]}'
+        rr='TRTS Mean Recall '+f' Classifier Model {classifier_type[index]}'
+        f1='TRTS Mean F1 Score '+f' Classifier Model {classifier_type[index]}'
+        pct='TRTS Standard Deviation of Precision '+f'Classifier Model {classifier_type[index]}'
+        act='TRTS Standard Deviation of Accuracy '+f' Classifier Model {classifier_type[index]}'
+        rrt='TRTS Standard Deviation of Recall '+f' Classifier Model {classifier_type[index]}'
+        f1t='TRTS Standard Deviation of f1 Score '+f' Classifier Model {classifier_type[index]}'
         if USE_AIM:
-                values = {ac: np.mean(dict_metrics["Synthetic accuracy"][classifier_type[index]]),
-                  pc: np.mean(dict_metrics["Synthetic precision"][classifier_type[index]]),
-                  rr: np.mean(dict_metrics["Synthetic recall"][classifier_type[index]]),
-                  f1: np.mean(dict_metrics["Synthetic F1 score"][classifier_type[index]]),
-                  act: np.std(dict_metrics["Synthetic accuracy"][classifier_type[index]]),
-                  pct: np.std(dict_metrics["Synthetic precision"][classifier_type[index]]),
-                  rrt: np.std(dict_metrics["Synthetic recall"][classifier_type[index]]),
-                  f1t: np.std(dict_metrics["Synthetic F1 score"][classifier_type[index]]),
+                values = {ac: np.mean(dict_metrics["TRTS accuracy"][classifier_type[index]]),
+                  pc: np.mean(dict_metrics["TRTS precision"][classifier_type[index]]),
+                  rr: np.mean(dict_metrics["TRTS recall"][classifier_type[index]]),
+                  f1: np.mean(dict_metrics["TRTS F1 score"][classifier_type[index]]),
+                  act: np.std(dict_metrics["TRTS accuracy"][classifier_type[index]]),
+                  pct: np.std(dict_metrics["TRTS precision"][classifier_type[index]]),
+                  rrt: np.std(dict_metrics["TRTS recall"][classifier_type[index]]),
+                  f1t: np.std(dict_metrics["TRTS F1 score"][classifier_type[index]]),
                   }
 
-                aim_run.track(values, context={'data': 'Synthetic', 'classifier_type': classifier_type[index]})
-                d = Distribution(synthetic_accuracies[index])
-                aim_run.track(d, name='accuracy_dist', step=0, context={'data': 'Synthetic', 'classifier_type': classifier_type[index]})
+                aim_run.track(values, context={'data': 'TRTS', 'classifier_type': classifier_type[index]})
+                d = Distribution(TRTS_accuracies[index])
+                aim_run.track(d, name='accuracy_dist', step=0, context={'data': 'TRTS', 'classifier_type': classifier_type[index]})
         if USE_MLFLOW:
-            values = {ac: np.mean(dict_metrics["Synthetic accuracy"][classifier_type[index]]),
-                  pc: np.mean(dict_metrics["Synthetic precision"][classifier_type[index]]),
-                  rr: np.mean(dict_metrics["Synthetic recall"][classifier_type[index]]),
-                  f1: np.mean(dict_metrics["Synthetic F1 score"][classifier_type[index]]),
-                  act: np.std(dict_metrics["Synthetic accuracy"][classifier_type[index]]),
-                  pct: np.std(dict_metrics["Synthetic precision"][classifier_type[index]]),
-                  rrt: np.std(dict_metrics["Synthetic recall"][classifier_type[index]]),
-                  f1t: np.std(dict_metrics["Synthetic F1 score"][classifier_type[index]]),
+            values = {ac: np.mean(dict_metrics["TRTS accuracy"][classifier_type[index]]),
+                  pc: np.mean(dict_metrics["TRTS precision"][classifier_type[index]]),
+                  rr: np.mean(dict_metrics["TRTS recall"][classifier_type[index]]),
+                  f1: np.mean(dict_metrics["TRTS F1 score"][classifier_type[index]]),
+                  act: np.std(dict_metrics["TRTS accuracy"][classifier_type[index]]),
+                  pct: np.std(dict_metrics["TRTS precision"][classifier_type[index]]),
+                  rrt: np.std(dict_metrics["TRTS recall"][classifier_type[index]]),
+                  f1t: np.std(dict_metrics["TRTS F1 score"][classifier_type[index]]),
                   }
             mlflow.log_metrics(values)
-        if USE_NEPTUNE:
 
-               nept_run[ac]=np.mean(dict_metrics["Synthetic accuracy"][classifier_type[index]])
-               nept_run[pc]=np.mean(dict_metrics["Synthetic precision"][classifier_type[index]])
-               nept_run[rr]=np.mean(dict_metrics["Synthetic recall"][classifier_type[index]])
-               nept_run[f1]=np.mean(dict_metrics["Synthetic F1 score"][classifier_type[index]])
-               nept_run[act]=np.std(dict_metrics["Synthetic accuracy"][classifier_type[index]])
-               nept_run[pct]=np.std(dict_metrics["Synthetic precision"][classifier_type[index]])
-               nept_run[rrt]= np.std(dict_metrics["Synthetic recall"][classifier_type[index]])
-               nept_run[f1t]=np.std(dict_metrics["Synthetic F1 score"][classifier_type[index]])
         if USE_TENSORBOARD:
             with file_writer.as_default():
-                  tf.summary.scalar(ac, data=np.mean(dict_metrics["Synthetic accuracy"][classifier_type[index]]),step=0)
-                  tf.summary.scalar(pc, data=np.mean(dict_metrics["Synthetic precision"][classifier_type[index]]),step=0)
-                  tf.summary.scalar(rr, data=np.mean(dict_metrics["Synthetic recall"][classifier_type[index]]),step=0)
-                  tf.summary.scalar(f1, data=np.mean(dict_metrics["Synthetic F1 score"][classifier_type[index]]),step=0)
-                  tf.summary.scalar(act, data=np.std(dict_metrics["Synthetic accuracy"][classifier_type[index]]),step=0)
-                  tf.summary.scalar(pct, data=np.std(dict_metrics["Synthetic precision"][classifier_type[index]]),step=0)
-                  tf.summary.scalar(rrt, data=np.std(dict_metrics["Synthetic recall"][classifier_type[index]]),step=0)
-                  tf.summary.scalar(f1t, data=np.std(dict_metrics["Synthetic F1 score"][classifier_type[index]]),step=0)
+                  tf.summary.scalar(ac, data=np.mean(dict_metrics["TRTS accuracy"][classifier_type[index]]),step=0)
+                  tf.summary.scalar(pc, data=np.mean(dict_metrics["TRTS precision"][classifier_type[index]]),step=0)
+                  tf.summary.scalar(rr, data=np.mean(dict_metrics["TRTS recall"][classifier_type[index]]),step=0)
+                  tf.summary.scalar(f1, data=np.mean(dict_metrics["TRTS F1 score"][classifier_type[index]]),step=0)
+                  tf.summary.scalar(act, data=np.std(dict_metrics["TRTS accuracy"][classifier_type[index]]),step=0)
+                  tf.summary.scalar(pct, data=np.std(dict_metrics["TRTS precision"][classifier_type[index]]),step=0)
+                  tf.summary.scalar(rrt, data=np.std(dict_metrics["TRTS recall"][classifier_type[index]]),step=0)
+                  tf.summary.scalar(f1t, data=np.std(dict_metrics["TRTS F1 score"][classifier_type[index]]),step=0)
 
         #for analysis_type in zip(analysis_type_list):
-        logging.info("Overall Real Results: {}\n".format(classifier_type[index]))
-        logging.info("  Real List of Accuracies: {} ".format(dict_metrics["Real accuracy"][classifier_type[index]]))
-        logging.info("  Real List of Precisions: {} ".format(dict_metrics["Real precision"][classifier_type[index]]))
-        logging.info("  Real List of Recalls: {} ".format(dict_metrics["Real recall"][classifier_type[index]]))
-        logging.info("  Real List of F1-scores: {} ".format(dict_metrics["Real F1 score"][classifier_type[index]]))
-        logging.info("  Real list log_likehood Score: {} ".format((dict_log_likehood_real[classifier_type[index]])))
-        logging.info("  Real Mean Accuracy: {} ".format(np.mean(dict_metrics["Real accuracy"][classifier_type[index]])))
-        logging.info("  Real Mean Precision: {} ".format(np.mean(dict_metrics["Real precision"][classifier_type[index]])))
-        logging.info("  Real Mean Recall: {} ".format(np.mean(dict_metrics["Real recall"][classifier_type[index]])))
-        logging.info("  Real Mean F1 Score: {} ".format(np.mean(dict_metrics["Real F1 score"][classifier_type[index]])))
-        logging.info("  Real Mean log_likehood Score: {} ".format(np.mean(dict_log_likehood_real[classifier_type[index]])))
-        logging.info("  Real Standard Deviation of Accuracy: {} ".format(np.std(dict_metrics["Real accuracy"][classifier_type[index]])))
-        logging.info("  Real Standard Deviation of Precision: {} ".format(np.std(dict_metrics["Real precision"][classifier_type[index]])))
-        logging.info("  Real Standard Deviation of Recall: {} ".format(np.std(dict_metrics["Real recall"][classifier_type[index]])))
-        logging.info("  Real Standard Deviation of F1 Score: {} \n".format(np.std(dict_metrics["Real F1 score"][classifier_type[index]])))
-        logging.info("  Real Standard Deviation of log_likehood Score: {} ".format(np.std(dict_log_likehood_real[classifier_type[index]])))
+        logging.info("Overall TSTR Results: {}\n".format(classifier_type[index]))
+        logging.info("  TSTR List of Accuracies: {} ".format(dict_metrics["TSTR accuracy"][classifier_type[index]]))
+        logging.info("  TSTR List of Precisions: {} ".format(dict_metrics["TSTR precision"][classifier_type[index]]))
+        logging.info("  TSTR List of Recalls: {} ".format(dict_metrics["TSTR recall"][classifier_type[index]]))
+        logging.info("  TSTR List of F1-scores: {} ".format(dict_metrics["TSTR F1 score"][classifier_type[index]]))
+        logging.info("  TSTR list log_likehood Score: {} ".format((dict_log_likehood_TSTR[classifier_type[index]])))
+        logging.info("  TSTR Mean Accuracy: {} ".format(np.mean(dict_metrics["TSTR accuracy"][classifier_type[index]])))
+        logging.info("  TSTR Mean Precision: {} ".format(np.mean(dict_metrics["TSTR precision"][classifier_type[index]])))
+        logging.info("  TSTR Mean Recall: {} ".format(np.mean(dict_metrics["TSTR recall"][classifier_type[index]])))
+        logging.info("  TSTR Mean F1 Score: {} ".format(np.mean(dict_metrics["TSTR F1 score"][classifier_type[index]])))
+        logging.info("  TSTR Mean log_likehood Score: {} ".format(np.mean(dict_log_likehood_TSTR[classifier_type[index]])))
+        logging.info("  TSTR Standard Deviation of Accuracy: {} ".format(np.std(dict_metrics["TSTR accuracy"][classifier_type[index]])))
+        logging.info("  TSTR Standard Deviation of Precision: {} ".format(np.std(dict_metrics["TSTR precision"][classifier_type[index]])))
+        logging.info("  TSTR Standard Deviation of Recall: {} ".format(np.std(dict_metrics["TSTR recall"][classifier_type[index]])))
+        logging.info("  TSTR Standard Deviation of F1 Score: {} \n".format(np.std(dict_metrics["TSTR F1 score"][classifier_type[index]])))
+        logging.info("  TSTR Standard Deviation of log_likehood Score: {} ".format(np.std(dict_log_likehood_TSTR[classifier_type[index]])))
 
-        plot_filename = os.path.join(output_dir, f'{classifier_type[index]}_treiando_com_sint_testado_com_Real.pdf')
+        plot_filename = os.path.join(output_dir, f'{classifier_type[index]}_treiando_com_sint_testado_com_TSTR.pdf')
 
-        plot_classifier_metrics.plot_classifier_metrics(classifier_type[index], dict_metrics["Real accuracy"][classifier_type[index]],
-                                                        dict_metrics["Real precision"][classifier_type[index]] ,dict_metrics["Real recall"][classifier_type[index]],
-                                                        dict_metrics["Real F1 score"][classifier_type[index]] ,plot_filename,
+        plot_classifier_metrics.plot_classifier_metrics(classifier_type[index], dict_metrics["TSTR accuracy"][classifier_type[index]],
+                                                        dict_metrics["TSTR precision"][classifier_type[index]] ,dict_metrics["TSTR recall"][classifier_type[index]],
+                                                        dict_metrics["TSTR F1 score"][classifier_type[index]] ,plot_filename,
                                                         f'{title_output_label}_TSTR',"TSTR")
 
-        ac='Real Mean Accuracy '+f' Classifier Model {classifier_type[index]}'
-        pc='Real Mean Precision '+f' Classifier Model {classifier_type[index]}'
-        rr='Real Mean Recall '+f' Classifier Model {classifier_type[index]}'
-        f1='Real Mean f1 Score '+f' Classifier Model {classifier_type[index]}'
-        pct='Real Standart Deviation of PreCision '+f'Classifier Model {classifier_type[index]}'
-        act='Real Standard Deviation of Accuracy '+f' Classifier Model {classifier_type[index]}'
-        rrt='Real Standard Deviation of Recall '+f' Classifier Model {classifier_type[index]}'
-        f1t='Real Standard Deviation of F1 Score '+f' Classifier Model {classifier_type[index]}'
+        ac='TSTR Mean Accuracy '+f' Classifier Model {classifier_type[index]}'
+        pc='TSTR Mean Precision '+f' Classifier Model {classifier_type[index]}'
+        rr='TSTR Mean Recall '+f' Classifier Model {classifier_type[index]}'
+        f1='TSTR Mean f1 Score '+f' Classifier Model {classifier_type[index]}'
+        pct='TSTR Standart Deviation of PreCision '+f'Classifier Model {classifier_type[index]}'
+        act='TSTR Standard Deviation of Accuracy '+f' Classifier Model {classifier_type[index]}'
+        rrt='TSTR Standard Deviation of Recall '+f' Classifier Model {classifier_type[index]}'
+        f1t='TSTR Standard Deviation of F1 Score '+f' Classifier Model {classifier_type[index]}'
         if USE_AIM:
-           aim_run.track(values,context={'data': 'Real','classifir_type': classifier_type[index]})
-           d = Distribution(real_accuracies[index])
-           aim_run.track(d, name='accuracy_dist', step=0, context={'data': 'Real', 'classifier_type': classifier_type[index]})
+           aim_run.track(values,context={'data': 'TSTR','classifir_type': classifier_type[index]})
+           d = Distribution(TSTR_accuracies[index])
+           aim_run.track(d, name='accuracy_dist', step=0, context={'data': 'TSTR', 'classifier_type': classifier_type[index]})
         if USE_MLFLOW:
             mlflow.log_metrics(values)
-           # d = Distribution(real_accuracies[index])
+           # d = Distribution(TSTR_accuracies[index])
 
-#            mlflow.log_metric('accuracy_dist',real_accuracies[index],step=index)
-        if USE_NEPTUNE:
-                nept_run[ac]=np.mean(dict_metrics["Real accuracy"][classifier_type[index]])
-                nept_run[pc]=np.mean(dict_metrics["Real precision"][classifier_type[index]])
-                nept_run[rr]=np.mean(dict_metrics["Real recall"][classifier_type[index]])
-                nept_run[f1]=np.mean(dict_metrics["Real F1 score"][classifier_type[index]])
-                nept_run[act]=np.std(dict_metrics["Real accuracy"][classifier_type[index]])
-                nept_run[pct]=np.std(dict_metrics["Real precision"][classifier_type[index]])
-                nept_run[rrt]=np.std(dict_metrics["Real recall"][classifier_type[index]])
-                nept_run[f1t]=np.std(dict_metrics["Real F1 score"][classifier_type[index]])
+#            mlflow.log_metric('accuracy_dist',TSTR_accuracies[index],step=index)
+
         if USE_TENSORBOARD:
             with file_writer.as_default():
-                  tf.summary.scalar(ac, data=np.mean(dict_metrics["Real accuracy"][classifier_type[index]]),step=0)
-                  tf.summary.scalar(pc, data=np.mean(dict_metrics["Real precision"][classifier_type[index]]),step=0)
-                  tf.summary.scalar(rr, data=np.mean(dict_metrics["Real recall"][classifier_type[index]]),step=0)
-                  tf.summary.scalar(f1, data=np.mean(dict_metrics["Real F1 score"][classifier_type[index]]),step=0)
-                  tf.summary.scalar(act, data=np.std(dict_metrics["Real accuracy"][classifier_type[index]]),step=0)
-                  tf.summary.scalar(pct, data=np.std(dict_metrics["Real precision"][classifier_type[index]]),step=0)
-                  tf.summary.scalar(rrt, data=np.std(dict_metrics["Real recall"][classifier_type[index]]),step=0)
-                  tf.summary.scalar(f1t, data=np.std(dict_metrics["Real F1 score"][classifier_type[index]]),step=0)     
+                  tf.summary.scalar(ac, data=np.mean(dict_metrics["TSTR accuracy"][classifier_type[index]]),step=0)
+                  tf.summary.scalar(pc, data=np.mean(dict_metrics["TSTR precision"][classifier_type[index]]),step=0)
+                  tf.summary.scalar(rr, data=np.mean(dict_metrics["TSTR recall"][classifier_type[index]]),step=0)
+                  tf.summary.scalar(f1, data=np.mean(dict_metrics["TSTR F1 score"][classifier_type[index]]),step=0)
+                  tf.summary.scalar(act, data=np.std(dict_metrics["TSTR accuracy"][classifier_type[index]]),step=0)
+                  tf.summary.scalar(pct, data=np.std(dict_metrics["TSTR precision"][classifier_type[index]]),step=0)
+                  tf.summary.scalar(rrt, data=np.std(dict_metrics["TSTR recall"][classifier_type[index]]),step=0)
+                  tf.summary.scalar(f1t, data=np.std(dict_metrics["TSTR F1 score"][classifier_type[index]]),step=0)     
     comparative_metrics = ['Mean Squared Error', 'Cosine Similarity', 'Max Mean Discrepancy']
 
 
@@ -593,72 +553,31 @@ def show_and_export_results(dict_similarity,classifier_type,output_dir,title_out
     p_f1=0
     p_recall=0
     for index in range(len(classifier_type)):
-     p_acc=p_value_test(dict_metrics["Real accuracy"],dict_metrics["Synthetic accuracy"],"accuracy",classifier_type[index])
-     p_prec=p_value_test(dict_metrics["Real precision"],dict_metrics["Synthetic precision"],"precision",classifier_type[index])
-     p_f1=p_value_test(dict_metrics["Real F1 score"],dict_metrics["Synthetic F1 score"],"F1 score",classifier_type[index])
-     p_recall=p_value_test(dict_metrics["Real recall"],dict_metrics["Synthetic recall"],"recall",classifier_type[index])
-     p_auc=p_value_test(dict_real_auc,dict_syn_auc,"auc",classifier_type[index])
+     p_acc=p_value_test(dict_metrics["TSTR accuracy"],dict_metrics["TRTS accuracy"],"accuracy",classifier_type[index])
+     p_prec=p_value_test(dict_metrics["TSTR precision"],dict_metrics["TRTS precision"],"precision",classifier_type[index])
+     p_f1=p_value_test(dict_metrics["TSTR F1 score"],dict_metrics["TRTS F1 score"],"F1 score",classifier_type[index])
+     p_recall=p_value_test(dict_metrics["TSTR recall"],dict_metrics["TRTS recall"],"recall",classifier_type[index])
+     p_auc=p_value_test(dict_TSTR_auc,dict_syn_auc,"auc",classifier_type[index])
      plot_filename = os.path.join(output_dir, f'{classifier_type[index]}_p_values.pdf')
-     #p_metrics.p_value_plot(classifier_type[index],p_acc,p_prec,p_f1,p_recall,p_auc,plot_filename,f'{title_output_label}_P_VALUE_DATA')
-   # logging.info("  P_value of accuracy and stats: {} {}\n".format(p_value_test(real_accuracies,synthetic_accuracies,list_pval_per_fold_accuracy)))
-   # logging.info("  P_value of precision: {}\n".format(p_value_test(real_precisions,synthetic_precisions,list_pval_per_fold_precision)))
-   # logging.info("  P_value of recall: {}\n".format(p_value_test(real_recalls,synthetic_recalls,list_pval_per_fold_recall)))
-   # logging.info("  P_value of f1 score: {}\n".format(p_value_test(real_f1_scores,synthetic_f1_scores,list_pval_per_fold_f1_score)))
-   # logging.info("  P_value of true positives rates:  {} in fold {}\n".format(wilcoxon_test_per_fold(list_syn_tpr,list_real_tpr)))
-   # logging.info("  P_value of false positives rates:  {} in fold {}\n".format(wilcoxon_test_per_fold(list_syn_fpr,list_real_fpr)))
-   # logging.info("  P_value of  auc: in  Classifier {} in fold {}\n".format(wilcoxon_test_per_fold(list_syn_auc,list_real_auc)))
 
-   # logging.info("  P_value of true positives rates over all folds: {}\n".format(p_value))
-
-   # logging.info("  P_value of false positives rates over all folds: {}\n".format(p_value))
-   # logging.info("AUC value for classifier with synthetic data {}\n".format(list_syn_auc))
-   # logging.info("AUC value for classifier with real data {}\n".format(list_syn_auc))
-
-  #  aux1,p_value=stats.wilcoxon(list_syn_auc,list_real_auc)
-  #  logging.info("  P_value of  auc over all folds: {}\n".format(p_value))
-    #   dict_similarity["list_mean_squared_error"]["false"].append(comparative_metrics1[0])
-     #   dict_similarity["list_cosine_similarity"]["false"].append(comparative_metrics1[1])
-     #   dict_similarity["list_maximum_mean_discrepancy"]["false"].append(comparative_metrics1[2])
-
-    plot_filename1 = os.path.join(output_dir, f'Comparison_Real_Synthetic_positive.jpg')
-    plot_filename2 = os.path.join(output_dir, f'Comparison_Real_Synthetic_false.jpg')
+    plot_filename1 = os.path.join(output_dir, f'Comparison_TSTR_TRTS_positive.jpg')
+    plot_filename2 = os.path.join(output_dir, f'Comparison_TSTR_TRTS_false.jpg')
 
     
     plot_regressive_metrics.plot_regressive_metrics(dict_similarity["list_mean_squared_error"]["positive"],dict_similarity["list_cosine_similarity"]["positive"],dict_similarity["list_maximum_mean_discrepancy"]["positive"],plot_filename1,f'{title_output_label}')
     plot_regressive_metrics.plot_regressive_metrics(dict_similarity["list_mean_squared_error"]["false"],dict_similarity["list_cosine_similarity"]["false"],dict_similarity["list_maximum_mean_discrepancy"]["false"],plot_filename2,f'{title_output_label}')
     if USE_AIM:
        aim_image = Image(plot_filename)
-       aim_run.track(value=aim_image, name=f'Comparison_Real_Synthetic',context={'classifier_type': classifier_type[index]})
+       aim_run.track(value=aim_image, name=f'Comparison_TSTR_TRTS',context={'classifier_type': classifier_type[index]})
     if USE_TENSORBOARD:
          with file_writer.as_default():
                  cm_image = plot_to_image(plot_filename)
-                 tf.summary.image('Comparison_Real_Synthetic.jpg', cm_image,step=0)
+                 tf.summary.image('Comparison_TSTR_TRTS.jpg', cm_image,step=0)
     if USE_MLFLOW:
        mlflow.log_artifact(plot_filename,'images')
-    if USE_NEPTUNE:
-       nept_run['Comparison_Real_Synthetic.jpg'].upload(plot_filename)
+ 
 
 
-    filename = os.path.join(output_dir, f'means_.csv')
-
-    means = {outer_key: {inner_key: np.mean(inner_value) for inner_key, inner_value in outer_value.items()} for outer_key, outer_value in dict_metrics.items()}
-
-    classifer_name = set()
-    for metric in dict_metrics.values():
-     classifer_name.update(metric.keys())
-
-
-    with open(filename, 'w', newline='') as csvfile:
-     writer = csv.writer(csvfile)
-
-     headers = ['Métrica'] + list(classifer_name)
-     writer.writerow(headers)
-
-     for key, metric_means in means.items():
-        row = [key]
-        for c_name in classifer_name:
-            row.append(metric_means.get(c_name, 'N/A'))  
-        writer.writerow(row)
 
 
  
@@ -679,19 +598,12 @@ def get_adversarial_model(latent_dim, input_data_shape, activation_function, ini
     
    # model(adversarial_model)
 
-    learning_rates = AdversarialModel.get_learning_rates()
-    logging.info("Optimizer generator learning rate: {}\n".format(learning_rates[0]))
-    logging.info("Optimizer discriminator learning rate: {}\n".format(learning_rates[1]))
-    logging.info("Conditional gan Adam learning rate: {}\n".format(learning_rates[2]))
-    logging.info("Conditional gan  RMS PROP learning rate: {}\n".format(learning_rates[3]))
-    logging.info("Conditional gan Ada delta learning rate: {}\n".format(learning_rates[4]))
     optimizer_generator = adversarial_model.get_optimizer(training_algorithm)
     optimizer_discriminator = adversarial_model.get_optimizer(training_algorithm)
     loss_generator = BinaryCrossentropy()
     loss_discriminator = BinaryCrossentropy()
 
     adversarial_model.compile(optimizer_generator, optimizer_discriminator, loss_generator, loss_discriminator,  loss=keras.losses.SparseCategoricalCrossentropy(),)
-    #mlflow.keras.log_model(adversarial_model,artifact_path="model")
     return adversarial_model
 
 
@@ -703,39 +615,6 @@ def show_model(latent_dim, input_data_shape, activation_function, initializer_me
                                          initializer_deviation, dropout_decay_rate_g, dropout_decay_rate_d,
                                          last_layer_activation, dense_layer_sizes_g, dense_layer_sizes_d,
                                          dataset_type)
-    #logging.info("Model Architecture")
-    #logging.info("  Model Generator")
-    #show_model_instance.get_generator().summary()
-    #mlflow.keras.log_model(show_model_instance.get_generator(),artifact_path="model")
-    #logging.info("  Dense Structure")
-    #show_model_instance.get_dense_generator_model().summary()
-    #mlflow.keras.log_model(show_model_instance.get_dense_generator_model(),artifact_path="model")
-    #logging.info("  Model Discriminator")
-    #show_model_instance.get_discriminator().summary()
-    #mlflow.keras.log_model(show_model_instance.get_discriminator(),artifact_path="model")
-    #logging.info("  Dense Structure")
-    #show_model_instance.get_dense_discriminator_model().summary()
-    #mlflow.keras.log_model(show_model_instance.get_dense_discriminator_model(),artifact_path="model")
-
-    #logging.info("")
-    #if verbose_level == logging.INFO:
-       # logging.info("Model Architecture")
-       # logging.info("  Model Generator")
-       # show_model_instance.get_generator().summary()
-       # logging.info("  Model Discriminator")
-       # show_model_instance.get_discriminator().summary()
-
-    #if verbose_level == logging.DEBUG:
-        #logging.info("Model Architecture")
-        #logging.info("  Model Generator")
-        #show_model_instance.get_generator().summary()
-        #logging.info("  Dense Structure")
-        #show_model_instance.get_dense_generator_model().summary()
-        #logging.info("  Model Discriminator")
-        #show_model_instance.get_discriminator().summary()
-        #logging.info("  Dense Structure")
-        #show_model_instance.get_dense_discriminator_model().summary()
-        #logging.info("")
 
 def run_experiment(dataset, input_data_shape, k, classifier_list, output_dir, batch_size, training_algorithm,
                    number_epochs, latent_dim, activation_function, dropout_decay_rate_g, dropout_decay_rate_d,
@@ -752,26 +631,25 @@ def run_experiment(dataset, input_data_shape, k, classifier_list, output_dir, ba
 
     stratified = StratifiedKFold(n_splits=k, shuffle=True)
 
-    list_accuracy, list_precision, list_recall, list_f1_score = [], [], [], []
+  
     dict_similarity={"list_mean_squared_error":{"positive":[],"false":[]},
     "list_cosine_similarity":{"positive":[],"false":[]},
     "list_kl_divergence":{"positive":[],"false":[]},
     "list_maximum_mean_discrepancy":{"positive":[],"false":[]}}
-    list_real_accuracy, list_real_precision, list_real_recall, list_real_f1_score = [], [], [], []
-    dict_log_likehood_real={"RandomForest":[],"AdaBoost":[],"DecisionTree":[], "Perceptron":[],"SVM":[],"SGDRegressor":[],"XGboost":[]}
-    dict_log_likehood_syn={"RandomForest":[],"AdaBoost":[],"DecisionTree":[], "Perceptron":[],"SVM":[],"SGDRegressor":[],"XGboost":[]}
+    dict_log_likehood_TSTR={"RandomForest":[],"AdaBoost":[],"DecisionTree":[], "Perceptron":[],"SVM":[],"SGDRegressor":[],"XGboost":[]}
+    dict_log_likehood_TSTR={"RandomForest":[],"AdaBoost":[],"DecisionTree":[], "Perceptron":[],"SVM":[],"SGDRegressor":[],"XGboost":[]}
     dict_syn_auc={"RandomForest":[],"AdaBoost":[],"DecisionTree":[], "Perceptron":[],"SVM":[],"SGDRegressor":[],"XGboost":[]}
-    dict_real_auc={"RandomForest":[],"AdaBoost":[],"DecisionTree":[], "Perceptron":[],"SVM":[],"SGDRegressor":[],"XGboost":[]}
-    dict_metrics={"Real accuracy":{"RandomForest":[],"AdaBoost":[],"DecisionTree":[], "Perceptron":[],"SVM":[],"SGDRegressor":[],"XGboost":[]},
-         "Synthetic accuracy":{"RandomForest":[],"AdaBoost":[],"DecisionTree":[], "Perceptron":[],"SVM":[],"SGDRegressor":[],"XGboost":[]},
-         "Real precision":{"RandomForest":[],"AdaBoost":[],"DecisionTree":[], "Perceptron":[],"SVM":[],"SGDRegressor":[],"XGboost":[]},
-         "Synthetic precision":{"RandomForest":[],"AdaBoost":[],"DecisionTree":[], "Perceptron":[],"SVM":[],"SGDRegressor":[],"XGboost":[]},
-         "Real F1 score":{"RandomForest":[],"AdaBoost":[],"DecisionTree":[], "Perceptron":[],"SVM":[],"SGDRegressor":[],"XGboost":[]},
-         "Synthetic F1 score":{"RandomForest":[],"AdaBoost":[],"DecisionTree":[],"Perceptron":[],"SVM":[],"SGDRegressor":[],"XGboost":[]},
-         "Real recall":{"RandomForest":[],"AdaBoost":[],"DecisionTree":[], "Perceptron":[],"SVM":[],"SGDRegressor":[],"XGboost":[]},
-         "Synthetic recall":{"RandomForest":[],"AdaBoost":[],"DecisionTree":[], "Perceptron":[],"SVM":[],"SGDRegressor":[],"XGboost":[]}}
+    dict_TSTR_auc={"RandomForest":[],"AdaBoost":[],"DecisionTree":[], "Perceptron":[],"SVM":[],"SGDRegressor":[],"XGboost":[]}
+    dict_metrics={"TSTR accuracy":{"RandomForest":[],"AdaBoost":[],"DecisionTree":[], "Perceptron":[],"SVM":[],"SGDRegressor":[],"XGboost":[]},
+         "TRTS accuracy":{"RandomForest":[],"AdaBoost":[],"DecisionTree":[], "Perceptron":[],"SVM":[],"SGDRegressor":[],"XGboost":[]},
+         "TSTR precision":{"RandomForest":[],"AdaBoost":[],"DecisionTree":[], "Perceptron":[],"SVM":[],"SGDRegressor":[],"XGboost":[]},
+         "TRTS precision":{"RandomForest":[],"AdaBoost":[],"DecisionTree":[], "Perceptron":[],"SVM":[],"SGDRegressor":[],"XGboost":[]},
+         "TSTR F1 score":{"RandomForest":[],"AdaBoost":[],"DecisionTree":[], "Perceptron":[],"SVM":[],"SGDRegressor":[],"XGboost":[]},
+         "TRTS F1 score":{"RandomForest":[],"AdaBoost":[],"DecisionTree":[],"Perceptron":[],"SVM":[],"SGDRegressor":[],"XGboost":[]},
+         "TSTR recall":{"RandomForest":[],"AdaBoost":[],"DecisionTree":[], "Perceptron":[],"SVM":[],"SGDRegressor":[],"XGboost":[]},
+         "TRTS recall":{"RandomForest":[],"AdaBoost":[],"DecisionTree":[], "Perceptron":[],"SVM":[],"SGDRegressor":[],"XGboost":[]}}
    #list_of_p={}
-    for i, (train_index, test_index) in enumerate(stratified.split(dataset.iloc[:, :-1], dataset.iloc[:, -1])):
+  for i, (train_index, test_index) in enumerate(stratified.split(dataset.iloc[:, :-1], dataset.iloc[:, -1])):
         adversarial_model = get_adversarial_model(latent_dim, input_data_shape, activation_function, initializer_mean,
                                                   initializer_deviation, dropout_decay_rate_g, dropout_decay_rate_d,
                                                   last_layer_activation, dense_layer_sizes_g, dense_layer_sizes_d,
@@ -876,21 +754,11 @@ def run_experiment(dataset, input_data_shape, k, classifier_list, output_dir, ba
         evaluation_results_synthetic_data = evaluate_synthetic_data(list_classifiers_TRTS, x_synthetic_samples,
                                                                     y_synthetic_samples, i, k, True,
                                                                     output_dir, classifier_list, title_output,
-                                                                    path_confusion_matrix, verbose_level,dict_metrics,dict_syn_auc,dict_log_likehood_syn)
-         
-       #evaluation_results_real_data = evaluate_real_data(list_classifiers_TRTS, x_test, y_test, i, k,
-        #                                                  True, output_dir, classifier_list,
-         #                                                 title_output, path_confusion_matrix, verbose_level,dict_TRTS,list_real_auc)
-   
-         #NEW EVALUATION                                                           
+                                                                    path_confusion_matrix, verbose_level,dict_metrics,dict_syn_auc,dict_log_likehood_TRTS)
         evaluation_results_real_data = evaluate_real_data(list_classifiers_TSTR, x_test, y_test, i, k,
                                                           True, output_dir, classifier_list,
-                                                          title_output, path_confusion_matrix, verbose_level,dict_metrics,dict_real_auc,dict_log_likehood_real)
-        #evaluation_results_synthetic_data = evaluate_synthetic_data(list_classifiers_TSTR, x_synthetic_samples,
-         #                                                           y_synthetic_samples, i, k, True,
-          #                                                          output_dir, classifier_list, title_output,
-           #                                                         path_confusion_matrix, verbose_level,dict_TSTR,dict_syn_auc)
-                                                          
+                                                          title_output, path_confusion_matrix, verbose_level,dict_metrics,dict_real_auc,dict_log_likehood_TSTR)
+                             
         uni,counts=np.unique(y_test,return_counts=True)
         indexation=0
         if counts[1]>counts[0]:
@@ -901,40 +769,22 @@ def run_experiment(dataset, input_data_shape, k, classifier_list, output_dir, ba
         falses=falses[:indexation]
         positives=x_test[y_test==1]
         positives=positives[:indexation]
-        #print(positives.shape)
-       # print(falses.shape)
-        #print(x_true_synthetic.shape)
         x_false_synthetic=x_false_synthetic[:indexation]
         x_true_synthetic=x_true_synthetic[:indexation]
-        #print(x_true_synthetic.shape)
         comparative_metrics1 = comparative_data(i,x_false_synthetic, falses,"falses")
         comparative_metrics2 = comparative_data(i,x_true_synthetic,positives,"true")
 
         #comparative_metrics = comparative_data(i, x_synthetic_samples, x_test)
-        list_accuracy.append(evaluation_results_synthetic_data[0])
-        list_precision.append(evaluation_results_synthetic_data[1])
-        list_recall.append(evaluation_results_synthetic_data[2])
-        list_f1_score.append(evaluation_results_synthetic_data[3])
-
-        list_real_accuracy.append(evaluation_results_real_data[0])
-        list_real_precision.append(evaluation_results_real_data[1])
-        list_real_recall.append(evaluation_results_real_data[2])
-        list_real_f1_score.append(evaluation_results_real_data[3])
 
         dict_similarity["list_mean_squared_error"]["false"].append(comparative_metrics1[0])
         dict_similarity["list_cosine_similarity"]["false"].append(comparative_metrics1[1])
         dict_similarity["list_maximum_mean_discrepancy"]["false"].append(comparative_metrics1[2])
       
-
-
-
         dict_similarity["list_mean_squared_error"]["positive"].append(comparative_metrics2[0])
         dict_similarity["list_cosine_similarity"]["positive"].append(comparative_metrics2[1])
         dict_similarity["list_maximum_mean_discrepancy"]["positive"].append(comparative_metrics2[2])
-     
-    show_and_export_results(dict_similarity,classifier_list, output_dir, title_output,dict_metrics,dict_syn_auc,dict_real_auc,dict_log_likehood_real,dict_log_likehood_syn)
+      show_and_export_results(dict_similarity,classifier_list, output_dir, title_output,dict_metrics,dict_syn_auc,dict_real_auc,dict_log_likehood_TRTS,dict_log_likehood_TSTR)
 
-   # #print( wilcoxon(list_real_fpr,list_syn_fpr))
 def initial_step(initial_arguments, dataset_type):
     
     file_args = os.path.join(initial_arguments.output_dir, 'commandline_args.txt')
@@ -1013,7 +863,7 @@ def create_argparse():
                         default=DEFAULT_ADVERSARIAL_LATENT_DIMENSION,
                         help="Dimensão do espaço latente para treinamento cGAN")
 
-    # TODO testar adequadamente antes de disponibilizar 'RMSprop', 'Adadelta'
+
     parser.add_argument("--training_algorithm", type=str,
                         default=DEFAULT_ADVERSARIAL_TRAINING_ALGORITHM,
                         help="Algoritmo de treinamento para cGAN.",
@@ -1074,7 +924,6 @@ def create_argparse():
 
     parser.add_argument('-rid','--run_id',type=str,help="codigo da run",default=None) 
     
-    parser.add_argument('-np','--use_neptune',action='store_true',help="Uso ou não da ferramenta neptune para monitoramento")
     
     parser.add_argument("-tb",'--use_tensorboard',action='store_true',help="Uso ou não da ferramenta tensorboard para monitoramento")
 
@@ -1134,13 +983,10 @@ if __name__ == "__main__":
         USE_TENSORBOARD=True
     if arguments.use_mlflow:
          USE_MLFLOW= True
-    if arguments.use_neptune:
-         USE_NEPTUNE=True
     if USE_AIM:
         output_dir = arguments.output_dir
         experiment_name= output_dir.split('/')[-1]
         aim_run=Run(experiment=experiment_name)
-        # args = arguments
     if USE_MLFLOW:
        mlflow.set_tracking_uri("http://127.0.0.1:6000/")
        
@@ -1150,8 +996,6 @@ if __name__ == "__main__":
              mlflow.set_experiment(arguments.output_dir)
        else:
              mlflow.start_run(run_id=arguments.run_id)
-    if USE_NEPTUNE:
-      nept_run = neptune.init_run(project="angelodiniz/Droid-run",api_token="eyJhcGlfYWRkcmVzcyI6Imh0dHBzOi8vYXBwLm5lcHR1bmUuYWkiLCJhcGlfdXJsIjoiaHR0cHM6Ly9hcHAubmVwdHVuZS5haSIsImFwaV9rZXkiOiI2M2FjMDNiYi00NzE4LTQwNjYtOTU5Ni02YWQyNWE5OGUxZDYifQ==",)
     if USE_TENSORBOARD:
       log_folder = "tensorboardfolder/"+ datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
       callbacks=[TensorBoard(log_dir=log_folder,histogram_freq=1,write_graph=True,write_images=True,update_freq='epoch',profile_batch=2,embeddings_freq=1)]
@@ -1173,8 +1017,5 @@ if __name__ == "__main__":
                    latent_stander_deviation=arguments.latent_stander_deviation, num_samples_class_malware=arguments.num_samples_class_malware, num_samples_class_benign=arguments.num_samples_class_benign )
 
     time_end_campaign = datetime.datetime.now()
-    if USE_NEPTUNE:
-         nept_run.stop()
-    logging.info("\t Evaluation duration: {}".format(time_end_campaign - time_start_campaign))
     if USE_TENSORBOARD:
        file_writer.close()
