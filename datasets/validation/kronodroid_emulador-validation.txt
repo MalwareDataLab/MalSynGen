@@ -1,0 +1,3 @@
+number of malware samples 10000
+numbers of benign samples 10000
+número de colunas 276 número de linhas 20000
