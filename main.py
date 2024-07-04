@@ -385,7 +385,7 @@ def p_value_test (Real_label,false_label,type_of_metric,classifier_type):
     aux2=[]
     #print(classifier_type)
     #for index in range(len(classifier_type)):
-    aux1=np.asfarray(real_label[classifier_type])
+    aux1=np.asfarray(Real_label[classifier_type])
     aux2=np.asfarray(false_label[classifier_type])   
     estaticts, p_value = stats.wilcoxon(aux1,aux2,alternative='two-sided')
     logging.info("  P_value of {}  {} and stats {} of {} \n".format(type_of_metric,p_value,estaticts,classifier_type))
@@ -402,7 +402,7 @@ def wilcoxon_test_per_fold(list_syn,list_real):
       aux_false.append(j)
     estaticts, p_value = stats.wilcoxon(aux_real,aux_false,zero_method="zsplit")
     return p_value
-def show_and_export_results(dict_similarity,classifier_type,output_dir,title_output_label,dict_metrics,dict_syn_auc,dict_TSTR_auc,dict_log_likehood_TSTR,dict_log_likehood_TSTR):
+def show_and_export_results(dict_similarity,classifier_type,output_dir,title_output_label,dict_metrics,dict_syn_auc,dict_TSTR_auc,dict_log_likehood_TSTR,dict_log_likehood_TRTS):
     plot_classifier_metrics = PlotClassificationMetrics()
     plot_regressive_metrics = PlotRegressiveMetrics()
     p_metrics=P_values_metrics()
@@ -457,8 +457,7 @@ def show_and_export_results(dict_similarity,classifier_type,output_dir,title_out
                   }
 
                 aim_run.track(values, context={'data': 'TRTS', 'classifier_type': classifier_type[index]})
-                d = Distribution(TRTS_accuracies[index])
-                aim_run.track(d, name='accuracy_dist', step=0, context={'data': 'TRTS', 'classifier_type': classifier_type[index]})
+               
         if USE_MLFLOW:
             values = {ac: np.mean(dict_metrics["TRTS accuracy"][classifier_type[index]]),
                   pc: np.mean(dict_metrics["TRTS precision"][classifier_type[index]]),
@@ -517,8 +516,7 @@ def show_and_export_results(dict_similarity,classifier_type,output_dir,title_out
         f1t='TSTR Standard Deviation of F1 Score '+f' Classifier Model {classifier_type[index]}'
         if USE_AIM:
            aim_run.track(values,context={'data': 'TSTR','classifir_type': classifier_type[index]})
-           d = Distribution(TSTR_accuracies[index])
-           aim_run.track(d, name='accuracy_dist', step=0, context={'data': 'TSTR', 'classifier_type': classifier_type[index]})
+
         if USE_MLFLOW:
             mlflow.log_metrics(values)
            # d = Distribution(TSTR_accuracies[index])
@@ -567,14 +565,17 @@ def show_and_export_results(dict_similarity,classifier_type,output_dir,title_out
     plot_regressive_metrics.plot_regressive_metrics(dict_similarity["list_mean_squared_error"]["positive"],dict_similarity["list_cosine_similarity"]["positive"],dict_similarity["list_maximum_mean_discrepancy"]["positive"],plot_filename1,f'{title_output_label}')
     plot_regressive_metrics.plot_regressive_metrics(dict_similarity["list_mean_squared_error"]["false"],dict_similarity["list_cosine_similarity"]["false"],dict_similarity["list_maximum_mean_discrepancy"]["false"],plot_filename2,f'{title_output_label}')
     if USE_AIM:
-       aim_image = Image(plot_filename)
-       aim_run.track(value=aim_image, name=f'Comparison_TSTR_TRTS',context={'classifier_type': classifier_type[index]})
+       aim_image = Image(plot_filename1)
+       aim_image2 = Image(plot_filename2)
+       aim_run.track(value=aim_image, name=plot_filename1,context={'classifier_type': classifier_type[index]})
+       aim_run.track(value=aim_image2, name=plot_filename2,context={'classifier_type': classifier_type[index]})
     if USE_TENSORBOARD:
          with file_writer.as_default():
                  cm_image = plot_to_image(plot_filename)
                  tf.summary.image('Comparison_TSTR_TRTS.jpg', cm_image,step=0)
     if USE_MLFLOW:
-       mlflow.log_artifact(plot_filename,'images')
+       mlflow.log_artifact(plot_filename1,'images')
+       mlflow.log_artifact(plot_filename2,'images')
  
 
 
@@ -636,9 +637,9 @@ def run_experiment(dataset, input_data_shape, k, classifier_list, output_dir, ba
     "list_cosine_similarity":{"positive":[],"false":[]},
     "list_kl_divergence":{"positive":[],"false":[]},
     "list_maximum_mean_discrepancy":{"positive":[],"false":[]}}
+    dict_log_likehood_TRTS={"RandomForest":[],"AdaBoost":[],"DecisionTree":[], "Perceptron":[],"SVM":[],"SGDRegressor":[],"XGboost":[]}
     dict_log_likehood_TSTR={"RandomForest":[],"AdaBoost":[],"DecisionTree":[], "Perceptron":[],"SVM":[],"SGDRegressor":[],"XGboost":[]}
-    dict_log_likehood_TSTR={"RandomForest":[],"AdaBoost":[],"DecisionTree":[], "Perceptron":[],"SVM":[],"SGDRegressor":[],"XGboost":[]}
-    dict_syn_auc={"RandomForest":[],"AdaBoost":[],"DecisionTree":[], "Perceptron":[],"SVM":[],"SGDRegressor":[],"XGboost":[]}
+    dict_TRTS_auc={"RandomForest":[],"AdaBoost":[],"DecisionTree":[], "Perceptron":[],"SVM":[],"SGDRegressor":[],"XGboost":[]}
     dict_TSTR_auc={"RandomForest":[],"AdaBoost":[],"DecisionTree":[], "Perceptron":[],"SVM":[],"SGDRegressor":[],"XGboost":[]}
     dict_metrics={"TSTR accuracy":{"RandomForest":[],"AdaBoost":[],"DecisionTree":[], "Perceptron":[],"SVM":[],"SGDRegressor":[],"XGboost":[]},
          "TRTS accuracy":{"RandomForest":[],"AdaBoost":[],"DecisionTree":[], "Perceptron":[],"SVM":[],"SGDRegressor":[],"XGboost":[]},
@@ -649,7 +650,7 @@ def run_experiment(dataset, input_data_shape, k, classifier_list, output_dir, ba
          "TSTR recall":{"RandomForest":[],"AdaBoost":[],"DecisionTree":[], "Perceptron":[],"SVM":[],"SGDRegressor":[],"XGboost":[]},
          "TRTS recall":{"RandomForest":[],"AdaBoost":[],"DecisionTree":[], "Perceptron":[],"SVM":[],"SGDRegressor":[],"XGboost":[]}}
    #list_of_p={}
-  for i, (train_index, test_index) in enumerate(stratified.split(dataset.iloc[:, :-1], dataset.iloc[:, -1])):
+    for i, (train_index, test_index) in enumerate(stratified.split(dataset.iloc[:, :-1], dataset.iloc[:, -1])):
         adversarial_model = get_adversarial_model(latent_dim, input_data_shape, activation_function, initializer_mean,
                                                   initializer_deviation, dropout_decay_rate_g, dropout_decay_rate_d,
                                                   last_layer_activation, dense_layer_sizes_g, dense_layer_sizes_d,
@@ -751,13 +752,13 @@ def run_experiment(dataset, input_data_shape, k, classifier_list, output_dir, ba
         list_classifiers_TSTR = instance_classifier_TSTR.get_trained_classifiers(classifier_list, x_synthetic_training, y_synthetic_training,
                                                                        dataset_type, verbose_level, input_data_shape)    
                                                                        
-        evaluation_results_synthetic_data = evaluate_synthetic_data(list_classifiers_TRTS, x_synthetic_samples,
+        evaluation_results_synthetic_data = evaluate_TRTS_data(list_classifiers_TRTS, x_synthetic_samples,
                                                                     y_synthetic_samples, i, k, True,
                                                                     output_dir, classifier_list, title_output,
-                                                                    path_confusion_matrix, verbose_level,dict_metrics,dict_syn_auc,dict_log_likehood_TRTS)
-        evaluation_results_real_data = evaluate_real_data(list_classifiers_TSTR, x_test, y_test, i, k,
+                                                                    path_confusion_matrix, verbose_level,dict_metrics,dict_TRTS_auc,dict_log_likehood_TRTS)
+        evaluation_results_real_data = evaluate_TSTR_data(list_classifiers_TSTR, x_test, y_test, i, k,
                                                           True, output_dir, classifier_list,
-                                                          title_output, path_confusion_matrix, verbose_level,dict_metrics,dict_real_auc,dict_log_likehood_TSTR)
+                                                          title_output, path_confusion_matrix, verbose_level,dict_metrics,dict_TSTR_auc,dict_log_likehood_TSTR)
                              
         uni,counts=np.unique(y_test,return_counts=True)
         indexation=0
@@ -783,7 +784,7 @@ def run_experiment(dataset, input_data_shape, k, classifier_list, output_dir, ba
         dict_similarity["list_mean_squared_error"]["positive"].append(comparative_metrics2[0])
         dict_similarity["list_cosine_similarity"]["positive"].append(comparative_metrics2[1])
         dict_similarity["list_maximum_mean_discrepancy"]["positive"].append(comparative_metrics2[2])
-      show_and_export_results(dict_similarity,classifier_list, output_dir, title_output,dict_metrics,dict_syn_auc,dict_real_auc,dict_log_likehood_TRTS,dict_log_likehood_TSTR)
+    show_and_export_results(dict_similarity,classifier_list, output_dir, title_output,dict_metrics,dict_TRTS_auc,dict_TSTR_auc,dict_log_likehood_TSTR,dict_log_likehood_TRTS)
 
 def initial_step(initial_arguments, dataset_type):
     
