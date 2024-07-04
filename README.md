@@ -2,7 +2,7 @@
 
 1. Clonar o repositório 
    ```bash
-    git clone https://github.com/MalwareDataLab/DroidAugmentor.git
+    git clone [https://github.com/MalwareDataLab/DroidAugmentor.git](https://github.com/MalwareDataLab/SynTabData.git)
     cd DroidAugmentor
    ```
 
