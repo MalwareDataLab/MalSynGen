@@ -2,15 +2,9 @@
 
 1. Clonar o repositório 
    ```bash
-    git clone [https://github.com/MalwareDataLab/DroidAugmentor.git](https://github.com/MalwareDataLab/SynTabData.git)
+    git clone https://github.com/MalwareDataLab/SynTabData.git
     cd DroidAugmentor
    ```
-
-   
-    **Clonar o repositorio com os datasets**
-      ```bash
-       git clone https://github.com/MalwareDataLab/Datasets.git
-      ```
 
 2. Executar a demonstração de funcionamento da ferramenta: 
 
