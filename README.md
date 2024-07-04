@@ -3,7 +3,7 @@
 1. Clonar o repositório 
    ```bash
     git clone https://github.com/MalwareDataLab/SynTabData.git
-    cd DroidAugmentor
+    cd SynTabData
    ```
 
 2. Executar a demonstração de funcionamento da ferramenta: 
