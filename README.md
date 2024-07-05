@@ -33,7 +33,8 @@
     ```
 
 ## Fluxo de execução 
-![fluxograma_novo(2) CGAN data augmentor SF SBSEG24(1)](https://github.com/MalwareDataLab/DroidAugmentor/assets/72932783/0ca6203a-356d-4b7f-a79c-e16de60ff5b6)
+![fluxograma (5)](https://github.com/MalwareDataLab/SynTabData/assets/72932783/bf0cc6ad-3408-45bb-b900-3e28c3d54a41)
+
 O fluxo de execução da ferramenta consiste de três etapas:
    **Seleção de dataset**: Nesta etapa,  realizamos o balanceamento pela classe minoritária, atravẽs do uso de técnicas de subamostragem. Os datasets balanceados e o código utilizado nesse processo se encontram em: https://github.com/MalwareDataLab/SynTabData/tree/87f5018d6acdbe79eb91563c34eb428f36c19a7a/datasets
 
