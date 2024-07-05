@@ -3,11 +3,11 @@ read -p "input batch_size :" batch
 read -p "input for number of epcochs :" epochs
 read -p "input the values of layers :" layers
 read -p "number of folds :" folds
-names=$(ls /Datasets/binaries/ | grep validation.txt | cut -d  "-" -f 1) 
+names=$(ls /datasets/validation| grep validation.txt | cut -d  "-" -f 1) 
 list=()
 for nam in $names;do 
-      s=/balanced-300-features/validation/$nam"-validation.txt"
-      r=/balanced-300-features/$nam"-balanced.csv"
+      s=datasets/validation/$nam"-validation.txt"
+      r= datasets/validation$nam"-balanced.csv"
       if [[ $layers == *","* ]]; then
              lay1=$(echo $layers|cut -d "," -f 1)
              lay2=$(echo $layers|cut -d "," -f 2)
