@@ -216,7 +216,7 @@ Documentação Aimstack: https://aimstack.readthedocs.io/en/latest/
 1. Instalar a ferramenta
    
    ```bash
-  pip install mlflow
+   pip install mlflow
    ```
 
 2. Instanciar um servidor local na porta 6002
