@@ -1,12 +1,17 @@
-FROM sf23/droidaugmentor:latest
-RUN apt-get update 
-RUN apt-get -y install wget net-tools vim
-RUN pip install pipenv
-WORKDIR /droidaugmentor
+FROM  ubuntu:20.04
 USER root
-RUN rm -rf /droidaugmentor/*
-COPY ./ /droidaugmentor/
-#RUN pipenv install -r /droidaugmentor/requirements.txt
-RUN mv /droidaugmentor/scripts/run_app_in_docker.sh /usr/bin/docker_run.sh
-RUN chmod +x /usr/bin/docker_run.sh 
-CMD ["docker_run.sh"]
+WORKDIR /SynTabData
+RUN apt-get update
+RUN apt-get -y install python3-pip
+RUN apt install unzip 
+RUN rm /bin/sh && ln -s /bin/bash /bin/sh
+#RUN pip3 install pipenv==2023.7.23
+#RUN export PATH="/home/root/.local/bin:$PATH" 
+COPY ./ /SynTabData/
+RUN apt install python3.8-venv
+RUN python3 -m pip install --user virtualenv
+RUN apt-get install python3-venv
+RUN python3 -m venv .venv
+RUN  source .venv/bin/activate
+RUN pip3 install -r requirements.txt
+#CMD while true; do sleep 1000; done
