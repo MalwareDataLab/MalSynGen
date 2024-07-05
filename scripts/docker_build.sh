@@ -1,2 +1,2 @@
 #!/bin/bash
-docker build -t sf24/SynTabData:latest . 
+docker build -t sf24/syntabdata:latest . 
