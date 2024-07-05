@@ -38,11 +38,11 @@ O fluxo de execução da ferramenta consiste de três etapas:
 
    **Seleção de dataset**: Nesta etapa o dataset original é balanceado em %50 bening e 50% malware. Os datasets balanceados e o código utilizado nesse processo se encontram em: https://github.com/MalwareDataLab/SynTabData/tree/87f5018d6acdbe79eb91563c34eb428f36c19a7a/datasets
 
-   Após o balanceamento o dataset será dividido em K dobras com base nos hiperparâmetros de entrada.
+ O dataset balanceado é então processado nas etapas de treinamento e avaliação através validação cruzada por meio de k-dobras (do inglês k-folds)
 
   **Treinamento**: Nesta etapa ocorre o treinamento da CGAN e geração dos dados sintéticos. Após a geração dos dados são treinados dois classificadores TS-AA(Treinado com dataset S, avaliado com A) e TR-As(Treinado com R, avaliado com s).
 
-   **Avaliação**: Consiste da coleta de métricas de fidelidade e utilidade dos classificadores e dados sintéticos. E subsequente aplicação do teste de wilcoxon sobre as métricas na dobra final
+   **Avaliação**: Consiste da coleta de métricas de fidelidade e utilidade dos classificadores e dados sintéticos. E subsequente aplicação do teste de wilcoxon sobre as métricas na dobra final.
 
 
 
