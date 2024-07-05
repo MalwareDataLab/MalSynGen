@@ -233,8 +233,8 @@ def evaluate_TRTS_data(list_classifiers, x_TRTS, y_TRTS, fold, k, generate_confu
         dict["TRTS F1 score"][classifier_type[index]].append(f1_score_TRTS)
         dict["TRTS recall"][classifier_type[index]].append(recall_TRTS)
         fpr, tpr,thresholds=sklearn.metrics.roc_curve(y_TRTS,   y_predict_prob)
-        log_likehood=log_loss(y_TRTS,y_predict_prob)
-        dict_log_likehood_syn[classifier_type[index]].append(log_likehood)
+      #  log_likehood=log_loss(y_TRTS,y_predict_prob)
+       # dict_log_likehood_syn[classifier_type[index]].append(log_likehood)
         plt.figure()  
         Path(os.path.join(output_dir, path_confusion_matrix)).mkdir(parents=True, exist_ok=True)
         roc_file = os.path.join(output_dir, path_confusion_matrix,f'Roc_curve_TRTS_{classifier_type[index]}_k{fold + 1}.jpg')
@@ -330,8 +330,8 @@ def evaluate_TSTR_data(list_classifiers, x_TSTR, y_TSTR, fold, k, generate_confu
         dict["TSTR recall"][classifier_type[index]].append(recall_TSTR)
 
         fpr, tpr,thresholds=metrics.roc_curve(y_sample_TSTR, y_predict_prob)
-        log_likehood=log_loss(y_sample_TSTR,y_predict_prob)
-        dict_log_likehood_TSTR[classifier_type[index]].append(log_likehood)
+        #log_likehood=log_loss(y_sample_TSTR,y_predict_prob)
+        #dict_log_likehood_TSTR[classifier_type[index]].append(log_likehood)
         plt.figure()  
         Path(os.path.join(output_dir, path_confusion_matrix)).mkdir(parents=True, exist_ok=True)
         roc_file = os.path.join(output_dir, path_confusion_matrix,f'Roc_curve_TSTR_{classifier_type[index]}_k{fold + 1}.jpg')
@@ -417,19 +417,19 @@ def show_and_export_results(dict_similarity,classifier_type,output_dir,title_out
         logging.info("  TRTS List of Precisions: {} ".format(dict_metrics["TRTS precision"][classifier_type[index]]))
         logging.info("  TRTS List of Recalls: {} ".format(dict_metrics["TRTS recall"][classifier_type[index]]))
         logging.info("  TRTS List of F1-scores: {} ".format(dict_metrics["TRTS F1 score"][classifier_type[index]]))
-        logging.info("  TRTS list log_likehood Score: {} ".format((dict_log_likehood_TRTS[classifier_type[index]])))
+      
         logging.info("  TRTS list AUC: {} ".format((dict_TRTS_auc[classifier_type[index]])))
         logging.info("  TRTS Mean Accuracy: {} ".format(np.mean(dict_metrics["TRTS accuracy"][classifier_type[index]])))
         logging.info("  TRTS Mean Precision: {} ".format(np.mean(dict_metrics["TRTS precision"][classifier_type[index]])))
         logging.info("  TRTS Mean Recall: {} ".format(np.mean(dict_metrics["TRTS recall"][classifier_type[index]])))
         logging.info("  TRTS Mean F1 Score: {} ".format(np.mean(dict_metrics["TRTS F1 score"][classifier_type[index]])))
         logging.info("  TRTS Mean AUC: {} ".format(np.mean(dict_TRTS_auc[classifier_type[index]])))
-        logging.info("  TRTS Mean log_likehood Score: {} ".format(np.mean(dict_log_likehood_TRTS[classifier_type[index]])))
+      
         logging.info("  TRTS Standard Deviation of Accuracy: {} ".format(np.std(dict_metrics["TRTS accuracy"][classifier_type[index]])))
         logging.info("  TRTS Standard Deviation of Precision: {} ".format(np.std(dict_metrics["TRTS precision"][classifier_type[index]])))
         logging.info("  TRTS Standard Deviation of Recall: {} ".format(np.std(dict_metrics["TRTS recall"][classifier_type[index]])))
         logging.info("  TRTS Standard Deviation of F1 Score: {} \n".format(np.std(dict_metrics["TRTS F1 score"][classifier_type[index]])))
-        logging.info("  TRTS Standard Deviation of log_likehood Score: {} ".format(np.std(dict_log_likehood_TRTS[classifier_type[index]])))
+      
         logging.info("  TRTS Standard Deviation of AUC: {} ".format(np.std(dict_TRTS_auc[classifier_type[index]])))
         plot_filename = os.path.join(output_dir, f'{classifier_type[index]}_treinado_com_TSTR_testado_com_sint.pdf')
 
@@ -491,18 +491,18 @@ def show_and_export_results(dict_similarity,classifier_type,output_dir,title_out
         logging.info("  TSTR List of Recalls: {} ".format(dict_metrics["TSTR recall"][classifier_type[index]]))
         logging.info("  TSTR List of F1-scores: {} ".format(dict_metrics["TSTR F1 score"][classifier_type[index]]))
         logging.info("  TSTR list AUC: {} ".format((dict_TSTR_auc[classifier_type[index]])))
-        logging.info("  TSTR list log_likehood Score: {} ".format((dict_log_likehood_TSTR[classifier_type[index]])))
+       
         logging.info("  TSTR Mean Accuracy: {} ".format(np.mean(dict_metrics["TSTR accuracy"][classifier_type[index]])))
         logging.info("  TSTR Mean Precision: {} ".format(np.mean(dict_metrics["TSTR precision"][classifier_type[index]])))
         logging.info("  TSTR Mean Recall: {} ".format(np.mean(dict_metrics["TSTR recall"][classifier_type[index]])))
         logging.info("  TSTR Mean F1 Score: {} ".format(np.mean(dict_metrics["TSTR F1 score"][classifier_type[index]])))
-        logging.info("  TSTR Mean log_likehood Score: {} ".format(np.mean(dict_log_likehood_TSTR[classifier_type[index]])))
+        
         logging.info("  TSTR Mean AUC: {} ".format(np.mean(dict_TSTR_auc[classifier_type[index]])))
         logging.info("  TSTR Standard Deviation of Accuracy: {} ".format(np.std(dict_metrics["TSTR accuracy"][classifier_type[index]])))
         logging.info("  TSTR Standard Deviation of Precision: {} ".format(np.std(dict_metrics["TSTR precision"][classifier_type[index]])))
         logging.info("  TSTR Standard Deviation of Recall: {} ".format(np.std(dict_metrics["TSTR recall"][classifier_type[index]])))
         logging.info("  TSTR Standard Deviation of F1 Score: {} \n".format(np.std(dict_metrics["TSTR F1 score"][classifier_type[index]])))
-        logging.info("  TSTR Standard Deviation of log_likehood Score: {} ".format(np.std(dict_log_likehood_TSTR[classifier_type[index]])))
+        
         logging.info("  TSTR Standard Deviation of AUC: {} ".format(np.std(dict_TSTR_auc[classifier_type[index]])))
         plot_filename = os.path.join(output_dir, f'{classifier_type[index]}_treiando_com_sint_testado_com_TSTR.pdf')
 
