@@ -87,7 +87,23 @@ Mesma campanha (SF24_4096_2048_10) sendo executada diretamente na aplicação (*
 ```
 pipenv run python main.py --verbosity 20 --input_dataset /datasets/kronodroid_real_device-balanced.csv --dense_layer_sizes_g 4096 --dense_layer_sizes_d 2048 --number_epochs 500 --k_fold 10 --num_samples_class_benign 10000 --num_samples_class_malware 10000 --training_algorithm Adam
 ```
+### Utilizar um venv para a execução dos experimentos
 
+## configurar venv 
+```
+python3 -m venv .venv
+```
+```
+source .venv/bin/activate
+```
+```
+pip3 install -r requirements.txt
+```
+Exemplo de execução de uma campanha pré-configurada:
+
+```
+python3 run_campaign.py -c Kronodroid_e
+```
 ###  Parâmetros dos testes automatizados:
 
       --------------------------------------------------------------
