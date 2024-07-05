@@ -35,10 +35,9 @@
 ## Fluxo de execução 
 ![fluxograma_novo(2) CGAN data augmentor SF SBSEG24(1)](https://github.com/MalwareDataLab/DroidAugmentor/assets/72932783/0ca6203a-356d-4b7f-a79c-e16de60ff5b6)
 O fluxo de execução da ferramenta consiste de três etapas:
+   **Seleção de dataset**: Nesta etapa,  realizamos o balanceamento pela classe minoritária, atravẽs do uso de técnicas de subamostragem. Os datasets balanceados e o código utilizado nesse processo se encontram em: https://github.com/MalwareDataLab/SynTabData/tree/87f5018d6acdbe79eb91563c34eb428f36c19a7a/datasets
 
-   **Seleção de dataset**: Nesta etapa o dataset original é balanceado em %50 bening e 50% malware. Os datasets balanceados e o código utilizado nesse processo se encontram em: https://github.com/MalwareDataLab/SynTabData/tree/87f5018d6acdbe79eb91563c34eb428f36c19a7a/datasets
-
- O dataset balanceado é então processado nas etapas de treinamento e avaliação através validação cruzada por meio de k-dobras (do inglês k-folds)
+ O dataset balanceado é então processado nas etapas de treinamento e avaliação, através validação cruzada por meio de k-dobras (do inglês k-folds) onde são criados dois subconjuntos: subconjunto de avaliação (Dataset r) e treino Dataset de treino (R)
 
   **Treinamento**: Nesta etapa ocorre o treinamento da cGAN e geração dos dados sintéticos. Após a geração dos dados são treinados dois classificadores TS-AA(Treinado com dataset S, avaliado com A) e TR-As(Treinado com R, avaliado com s).
 
