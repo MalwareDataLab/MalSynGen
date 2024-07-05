@@ -211,7 +211,7 @@ A ferramenta foi executada e testada na prática nos seguintes ambientes:
 
 Documentação Aimstack: https://aimstack.readthedocs.io/en/latest/
       
-**MLFLOW**
+**Mlflow**
 
 1. Instalar a ferramenta
    
