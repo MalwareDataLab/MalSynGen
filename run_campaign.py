@@ -31,113 +31,56 @@ PATH_LOG = 'logs'
 PATH_DATASETS = 'datasets'
 PATHS = [PATH_LOG]
 args = None
-COMMAND = "pipenv run python main_aim_mlflow.py -ml True "
+COMMAND = "pipenv run python main.py -ml  "
 
-datasets = [
-        'Datasets/Campain_datasets/defenseDroid2939_original_6000Malwares_5975Benign.csv',
-        'Datasets/Campain_datasets/defenseDroid2939_small_256Malwares_256Benign.csv',
-        'Datasets/Campain_datasets/defenseDroid2939_small_512Malwares_512Benign.csv',
-        'Datasets/Campain_datasets/defenseDroid2939_small_64Malwares_64Benign.csv',
-        'Datasets/Campain_datasets/drebin215_original_5560Malwares_6566Benign.csv',
-        'Datasets/Campain_datasets/drebin215_small_256Malwares_256Benign.csv',
-        'Datasets/Campain_datasets/drebin215_small_512Malwares_512Benign.csv',
-        'Datasets/Campain_datasets/drebin215_small_64Malwares_64Benign.csv']
+datasets = [ 'datasets/kronodroid_emulador-balanced.csv', 'datasets/kronodroid_real_device-balanced.csv' ]
 
 # training_algorithm_choices = ['Adam', 'RMSprop', 'Adadelta']
 campaigns_available = {}
 
 campaigns_available['demo'] = {
-    'input_dataset': ['Datasets/Campain_datasets/defenseDroid2939_small_64Malwares_64Benign.csv'],
-    'number_epochs' : ['1'],
+    'input_dataset': ['datasets/kronodroid_emulador-balanced.csv'],
+    "num_samples_class_benign" :['10000'],
+    "num_samples_class_malware" :['10000'],
+    'number_epochs' : ['300'],
     'training_algorithm': ['Adam'],
 }
-
-campaigns_available['sf23_1l_64'] = {
-    'input_dataset': ['Datasets/Campain_datasets/defenseDroid2939_original_6000Malwares_5975Benign.csv',
-                     'Datasets/Campain_datasets/drebin215_original_5560Malwares_6566Benign.csv'],
-    "dense_layer_sizes_g" : ['64'],
-    "dense_layer_sizes_d" : ['64'],
-    'number_epochs' : ['1000'],
-    'training_algorithm': ['Adam'],
-}
-
-campaigns_available['sf23_1l_128'] = {
-    'input_dataset': ['Datasets/Campain_datasets/defenseDroid2939_original_6000Malwares_5975Benign.csv',
-                     'Datasets/Campain_datasets/drebin215_original_5560Malwares_6566Benign.csv'],
-    "dense_layer_sizes_g" : ['128'],
-    "dense_layer_sizes_d" : ['128'],
-    'number_epochs' : ['1000'],
-    'training_algorithm': ['Adam'],
-}
-
-campaigns_available['sf23_1l_256'] = {
-    'input_dataset': ['Datasets/Campain_datasets/drebin215_original_5560Malwares_6566Benign.csv'],
-    "dense_layer_sizes_g" : ['256'],
-    "dense_layer_sizes_d" : ['256'],
-    'number_epochs' : ['1000'],
-    'training_algorithm': ['Adam'],
-}
-
-campaigns_available['sf23_1l_512'] = {
-    'input_dataset': ['Datasets/Campain_datasets/defenseDroid2939_original_6000Malwares_5975Benign.csv',
-                     'Datasets/Campain_datasets/drebin215_original_5560Malwares_6566Benign.csv'],
-    "dense_layer_sizes_g" : ['512'],
-    "dense_layer_sizes_d" : ['512'],
-    'number_epochs' : ['1000'],
-    'training_algorithm': ['Adam'],
-}
-
-campaigns_available['sf23_1l_1024'] = {
-    'input_dataset': ['Datasets/Campain_datasets/drebin215_original_5560Malwares_6566Benign.csv'],
-    "dense_layer_sizes_g" : ['1024'],
-    "dense_layer_sizes_d" : ['1024'],
-    'number_epochs' : ['1000'],
-    'training_algorithm': ['Adam'],
-}
-
-campaigns_available['sf23_1l_4096'] = {
-    'input_dataset': ['Datasets/Campain_datasets/drebin215_original_5560Malwares_6566Benign.csv'],
+campaigns_available['Kronodroid_r'] = {
+    'input_dataset': ['datasets/kronodroid_emulador-balanced.csv'],
     "dense_layer_sizes_g" : ['4096'],
-    "dense_layer_sizes_d" : ['4096'],
-    'number_epochs' : ['1000'],
+    "dense_layer_sizes_d" : ['2048'],
+    "num_samples_class_benign" :['10000'],
+    "num_samples_class_malware" :['10000'],
+    'number_epochs' : ['500'],
+    'k_fold':['10'],
     'training_algorithm': ['Adam'],
 }
 
-campaigns_available['sf23_1l_8192'] = {
-    'input_dataset': ['Datasets/Campain_datasets/defenseDroid2939_original_6000Malwares_5975Benign.csv',
-                     'Datasets/Campain_datasets/drebin215_original_5560Malwares_6566Benign.csv'],
-    "dense_layer_sizes_g" : ['8192'],
-    "dense_layer_sizes_d" : ['8192'],
-    'number_epochs' : ['1000'],
+campaigns_available['Kronodroid_e'] = {
+    'input_dataset': ['datasets/kronodroid_real_device-balanced.csv'],
+    "dense_layer_sizes_g" : ['4096'],
+    "dense_layer_sizes_d" : ['2048'],
+    'number_epochs' : ['500'],
+    'k_fold':['10'],
+    "num_samples_class_benign" :['10000'],
+    "num_samples_class_malware" :['10000'],
+    'training_algorithm': ['Adam'],
+}
+
+campaigns_available['SF24_4096_2048_10'] = {
+    'input_dataset': ['datasets/kronodroid_real_device-balanced.csv',
+                      'datasets//kronodroid_emulador-balanced.csv'],
+    "dense_layer_sizes_g" : ['4096'],
+    "dense_layer_sizes_d" : ['2048'],
+    'number_epochs' : ['500'],
+    'k_fold':['10'],
+    "num_samples_class_benign" :['10000'],
+    "num_samples_class_malware" :['10000'],
     'training_algorithm': ['Adam'],
 }
 
 
-campaigns_available['sf23_2l'] = {
-    'input_dataset': ['Datasets/Campain_datasets/defenseDroid2939_original_6000Malwares_5975Benign.csv',
-                     'Datasets/Campain_datasets/drebin215_original_5560Malwares_6566Benign.csv'],
-    "dense_layer_sizes_g" : ['512,1024'],
-    "dense_layer_sizes_d" : ['1024,512'],
-    'number_epochs' : ['1000'],
-    'training_algorithm': ['Adam'],
-}
 
-campaigns_available['sf23_3l'] = {
-    'input_dataset': ['Datasets/Campain_datasets/defenseDroid2939_original_6000Malwares_5975Benign.csv',
-                     'Datasets/Campain_datasets/drebin215_original_5560Malwares_6566Benign.csv'],
-    "dense_layer_sizes_g" : ['512,1024,2048'],
-    "dense_layer_sizes_d" : ['2048,1024,512'],
-    'number_epochs' : ['1000'],
-    'training_algorithm': ['Adam'],
-}
-
-
-campaigns_available['teste'] = {
-    'input_dataset': ['Datasets/Campain_datasets/defenseDroid2939_original_6000Malwares_5975Benign.csv',
-                      'Datasets/Campain_datasets/drebin215_original_5560Malwares_6566Benign.csv'],
-    'classifier' : ['knn', 'random_forest', 'svm'],
-    'training_algorithm': ['Adam', 'RMSprop', 'Adadelta'],
-}
 
 
 #'perceptron',
@@ -320,8 +263,8 @@ def main():
     time_start_evaluation = datetime.datetime.now()
     
     count_campaign = 1
-    mlflow.set_tracking_uri("http://127.0.0.1:5000/")
-    mlflow.set_experiment("droid_augmentor")
+    mlflow.set_tracking_uri("http://127.0.0.1:6002/")
+    mlflow.set_experiment("SynTabData")
     with mlflow.start_run(run_name="campain_test"): 
      for c in campaigns_chosen:
        with mlflow.start_run(run_name=c,nested=True) as run:
