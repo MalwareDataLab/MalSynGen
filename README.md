@@ -242,7 +242,7 @@ Documentação Mlflow: https://mlflow.org/docs/latest/index.html
 
 3. Visualizar os resultados com o comando
    
-   ```bash
+  ```bash
   tensorboard --logdir=tensorboardfolder/ --port=6002
   ```
 
