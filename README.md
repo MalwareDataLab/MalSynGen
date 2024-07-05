@@ -234,15 +234,16 @@ Documentação Mlflow: https://mlflow.org/docs/latest/index.html
 
 1. Instalar a ferramenta
 
-   ```bash
+  ```bash
   pip install tensorboard
-   ```
+  ```
 
 2. Executar SynTabData com a opção -tb ou --use_tensorboard
 
 3. Visualizar os resultados com o comando
+   
    ```bash
   tensorboard --logdir=tensorboardfolder/ --port=6002
-   ```
+  ```
 
 Documentação TensorBoard: https://www.tensorflow.org/tensorboard/get_started?hl=pt-br
