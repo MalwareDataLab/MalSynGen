@@ -36,14 +36,11 @@
 ![fluxograma_novo(2) CGAN data augmentor SF SBSEG24(1)](https://github.com/MalwareDataLab/DroidAugmentor/assets/72932783/0ca6203a-356d-4b7f-a79c-e16de60ff5b6)
 O fluxo de execução da ferramenta consiste de três etapas:
 
-   **Seleção de dataset**: Esta etapa iniciada através da execução script de balancemento das entradas: 
-   ```bash
-   python3 rebalancer.py -i arquvo_de_entrada.csv -o arquivo_de_saida.csv
-   ```
+   **Seleção de dataset**: Nesta etapa o dataset original é balanceado em %50 bening e 50% malware. Os datasets balanceados e o código utilizado nesse processo se encontram em: https://github.com/MalwareDataLab/SynTabData/tree/87f5018d6acdbe79eb91563c34eb428f36c19a7a/datasets
 
-   Após o balancemento o dataset será dividido em K dobras com base nos hiperparâmetros de entrada.
+   Após o balanceamento o dataset será dividido em K dobras com base nos hiperparâmetros de entrada.
 
-  **Treinamento**: Nesta etapa ocorre o treinamento da CGAN e geração dos dados sintenticos. Após a geração dos dados são treinados dois classificadores TS-AA(Treinado com dataset S, avaliado com A) e TR-As(Treinado com R, avaliado com s).
+  **Treinamento**: Nesta etapa ocorre o treinamento da CGAN e geração dos dados sintéticos. Após a geração dos dados são treinados dois classificadores TS-AA(Treinado com dataset S, avaliado com A) e TR-As(Treinado com R, avaliado com s).
 
    **Avaliação**: Consiste da coleta de métricas de fidelidade e utilidade dos classificadores e dados sintéticos. E subsequente aplicação do teste de wilcoxon sobre as métricas na dobra final
 
