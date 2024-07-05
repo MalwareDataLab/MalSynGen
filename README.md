@@ -199,17 +199,17 @@ A ferramenta foi executada e testada na prática nos seguintes ambientes:
 ## Feramentas de rastreamento
 **Aimstack**
 
-   1. Instalar a ferramenta
+1. Instalar a ferramenta
 
    ```bash
    pip install aim
    ```
 
-   2. Executar SynTabData com a opção -a ou --use_aim
+2. Executar SynTabData com a opção -a ou --use_aim
 
-   3. Executar o comando aim up na pasta do SynTabData
+3. Executar o comando aim up na pasta do SynTabData
 
-   Documentação Aimstack: https://aimstack.readthedocs.io/en/latest/
+Documentação Aimstack: https://aimstack.readthedocs.io/en/latest/
       
 **MLFLOW**
 
@@ -224,7 +224,6 @@ A ferramenta foi executada e testada na prática nos seguintes ambientes:
    ```bash
    mlflow server --port 6002
    ```
-
 3. Executar SynTabData com a opção -ml ou --use_mlflow   
 
 4. Acessar o endereço http://localhost:6002/ no seu navegador para visualizar os resultados
