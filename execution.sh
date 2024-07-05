@@ -7,7 +7,7 @@ names=$(ls /datasets/validation| grep validation.txt | cut -d  "-" -f 1)
 list=()
 for nam in $names;do 
       s=datasets/validation/$nam"-validation.txt"
-      r= datasets/validation$nam"-balanced.csv"
+      r= datasets/$nam"-balanced.csv"
       if [[ $layers == *","* ]]; then
              lay1=$(echo $layers|cut -d "," -f 1)
              lay2=$(echo $layers|cut -d "," -f 2)
