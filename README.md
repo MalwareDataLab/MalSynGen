@@ -113,8 +113,8 @@ python3 run_campaign.py -c Kronodroid_e
     --campaign ou -c:    Especifica a campanha de avaliação que você deseja executar. 
                          Você pode fornecer o nome de uma campanha específica ou uma  
                          lista de campanhas separadas por vírgula. 
-                         Por exemplo: --campaign sf23_1l_64 ou --campaign 
-                         sf23_1l_64,sf23_1l_128.
+                         Por exemplo: --campaign SF24_4096_2048_10 ou --campaign 
+                          Kronodroid_e.
 
     --demo ou -d:
                          Ativa o modo demo. Quando presente, o script será executado 
