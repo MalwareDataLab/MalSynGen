@@ -2,7 +2,7 @@
 #USER_ID=$(id -u $USER)
 DIR=$(readlink -f shared)
 docker build -t sf24/syntabdata:latest . 
-sudo docker run -it --name=syntabdata-$RANDOM -v $DIR:/SynTabData/shared -e DISPLAY=unix$DISPLAY sf24/syntabdata:latest /SynTabData/shared/app_run.sh --verbosity 20 --output_dir /SynTabData/datasets/kronodroid_emulador-balanced.csv --num_samples_class_malware  10000 --num_samples_class_benign 10000 --dense_layer_sizes_g 4096 --dense_layer_sizes_d 2048 --number_epochs 1000 --k_fold 10 --training_algorithm Adam
+sudo docker run -it --name=syntabdata-$RANDOM -v $DIR:/SynTabData/shared -e DISPLAY=unix$DISPLAY sf24/syntabdata:latest /SynTabData/shared/app_run.sh --verbosity 20 --output_dir /SynTabData/datasets/kronodroid_emulador-balanced.csv --num_samples_class_malware  10000 --num_samples_class_benign 10000 --dense_layer_sizes_g 4096 --dense_layer_sizes_d 2048 --number_epochs 300 --k_fold 10 --training_algorithm Adam
 #ls shared/outputs/
 
 
