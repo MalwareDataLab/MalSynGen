@@ -79,11 +79,11 @@ pipenv python3 run_campaign.py
 Exemplo de execução de uma campanha pré-configurada:
 
 ```
-pipenv run python3 run_campaign.py -c Kronodroid_e
+pipenv run python3 run_campaign.py -c Kronodroid_r
 
 ```
 
-Mesma campanha (SF24_4096_2048_10) sendo executada diretamente na aplicação (**main.py**):
+Mesma campanha (Kronodroid_r) sendo executada diretamente na aplicação (**main.py**):
 ```
 pipenv run python main.py --verbosity 20 --input_dataset /datasets/kronodroid_real_device-balanced.csv --dense_layer_sizes_g 4096 --dense_layer_sizes_d 2048 --number_epochs 500 --k_fold 10 --num_samples_class_benign 10000 --num_samples_class_malware 10000 --training_algorithm Adam
 ```
