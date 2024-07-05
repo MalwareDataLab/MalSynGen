@@ -12,13 +12,8 @@
    ```bash
    ./run_demo_app.sh
    ```
-
-   **Opção 2**: baixar a imagem do [hub.docker.com](hub.docker.com) e instanciar um container Docker.
-   ```bash
-   ./run_demo_docker.sh
-   ```
      
-   **Opção 3**: construir uma imagem Docker localmente a partir do Dockerfile e instanciar um container.
+   **Opção 2**: construir uma imagem Docker localmente a partir do Dockerfile e instanciar um container.
    
    ```bash
    ./scripts/docker_build.sh
@@ -29,7 +24,7 @@
 4. Executar os mesmos experimentos (campanhas) do paper
 
    ```bash
-    ./run_sf23_experiments.sh
+    ./run_sf24_experiments.sh
     ```
 
 ## Fluxo de execução 
@@ -79,13 +74,13 @@ pipenv python3 run_campaign.py
 Exemplo de execução de uma campanha pré-configurada:
 
 ```
-pipenv run python3 run_campaign.py -c sf23_1l_256
+pipenv run python3 run_campaign.py -c Kronodroid_e
 
 ```
 
-Mesma campanha (sf23_1l_256) sendo executada diretamente na aplicação (**main.py**):
+Mesma campanha (SF24_4096_2048_10) sendo executada diretamente na aplicação (**main.py**):
 ```
-pipenv run python main.py --verbosity 20 --output_dir outputs/out_2023-08-05_12-04-18/sf23_1l_256/combination_2 --input_dataset datasets/drebin215_original_5560Malwares_6566Benign.csv --dense_layer_sizes_g 256 --dense_layer_sizes_d 256 --number_epochs 1000 --training_algorithm Adam
+pipenv run python main.py --verbosity 20 --input_dataset /datasets/kronodroid_real_device-balanced.csv --dense_layer_sizes_g 4096 --dense_layer_sizes_d 2048 --number_epochs 500 --k_fold 10 --num_samples_class_benign 10000 --num_samples_class_malware 10000 --training_algorithm Adam
 ```
 
 ###  Parâmetros dos testes automatizados:
