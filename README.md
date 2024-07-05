@@ -19,6 +19,11 @@
    ./scripts/docker_build.sh
    ./scripts/docker_run_solo.sh
    ```
+   
+   **Opção 3**: Executar o docker demo que instancia uma versão reduzida do experimento.
+   ```bash
+   ./run_demo_docker.sh
+   ```
 
     
 4. Executar os mesmos experimentos (campanhas) do paper
