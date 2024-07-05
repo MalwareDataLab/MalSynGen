@@ -1,2 +1,2 @@
 #!/bin/bash
-docker build -t sf23/droidaugmentor:latest . 
+docker build -t sf24/SyntabData:latest . 
