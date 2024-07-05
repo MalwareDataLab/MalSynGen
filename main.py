@@ -402,7 +402,7 @@ def wilcoxon_test_per_fold(list_syn,list_real):
       aux_false.append(j)
     estaticts, p_value = stats.wilcoxon(aux_real,aux_false,zero_method="zsplit")
     return p_value
-def show_and_export_results(dict_similarity,classifier_type,output_dir,title_output_label,dict_metrics,dict_syn_auc,dict_TSTR_auc,dict_log_likehood_TSTR,dict_log_likehood_TRTS):
+def show_and_export_results(dict_similarity,classifier_type,output_dir,title_output_label,dict_metrics,dict_TRTS_auc,dict_TSTR_auc,dict_log_likehood_TSTR,dict_log_likehood_TRTS):
     plot_classifier_metrics = PlotClassificationMetrics()
     plot_regressive_metrics = PlotRegressiveMetrics()
     p_metrics=P_values_metrics()
@@ -418,16 +418,19 @@ def show_and_export_results(dict_similarity,classifier_type,output_dir,title_out
         logging.info("  TRTS List of Recalls: {} ".format(dict_metrics["TRTS recall"][classifier_type[index]]))
         logging.info("  TRTS List of F1-scores: {} ".format(dict_metrics["TRTS F1 score"][classifier_type[index]]))
         logging.info("  TRTS list log_likehood Score: {} ".format((dict_log_likehood_TRTS[classifier_type[index]])))
+        logging.info("  TRTS list AUC: {} ".format((dict_TRTS_auc[classifier_type[index]])))
         logging.info("  TRTS Mean Accuracy: {} ".format(np.mean(dict_metrics["TRTS accuracy"][classifier_type[index]])))
         logging.info("  TRTS Mean Precision: {} ".format(np.mean(dict_metrics["TRTS precision"][classifier_type[index]])))
         logging.info("  TRTS Mean Recall: {} ".format(np.mean(dict_metrics["TRTS recall"][classifier_type[index]])))
         logging.info("  TRTS Mean F1 Score: {} ".format(np.mean(dict_metrics["TRTS F1 score"][classifier_type[index]])))
+        logging.info("  TRTS Mean AUC: {} ".format(np.mean(dict_TRTS_auc[classifier_type[index]])))
         logging.info("  TRTS Mean log_likehood Score: {} ".format(np.mean(dict_log_likehood_TRTS[classifier_type[index]])))
         logging.info("  TRTS Standard Deviation of Accuracy: {} ".format(np.std(dict_metrics["TRTS accuracy"][classifier_type[index]])))
         logging.info("  TRTS Standard Deviation of Precision: {} ".format(np.std(dict_metrics["TRTS precision"][classifier_type[index]])))
         logging.info("  TRTS Standard Deviation of Recall: {} ".format(np.std(dict_metrics["TRTS recall"][classifier_type[index]])))
         logging.info("  TRTS Standard Deviation of F1 Score: {} \n".format(np.std(dict_metrics["TRTS F1 score"][classifier_type[index]])))
         logging.info("  TRTS Standard Deviation of log_likehood Score: {} ".format(np.std(dict_log_likehood_TRTS[classifier_type[index]])))
+        logging.info("  TRTS Standard Deviation of AUC: {} ".format(np.std(dict_TRTS_auc[classifier_type[index]])))
         plot_filename = os.path.join(output_dir, f'{classifier_type[index]}_treinado_com_TSTR_testado_com_sint.pdf')
 
         plot_classifier_metrics.plot_classifier_metrics(classifier_type[index], dict_metrics["TRTS accuracy"][classifier_type[index]],
@@ -487,18 +490,20 @@ def show_and_export_results(dict_similarity,classifier_type,output_dir,title_out
         logging.info("  TSTR List of Precisions: {} ".format(dict_metrics["TSTR precision"][classifier_type[index]]))
         logging.info("  TSTR List of Recalls: {} ".format(dict_metrics["TSTR recall"][classifier_type[index]]))
         logging.info("  TSTR List of F1-scores: {} ".format(dict_metrics["TSTR F1 score"][classifier_type[index]]))
+        logging.info("  TSTR list AUC: {} ".format((dict_TSTR_auc[classifier_type[index]])))
         logging.info("  TSTR list log_likehood Score: {} ".format((dict_log_likehood_TSTR[classifier_type[index]])))
         logging.info("  TSTR Mean Accuracy: {} ".format(np.mean(dict_metrics["TSTR accuracy"][classifier_type[index]])))
         logging.info("  TSTR Mean Precision: {} ".format(np.mean(dict_metrics["TSTR precision"][classifier_type[index]])))
         logging.info("  TSTR Mean Recall: {} ".format(np.mean(dict_metrics["TSTR recall"][classifier_type[index]])))
         logging.info("  TSTR Mean F1 Score: {} ".format(np.mean(dict_metrics["TSTR F1 score"][classifier_type[index]])))
         logging.info("  TSTR Mean log_likehood Score: {} ".format(np.mean(dict_log_likehood_TSTR[classifier_type[index]])))
+        logging.info("  TSTR Mean AUC: {} ".format(np.mean(dict_TSTR_auc[classifier_type[index]])))
         logging.info("  TSTR Standard Deviation of Accuracy: {} ".format(np.std(dict_metrics["TSTR accuracy"][classifier_type[index]])))
         logging.info("  TSTR Standard Deviation of Precision: {} ".format(np.std(dict_metrics["TSTR precision"][classifier_type[index]])))
         logging.info("  TSTR Standard Deviation of Recall: {} ".format(np.std(dict_metrics["TSTR recall"][classifier_type[index]])))
         logging.info("  TSTR Standard Deviation of F1 Score: {} \n".format(np.std(dict_metrics["TSTR F1 score"][classifier_type[index]])))
         logging.info("  TSTR Standard Deviation of log_likehood Score: {} ".format(np.std(dict_log_likehood_TSTR[classifier_type[index]])))
-
+        logging.info("  TSTR Standard Deviation of AUC: {} ".format(np.std(dict_TSTR_auc[classifier_type[index]])))
         plot_filename = os.path.join(output_dir, f'{classifier_type[index]}_treiando_com_sint_testado_com_TSTR.pdf')
 
         plot_classifier_metrics.plot_classifier_metrics(classifier_type[index], dict_metrics["TSTR accuracy"][classifier_type[index]],
@@ -555,7 +560,7 @@ def show_and_export_results(dict_similarity,classifier_type,output_dir,title_out
      p_prec=p_value_test(dict_metrics["TSTR precision"],dict_metrics["TRTS precision"],"precision",classifier_type[index])
      p_f1=p_value_test(dict_metrics["TSTR F1 score"],dict_metrics["TRTS F1 score"],"F1 score",classifier_type[index])
      p_recall=p_value_test(dict_metrics["TSTR recall"],dict_metrics["TRTS recall"],"recall",classifier_type[index])
-     p_auc=p_value_test(dict_TSTR_auc,dict_syn_auc,"auc",classifier_type[index])
+     p_auc=p_value_test(dict_TSTR_auc,dict_TRTS_auc,"auc",classifier_type[index])
      plot_filename = os.path.join(output_dir, f'{classifier_type[index]}_p_values.pdf')
 
     plot_filename1 = os.path.join(output_dir, f'Comparison_TSTR_TRTS_positive.jpg')
