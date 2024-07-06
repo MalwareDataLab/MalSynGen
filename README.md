@@ -197,23 +197,14 @@ Obs.: Lembre-se de ter Models, Tools e a main devidamente importada no seu drive
 
 ## Ambientes de teste
 
-A ferramenta foi executada e testada na prática nos seguintes ambientes:
+A ferramenta foi executada e testada na prática nos seguinte ambiente:
 
    
-1. Linux Ubuntu 22.04.2 LTS<br/>
+. Linux Ubuntu 22.04.2 LTS<br/>
    Kernel Version = 5.15.109+<br/>
    Python = 3.8.10 <br/>
    Módulos Python conforme [requirements](requirements.txt).
 
-2. Linux Ubuntu 22.04.2 LTS<br/>
-   Kernel Version =  5.19.0-46-generic<br/>
-   Python = 3.10.6<br/>
-   Módulos Python conforme [requirements](requirements.txt).
-
-3. Linux Ubuntu 20.04.6 LTS<br/>
-   Kernel Version =  5.19.0-46-generic<br/>
-   Python = 3.8.10<br/>
-   Módulos Python conforme [requirements](requirements.txt).
 
 ## Feramentas de rastreamento
 **Aimstack**
