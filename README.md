@@ -40,10 +40,9 @@ O fluxo de execução da ferramenta consiste de três etapas:
 
  O dataset balanceado é então processado nas etapas de treinamento e avaliação, através validação cruzada por meio de k-dobras (do inglês k-folds) onde são criados dois subconjuntos: subconjunto de avaliação (Dataset r) e subconjunto de treino (Dataset R)
 
-  **Treinamento**: Nesta etapa ocorre o treinamento da cGAN e geração de dois conjuntos de dados sintéticos: Dataset S (gerado a partir de R) e Dataset s (gerado a paritr de r). Após a geração dos dados são treinados dois classificadores TR-Ar(Treinado com dataset R, avaliado com r) e TS-Ar(Treinado com S, avaliado com r).
+  **Treinamento**: Nessa etapa, a cGANs é treinada  e utilizada cGANs para gerar dados sintéticos, precisamos treinar classificadores para posteriormente verificarmos a utilidade dos dados sintéticos gerados: Dataset S (gerado a partir de R) e Dataset s (gerado a paritr de r).  Os classificadores utilizados são denominados TR-As(Treinado com dataset R, avaliado com s) e TS-Ar(Treinado com S, avaliado com r).
 
-   **Avaliação**: Consiste da coleta de métricas de fidelidade e utilidade dos classificadores e dados sintéticos. E subsequente, aplicação  de uma análise estática utilizando o teste wilcoxon sobre as métricas após o término da execução em dobras.
-
+   **Avaliação**: Esta etapa consiste da  execução e subsquente extração de métricas de utilidade dos classificadores, e fidelidade dos sintéticos atravês de uma comparação entre s e r. Por fim, verificamos se a utilidade dos dados sintéticos é fiel à utilidade dos dados reais através de testes como o de Wilcoxon no final da execução de dobras.
 
 
 ## Executando os datasets balanceados
