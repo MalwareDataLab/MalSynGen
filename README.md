@@ -46,7 +46,7 @@ O fluxo de execução da ferramenta consiste de três etapas:
 
 
 ## Executando os datasets balanceados
-O script em bash execution.sh é reponsavel pela execução dos datasets balanceados criados apartir dos 10 datasets originais.
+O script em bash execution.sh é reponsavel pela execução de todos os datasets balanceados.
 
 Executar o script: 
 
