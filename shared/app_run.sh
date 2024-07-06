@@ -6,5 +6,5 @@ echo "=============================================================="
 #USER_ID=$1
 #shift
 cd /SynTabData/
-pipenv python main.py  $*
+python main.py  $*
 #chown -R $USER_ID shared 
