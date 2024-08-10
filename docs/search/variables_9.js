@@ -1,0 +1,27 @@
+var searchData=
+[
+  ['labels_5fbar_5fmetrics_0',['labels_bar_metrics',['../classtools_1_1PlotClassificationMetrics.html#a8a6209a0f5df41b644799d60cdd638d3',1,'tools::PlotClassificationMetrics']]],
+  ['labels_5fplot_5ffidelity_5fmetrics_1',['labels_plot_fidelity_metrics',['../classtools_1_1PlotFidelityeMetrics.html#a77b35b1c53dcd9465c8f97d6e6e2033c',1,'tools::PlotFidelityeMetrics']]],
+  ['last_5flayer_5factivation_2',['last_layer_activation',['../classConditionalGANModel_1_1ConditionalGAN.html#a50221b7b595e3d736e99d64c74e18a85',1,'ConditionalGANModel.ConditionalGAN.last_layer_activation'],['../classPerceptronModel_1_1PerceptronMultilayer.html#a479feaf29c82a15634c6ad83c83770e6',1,'PerceptronModel.PerceptronMultilayer.last_layer_activation']]],
+  ['latent_5fdim_3',['latent_dim',['../classConditionalGANModel_1_1ConditionalGAN.html#ad08e4f829126d497c0d739f3b33277ce',1,'ConditionalGANModel.ConditionalGAN.latent_dim'],['../namespacemain.html#a06cc62770fed9ba6ee64c04f3ee015d8',1,'main.latent_dim']]],
+  ['latent_5fdimension_4',['latent_dimension',['../classAdversarialModel_1_1AdversarialModel.html#a6f82699a96adae9fa16727ebd19bca1c',1,'AdversarialModel.AdversarialModel.latent_dimension'],['../namespacemain.html#ac881531621503b3b0f3f15cf84d22be7',1,'main.latent_dimension']]],
+  ['latent_5fmean_5fdistribution_5',['latent_mean_distribution',['../classAdversarialModel_1_1AdversarialModel.html#a4ae2c00d70b60b37518125f0bc2cac15',1,'AdversarialModel.AdversarialModel.latent_mean_distribution'],['../namespacemain.html#a8cfeaf99fca370858035b95324d1248d',1,'main.latent_mean_distribution']]],
+  ['latent_5fstander_5fdeviation_6',['latent_stander_deviation',['../classAdversarialModel_1_1AdversarialModel.html#a9556aeaa6494af8eefd71339686bb89c',1,'AdversarialModel.AdversarialModel.latent_stander_deviation'],['../namespacemain.html#acc4221aea739bedfbd2132ec43a74aae',1,'main.latent_stander_deviation']]],
+  ['layer_5factivation_7',['layer_activation',['../classPerceptronModel_1_1PerceptronMultilayer.html#a570835eaa3b75c5c954b10f0d97c5484',1,'PerceptronModel::PerceptronMultilayer']]],
+  ['layers_5fsettings_8',['layers_settings',['../classPerceptronModel_1_1PerceptronMultilayer.html#a63f3f80b61fe60b944a9c397dc58c90d',1,'PerceptronModel::PerceptronMultilayer']]],
+  ['legend_5frotation_9',['legend_rotation',['../classtools_1_1PlotConfusionMatrix.html#a43aad934de59ab5b525a80aace2e81b8',1,'tools::PlotConfusionMatrix']]],
+  ['level_10',['level',['../namespacemain.html#ad39dcd94f0ffc845ab416c0783c20d25',1,'main']]],
+  ['log_5ffolder_11',['log_folder',['../namespacemain.html#a5fdef177d10fc6f2d493400999ffbb3b',1,'main']]],
+  ['logging_5ffile_5fname_12',['LOGGING_FILE_NAME',['../namespacemain.html#ac8cd1715933ffff31ca688ea4d06fbf4',1,'main']]],
+  ['logging_5ffilename_13',['logging_filename',['../namespacemain.html#a887dfbfcebffaa6c1e81634c883a121e',1,'main']]],
+  ['logging_5fformat_14',['logging_format',['../namespacemain.html#a6f20f2189da4b313dbe8262635987909',1,'main']]],
+  ['loss_5fcurve_5flegend_5fdiscriminator_15',['loss_curve_legend_discriminator',['../classtools_1_1PlotCurveLoss.html#abd49cb9fe28771a7415afbd73566f182',1,'tools::PlotCurveLoss']]],
+  ['loss_5fcurve_5flegend_5fgenerator_16',['loss_curve_legend_generator',['../classtools_1_1PlotCurveLoss.html#ae00c884d276f1fb81fd5b85792336fd1',1,'tools::PlotCurveLoss']]],
+  ['loss_5fcurve_5flegend_5fiterations_17',['loss_curve_legend_iterations',['../classtools_1_1PlotCurveLoss.html#a1cbe750b938719a294ad06c4d3dd19ae',1,'tools::PlotCurveLoss']]],
+  ['loss_5fcurve_5flegend_5floss_18',['loss_curve_legend_loss',['../classtools_1_1PlotCurveLoss.html#a221163d9a725893a0ae1cb9e226b1f20',1,'tools::PlotCurveLoss']]],
+  ['loss_5fcurve_5flegend_5fname_19',['loss_curve_legend_name',['../classtools_1_1PlotCurveLoss.html#aa77402522c504e8fed8e8b2b9e7904d2',1,'tools::PlotCurveLoss']]],
+  ['loss_5fcurve_5fprefix_5ffile_20',['loss_curve_prefix_file',['../classtools_1_1PlotCurveLoss.html#a8f70e42ad7aa509ad222e03e83fd21be',1,'tools::PlotCurveLoss']]],
+  ['loss_5fcurver_5ftitle_5fplot_21',['loss_curver_title_plot',['../classtools_1_1PlotCurveLoss.html#a6da8b22989407e1a3257097382484ae0',1,'tools::PlotCurveLoss']]],
+  ['loss_5fdiscriminator_22',['loss_discriminator',['../classAdversarialModel_1_1AdversarialModel.html#adfe7f361ff797f6ef3c72c8d30e05f7e',1,'AdversarialModel::AdversarialModel']]],
+  ['loss_5fgenerator_23',['loss_generator',['../classAdversarialModel_1_1AdversarialModel.html#a3dbe559824467e6bf23c2beb0569f923',1,'AdversarialModel::AdversarialModel']]]
+];

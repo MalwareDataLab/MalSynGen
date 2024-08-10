@@ -1,0 +1,682 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.11.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MalSynGen: Referência à classe ConditionalGANModel.ConditionalGAN</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">MalSynGen
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.11.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Localizar',false);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrada</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespaceConditionalGANModel.html">ConditionalGANModel</a></li><li class="navelem"><a class="el" href="classConditionalGANModel_1_1ConditionalGAN.html">ConditionalGAN</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Membros públicos</a> &#124;
+<a href="#pub-attribs">Atributos Públicos</a> &#124;
+<a href="classConditionalGANModel_1_1ConditionalGAN-members.html">Mostrar lista completa dos membros</a>  </div>
+  <div class="headertitle"><div class="title">Referência à classe ConditionalGANModel.ConditionalGAN</div></div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Membros públicos</h2></td></tr>
+<tr class="memitem:accedf48c3e953396a959d56b2dbf7282" id="r_accedf48c3e953396a959d56b2dbf7282"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#accedf48c3e953396a959d56b2dbf7282">__init__</a> (self, latent_dim=<a class="el" href="namespaceConditionalGANModel.html#a71cceffd1ff1c518bdd9daa992a2da5e">DEFAULT_CONDITIONAL_GAN_LATENT_DIMENSION</a>, output_shape=None, activation_function=<a class="el" href="namespaceConditionalGANModel.html#aa70197cac76ed713e6e130a23bce77f7">DEFAULT_CONDITIONAL_GAN_ACTIVATION</a>, initializer_mean=<a class="el" href="namespaceConditionalGANModel.html#ac80722c27a90ce5ec0fe76cd8806c8a3">DEFAULT_CONDITIONAL_GAN_INITIALIZER_MEAN</a>, initializer_deviation=<a class="el" href="namespaceConditionalGANModel.html#a7396e1c61119ea4b396d5adb42eaba6b">DEFAULT_CONDITIONAL_GAN_INITIALIZER_DEVIATION</a>, dropout_decay_rate_g=<a class="el" href="namespaceConditionalGANModel.html#a3a889fdf8662f637807d8578543cad8d">DEFAULT_CONDITIONAL_GAN_DROPOUT_DECAY_RATE_G</a>, dropout_decay_rate_d=<a class="el" href="namespaceConditionalGANModel.html#a24f4b9743a5b0bc45ee5421d083184b9">DEFAULT_CONDITIONAL_GAN_DROPOUT_DECAY_RATE_D</a>, last_layer_activation=<a class="el" href="namespaceConditionalGANModel.html#a1ebbad3cd908c44be0f028b2aec6cbe0">DEFAULT_CONDITIONAL_LAST_ACTIVATION_LAYER</a>, dense_layer_sizes_g=None, dense_layer_sizes_d=None, dataset_type=np.float32)</td></tr>
+<tr class="separator:accedf48c3e953396a959d56b2dbf7282"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa358bdcdec7eee061533ec913c5913b9" id="r_aa358bdcdec7eee061533ec913c5913b9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa358bdcdec7eee061533ec913c5913b9">add_activation_layer</a> (self, neural_nodel)</td></tr>
+<tr class="separator:aa358bdcdec7eee061533ec913c5913b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a114b4167422dcbd46abe7a9507c5c4cf" id="r_a114b4167422dcbd46abe7a9507c5c4cf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a114b4167422dcbd46abe7a9507c5c4cf">get_generator</a> (self)</td></tr>
+<tr class="separator:a114b4167422dcbd46abe7a9507c5c4cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d144fae2f00e3b8641dde1bb9a6116a" id="r_a2d144fae2f00e3b8641dde1bb9a6116a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2d144fae2f00e3b8641dde1bb9a6116a">get_discriminator</a> (self)</td></tr>
+<tr class="separator:a2d144fae2f00e3b8641dde1bb9a6116a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cc9d4ce42aedae8c931227d3552f598" id="r_a3cc9d4ce42aedae8c931227d3552f598"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3cc9d4ce42aedae8c931227d3552f598">get_dense_generator_model</a> (self)</td></tr>
+<tr class="separator:a3cc9d4ce42aedae8c931227d3552f598"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a57abc2a349ff4209676f446cfe88dc" id="r_a7a57abc2a349ff4209676f446cfe88dc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7a57abc2a349ff4209676f446cfe88dc">get_dense_discriminator_model</a> (self)</td></tr>
+<tr class="separator:a7a57abc2a349ff4209676f446cfe88dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0eb85eea28a64810f6d2dfb9851757f1" id="r_a0eb85eea28a64810f6d2dfb9851757f1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0eb85eea28a64810f6d2dfb9851757f1">set_latent_dimension</a> (self, latent_dimension)</td></tr>
+<tr class="separator:a0eb85eea28a64810f6d2dfb9851757f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32b17b17627a87238d8255972aaad300" id="r_a32b17b17627a87238d8255972aaad300"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a32b17b17627a87238d8255972aaad300">set_output_shape</a> (self, output_shape)</td></tr>
+<tr class="separator:a32b17b17627a87238d8255972aaad300"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88b173bd29fcaf1a3d564984c6b1e226" id="r_a88b173bd29fcaf1a3d564984c6b1e226"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a88b173bd29fcaf1a3d564984c6b1e226">set_activation_function</a> (self, activation_function)</td></tr>
+<tr class="separator:a88b173bd29fcaf1a3d564984c6b1e226"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7ba379be830aab91bd416f4914c7e85" id="r_aa7ba379be830aab91bd416f4914c7e85"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa7ba379be830aab91bd416f4914c7e85">set_last_layer_activation</a> (self, last_layer_activation)</td></tr>
+<tr class="separator:aa7ba379be830aab91bd416f4914c7e85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8cfb01cf55a583615adc2a14c6395a5d" id="r_a8cfb01cf55a583615adc2a14c6395a5d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8cfb01cf55a583615adc2a14c6395a5d">set_dropout_decay_rate_generator</a> (self, dropout_decay_rate_generator)</td></tr>
+<tr class="separator:a8cfb01cf55a583615adc2a14c6395a5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62445852fb2a300bd5c730a7aec55eff" id="r_a62445852fb2a300bd5c730a7aec55eff"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a62445852fb2a300bd5c730a7aec55eff">set_dropout_decay_rate_discriminator</a> (self, dropout_decay_rate_discriminator)</td></tr>
+<tr class="separator:a62445852fb2a300bd5c730a7aec55eff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07f5e96f13dfacc97c3db6b0ed1d69d7" id="r_a07f5e96f13dfacc97c3db6b0ed1d69d7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a07f5e96f13dfacc97c3db6b0ed1d69d7">set_dense_layer_sizes_generator</a> (self, dense_layer_sizes_generator)</td></tr>
+<tr class="separator:a07f5e96f13dfacc97c3db6b0ed1d69d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66149ed001ddb6b69acd72cd63d92f56" id="r_a66149ed001ddb6b69acd72cd63d92f56"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a66149ed001ddb6b69acd72cd63d92f56">set_dense_layer_sizes_discriminator</a> (self, dense_layer_sizes_discriminator)</td></tr>
+<tr class="separator:a66149ed001ddb6b69acd72cd63d92f56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6435dd2abf22ba1216c009e498a149a7" id="r_a6435dd2abf22ba1216c009e498a149a7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6435dd2abf22ba1216c009e498a149a7">set_dataset_type</a> (self, dataset_type)</td></tr>
+<tr class="separator:a6435dd2abf22ba1216c009e498a149a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b6df85df93e81774034da61ed4da73f" id="r_a0b6df85df93e81774034da61ed4da73f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0b6df85df93e81774034da61ed4da73f">set_initializer_mean</a> (self, initializer_mean)</td></tr>
+<tr class="separator:a0b6df85df93e81774034da61ed4da73f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a477be7fcf0e3c71b32813454e02e1125" id="r_a477be7fcf0e3c71b32813454e02e1125"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a477be7fcf0e3c71b32813454e02e1125">set_initializer_deviation</a> (self, initializer_deviation)</td></tr>
+<tr class="separator:a477be7fcf0e3c71b32813454e02e1125"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Atributos Públicos</h2></td></tr>
+<tr class="memitem:ad08e4f829126d497c0d739f3b33277ce" id="r_ad08e4f829126d497c0d739f3b33277ce"><td class="memItemLeft" align="right" valign="top"><a id="ad08e4f829126d497c0d739f3b33277ce" name="ad08e4f829126d497c0d739f3b33277ce"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>latent_dim</b></td></tr>
+<tr class="separator:ad08e4f829126d497c0d739f3b33277ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a294d2f05e4c20820df9f4978a5daa2de" id="r_a294d2f05e4c20820df9f4978a5daa2de"><td class="memItemLeft" align="right" valign="top"><a id="a294d2f05e4c20820df9f4978a5daa2de" name="a294d2f05e4c20820df9f4978a5daa2de"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>output_shape</b></td></tr>
+<tr class="separator:a294d2f05e4c20820df9f4978a5daa2de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a718282db69bb559c6d906915c536360c" id="r_a718282db69bb559c6d906915c536360c"><td class="memItemLeft" align="right" valign="top"><a id="a718282db69bb559c6d906915c536360c" name="a718282db69bb559c6d906915c536360c"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>activation_function</b></td></tr>
+<tr class="separator:a718282db69bb559c6d906915c536360c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50221b7b595e3d736e99d64c74e18a85" id="r_a50221b7b595e3d736e99d64c74e18a85"><td class="memItemLeft" align="right" valign="top"><a id="a50221b7b595e3d736e99d64c74e18a85" name="a50221b7b595e3d736e99d64c74e18a85"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>last_layer_activation</b></td></tr>
+<tr class="separator:a50221b7b595e3d736e99d64c74e18a85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5d40c7705273e3c9bd4937eb11818d0" id="r_ac5d40c7705273e3c9bd4937eb11818d0"><td class="memItemLeft" align="right" valign="top"><a id="ac5d40c7705273e3c9bd4937eb11818d0" name="ac5d40c7705273e3c9bd4937eb11818d0"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>dropout_decay_rate_g</b></td></tr>
+<tr class="separator:ac5d40c7705273e3c9bd4937eb11818d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e44fc5ac8286bf636f9f5a11a37ea12" id="r_a2e44fc5ac8286bf636f9f5a11a37ea12"><td class="memItemLeft" align="right" valign="top"><a id="a2e44fc5ac8286bf636f9f5a11a37ea12" name="a2e44fc5ac8286bf636f9f5a11a37ea12"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>dropout_decay_rate_d</b></td></tr>
+<tr class="separator:a2e44fc5ac8286bf636f9f5a11a37ea12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad41e4e8c38a58d8889a480367bbbd469" id="r_ad41e4e8c38a58d8889a480367bbbd469"><td class="memItemLeft" align="right" valign="top"><a id="ad41e4e8c38a58d8889a480367bbbd469" name="ad41e4e8c38a58d8889a480367bbbd469"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>dense_layer_sizes_g</b></td></tr>
+<tr class="separator:ad41e4e8c38a58d8889a480367bbbd469"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65f06eea7dbcff9d45cf7b8ff5d2d086" id="r_a65f06eea7dbcff9d45cf7b8ff5d2d086"><td class="memItemLeft" align="right" valign="top"><a id="a65f06eea7dbcff9d45cf7b8ff5d2d086" name="a65f06eea7dbcff9d45cf7b8ff5d2d086"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>dense_layer_sizes_d</b></td></tr>
+<tr class="separator:a65f06eea7dbcff9d45cf7b8ff5d2d086"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a745014ae4c2241cc90dd8b7e43f90527" id="r_a745014ae4c2241cc90dd8b7e43f90527"><td class="memItemLeft" align="right" valign="top"><a id="a745014ae4c2241cc90dd8b7e43f90527" name="a745014ae4c2241cc90dd8b7e43f90527"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>dataset_type</b></td></tr>
+<tr class="separator:a745014ae4c2241cc90dd8b7e43f90527"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4e5a3986edf4a42e02646b51cc5089c" id="r_af4e5a3986edf4a42e02646b51cc5089c"><td class="memItemLeft" align="right" valign="top"><a id="af4e5a3986edf4a42e02646b51cc5089c" name="af4e5a3986edf4a42e02646b51cc5089c"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>initializer_mean</b></td></tr>
+<tr class="separator:af4e5a3986edf4a42e02646b51cc5089c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6eac297dc54cf909c05a9e581cc99ab2" id="r_a6eac297dc54cf909c05a9e581cc99ab2"><td class="memItemLeft" align="right" valign="top"><a id="a6eac297dc54cf909c05a9e581cc99ab2" name="a6eac297dc54cf909c05a9e581cc99ab2"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>initializer_deviation</b></td></tr>
+<tr class="separator:a6eac297dc54cf909c05a9e581cc99ab2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb4a6d26bfa8dcf07c7cc2d79881cd65" id="r_adb4a6d26bfa8dcf07c7cc2d79881cd65"><td class="memItemLeft" align="right" valign="top"><a id="adb4a6d26bfa8dcf07c7cc2d79881cd65" name="adb4a6d26bfa8dcf07c7cc2d79881cd65"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>generator_model_dense</b></td></tr>
+<tr class="separator:adb4a6d26bfa8dcf07c7cc2d79881cd65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8358ae8aac7b3af5ea6be7647e49ca3b" id="r_a8358ae8aac7b3af5ea6be7647e49ca3b"><td class="memItemLeft" align="right" valign="top"><a id="a8358ae8aac7b3af5ea6be7647e49ca3b" name="a8358ae8aac7b3af5ea6be7647e49ca3b"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>discriminator_model_dense</b></td></tr>
+<tr class="separator:a8358ae8aac7b3af5ea6be7647e49ca3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
+<div class="textblock"><pre class="fragment">Classe responsavel por configurar e criar um modelo GAN condicional (cGAN) utilizando Keras.
+Funções:
+    - __init__ : Inicializa a ConditionalGAN com os parâmetros especificados ou padrão.
+    - add_activation_layer :  Define a funlção de ativação especificada à  camada na rede neural.
+    - get_generator : Instância e retorna o modelo gerador da ConditionalGAN.
+    - get_discriminator : Instância e retorna o modelo gerador da ConditionalGAN.
+    - get_dense_generator_model : Retorna o modelo do gerador da ConditionalGAN.
+    - get_dense_discriminator_model :  Retorna o modelo do discriminador da ConditionalGAN.
+    - set_latent_dimension : Define a dimensão latente da ConditionalGAN.
+    - set_output_shape : Define o formato de saída da ConditionalGAN.
+    - set_activation_function : Define a função de ativação das camadas internas da ConditionalGAN.
+    - set_last_layer_activation :Define a função de ativação para a última camada do gerador.
+    - set_dropout_decay_rate_generator : Define a taxa do dropout para o gerador da ConditionalGAN.
+    - set_dropout_decay_rate_discriminator : Define a taxa do dropout para o discriminador da ConditionalGAN.
+    - set_dense_layer_sizes_generator : Define os tamanhos das camadas densas para o gerador da ConditionalGAN.
+    - set_dense_layer_sizes_discriminator : Define os tamanhos das camadas densas para o discriminador da ConditionalGAN.
+    - set_dataset_type : Define o tipo de dados do dataset.
+    - set_initializer_mean : Define a média para a inicialização dos pesos das camadas.
+    - set_initializer_deviation : Define o desvio padrão para inicialização dos pesos das camadas.
+</pre> </div><h2 class="groupheader">Documentação dos Construtores &amp; Destrutor</h2>
+<a id="accedf48c3e953396a959d56b2dbf7282" name="accedf48c3e953396a959d56b2dbf7282"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#accedf48c3e953396a959d56b2dbf7282">&#9670;&#160;</a></span>__init__()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ConditionalGANModel.ConditionalGAN.__init__ </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>latent_dim</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="namespaceConditionalGANModel.html#a71cceffd1ff1c518bdd9daa992a2da5e">DEFAULT_CONDITIONAL_GAN_LATENT_DIMENSION</a></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>output_shape</em></span><span class="paramdefsep"> = </span><span class="paramdefval">None</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>activation_function</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="namespaceConditionalGANModel.html#aa70197cac76ed713e6e130a23bce77f7">DEFAULT_CONDITIONAL_GAN_ACTIVATION</a></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>initializer_mean</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="namespaceConditionalGANModel.html#ac80722c27a90ce5ec0fe76cd8806c8a3">DEFAULT_CONDITIONAL_GAN_INITIALIZER_MEAN</a></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>initializer_deviation</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="namespaceConditionalGANModel.html#a7396e1c61119ea4b396d5adb42eaba6b">DEFAULT_CONDITIONAL_GAN_INITIALIZER_DEVIATION</a></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>dropout_decay_rate_g</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="namespaceConditionalGANModel.html#a3a889fdf8662f637807d8578543cad8d">DEFAULT_CONDITIONAL_GAN_DROPOUT_DECAY_RATE_G</a></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>dropout_decay_rate_d</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="namespaceConditionalGANModel.html#a24f4b9743a5b0bc45ee5421d083184b9">DEFAULT_CONDITIONAL_GAN_DROPOUT_DECAY_RATE_D</a></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>last_layer_activation</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="namespaceConditionalGANModel.html#a1ebbad3cd908c44be0f028b2aec6cbe0">DEFAULT_CONDITIONAL_LAST_ACTIVATION_LAYER</a></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>dense_layer_sizes_g</em></span><span class="paramdefsep"> = </span><span class="paramdefval">None</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>dense_layer_sizes_d</em></span><span class="paramdefsep"> = </span><span class="paramdefval">None</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>dataset_type</em></span><span class="paramdefsep"> = </span><span class="paramdefval">np.float32</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Inicializa a ConditionalGAN com os parâmetros especificados ou padrão.
+
+Parâmetros:
+   - latent_dim : Dimensão do espaço latente.
+   - output_shape t: Formato da saída.
+   - activation_function : Função de ativação para as camadas internas da cGAN.
+   - initializer_mean : Média para inicialização dos pesos das camadas
+   - initializer_deviation : Desvio padrão para inicialização dos pesos das camadas.
+   - dropout_decay_rate_g : Taxa de dropout para o gerador.
+   - dropout_decay_rate_d : Taxa de dropout para o discriminador.
+   - last_layer_activation : Função de ativação para a última camada do gerador.
+   - dense_layer_sizes_g : Tamanhos das camadas densas do gerador.
+   - dense_layer_sizes_d : Tamanhos das camadas densas do discriminador.
+   - dataset_type : Tipo de dados do dataset.
+</pre> 
+</div>
+</div>
+<h2 class="groupheader">Documentação das funções</h2>
+<a id="aa358bdcdec7eee061533ec913c5913b9" name="aa358bdcdec7eee061533ec913c5913b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa358bdcdec7eee061533ec913c5913b9">&#9670;&#160;</a></span>add_activation_layer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ConditionalGANModel.ConditionalGAN.add_activation_layer </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>neural_nodel</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Define a funlção de ativação especificada à  camada na rede neural.
+
+Parâmetros:
+   - neural_nodel : Camada da rede neural.
+
+Retorno:
+   - neural_nodel: Camada de rede neural com função de ativação adicionada.
+</pre> 
+</div>
+</div>
+<a id="a7a57abc2a349ff4209676f446cfe88dc" name="a7a57abc2a349ff4209676f446cfe88dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a57abc2a349ff4209676f446cfe88dc">&#9670;&#160;</a></span>get_dense_discriminator_model()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ConditionalGANModel.ConditionalGAN.get_dense_discriminator_model </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Retorna o modelo do discriminador da ConditionalGAN.
+
+Retorno:
+   - self.discriminator_model_dense: Modelo do discriminador.
+</pre> 
+</div>
+</div>
+<a id="a3cc9d4ce42aedae8c931227d3552f598" name="a3cc9d4ce42aedae8c931227d3552f598"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3cc9d4ce42aedae8c931227d3552f598">&#9670;&#160;</a></span>get_dense_generator_model()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ConditionalGANModel.ConditionalGAN.get_dense_generator_model </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Retorna o modelo do gerador da ConditionalGAN.
+
+Retorno:
+   - self.generator_model_dense: Modelo do gerador.
+</pre> 
+</div>
+</div>
+<a id="a2d144fae2f00e3b8641dde1bb9a6116a" name="a2d144fae2f00e3b8641dde1bb9a6116a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d144fae2f00e3b8641dde1bb9a6116a">&#9670;&#160;</a></span>get_discriminator()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ConditionalGANModel.ConditionalGAN.get_discriminator </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Instância e retorna o modelo discriminador da ConditionalGAN.
+
+Retorno:
+   - Model: Modelo do discriminador.
+</pre> 
+</div>
+</div>
+<a id="a114b4167422dcbd46abe7a9507c5c4cf" name="a114b4167422dcbd46abe7a9507c5c4cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a114b4167422dcbd46abe7a9507c5c4cf">&#9670;&#160;</a></span>get_generator()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ConditionalGANModel.ConditionalGAN.get_generator </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Instância e retorna o modelo gerador da ConditionalGAN.
+
+ Retorno:
+   - Model: Modelo do gerador.
+</pre> 
+</div>
+</div>
+<a id="a88b173bd29fcaf1a3d564984c6b1e226" name="a88b173bd29fcaf1a3d564984c6b1e226"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88b173bd29fcaf1a3d564984c6b1e226">&#9670;&#160;</a></span>set_activation_function()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ConditionalGANModel.ConditionalGAN.set_activation_function </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>activation_function</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Define a função de ativação das camadas internas da ConditionalGAN.
+
+Parâmetros:
+  -  activation_function: Função de ativação.
+</pre> 
+</div>
+</div>
+<a id="a6435dd2abf22ba1216c009e498a149a7" name="a6435dd2abf22ba1216c009e498a149a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6435dd2abf22ba1216c009e498a149a7">&#9670;&#160;</a></span>set_dataset_type()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ConditionalGANModel.ConditionalGAN.set_dataset_type </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>dataset_type</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Define o tipo de dados do dataset.
+
+Parâmetros:
+  -  dataset_type : Tipo de dado do dataset.
+</pre> 
+</div>
+</div>
+<a id="a66149ed001ddb6b69acd72cd63d92f56" name="a66149ed001ddb6b69acd72cd63d92f56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66149ed001ddb6b69acd72cd63d92f56">&#9670;&#160;</a></span>set_dense_layer_sizes_discriminator()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ConditionalGANModel.ConditionalGAN.set_dense_layer_sizes_discriminator </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>dense_layer_sizes_discriminator</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Define os tamanhos das camadas densas para o discriminador da ConditionalGAN.
+
+Parâmetros:
+   - dense_layer_sizes_discriminator : Lista de tamanhos das camadas densas para o discriminador.
+</pre> 
+</div>
+</div>
+<a id="a07f5e96f13dfacc97c3db6b0ed1d69d7" name="a07f5e96f13dfacc97c3db6b0ed1d69d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07f5e96f13dfacc97c3db6b0ed1d69d7">&#9670;&#160;</a></span>set_dense_layer_sizes_generator()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ConditionalGANModel.ConditionalGAN.set_dense_layer_sizes_generator </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>dense_layer_sizes_generator</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Define os tamanhos das camadas densas para o gerador da ConditionalGAN.
+
+Parâmetros:
+   - dense_layer_sizes_generator: Lista de tamanhos das camadas densas para o gerador.
+</pre> 
+</div>
+</div>
+<a id="a62445852fb2a300bd5c730a7aec55eff" name="a62445852fb2a300bd5c730a7aec55eff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62445852fb2a300bd5c730a7aec55eff">&#9670;&#160;</a></span>set_dropout_decay_rate_discriminator()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ConditionalGANModel.ConditionalGAN.set_dropout_decay_rate_discriminator </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>dropout_decay_rate_discriminator</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Define a taxa do dropout para o discriminador da ConditionalGAN.
+
+Parâmetros:
+  -  dropout_decay_rate_discriminator: Taxa do dropout para o discriminador.
+</pre> 
+</div>
+</div>
+<a id="a8cfb01cf55a583615adc2a14c6395a5d" name="a8cfb01cf55a583615adc2a14c6395a5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8cfb01cf55a583615adc2a14c6395a5d">&#9670;&#160;</a></span>set_dropout_decay_rate_generator()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ConditionalGANModel.ConditionalGAN.set_dropout_decay_rate_generator </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>dropout_decay_rate_generator</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Define a taxa do dropout para o gerador da ConditionalGAN.
+
+Parâmetros:
+  -  dropout_decay_rate_generator: Taxa  do dropout para o gerador.
+</pre> 
+</div>
+</div>
+<a id="a477be7fcf0e3c71b32813454e02e1125" name="a477be7fcf0e3c71b32813454e02e1125"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a477be7fcf0e3c71b32813454e02e1125">&#9670;&#160;</a></span>set_initializer_deviation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ConditionalGANModel.ConditionalGAN.set_initializer_deviation </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>initializer_deviation</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Define o desvio padrão para inicialização dos pesos das camadas.
+
+Parâmetros:
+   - initializer_deviation : desvio padrão para inicialização dos pesos das camadas.
+</pre> 
+</div>
+</div>
+<a id="a0b6df85df93e81774034da61ed4da73f" name="a0b6df85df93e81774034da61ed4da73f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b6df85df93e81774034da61ed4da73f">&#9670;&#160;</a></span>set_initializer_mean()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ConditionalGANModel.ConditionalGAN.set_initializer_mean </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>initializer_mean</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Define a média para a inicialização dos pesos das camadas.
+
+Parâmetros:
+  -  initializer_mean : média para inicialização dos pesos das camadas.
+</pre> 
+</div>
+</div>
+<a id="aa7ba379be830aab91bd416f4914c7e85" name="aa7ba379be830aab91bd416f4914c7e85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7ba379be830aab91bd416f4914c7e85">&#9670;&#160;</a></span>set_last_layer_activation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ConditionalGANModel.ConditionalGAN.set_last_layer_activation </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>last_layer_activation</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Define a função de ativação para a última camada do gerador.
+
+Parâmetros:
+  -  last_layer_activation: Função de ativação para a última camada do gerador.
+</pre> 
+</div>
+</div>
+<a id="a0eb85eea28a64810f6d2dfb9851757f1" name="a0eb85eea28a64810f6d2dfb9851757f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0eb85eea28a64810f6d2dfb9851757f1">&#9670;&#160;</a></span>set_latent_dimension()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ConditionalGANModel.ConditionalGAN.set_latent_dimension </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>latent_dimension</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Define a dimensão latente da ConditionalGAN.
+
+Parâmetros:
+   - latent_dimension : Dimensão latente.
+</pre> 
+</div>
+</div>
+<a id="a32b17b17627a87238d8255972aaad300" name="a32b17b17627a87238d8255972aaad300"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32b17b17627a87238d8255972aaad300">&#9670;&#160;</a></span>set_output_shape()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ConditionalGANModel.ConditionalGAN.set_output_shape </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>output_shape</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Define o formato de saída da ConditionalGAN.
+
+Parâmetros:
+  -  output_shape : Formato de saída da ConditionalGAN.
+</pre> 
+</div>
+</div>
+<hr/>A documentação para esta classe foi gerada a partir do seguinte ficheiro:<ul>
+<li>Models/<b>ConditionalGANModel.py</b></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

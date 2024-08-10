@@ -1,0 +1,25 @@
+var searchData=
+[
+  ['páginas_20relacionadas_0',['10.1. Páginas relacionadas',['../index.html#autotoc_md27',1,'']]],
+  ['p_5fvalue_5ftest_1',['p_value_test',['../namespacemain.html#a7709d8cc9ecdc89ff22951350ef1abd8',1,'main']]],
+  ['parâmetros_20da_20ferramenta_2',['6. Parâmetros da Ferramenta',['../index.html#autotoc_md19',1,'']]],
+  ['parâmetros_20dos_20testes_20automatizados_3a_3',['4.2. Parâmetros dos testes automatizados:',['../index.html#autotoc_md15',1,'']]],
+  ['para_20detecção_20de_20malware_4',['Artefatos apêndice SBSeg24/SF: #243359: MalSynGen: redes neurais artificiais na geração de dados tabulares sintéticos para detecção de malware',['../md_ARTEFATOS.html',1,'']]],
+  ['para_20salvamento_20das_20figuras_20geradas_20e_20as_20métricas_20obtidas_20na_20ferramenta_20de_20rastreamento_20aimstack_5',['opção para salvamento das figuras geradas e as métricas obtidas, na  ferramenta de rastreamento Aimstack',['..//home/angelo/MalSynGen/main.py#autotoc_md9',1,'']]],
+  ['parents_6',['parents',['../namespacemain.html#aa6eea602ff3979e1ff2936eeeb7c1cd7',1,'main']]],
+  ['perceptronmodel_7',['PerceptronModel',['../namespacePerceptronModel.html',1,'']]],
+  ['perceptronmultilayer_8',['PerceptronMultilayer',['../classPerceptronModel_1_1PerceptronMultilayer.html',1,'PerceptronModel']]],
+  ['plot_5fclassifier_5fmetrics_9',['plot_classifier_metrics',['../classtools_1_1PlotClassificationMetrics.html#adda4f6839ab5a7a35f0241ce33940048',1,'tools::PlotClassificationMetrics']]],
+  ['plot_5fconfusion_5fmatrix_10',['plot_confusion_matrix',['../classtools_1_1PlotConfusionMatrix.html#a2605ebb0d4e3d5d39e9df0516038adef',1,'tools::PlotConfusionMatrix']]],
+  ['plot_5ffidelity_5fmetrics_11',['plot_fidelity_metrics',['../classtools_1_1PlotFidelityeMetrics.html#ad938342121ba3ed5fca4a0c135651128',1,'tools::PlotFidelityeMetrics']]],
+  ['plot_5fto_5fimage_12',['plot_to_image',['../namespacemain.html#a8d5ce8ff3433d2ec75810f451506df9a',1,'main']]],
+  ['plot_5ftraining_5floss_5fcurve_13',['plot_training_loss_curve',['../classtools_1_1PlotCurveLoss.html#a56a0bd8691fdaa8be40cfe6cfde07f37',1,'tools::PlotCurveLoss']]],
+  ['plotclassificationmetrics_14',['PlotClassificationMetrics',['../classtools_1_1PlotClassificationMetrics.html',1,'tools']]],
+  ['plotconfusionmatrix_15',['PlotConfusionMatrix',['../classtools_1_1PlotConfusionMatrix.html',1,'tools']]],
+  ['plotcurveloss_16',['PlotCurveLoss',['../classtools_1_1PlotCurveLoss.html',1,'tools']]],
+  ['plotfidelityemetrics_17',['PlotFidelityeMetrics',['../classtools_1_1PlotFidelityeMetrics.html',1,'tools']]],
+  ['preparação_20e_20instalação_18',['1. Preparação e instalação',['../index.html',1,'']]],
+  ['print_5fconfig_19',['print_config',['../namespacerun__campaign.html#a91dfa124669234c62374c6f1edf3431b',1,'run_campaign']]],
+  ['probabilisticmetrics_20',['ProbabilisticMetrics',['../classtools_1_1ProbabilisticMetrics.html',1,'tools']]],
+  ['process_5fcolumn_21',['process_column',['../namespacerebalancer.html#ae6c63846e5a7f303d560f089d43c7654',1,'rebalancer']]]
+];

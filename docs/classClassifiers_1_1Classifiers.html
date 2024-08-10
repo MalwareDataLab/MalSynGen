@@ -1,0 +1,1983 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.11.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MalSynGen: Referência à classe Classifiers.Classifiers</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">MalSynGen
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.11.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Localizar',false);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrada</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespaceClassifiers.html">Classifiers</a></li><li class="navelem"><a class="el" href="classClassifiers_1_1Classifiers.html">Classifiers</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Membros públicos</a> &#124;
+<a href="#pri-methods">Membros privados</a> &#124;
+<a href="#pri-attribs">Atributos Privados</a> &#124;
+<a href="classClassifiers_1_1Classifiers-members.html">Mostrar lista completa dos membros</a>  </div>
+  <div class="headertitle"><div class="title">Referência à classe Classifiers.Classifiers</div></div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Membros públicos</h2></td></tr>
+<tr class="memitem:a7f1c8022c0c3a8b914a66d488d0ac3b9" id="r_a7f1c8022c0c3a8b914a66d488d0ac3b9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7f1c8022c0c3a8b914a66d488d0ac3b9">__init__</a> (self, random_forest_number_estimators=<a class="el" href="namespaceClassifiers.html#abe16c7c4e5d17380e4a5beccf1866b78">DEFAULT_RANDOM_FOREST_NUMBER_ESTIMATORS</a>, random_forest_max_depth=<a class="el" href="namespaceClassifiers.html#ac2dab1d9d2edbe8728e6cae5c7c93d3e">DEFAULT_RANDOM_FOREST_MAX_DEPTH</a>, <a class="el" href="#a81d6fb7a0cc5fc39d842a4061d35d666">max_leaf_nodes</a>=<a class="el" href="namespaceClassifiers.html#a8e66ff1e6a994abfac4b9de81e177408">DEFAULT_RANDOM_FOREST_MAX_LEAF_NODES</a>, knn_number_neighbors=<a class="el" href="namespaceClassifiers.html#adbfa095935f8ae925fac7c2fe9b8acb3">DEFAULT_KNN_NUMBER_NEIGHBORS</a>, knn_weights=<a class="el" href="namespaceClassifiers.html#a72c2a72984c1d205ea0d4056eeef315e">DEFAULT_KNN_WEIGHTS</a>, knn_leaf_size=<a class="el" href="namespaceClassifiers.html#ad42a16c24afda9268353fbbd6230a715">DEFAULT_KNN_LEAF_SIZE</a>, knn_metric=<a class="el" href="namespaceClassifiers.html#a151ce2d053e20a67764d58bbcb5aeb80">DEFAULT_KNN_METRIC</a>, knn_algorithm=<a class="el" href="namespaceClassifiers.html#ac0457a5c498d96a3a258ae5acaa249ef">DEFAULT_KNN_ALGORITHM</a>, support_vector_machine_gamma=<a class="el" href="namespaceClassifiers.html#a34c57f9298fa5b5b72e97fc7d5518136">DEFAULT_SUPPORT_VECTOR_MACHINE_GAMMA</a>, support_vector_machine_normalization=<a class="el" href="namespaceClassifiers.html#aa03493811efbba37c9cded5a568fc3bb">DEFAULT_SUPPORT_VECTOR_MACHINE_REGULARIZATION</a>, support_vector_machine_kernel=<a class="el" href="namespaceClassifiers.html#ab04644cddf11d7283e61ac84b6866486">DEFAULT_SUPPORT_VECTOR_MACHINE_KERNEL</a>, support_vector_machine_kernel_degree=<a class="el" href="namespaceClassifiers.html#ab6db40050575bf167689758351c99fab">DEFAULT_SUPPORT_VECTOR_MACHINE_KERNEL_DEGREE</a>, gaussian_process_kernel=<a class="el" href="namespaceClassifiers.html#a3bd3924fb87c9d835407a8d71a3ff4d4">DEFAULT_GAUSSIAN_PROCESS_KERNEL</a>, gaussian_process_max_iterations=<a class="el" href="namespaceClassifiers.html#a966d559801d18217d4517f475de5b2b6">DEFAULT_GAUSSIAN_PROCESS_MAX_ITERATIONS</a>, gaussian_process_optimizer=<a class="el" href="namespaceClassifiers.html#a118f6fd23a8ce54bbd90460889498a27">DEFAULT_GAUSSIAN_PROCESS_OPTIMIZER</a>, decision_tree_criterion=<a class="el" href="namespaceClassifiers.html#a58a748b3503baabed4590f5f73601aba">DEFAULT_DECISION_TREE_CRITERION</a>, decision_tree_max_depth=<a class="el" href="namespaceClassifiers.html#a98c94c3f3821cd1af383ace5ea4c0ff0">DEFAULT_DECISION_TREE_MAX_DEPTH</a>, decision_tree_max_feature=<a class="el" href="namespaceClassifiers.html#a6eec4b585752913a795c7eb54b38248d">DEFAULT_DECISION_TREE_MAX_FEATURE</a>, decision_tree_max_leaf=<a class="el" href="namespaceClassifiers.html#a6949a848785f87bd278b685b7cbc2406">DEFAULT_DECISION_TREE_MAX_LEAF</a>, ada_boost_estimator=<a class="el" href="namespaceClassifiers.html#a3f12cd1630ef9e83a76c31b4e8c44470">DEFAULT_ADA_BOOST_ESTIMATOR</a>, ada_boost_number_estimators=<a class="el" href="namespaceClassifiers.html#ad34181655f7d731925c3b53dc7b54a70">DEFAULT_ADA_BOOST_NUMBER_ESTIMATORS</a>, ada_boost_learning_rate=<a class="el" href="namespaceClassifiers.html#a5ea02e105616918e8153b2803e757774">DEFAULT_ADA_BOOST_LEARNING_RATE</a>, ada_boost_algorithm=<a class="el" href="namespaceClassifiers.html#a5bbd4757edab9fe04a5c54c8e5b3cb1c">DEFAULT_ADA_BOOST_ALGORITHM</a>, naive_bayes_priors=<a class="el" href="namespaceClassifiers.html#a189dc0e70fb8d166bff85cbe036b1426">DEFAULT_NAIVE_BAYES_PRIORS</a>, naive_bayes_variation_smoothing=<a class="el" href="namespaceClassifiers.html#a45cf8472626f2c6ee82efc70e9c03639">DEFAULT_NAIVE_BAYES_VARIATION_SMOOTHING</a>, quadratic_discriminant_analysis_priors=<a class="el" href="namespaceClassifiers.html#a36fa6a15be3f596d6ddb49f435bd7356">DEFAULT_QUADRATIC_DISCRIMINANT_ANALYSIS_PRIORS</a>, quadratic_discriminant_analysis_regularization=<a class="el" href="namespaceClassifiers.html#a9295fe68a77e30f01407dd695a397256">DEFAULT_QUADRATIC_DISCRIMINANT_ANALYSIS_REGULARIZATION</a>, quadratic_discriminant_threshold=<a class="el" href="namespaceClassifiers.html#a7bf0d20d3f595ed20962576afc544c98">DEFAULT_QUADRATIC_DISCRIMINANT_THRESHOLD</a>, perceptron_training_algorithm=<a class="el" href="namespaceClassifiers.html#a030e49d99bd7b4c3ff74f8373adffc3c">DEFAULT_PERCEPTRON_TRAINING_ALGORITHM</a>, perceptron_training_loss=<a class="el" href="namespaceClassifiers.html#a4e38b9f0440d221b6cac3de6797e7bc7">DEFAULT_PERCEPTRON_LOSS</a>, perceptron_training_metric=None, perceptron_layer_activation=<a class="el" href="namespaceClassifiers.html#a88ee91929def0795f8f3088cbd59dab9">DEFAULT_PERCEPTRON_LAYER_ACTIVATION</a>, perceptron_last_layer_activation=<a class="el" href="namespaceClassifiers.html#a5015fecc2b3e8cdce053a2cf487e3cbe">DEFAULT_PERCEPTRON_LAST_LAYER_ACTIVATION</a>, perceptron_dropout_decay_rate=<a class="el" href="namespaceClassifiers.html#ad37fe72f6c387064b9cda717b4b4338a">DEFAULT_PERCEPTRON_DROPOUT_DECAY_RATE</a>, perceptron_number_epochs=<a class="el" href="namespaceClassifiers.html#a086d755fd9623cb8c79f70e8fdb8abff">DEFAULT_PERCEPTRON_NUMBER_EPOCHS</a>, perceptron_layers_settings=None)</td></tr>
+<tr class="separator:a7f1c8022c0c3a8b914a66d488d0ac3b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a279118cdc9d744aedc1b8e5ba9e0a430" id="r_a279118cdc9d744aedc1b8e5ba9e0a430"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a279118cdc9d744aedc1b8e5ba9e0a430">get_trained_classifiers</a> (self, classifiers_list, x_samples_training, y_samples_training, dataset_type, verbose_level, input_dataset_shape)</td></tr>
+<tr class="separator:a279118cdc9d744aedc1b8e5ba9e0a430"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7834904d41f8b2d1d8b1b685680094cd" id="r_a7834904d41f8b2d1d8b1b685680094cd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7834904d41f8b2d1d8b1b685680094cd">set_random_forest_number_estimators</a> (self, random_forest_number_estimators)</td></tr>
+<tr class="separator:a7834904d41f8b2d1d8b1b685680094cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2db296e7c0dbeb5943e4bb6ec8b40a21" id="r_a2db296e7c0dbeb5943e4bb6ec8b40a21"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2db296e7c0dbeb5943e4bb6ec8b40a21">set_random_forest_max_depth</a> (self, random_forest_max_depth)</td></tr>
+<tr class="separator:a2db296e7c0dbeb5943e4bb6ec8b40a21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81d6fb7a0cc5fc39d842a4061d35d666" id="r_a81d6fb7a0cc5fc39d842a4061d35d666"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a81d6fb7a0cc5fc39d842a4061d35d666">max_leaf_nodes</a> (self, max_leaf_nodes)</td></tr>
+<tr class="separator:a81d6fb7a0cc5fc39d842a4061d35d666"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65074491ef2cbfd77023e372e1ab51c8" id="r_a65074491ef2cbfd77023e372e1ab51c8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a65074491ef2cbfd77023e372e1ab51c8">set_knn_number_neighbors</a> (self, knn_number_neighbors)</td></tr>
+<tr class="separator:a65074491ef2cbfd77023e372e1ab51c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7315d28133d874ec7749af3eb314bce" id="r_af7315d28133d874ec7749af3eb314bce"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af7315d28133d874ec7749af3eb314bce">set_knn_weights</a> (self, knn_weights)</td></tr>
+<tr class="separator:af7315d28133d874ec7749af3eb314bce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0799e9e395ebd134d5bfc81725bb657" id="r_af0799e9e395ebd134d5bfc81725bb657"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af0799e9e395ebd134d5bfc81725bb657">set_knn_leaf_size</a> (self, knn_leaf_size)</td></tr>
+<tr class="separator:af0799e9e395ebd134d5bfc81725bb657"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23685caabf4b16d4c8f66f7c8fa09da0" id="r_a23685caabf4b16d4c8f66f7c8fa09da0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a23685caabf4b16d4c8f66f7c8fa09da0">set_knn_metric</a> (self, knn_metric)</td></tr>
+<tr class="separator:a23685caabf4b16d4c8f66f7c8fa09da0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a3f52dc9ad74fe99bf1427576f1eda7" id="r_a5a3f52dc9ad74fe99bf1427576f1eda7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5a3f52dc9ad74fe99bf1427576f1eda7">set_knn_algorithm</a> (self, knn_algorithm)</td></tr>
+<tr class="separator:a5a3f52dc9ad74fe99bf1427576f1eda7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9b7ada879e0a08f4f516dc0bc01ec02" id="r_ae9b7ada879e0a08f4f516dc0bc01ec02"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae9b7ada879e0a08f4f516dc0bc01ec02">set_support_vector_machine_normalization</a> (self, support_vector_machine_normalization)</td></tr>
+<tr class="separator:ae9b7ada879e0a08f4f516dc0bc01ec02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68507bb9ce1d4839bd6eea967c633617" id="r_a68507bb9ce1d4839bd6eea967c633617"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a68507bb9ce1d4839bd6eea967c633617">set_support_vector_machine_kernel</a> (self, support_vector_machine_kernel)</td></tr>
+<tr class="separator:a68507bb9ce1d4839bd6eea967c633617"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a605cebe20f7785919ebba03558dc2c88" id="r_a605cebe20f7785919ebba03558dc2c88"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a605cebe20f7785919ebba03558dc2c88">set_support_vector_machine_kernel_degree</a> (self, support_vector_machine_kernel_degree)</td></tr>
+<tr class="separator:a605cebe20f7785919ebba03558dc2c88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64e7fd480bc2a4deb8a0d121ddc3047a" id="r_a64e7fd480bc2a4deb8a0d121ddc3047a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a64e7fd480bc2a4deb8a0d121ddc3047a">set_support_vector_machine_gamma</a> (self, support_vector_machine_gamma)</td></tr>
+<tr class="separator:a64e7fd480bc2a4deb8a0d121ddc3047a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac99ead1bd9e285a531c561e12a2f7e02" id="r_ac99ead1bd9e285a531c561e12a2f7e02"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac99ead1bd9e285a531c561e12a2f7e02">set_gaussian_process_kernel</a> (self, gaussian_process_kernel)</td></tr>
+<tr class="separator:ac99ead1bd9e285a531c561e12a2f7e02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35ff787ae37c400c9078961058309e5d" id="r_a35ff787ae37c400c9078961058309e5d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a35ff787ae37c400c9078961058309e5d">set_gaussian_process_max_iterations</a> (self, gaussian_process_max_iterations)</td></tr>
+<tr class="separator:a35ff787ae37c400c9078961058309e5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a910304810b5594517f500e98e55de8f4" id="r_a910304810b5594517f500e98e55de8f4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a910304810b5594517f500e98e55de8f4">set_gaussian_process_optimizer</a> (self, gaussian_process_optimizer)</td></tr>
+<tr class="separator:a910304810b5594517f500e98e55de8f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4bca7f3e8be09038c13eafffcc6e8a7" id="r_ae4bca7f3e8be09038c13eafffcc6e8a7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae4bca7f3e8be09038c13eafffcc6e8a7">set_decision_tree_criterion</a> (self, decision_tree_criterion)</td></tr>
+<tr class="separator:ae4bca7f3e8be09038c13eafffcc6e8a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c0aeb58a88f6d19fa28b4ea46b173a5" id="r_a0c0aeb58a88f6d19fa28b4ea46b173a5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0c0aeb58a88f6d19fa28b4ea46b173a5">set_decision_tree_max_depth</a> (self, decision_tree_max_depth)</td></tr>
+<tr class="separator:a0c0aeb58a88f6d19fa28b4ea46b173a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ec482176873a36a959ff010879a4b49" id="r_a0ec482176873a36a959ff010879a4b49"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0ec482176873a36a959ff010879a4b49">set_decision_tree_max_feature</a> (self, decision_tree_max_feature)</td></tr>
+<tr class="separator:a0ec482176873a36a959ff010879a4b49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac49e6c41623b5833ca263f17a9e30f6a" id="r_ac49e6c41623b5833ca263f17a9e30f6a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac49e6c41623b5833ca263f17a9e30f6a">set_decision_tree_max_leaf</a> (self, decision_tree_max_leaf)</td></tr>
+<tr class="separator:ac49e6c41623b5833ca263f17a9e30f6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d498c26ffc5823f3ac3c15e2f99797f" id="r_a1d498c26ffc5823f3ac3c15e2f99797f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1d498c26ffc5823f3ac3c15e2f99797f">set_ada_boost_estimator</a> (self, ada_boost_estimator)</td></tr>
+<tr class="separator:a1d498c26ffc5823f3ac3c15e2f99797f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee6ea1d50a385d0d5af4382f01a44ba0" id="r_aee6ea1d50a385d0d5af4382f01a44ba0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aee6ea1d50a385d0d5af4382f01a44ba0">set_ada_boost_number_estimators</a> (self, ada_boost_number_estimators)</td></tr>
+<tr class="separator:aee6ea1d50a385d0d5af4382f01a44ba0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c7a54ef16ef22b98d1ca8c28d2c3b82" id="r_a4c7a54ef16ef22b98d1ca8c28d2c3b82"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4c7a54ef16ef22b98d1ca8c28d2c3b82">set_ada_boost_learning_rate</a> (self, ada_boost_learning_rate)</td></tr>
+<tr class="separator:a4c7a54ef16ef22b98d1ca8c28d2c3b82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a753b29074a153bc5cc4cbd5517fbdf36" id="r_a753b29074a153bc5cc4cbd5517fbdf36"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a753b29074a153bc5cc4cbd5517fbdf36">set_ada_boost_algorithm</a> (self, ada_boost_algorithm)</td></tr>
+<tr class="separator:a753b29074a153bc5cc4cbd5517fbdf36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a077a5dab04faaad15f153a83d5a355de" id="r_a077a5dab04faaad15f153a83d5a355de"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a077a5dab04faaad15f153a83d5a355de">set_naive_bayes_priors</a> (self, naive_bayes_priors)</td></tr>
+<tr class="separator:a077a5dab04faaad15f153a83d5a355de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b9f29ed6bdeb77a01c751279d2208d4" id="r_a7b9f29ed6bdeb77a01c751279d2208d4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7b9f29ed6bdeb77a01c751279d2208d4">set_naive_bayes_variation_smoothing</a> (self, naive_bayes_variation_smoothing)</td></tr>
+<tr class="separator:a7b9f29ed6bdeb77a01c751279d2208d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acbc0e9741b6cc73ef9aa5d72e707d6b8" id="r_acbc0e9741b6cc73ef9aa5d72e707d6b8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acbc0e9741b6cc73ef9aa5d72e707d6b8">set_quadratic_discriminant_analysis_priors</a> (self, quadratic_discriminant_analysis_priors)</td></tr>
+<tr class="separator:acbc0e9741b6cc73ef9aa5d72e707d6b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9208bd141ae4e79168df0215b62b2fa" id="r_ab9208bd141ae4e79168df0215b62b2fa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab9208bd141ae4e79168df0215b62b2fa">set_quadratic_discriminant_analysis_regularization</a> (self, quadratic_discriminant_analysis_regularization)</td></tr>
+<tr class="separator:ab9208bd141ae4e79168df0215b62b2fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16fa4fe6908b619a15c7956904ff5bb7" id="r_a16fa4fe6908b619a15c7956904ff5bb7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a16fa4fe6908b619a15c7956904ff5bb7">set_quadratic_discriminant_threshold</a> (self, quadratic_discriminant_threshold)</td></tr>
+<tr class="separator:a16fa4fe6908b619a15c7956904ff5bb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9687e6c3970146831be66bee074b8c4d" id="r_a9687e6c3970146831be66bee074b8c4d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9687e6c3970146831be66bee074b8c4d">set_perceptron_training_algorithm</a> (self, perceptron_training_algorithm)</td></tr>
+<tr class="separator:a9687e6c3970146831be66bee074b8c4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a467f574b39dfc31263a2e21025dcb0f5" id="r_a467f574b39dfc31263a2e21025dcb0f5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a467f574b39dfc31263a2e21025dcb0f5">set_perceptron_training_loss</a> (self, perceptron_training_loss)</td></tr>
+<tr class="separator:a467f574b39dfc31263a2e21025dcb0f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e7a6f1f7253edd82a656a7b86b2e7f2" id="r_a6e7a6f1f7253edd82a656a7b86b2e7f2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6e7a6f1f7253edd82a656a7b86b2e7f2">set_perceptron_layer_activation</a> (self, perceptron_layer_activation)</td></tr>
+<tr class="separator:a6e7a6f1f7253edd82a656a7b86b2e7f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Membros privados</h2></td></tr>
+<tr class="memitem:ae001be25d860504f3057b6fe18c05167" id="r_ae001be25d860504f3057b6fe18c05167"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae001be25d860504f3057b6fe18c05167">__get_instance_random_forest</a> (self, x_samples_training, y_samples_training, dataset_type)</td></tr>
+<tr class="separator:ae001be25d860504f3057b6fe18c05167"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78d30645d6673655c61a955f3d211309" id="r_a78d30645d6673655c61a955f3d211309"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a78d30645d6673655c61a955f3d211309">__get_instance_k_neighbors_classifier</a> (self, x_samples_training, y_samples_training, dataset_type)</td></tr>
+<tr class="separator:a78d30645d6673655c61a955f3d211309"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafe0e0041a71a4e3cc5a3369f8fd1120" id="r_aafe0e0041a71a4e3cc5a3369f8fd1120"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aafe0e0041a71a4e3cc5a3369f8fd1120">__get_instance_support_vector_machine</a> (self, x_samples_training, y_samples_training, dataset_type)</td></tr>
+<tr class="separator:aafe0e0041a71a4e3cc5a3369f8fd1120"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad73344b7cc197f10714682bc4d21cd80" id="r_ad73344b7cc197f10714682bc4d21cd80"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad73344b7cc197f10714682bc4d21cd80">__get_instance_gaussian_process</a> (self, x_samples_training, y_samples_training, dataset_type)</td></tr>
+<tr class="separator:ad73344b7cc197f10714682bc4d21cd80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82851f666b0c9914742e6592337078dd" id="r_a82851f666b0c9914742e6592337078dd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a82851f666b0c9914742e6592337078dd">__get_instance_xgboost</a> (self, x_samples_training, y_samples_training, dataset_type)</td></tr>
+<tr class="separator:a82851f666b0c9914742e6592337078dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc3939e7e8b18cabf2af79800960cd48" id="r_afc3939e7e8b18cabf2af79800960cd48"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afc3939e7e8b18cabf2af79800960cd48">__get_instance_SGDRegressor</a> (self, x_samples_training, y_samples_training, dataset_type)</td></tr>
+<tr class="separator:afc3939e7e8b18cabf2af79800960cd48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a260d43c4e27244f17c2da279f2b586f8" id="r_a260d43c4e27244f17c2da279f2b586f8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a260d43c4e27244f17c2da279f2b586f8">__get_instance_decision_tree</a> (self, x_samples_training, y_samples_training, dataset_type)</td></tr>
+<tr class="separator:a260d43c4e27244f17c2da279f2b586f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4660d89e49fa5bb561da620da6146f94" id="r_a4660d89e49fa5bb561da620da6146f94"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4660d89e49fa5bb561da620da6146f94">__get_instance_ada_boost</a> (self, x_samples_training, y_samples_training, dataset_type)</td></tr>
+<tr class="separator:a4660d89e49fa5bb561da620da6146f94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a474418c36bcd76e4e1c5e25738ba5974" id="r_a474418c36bcd76e4e1c5e25738ba5974"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a474418c36bcd76e4e1c5e25738ba5974">__get_instance_naive_bayes</a> (self, x_samples_training, y_samples_training, dataset_type)</td></tr>
+<tr class="separator:a474418c36bcd76e4e1c5e25738ba5974"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ac751f4d0aa2f2af596f499a03f8155" id="r_a9ac751f4d0aa2f2af596f499a03f8155"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9ac751f4d0aa2f2af596f499a03f8155">__get_instance_quadratic_discriminant</a> (self, x_samples_training, y_samples_training, dataset_type)</td></tr>
+<tr class="separator:a9ac751f4d0aa2f2af596f499a03f8155"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaafc8ee8eff0a2c8622e5e53329cbf62" id="r_aaafc8ee8eff0a2c8622e5e53329cbf62"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaafc8ee8eff0a2c8622e5e53329cbf62">__get_instance_perceptron</a> (self, x_samples_training, y_samples_training, dataset_type, verbose_level, input_dataset_shape)</td></tr>
+<tr class="separator:aaafc8ee8eff0a2c8622e5e53329cbf62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Atributos Privados</h2></td></tr>
+<tr class="memitem:a79a3866a18ac2f092a00894d2a3116cf" id="r_a79a3866a18ac2f092a00894d2a3116cf"><td class="memItemLeft" align="right" valign="top"><a id="a79a3866a18ac2f092a00894d2a3116cf" name="a79a3866a18ac2f092a00894d2a3116cf"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>__random_forest_number_estimators</b></td></tr>
+<tr class="separator:a79a3866a18ac2f092a00894d2a3116cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa617864716d86607ef852071f1ce4e26" id="r_aa617864716d86607ef852071f1ce4e26"><td class="memItemLeft" align="right" valign="top"><a id="aa617864716d86607ef852071f1ce4e26" name="aa617864716d86607ef852071f1ce4e26"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>__random_forest_max_depth</b></td></tr>
+<tr class="separator:aa617864716d86607ef852071f1ce4e26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aecb5d11d9368b05e2cce0f4a6f8bb7e3" id="r_aecb5d11d9368b05e2cce0f4a6f8bb7e3"><td class="memItemLeft" align="right" valign="top"><a id="aecb5d11d9368b05e2cce0f4a6f8bb7e3" name="aecb5d11d9368b05e2cce0f4a6f8bb7e3"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>__max_leaf_nodes</b></td></tr>
+<tr class="separator:aecb5d11d9368b05e2cce0f4a6f8bb7e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8174bd8836092cd03765f89ae5f4769e" id="r_a8174bd8836092cd03765f89ae5f4769e"><td class="memItemLeft" align="right" valign="top"><a id="a8174bd8836092cd03765f89ae5f4769e" name="a8174bd8836092cd03765f89ae5f4769e"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>__knn_number_neighbors</b></td></tr>
+<tr class="separator:a8174bd8836092cd03765f89ae5f4769e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a47aef77f839a0d6f0a4e9b85445718" id="r_a6a47aef77f839a0d6f0a4e9b85445718"><td class="memItemLeft" align="right" valign="top"><a id="a6a47aef77f839a0d6f0a4e9b85445718" name="a6a47aef77f839a0d6f0a4e9b85445718"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>__knn_weights</b></td></tr>
+<tr class="separator:a6a47aef77f839a0d6f0a4e9b85445718"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16919529628c621dcb8c305ef19fa922" id="r_a16919529628c621dcb8c305ef19fa922"><td class="memItemLeft" align="right" valign="top"><a id="a16919529628c621dcb8c305ef19fa922" name="a16919529628c621dcb8c305ef19fa922"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>__knn_leaf_size</b></td></tr>
+<tr class="separator:a16919529628c621dcb8c305ef19fa922"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48429731e0fe5d3195fa5921956ca9fc" id="r_a48429731e0fe5d3195fa5921956ca9fc"><td class="memItemLeft" align="right" valign="top"><a id="a48429731e0fe5d3195fa5921956ca9fc" name="a48429731e0fe5d3195fa5921956ca9fc"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>__knn_metric</b></td></tr>
+<tr class="separator:a48429731e0fe5d3195fa5921956ca9fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a144dcc51967949e6c773168cab0b2e0b" id="r_a144dcc51967949e6c773168cab0b2e0b"><td class="memItemLeft" align="right" valign="top"><a id="a144dcc51967949e6c773168cab0b2e0b" name="a144dcc51967949e6c773168cab0b2e0b"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>__knn_algorithm</b></td></tr>
+<tr class="separator:a144dcc51967949e6c773168cab0b2e0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42a78ae03ea42f0ef477c5baeada1de6" id="r_a42a78ae03ea42f0ef477c5baeada1de6"><td class="memItemLeft" align="right" valign="top"><a id="a42a78ae03ea42f0ef477c5baeada1de6" name="a42a78ae03ea42f0ef477c5baeada1de6"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>__support_vector_machine_normalization</b></td></tr>
+<tr class="separator:a42a78ae03ea42f0ef477c5baeada1de6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9d797711949c84616f34c5a511199e2" id="r_aa9d797711949c84616f34c5a511199e2"><td class="memItemLeft" align="right" valign="top"><a id="aa9d797711949c84616f34c5a511199e2" name="aa9d797711949c84616f34c5a511199e2"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>__support_vector_machine_kernel</b></td></tr>
+<tr class="separator:aa9d797711949c84616f34c5a511199e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b60bfaef4f66da08290246eb1ce6eda" id="r_a2b60bfaef4f66da08290246eb1ce6eda"><td class="memItemLeft" align="right" valign="top"><a id="a2b60bfaef4f66da08290246eb1ce6eda" name="a2b60bfaef4f66da08290246eb1ce6eda"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>__support_vector_machine_kernel_degree</b></td></tr>
+<tr class="separator:a2b60bfaef4f66da08290246eb1ce6eda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4cada3bd08cb64d373e6ca2dadfdeba6" id="r_a4cada3bd08cb64d373e6ca2dadfdeba6"><td class="memItemLeft" align="right" valign="top"><a id="a4cada3bd08cb64d373e6ca2dadfdeba6" name="a4cada3bd08cb64d373e6ca2dadfdeba6"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>__support_vector_machine_gamma</b></td></tr>
+<tr class="separator:a4cada3bd08cb64d373e6ca2dadfdeba6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ca316bdeb448006262ccf6da8f85108" id="r_a5ca316bdeb448006262ccf6da8f85108"><td class="memItemLeft" align="right" valign="top"><a id="a5ca316bdeb448006262ccf6da8f85108" name="a5ca316bdeb448006262ccf6da8f85108"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>__gaussian_process_kernel</b></td></tr>
+<tr class="separator:a5ca316bdeb448006262ccf6da8f85108"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af727f3aa9712c872946b5cefc8bc95c5" id="r_af727f3aa9712c872946b5cefc8bc95c5"><td class="memItemLeft" align="right" valign="top"><a id="af727f3aa9712c872946b5cefc8bc95c5" name="af727f3aa9712c872946b5cefc8bc95c5"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>__gaussian_process_max_iterations</b></td></tr>
+<tr class="separator:af727f3aa9712c872946b5cefc8bc95c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f9b980d938e81c13f4b65d08862b335" id="r_a0f9b980d938e81c13f4b65d08862b335"><td class="memItemLeft" align="right" valign="top"><a id="a0f9b980d938e81c13f4b65d08862b335" name="a0f9b980d938e81c13f4b65d08862b335"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>__gaussian_process_optimizer</b></td></tr>
+<tr class="separator:a0f9b980d938e81c13f4b65d08862b335"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d2ebcc1f8a527bac8519e156cab4d00" id="r_a6d2ebcc1f8a527bac8519e156cab4d00"><td class="memItemLeft" align="right" valign="top"><a id="a6d2ebcc1f8a527bac8519e156cab4d00" name="a6d2ebcc1f8a527bac8519e156cab4d00"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>__decision_tree_criterion</b></td></tr>
+<tr class="separator:a6d2ebcc1f8a527bac8519e156cab4d00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a3f0cfc4d2dfa2421530027de739f85" id="r_a8a3f0cfc4d2dfa2421530027de739f85"><td class="memItemLeft" align="right" valign="top"><a id="a8a3f0cfc4d2dfa2421530027de739f85" name="a8a3f0cfc4d2dfa2421530027de739f85"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>__decision_tree_max_depth</b></td></tr>
+<tr class="separator:a8a3f0cfc4d2dfa2421530027de739f85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba2e4e245ebbaf7a888ff69549132c3d" id="r_aba2e4e245ebbaf7a888ff69549132c3d"><td class="memItemLeft" align="right" valign="top"><a id="aba2e4e245ebbaf7a888ff69549132c3d" name="aba2e4e245ebbaf7a888ff69549132c3d"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>__decision_tree_max_feature</b></td></tr>
+<tr class="separator:aba2e4e245ebbaf7a888ff69549132c3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa94382787ed79636566373c80ffef4d" id="r_aaa94382787ed79636566373c80ffef4d"><td class="memItemLeft" align="right" valign="top"><a id="aaa94382787ed79636566373c80ffef4d" name="aaa94382787ed79636566373c80ffef4d"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>__decision_tree_max_leaf</b></td></tr>
+<tr class="separator:aaa94382787ed79636566373c80ffef4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11f04376aeececb625b64f34b0349344" id="r_a11f04376aeececb625b64f34b0349344"><td class="memItemLeft" align="right" valign="top"><a id="a11f04376aeececb625b64f34b0349344" name="a11f04376aeececb625b64f34b0349344"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>__ada_boost_estimator</b></td></tr>
+<tr class="separator:a11f04376aeececb625b64f34b0349344"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52d52dc9d86446a59aa052f3cd1f188b" id="r_a52d52dc9d86446a59aa052f3cd1f188b"><td class="memItemLeft" align="right" valign="top"><a id="a52d52dc9d86446a59aa052f3cd1f188b" name="a52d52dc9d86446a59aa052f3cd1f188b"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>__ada_boost_number_estimators</b></td></tr>
+<tr class="separator:a52d52dc9d86446a59aa052f3cd1f188b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c4731fb757d73e3dc48fb0c4fa98bb9" id="r_a3c4731fb757d73e3dc48fb0c4fa98bb9"><td class="memItemLeft" align="right" valign="top"><a id="a3c4731fb757d73e3dc48fb0c4fa98bb9" name="a3c4731fb757d73e3dc48fb0c4fa98bb9"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>__ada_boost_learning_rate</b></td></tr>
+<tr class="separator:a3c4731fb757d73e3dc48fb0c4fa98bb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba60722f61e28e23aa10c94597afdee6" id="r_aba60722f61e28e23aa10c94597afdee6"><td class="memItemLeft" align="right" valign="top"><a id="aba60722f61e28e23aa10c94597afdee6" name="aba60722f61e28e23aa10c94597afdee6"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>__ada_boost_algorithm</b></td></tr>
+<tr class="separator:aba60722f61e28e23aa10c94597afdee6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e2d048e472a82fcc29781bd24271f9a" id="r_a3e2d048e472a82fcc29781bd24271f9a"><td class="memItemLeft" align="right" valign="top"><a id="a3e2d048e472a82fcc29781bd24271f9a" name="a3e2d048e472a82fcc29781bd24271f9a"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>__naive_bayes_priors</b></td></tr>
+<tr class="separator:a3e2d048e472a82fcc29781bd24271f9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a0440c4b800b4f197b079dff9754c06" id="r_a4a0440c4b800b4f197b079dff9754c06"><td class="memItemLeft" align="right" valign="top"><a id="a4a0440c4b800b4f197b079dff9754c06" name="a4a0440c4b800b4f197b079dff9754c06"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>__naive_bayes_variation_smoothing</b></td></tr>
+<tr class="separator:a4a0440c4b800b4f197b079dff9754c06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affeee80f364597b7a21a3432097dc5b2" id="r_affeee80f364597b7a21a3432097dc5b2"><td class="memItemLeft" align="right" valign="top"><a id="affeee80f364597b7a21a3432097dc5b2" name="affeee80f364597b7a21a3432097dc5b2"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>__quadratic_discriminant_analysis_priors</b></td></tr>
+<tr class="separator:affeee80f364597b7a21a3432097dc5b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf25c600a5cd1bfe0c14531c9d9ff6a5" id="r_acf25c600a5cd1bfe0c14531c9d9ff6a5"><td class="memItemLeft" align="right" valign="top"><a id="acf25c600a5cd1bfe0c14531c9d9ff6a5" name="acf25c600a5cd1bfe0c14531c9d9ff6a5"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>__quadratic_discriminant_regularize</b></td></tr>
+<tr class="separator:acf25c600a5cd1bfe0c14531c9d9ff6a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45052a814c77946016c4ecf5a979891d" id="r_a45052a814c77946016c4ecf5a979891d"><td class="memItemLeft" align="right" valign="top"><a id="a45052a814c77946016c4ecf5a979891d" name="a45052a814c77946016c4ecf5a979891d"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>__quadratic_discriminant_threshold</b></td></tr>
+<tr class="separator:a45052a814c77946016c4ecf5a979891d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc043778037898a3818c001b1c9a01ec" id="r_afc043778037898a3818c001b1c9a01ec"><td class="memItemLeft" align="right" valign="top"><a id="afc043778037898a3818c001b1c9a01ec" name="afc043778037898a3818c001b1c9a01ec"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>__perceptron_training_algorithm</b></td></tr>
+<tr class="separator:afc043778037898a3818c001b1c9a01ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b150992e5203c0fcff975a021d93d62" id="r_a3b150992e5203c0fcff975a021d93d62"><td class="memItemLeft" align="right" valign="top"><a id="a3b150992e5203c0fcff975a021d93d62" name="a3b150992e5203c0fcff975a021d93d62"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>__perceptron_training_loss</b></td></tr>
+<tr class="separator:a3b150992e5203c0fcff975a021d93d62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c8e5f7cb30ebcfd6ba9414aad60c80b" id="r_a9c8e5f7cb30ebcfd6ba9414aad60c80b"><td class="memItemLeft" align="right" valign="top"><a id="a9c8e5f7cb30ebcfd6ba9414aad60c80b" name="a9c8e5f7cb30ebcfd6ba9414aad60c80b"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>__perceptron_layer_activation</b></td></tr>
+<tr class="separator:a9c8e5f7cb30ebcfd6ba9414aad60c80b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a5440c5078f638b7e5b24dd83d4079d" id="r_a7a5440c5078f638b7e5b24dd83d4079d"><td class="memItemLeft" align="right" valign="top"><a id="a7a5440c5078f638b7e5b24dd83d4079d" name="a7a5440c5078f638b7e5b24dd83d4079d"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>__perceptron_last_layer_activation</b></td></tr>
+<tr class="separator:a7a5440c5078f638b7e5b24dd83d4079d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c6437788227749870d5d337db316b05" id="r_a0c6437788227749870d5d337db316b05"><td class="memItemLeft" align="right" valign="top"><a id="a0c6437788227749870d5d337db316b05" name="a0c6437788227749870d5d337db316b05"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>__perceptron_dropout_decay_rate</b></td></tr>
+<tr class="separator:a0c6437788227749870d5d337db316b05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeda23614f094aa88719aee22841ec356" id="r_aeda23614f094aa88719aee22841ec356"><td class="memItemLeft" align="right" valign="top"><a id="aeda23614f094aa88719aee22841ec356" name="aeda23614f094aa88719aee22841ec356"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>__perceptron_number_epochs</b></td></tr>
+<tr class="separator:aeda23614f094aa88719aee22841ec356"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54978cf5c5ecf113d3201cf5e4665098" id="r_a54978cf5c5ecf113d3201cf5e4665098"><td class="memItemLeft" align="right" valign="top"><a id="a54978cf5c5ecf113d3201cf5e4665098" name="a54978cf5c5ecf113d3201cf5e4665098"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>__perceptron_training_metric</b></td></tr>
+<tr class="separator:a54978cf5c5ecf113d3201cf5e4665098"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afbe66b454915e232d58e273ca39c84e0" id="r_afbe66b454915e232d58e273ca39c84e0"><td class="memItemLeft" align="right" valign="top"><a id="afbe66b454915e232d58e273ca39c84e0" name="afbe66b454915e232d58e273ca39c84e0"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>__perceptron_layers_settings</b></td></tr>
+<tr class="separator:afbe66b454915e232d58e273ca39c84e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
+<div class="textblock"><pre class="fragment">A classe Classifiers é responsável por criar, configurar e treinar diversos modelos de classificação utilizando parâmetros especificados pelo usuário ou valores padrão. 
+A classe suporta múltiplos algoritmos de aprendizado supervisionado, incluindo:
+            -Random Forest.
+            -K-Nearest Neighbors.
+            -Support Vector Machine. 
+            -Gaussian Process.
+            -Decision Tree.
+            -AdaBoost.
+            -Naive Bayes.
+            -Quadratic Discriminant Analysis.
+            -Perceptron Multilayer.
+            -XGBoost.
+            -SGD Regressor.
+Funções:
+    - __init__ : Inicializa a classe Classifiers com os parâmetros padrão ou especificados.
+    - _get_instance_random_forest : Retorna uma instância treinada de um classificador RandomForest.
+    - __get_instance_k_neighbors_classifier :  Retorna uma instância treinada de um classificador KNN.
+    - __get_instance_support_vector_machine :  Retorna uma instância treinada de um classifcador SVM.
+    - __get_instance_gaussian_process : Retorna uma instância treinada de um classificador de processo Gausiano.
+    - __get_instance_xgboost : Retorna uma instância treinada de um classificador XGBoost.
+    - __get_instance_SGDRegressor : Retorna uma instância treinada de um classificador SGD.
+    - __get_instance_decision_tree : Retorna uma instância treinada de um classificador Decision Tree.
+    - __get_instance_ada_boost : Retorna uma instância treinada de um classificador  AdaBoost.
+    - __get_instance_naive_bayes : Retorna uma instância treinada de um classificador  Naive Bayes.
+    - __get_instance_quadratic_discriminant : Retorna uma instância treinada de um classificador discriminador quadrático.
+    - __get_instance_perceptron : Retorna uma instância treinada de um classificador perceptron de multi camadas.
+    - get_trained_classifiers : Retorna uma lista de classificadores treinados baseados na lista de classificadores fornecida.
+    - set_random_forest_number_estimators : Define o número de estimadores para o Random Forest.
+    - set_random_forest_max_depth :  Define a profundidade máxima da árvore do algoritmo Random Forest.
+    - max_leaf_nodes :   Define o número máximo de folhas no Random Forest.
+    - set_knn_number_neighbors : Define o número de vizinhos para o algoritmo KNN.
+    - set_knn_weights : Define a função de peso para o algoritmo KNN.
+    - set_knn_leaf_size : Define o tamanho da folha para o KNN.
+    - set_knn_metric : Define a  métrica utilizada para a computação da distância para o KNN.
+    - set_knn_algorithm : Define o algoritmo usado pelo KNN.
+    - set_support_vector_machine_normalization: Define o parâmetro de regularização para SVM.
+    - set_support_vector_machine_kernel : Define o kernel usado pelo SVM.
+    - set_support_vector_machine_kernel_degree : Define o grau do kernel para SVM.
+    - set_support_vector_machine_gamma : Define o coeficiente gamma para SVM.
+    - set_gaussian_process_kernel: Define  o kernel para o processo gaussiano.
+    - set_gaussian_process_max_iterations : Define  o número máximo de iterações para o processo gaussiano.
+    - set_gaussian_process_optimizer : Define  o otimizador para o processo gaussiano.
+    - set_decision_tree_criterion : Define o critério usado para medir a qualidade da divisão na árvore de decisão.
+    - set_decision_tree_max_depth : Define a profundidade máxima da árvore de decisão.
+    - set_decision_tree_max_feature : Define o número máximo de características a serem consideradas para a árvore de decisão.
+    - set_decision_tree_max_leaf : Define o número máximo de folhas na árvore de decisão.
+    - set_ada_boost_estimator : Define o estimador base para AdaBoost.
+    - set_ada_boost_number_estimators : Define o  número maximo de estimadores para o AdaBoost.
+    - set_ada_boost_learning_rate : Define a taxa de aprendizado do AdaBoost.
+    - set_ada_boost_algorithm : Define o algoritmo a utilizado pelo AdaBoost.
+    - set_naive_bayes_priors : Define a probabilidades de Priors para Naive Bayes.
+    - set_naive_bayes_variation_smoothing : Define o parâmetro de suavização para Naive Bayes.
+    - set_quadratic_discriminant_analysis_priors : Define  a probabilidades de priors para QDA.
+    - set_quadratic_discriminant_analysis_regularization : Define o parâmetro de regularização para QDA.
+    - set_perceptron_training_algorithm : Define o algoritmo de treinamento para Perceptron.
+    - set_perceptron_training_loss : Define  a função de perda para o Perceptron.
+    - set_perceptron_layer_activation : Define a função de ativação das camadas internas do Perceptron.
+</pre> </div><h2 class="groupheader">Documentação dos Construtores &amp; Destrutor</h2>
+<a id="a7f1c8022c0c3a8b914a66d488d0ac3b9" name="a7f1c8022c0c3a8b914a66d488d0ac3b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f1c8022c0c3a8b914a66d488d0ac3b9">&#9670;&#160;</a></span>__init__()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Classifiers.Classifiers.__init__ </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>random_forest_number_estimators</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="namespaceClassifiers.html#abe16c7c4e5d17380e4a5beccf1866b78">DEFAULT_RANDOM_FOREST_NUMBER_ESTIMATORS</a></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>random_forest_max_depth</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="namespaceClassifiers.html#ac2dab1d9d2edbe8728e6cae5c7c93d3e">DEFAULT_RANDOM_FOREST_MAX_DEPTH</a></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>max_leaf_nodes</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="namespaceClassifiers.html#a8e66ff1e6a994abfac4b9de81e177408">DEFAULT_RANDOM_FOREST_MAX_LEAF_NODES</a></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>knn_number_neighbors</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="namespaceClassifiers.html#adbfa095935f8ae925fac7c2fe9b8acb3">DEFAULT_KNN_NUMBER_NEIGHBORS</a></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>knn_weights</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="namespaceClassifiers.html#a72c2a72984c1d205ea0d4056eeef315e">DEFAULT_KNN_WEIGHTS</a></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>knn_leaf_size</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="namespaceClassifiers.html#ad42a16c24afda9268353fbbd6230a715">DEFAULT_KNN_LEAF_SIZE</a></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>knn_metric</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="namespaceClassifiers.html#a151ce2d053e20a67764d58bbcb5aeb80">DEFAULT_KNN_METRIC</a></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>knn_algorithm</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="namespaceClassifiers.html#ac0457a5c498d96a3a258ae5acaa249ef">DEFAULT_KNN_ALGORITHM</a></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>support_vector_machine_gamma</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="namespaceClassifiers.html#a34c57f9298fa5b5b72e97fc7d5518136">DEFAULT_SUPPORT_VECTOR_MACHINE_GAMMA</a></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>support_vector_machine_normalization</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="namespaceClassifiers.html#aa03493811efbba37c9cded5a568fc3bb">DEFAULT_SUPPORT_VECTOR_MACHINE_REGULARIZATION</a></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>support_vector_machine_kernel</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="namespaceClassifiers.html#ab04644cddf11d7283e61ac84b6866486">DEFAULT_SUPPORT_VECTOR_MACHINE_KERNEL</a></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>support_vector_machine_kernel_degree</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="namespaceClassifiers.html#ab6db40050575bf167689758351c99fab">DEFAULT_SUPPORT_VECTOR_MACHINE_KERNEL_DEGREE</a></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>gaussian_process_kernel</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="namespaceClassifiers.html#a3bd3924fb87c9d835407a8d71a3ff4d4">DEFAULT_GAUSSIAN_PROCESS_KERNEL</a></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>gaussian_process_max_iterations</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="namespaceClassifiers.html#a966d559801d18217d4517f475de5b2b6">DEFAULT_GAUSSIAN_PROCESS_MAX_ITERATIONS</a></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>gaussian_process_optimizer</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="namespaceClassifiers.html#a118f6fd23a8ce54bbd90460889498a27">DEFAULT_GAUSSIAN_PROCESS_OPTIMIZER</a></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>decision_tree_criterion</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="namespaceClassifiers.html#a58a748b3503baabed4590f5f73601aba">DEFAULT_DECISION_TREE_CRITERION</a></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>decision_tree_max_depth</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="namespaceClassifiers.html#a98c94c3f3821cd1af383ace5ea4c0ff0">DEFAULT_DECISION_TREE_MAX_DEPTH</a></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>decision_tree_max_feature</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="namespaceClassifiers.html#a6eec4b585752913a795c7eb54b38248d">DEFAULT_DECISION_TREE_MAX_FEATURE</a></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>decision_tree_max_leaf</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="namespaceClassifiers.html#a6949a848785f87bd278b685b7cbc2406">DEFAULT_DECISION_TREE_MAX_LEAF</a></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>ada_boost_estimator</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="namespaceClassifiers.html#a3f12cd1630ef9e83a76c31b4e8c44470">DEFAULT_ADA_BOOST_ESTIMATOR</a></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>ada_boost_number_estimators</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="namespaceClassifiers.html#ad34181655f7d731925c3b53dc7b54a70">DEFAULT_ADA_BOOST_NUMBER_ESTIMATORS</a></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>ada_boost_learning_rate</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="namespaceClassifiers.html#a5ea02e105616918e8153b2803e757774">DEFAULT_ADA_BOOST_LEARNING_RATE</a></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>ada_boost_algorithm</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="namespaceClassifiers.html#a5bbd4757edab9fe04a5c54c8e5b3cb1c">DEFAULT_ADA_BOOST_ALGORITHM</a></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>naive_bayes_priors</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="namespaceClassifiers.html#a189dc0e70fb8d166bff85cbe036b1426">DEFAULT_NAIVE_BAYES_PRIORS</a></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>naive_bayes_variation_smoothing</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="namespaceClassifiers.html#a45cf8472626f2c6ee82efc70e9c03639">DEFAULT_NAIVE_BAYES_VARIATION_SMOOTHING</a></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>quadratic_discriminant_analysis_priors</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="namespaceClassifiers.html#a36fa6a15be3f596d6ddb49f435bd7356">DEFAULT_QUADRATIC_DISCRIMINANT_ANALYSIS_PRIORS</a></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>quadratic_discriminant_analysis_regularization</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="namespaceClassifiers.html#a9295fe68a77e30f01407dd695a397256">DEFAULT_QUADRATIC_DISCRIMINANT_ANALYSIS_REGULARIZATION</a></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>quadratic_discriminant_threshold</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="namespaceClassifiers.html#a7bf0d20d3f595ed20962576afc544c98">DEFAULT_QUADRATIC_DISCRIMINANT_THRESHOLD</a></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>perceptron_training_algorithm</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="namespaceClassifiers.html#a030e49d99bd7b4c3ff74f8373adffc3c">DEFAULT_PERCEPTRON_TRAINING_ALGORITHM</a></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>perceptron_training_loss</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="namespaceClassifiers.html#a4e38b9f0440d221b6cac3de6797e7bc7">DEFAULT_PERCEPTRON_LOSS</a></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>perceptron_training_metric</em></span><span class="paramdefsep"> = </span><span class="paramdefval">None</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>perceptron_layer_activation</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="namespaceClassifiers.html#a88ee91929def0795f8f3088cbd59dab9">DEFAULT_PERCEPTRON_LAYER_ACTIVATION</a></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>perceptron_last_layer_activation</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="namespaceClassifiers.html#a5015fecc2b3e8cdce053a2cf487e3cbe">DEFAULT_PERCEPTRON_LAST_LAYER_ACTIVATION</a></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>perceptron_dropout_decay_rate</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="namespaceClassifiers.html#ad37fe72f6c387064b9cda717b4b4338a">DEFAULT_PERCEPTRON_DROPOUT_DECAY_RATE</a></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>perceptron_number_epochs</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="namespaceClassifiers.html#a086d755fd9623cb8c79f70e8fdb8abff">DEFAULT_PERCEPTRON_NUMBER_EPOCHS</a></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>perceptron_layers_settings</em></span><span class="paramdefsep"> = </span><span class="paramdefval">None</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Inicializa a classe Classifiers com os parâmetros padrão ou especificados.
+
+Parâmetros:
+   - random_forest_number_estimators : Número de estimadores para o Random Forest.
+   - random_forest_max_depth : Profundidade máxima da árvore no Random Forest.
+   - max_leaf_nodes : Número máximo de folhas no Random Forest.
+   - knn_number_neighbors : Número de vizinhos para o KNN.
+   - knn_weights : Função de peso para o KNN.
+   - knn_leaf_size : Tamanho da folha para o KNN.
+   - knn_metric : Métrica utilizada para a computação da distância para o KNN. 
+   - knn_algorithm: Algoritmo usado pelo KNN.
+   - support_vector_machine_gamma:  Coeficiente gamma para SVM.
+   - support_vector_machine_normalization: Parâmetro de regularização para SVM.
+   - support_vector_machine_kernel : Kernel usado pelo SVM.
+   - support_vector_machine_kernel_degree : Grau do kernel para SVM.
+   - gaussian_process_kernel : Kernel para o processo gaussiano.
+   - gaussian_process_max_iterations : Número máximo de iterações para o processo gaussiano.
+   - gaussian_process_optimizer : Otimizador para o processo gaussiano.
+   - decision_tree_criterion : Critério usado para medir a qualidade da divisão na árvore de decisão.
+   - decision_tree_max_depth : Profundidade máxima da árvore de decisão.
+   - decision_tree_max_feature : Número máximo de características a serem consideradas.
+   - decision_tree_max_leaf : Número máximo de folhas na árvore de decisão.
+   - ada_boost_estimator : Estimador base para o AdaBoost.
+   - ada_boost_number_estimators : Número maximo de estimadores para o AdaBoost.
+   - ada_boost_learning_rate : Taxa de aprendizado do AdaBoost.
+   - ada_boost_algorithm : Algoritmo usado pelo AdaBoost.
+   - naive_bayes_priors : Probabilidades de Priors para Naive Bayes.
+   - naive_bayes_variation_smoothing : Parâmetro de suavização para Naive Bayes.
+   - quadratic_discriminant_analysis_priors : Probabilidades de priors para QDA.
+   - quadratic_discriminant_analysis_regularization : Parâmetro de regularização para QDA.
+   - quadratic_discriminant_threshold : Limiar de decisão para QDA.
+   - perceptron_training_algorithm : Algoritmo de treinamento para Perceptron.
+   - perceptron_training_loss : Função de perda para o Perceptron.
+   - perceptron_training_metric : Métrica de avaliação para o Perceptron.
+   - perceptron_layer_activation : Função de ativação das camadas internas do Perceptron.
+   - perceptron_last_layer_activation : Função de ativação da última camada do Perceptron.
+   - perceptron_dropout_decay_rate : Taxa de decaimento para o dropout no Perceptron.
+   - perceptron_number_epochs : Número de épocas de treinamento para o Perceptron.
+   - perceptron_layers_settings : Configurações das camadas do Perceptron.
+   - set_naive_bayes_priors : Define  a probabilidades de prior para QDA.
+   - set_quadratic_discriminant_threshold : Define o limiar de decisão para QDA.</pre> 
+</div>
+</div>
+<h2 class="groupheader">Documentação das funções</h2>
+<a id="a4660d89e49fa5bb561da620da6146f94" name="a4660d89e49fa5bb561da620da6146f94"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4660d89e49fa5bb561da620da6146f94">&#9670;&#160;</a></span>__get_instance_ada_boost()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Classifiers.Classifiers.__get_instance_ada_boost </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>x_samples_training</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>y_samples_training</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>dataset_type</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">Retorna uma instância treinada de um classificador  AdaBoost.
+
+Parâmetros:
+   - x_samples_training : Amostras de treinamento.
+   - y_samples_training : Rótulos das amostras de treinamento.
+   - dataset_type : Tipo de dados das amostras.
+
+Retorno:
+   - instance_model_classifier: Instância treinada de um classificador AdaBoost.
+</pre> 
+</div>
+</div>
+<a id="a260d43c4e27244f17c2da279f2b586f8" name="a260d43c4e27244f17c2da279f2b586f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a260d43c4e27244f17c2da279f2b586f8">&#9670;&#160;</a></span>__get_instance_decision_tree()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Classifiers.Classifiers.__get_instance_decision_tree </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>x_samples_training</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>y_samples_training</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>dataset_type</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">Retorna uma instância treinada de um classificador Decision Tree.
+
+Parâmetros:
+   - x_samples_training : Amostras de treinamento.
+   -  y_samples_training : Rótulos das amostras de treinamento.
+   -  dataset_type : Tipo de dados das amostras.
+
+Retorno:
+    instance_model_classifier: Instância de um  classificador Decision Tree.
+</pre> 
+</div>
+</div>
+<a id="ad73344b7cc197f10714682bc4d21cd80" name="ad73344b7cc197f10714682bc4d21cd80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad73344b7cc197f10714682bc4d21cd80">&#9670;&#160;</a></span>__get_instance_gaussian_process()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Classifiers.Classifiers.__get_instance_gaussian_process </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>x_samples_training</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>y_samples_training</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>dataset_type</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">Retorna uma instância treinada de um classificador de processo Gausiano.
+
+Parâmetros:
+  -  x_samples_training : Amostras de treinamento.
+  -  y_samples_training : Rótulos das amostras de treinamento.
+  -  dataset_type : Tipo de dados das amostras.
+
+Retorno
+   - instance_model_classifier Instância treinada de um classificador de processo Gausiano.
+</pre> 
+</div>
+</div>
+<a id="a78d30645d6673655c61a955f3d211309" name="a78d30645d6673655c61a955f3d211309"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78d30645d6673655c61a955f3d211309">&#9670;&#160;</a></span>__get_instance_k_neighbors_classifier()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Classifiers.Classifiers.__get_instance_k_neighbors_classifier </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>x_samples_training</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>y_samples_training</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>dataset_type</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">Retorna uma instância treinada de um classificador KNN.
+
+Parâmetros:
+  -  x_samples_training : Amostras de treinamento.
+  -  y_samples_training : Rótulos das amostras de treinamento.
+  -  dataset_type : Tipo de dados das amostras.
+
+Retorno:
+  -  instance_model_classifier: instância treinada de um classificador KNN.
+</pre> 
+</div>
+</div>
+<a id="a474418c36bcd76e4e1c5e25738ba5974" name="a474418c36bcd76e4e1c5e25738ba5974"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a474418c36bcd76e4e1c5e25738ba5974">&#9670;&#160;</a></span>__get_instance_naive_bayes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Classifiers.Classifiers.__get_instance_naive_bayes </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>x_samples_training</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>y_samples_training</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>dataset_type</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">Retorna uma instância treinada de um classificador  Naive Bayes.
+
+Parâmetros:
+   - x_samples_training : Amostras de treinamento.
+   - y_samples_training : Rótulos das amostras de treinamento.
+   - dataset_type : Tipo de dados das amostras.
+
+Retorno:
+   - instance_model_classifier: Instância treinada de um classificador ANaive Bayes.
+</pre> 
+</div>
+</div>
+<a id="aaafc8ee8eff0a2c8622e5e53329cbf62" name="aaafc8ee8eff0a2c8622e5e53329cbf62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaafc8ee8eff0a2c8622e5e53329cbf62">&#9670;&#160;</a></span>__get_instance_perceptron()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Classifiers.Classifiers.__get_instance_perceptron </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>x_samples_training</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>y_samples_training</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>dataset_type</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>verbose_level</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>input_dataset_shape</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">Retorna uma instância treinada de um classificador perceptron de multi camadas.
+
+
+Parâmetros:
+   - x_samples_training : Amostras de treinamento.
+   - y_samples_training : Rótulos das amostras de treinamento.
+   - dataset_type : Tipo de dados das amostras.
+
+Retorno:
+   - instance_model_classifier: Instância treinada de um classificador  perceptron de multi camadas.
+</pre> 
+</div>
+</div>
+<a id="a9ac751f4d0aa2f2af596f499a03f8155" name="a9ac751f4d0aa2f2af596f499a03f8155"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ac751f4d0aa2f2af596f499a03f8155">&#9670;&#160;</a></span>__get_instance_quadratic_discriminant()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Classifiers.Classifiers.__get_instance_quadratic_discriminant </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>x_samples_training</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>y_samples_training</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>dataset_type</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">Retorna uma instância treinada de um classificador discriminador quadrático.
+
+
+Parâmetros:
+   - x_samples_training : Amostras de treinamento.
+   - y_samples_training : Rótulos das amostras de treinamento.
+   - dataset_type : Tipo de dados das amostras.
+
+Retorno:
+   - instance_model_classifier: Instância treinada de um classificador  discriminador quadrático.
+</pre> 
+</div>
+</div>
+<a id="ae001be25d860504f3057b6fe18c05167" name="ae001be25d860504f3057b6fe18c05167"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae001be25d860504f3057b6fe18c05167">&#9670;&#160;</a></span>__get_instance_random_forest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Classifiers.Classifiers.__get_instance_random_forest </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>x_samples_training</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>y_samples_training</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>dataset_type</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">Retorna uma instância treinada de um classificador RandomForest.
+
+Parâmetros:
+   - x_samples_training : Amostras de treinamento.
+   - y_samples_training : Rótulos das amostras de treinamento.
+   - dataset_type : Tipo de dados das amostras.
+
+Retorno:
+   - instance_model_classifier: instância treinada de um classificador RandomForest.
+</pre> 
+</div>
+</div>
+<a id="afc3939e7e8b18cabf2af79800960cd48" name="afc3939e7e8b18cabf2af79800960cd48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc3939e7e8b18cabf2af79800960cd48">&#9670;&#160;</a></span>__get_instance_SGDRegressor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Classifiers.Classifiers.__get_instance_SGDRegressor </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>x_samples_training</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>y_samples_training</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>dataset_type</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">Retorna uma instância treinada de um classificador SGD.
+
+Parâmetros:
+   - x_samples_training : Amostras de treinamento.
+   -  y_samples_training : Rótulos das amostras de treinamento.
+   -  dataset_type : Tipo de dados das amostras.
+
+Retorno
+    instance_model_classifier: Instância de um classificador SGD.
+</pre> 
+</div>
+</div>
+<a id="aafe0e0041a71a4e3cc5a3369f8fd1120" name="aafe0e0041a71a4e3cc5a3369f8fd1120"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aafe0e0041a71a4e3cc5a3369f8fd1120">&#9670;&#160;</a></span>__get_instance_support_vector_machine()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Classifiers.Classifiers.__get_instance_support_vector_machine </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>x_samples_training</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>y_samples_training</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>dataset_type</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">Retorna uma instância treinada de um classifcador SVM.
+
+Parâmetros:
+   - x_samples_training : Amostras de treinamento.
+   - y_samples_training : Rótulos das amostras de treinamento.
+   - dataset_type : Tipo de dados das amostras.
+
+Retorno
+   - instance_model_classifier: Instância treinada de um classifcador SVM.
+</pre> 
+</div>
+</div>
+<a id="a82851f666b0c9914742e6592337078dd" name="a82851f666b0c9914742e6592337078dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82851f666b0c9914742e6592337078dd">&#9670;&#160;</a></span>__get_instance_xgboost()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Classifiers.Classifiers.__get_instance_xgboost </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>x_samples_training</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>y_samples_training</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>dataset_type</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">Retorna uma instância treinada de um classificador XGBoost.
+
+Parâmetros:
+   - x_samples_training : Amostras de treinamento.
+   - y_samples_training : Rótulos das amostras de treinamento.
+   - dataset_type : Tipo de dados das amostras.
+
+Retorno
+   - instance_model_classifier: Instância de um classificador XGBoost.
+</pre> 
+</div>
+</div>
+<a id="a279118cdc9d744aedc1b8e5ba9e0a430" name="a279118cdc9d744aedc1b8e5ba9e0a430"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a279118cdc9d744aedc1b8e5ba9e0a430">&#9670;&#160;</a></span>get_trained_classifiers()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Classifiers.Classifiers.get_trained_classifiers </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>classifiers_list</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>x_samples_training</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>y_samples_training</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>dataset_type</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>verbose_level</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>input_dataset_shape</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Retorna uma lista de classificadores treinados baseados na lista de classificadores fornecida.
+
+Parâmetros:
+   - classifier_list : Lista de strings com nomes de algoritmos de classificação desejados.
+   - x_samples_training : Amostras de treinamento.
+   - y_samples_training: Rótulos das amostras de treinamento.
+   - dataset_type : Tipo de dados das amostras.
+   - log_level : Nível de log desejado para registrar o progresso.
+
+Retorno:
+   - list_instance_classifiers: Lista contendo instâncias treinadas dos classificadores especificados.
+</pre> 
+</div>
+</div>
+<a id="a81d6fb7a0cc5fc39d842a4061d35d666" name="a81d6fb7a0cc5fc39d842a4061d35d666"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81d6fb7a0cc5fc39d842a4061d35d666">&#9670;&#160;</a></span>max_leaf_nodes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Classifiers.Classifiers.max_leaf_nodes </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>max_leaf_nodes</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Define o número máximo de folhas no Random Forest.
+
+Parâmetros:
+   - max_leaf_nodes: Número máximo de folhas no Random Forest.
+</pre> 
+</div>
+</div>
+<a id="a753b29074a153bc5cc4cbd5517fbdf36" name="a753b29074a153bc5cc4cbd5517fbdf36"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a753b29074a153bc5cc4cbd5517fbdf36">&#9670;&#160;</a></span>set_ada_boost_algorithm()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Classifiers.Classifiers.set_ada_boost_algorithm </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>ada_boost_algorithm</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Define o algoritmo a utilizado pelo AdaBoost.
+
+Parâmetros:
+   - ada_boost_learning_rate: Algoritmo a utilizado pelo AdaBoost.
+</pre> 
+</div>
+</div>
+<a id="a1d498c26ffc5823f3ac3c15e2f99797f" name="a1d498c26ffc5823f3ac3c15e2f99797f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d498c26ffc5823f3ac3c15e2f99797f">&#9670;&#160;</a></span>set_ada_boost_estimator()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Classifiers.Classifiers.set_ada_boost_estimator </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>ada_boost_estimator</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Define o estimador base para AdaBoost.
+
+Parâmetros:
+   - ada_boost_estimator: Estimador base para AdaBoost.
+</pre> 
+</div>
+</div>
+<a id="a4c7a54ef16ef22b98d1ca8c28d2c3b82" name="a4c7a54ef16ef22b98d1ca8c28d2c3b82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c7a54ef16ef22b98d1ca8c28d2c3b82">&#9670;&#160;</a></span>set_ada_boost_learning_rate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Classifiers.Classifiers.set_ada_boost_learning_rate </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>ada_boost_learning_rate</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Define a taxa de aprendizado do AdaBoost.
+
+Parâmetros:
+   - ada_boost_learning_rate: Taxa de aprendizado do AdaBoost.
+</pre> 
+</div>
+</div>
+<a id="aee6ea1d50a385d0d5af4382f01a44ba0" name="aee6ea1d50a385d0d5af4382f01a44ba0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee6ea1d50a385d0d5af4382f01a44ba0">&#9670;&#160;</a></span>set_ada_boost_number_estimators()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Classifiers.Classifiers.set_ada_boost_number_estimators </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>ada_boost_number_estimators</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Define o  número maximo de estimadores para o AdaBoost.
+
+Parâmetros:
+   - ada_boost_estimator: Número maximo de estimadores para o AdaBoost.
+</pre> 
+</div>
+</div>
+<a id="ae4bca7f3e8be09038c13eafffcc6e8a7" name="ae4bca7f3e8be09038c13eafffcc6e8a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4bca7f3e8be09038c13eafffcc6e8a7">&#9670;&#160;</a></span>set_decision_tree_criterion()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Classifiers.Classifiers.set_decision_tree_criterion </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>decision_tree_criterion</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Define o critério usado para medir a qualidade da divisão na árvore de decisão.
+
+Parâmetros:
+   - decision_tree_criterion: Critério usado para medir a qualidade da divisão na árvore de decisão.
+</pre> 
+</div>
+</div>
+<a id="a0c0aeb58a88f6d19fa28b4ea46b173a5" name="a0c0aeb58a88f6d19fa28b4ea46b173a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c0aeb58a88f6d19fa28b4ea46b173a5">&#9670;&#160;</a></span>set_decision_tree_max_depth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Classifiers.Classifiers.set_decision_tree_max_depth </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>decision_tree_max_depth</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Define a profundidade máxima da árvore de decisão.
+
+Parâmetros:
+   - decision_tree_max_depth: Profundidade máxima da árvore de decisão.
+</pre> 
+</div>
+</div>
+<a id="a0ec482176873a36a959ff010879a4b49" name="a0ec482176873a36a959ff010879a4b49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ec482176873a36a959ff010879a4b49">&#9670;&#160;</a></span>set_decision_tree_max_feature()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Classifiers.Classifiers.set_decision_tree_max_feature </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>decision_tree_max_feature</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Define o número máximo de características a serem consideradas para a árvore de decisão.
+
+Parâmetros:
+   - decision_tree_max_feature: Número máximo de características a serem consideradas para a árvore de decisão..
+</pre> 
+</div>
+</div>
+<a id="ac49e6c41623b5833ca263f17a9e30f6a" name="ac49e6c41623b5833ca263f17a9e30f6a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac49e6c41623b5833ca263f17a9e30f6a">&#9670;&#160;</a></span>set_decision_tree_max_leaf()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Classifiers.Classifiers.set_decision_tree_max_leaf </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>decision_tree_max_leaf</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Define o número máximo de folhas na árvore de decisão.
+
+Parâmetros:
+   - decision_tree_max_leaf: Número máximo de folhas na árvore de decisão.
+</pre> 
+</div>
+</div>
+<a id="ac99ead1bd9e285a531c561e12a2f7e02" name="ac99ead1bd9e285a531c561e12a2f7e02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac99ead1bd9e285a531c561e12a2f7e02">&#9670;&#160;</a></span>set_gaussian_process_kernel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Classifiers.Classifiers.set_gaussian_process_kernel </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>gaussian_process_kernel</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Define  o kernel para o processo gaussiano.
+
+Parâmetros:
+   - gaussian_process_kernel: Kernel para o processo gaussiano.
+</pre> 
+</div>
+</div>
+<a id="a35ff787ae37c400c9078961058309e5d" name="a35ff787ae37c400c9078961058309e5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35ff787ae37c400c9078961058309e5d">&#9670;&#160;</a></span>set_gaussian_process_max_iterations()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Classifiers.Classifiers.set_gaussian_process_max_iterations </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>gaussian_process_max_iterations</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Define  o número máximo de iterações para o processo gaussiano.
+
+Parâmetros:
+   - gaussian_process_max_iterations: Número máximo de iterações para o processo gaussiano.
+</pre> 
+</div>
+</div>
+<a id="a910304810b5594517f500e98e55de8f4" name="a910304810b5594517f500e98e55de8f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a910304810b5594517f500e98e55de8f4">&#9670;&#160;</a></span>set_gaussian_process_optimizer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Classifiers.Classifiers.set_gaussian_process_optimizer </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>gaussian_process_optimizer</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Define  o otimizador para o processo gaussiano.
+
+Parâmetros:
+   - gaussian_process_optimizer: Otimizador para o processo gaussiano.
+</pre> 
+</div>
+</div>
+<a id="a5a3f52dc9ad74fe99bf1427576f1eda7" name="a5a3f52dc9ad74fe99bf1427576f1eda7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a3f52dc9ad74fe99bf1427576f1eda7">&#9670;&#160;</a></span>set_knn_algorithm()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Classifiers.Classifiers.set_knn_algorithm </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>knn_algorithm</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Define o algoritmo usado pelo KNN.
+
+Parâmetros:
+   - knn_algorithm: Algoritmo usado pelo KNN.
+</pre> 
+</div>
+</div>
+<a id="af0799e9e395ebd134d5bfc81725bb657" name="af0799e9e395ebd134d5bfc81725bb657"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0799e9e395ebd134d5bfc81725bb657">&#9670;&#160;</a></span>set_knn_leaf_size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Classifiers.Classifiers.set_knn_leaf_size </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>knn_leaf_size</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Define o tamanho da folha para o KNN.
+
+Parâmetros:
+   - knn_leaf_size: Tamanho da folha para o KNN
+</pre> 
+</div>
+</div>
+<a id="a23685caabf4b16d4c8f66f7c8fa09da0" name="a23685caabf4b16d4c8f66f7c8fa09da0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23685caabf4b16d4c8f66f7c8fa09da0">&#9670;&#160;</a></span>set_knn_metric()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Classifiers.Classifiers.set_knn_metric </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>knn_metric</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Define a  métrica utilizada para a computação da distância para o KNN.
+
+Parâmetros:
+   - knn_metric: Métrica utilizada para a computação da distância para o KNN.
+</pre> 
+</div>
+</div>
+<a id="a65074491ef2cbfd77023e372e1ab51c8" name="a65074491ef2cbfd77023e372e1ab51c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65074491ef2cbfd77023e372e1ab51c8">&#9670;&#160;</a></span>set_knn_number_neighbors()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Classifiers.Classifiers.set_knn_number_neighbors </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>knn_number_neighbors</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Define o número de vizinhos para o classificador KNN.
+
+Parâmetros:
+   - knn_number_neighbors: Número de vizinhos para o classificador KNN.
+</pre> 
+</div>
+</div>
+<a id="af7315d28133d874ec7749af3eb314bce" name="af7315d28133d874ec7749af3eb314bce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7315d28133d874ec7749af3eb314bce">&#9670;&#160;</a></span>set_knn_weights()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Classifiers.Classifiers.set_knn_weights </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>knn_weights</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Define a função de peso para o classificador KNN.
+
+Parâmetros:
+   - knn_weights: Função de peso para o classificador KNN.
+</pre> 
+</div>
+</div>
+<a id="a077a5dab04faaad15f153a83d5a355de" name="a077a5dab04faaad15f153a83d5a355de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a077a5dab04faaad15f153a83d5a355de">&#9670;&#160;</a></span>set_naive_bayes_priors()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Classifiers.Classifiers.set_naive_bayes_priors </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>naive_bayes_priors</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Define a probabilidades de Priors para Naive Bayes.
+
+Parâmetros:
+   - naive_bayes_priors: Probabilidades de Priors para Naive Bayes.
+</pre> 
+</div>
+</div>
+<a id="a7b9f29ed6bdeb77a01c751279d2208d4" name="a7b9f29ed6bdeb77a01c751279d2208d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b9f29ed6bdeb77a01c751279d2208d4">&#9670;&#160;</a></span>set_naive_bayes_variation_smoothing()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Classifiers.Classifiers.set_naive_bayes_variation_smoothing </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>naive_bayes_variation_smoothing</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Define o parâmetro de suavização para Naive Bayes.
+
+Parâmetros:
+   - naive_bayes_variation_smoothing: Parâmetro de suavização para Naive Bayes.
+</pre> 
+</div>
+</div>
+<a id="a6e7a6f1f7253edd82a656a7b86b2e7f2" name="a6e7a6f1f7253edd82a656a7b86b2e7f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e7a6f1f7253edd82a656a7b86b2e7f2">&#9670;&#160;</a></span>set_perceptron_layer_activation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Classifiers.Classifiers.set_perceptron_layer_activation </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>perceptron_layer_activation</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Define a função de ativação das camadas internas do Perceptron.
+
+Parâmetros:
+   - perceptron_layer_activation: Função de ativação das camadas internas do Perceptron.
+</pre> 
+</div>
+</div>
+<a id="a9687e6c3970146831be66bee074b8c4d" name="a9687e6c3970146831be66bee074b8c4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9687e6c3970146831be66bee074b8c4d">&#9670;&#160;</a></span>set_perceptron_training_algorithm()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Classifiers.Classifiers.set_perceptron_training_algorithm </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>perceptron_training_algorithm</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Define o algoritmo de treinamento para o Perceptron.
+
+Parâmetros:
+   - perceptron_training_algorithm: Algoritmo de treinamento para o Perceptron.
+</pre> 
+</div>
+</div>
+<a id="a467f574b39dfc31263a2e21025dcb0f5" name="a467f574b39dfc31263a2e21025dcb0f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a467f574b39dfc31263a2e21025dcb0f5">&#9670;&#160;</a></span>set_perceptron_training_loss()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Classifiers.Classifiers.set_perceptron_training_loss </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>perceptron_training_loss</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Define  a função de perda para o Perceptron.
+
+Parâmetros:
+   - perceptron_training_loss: Função de perda para o Perceptron
+</pre> 
+</div>
+</div>
+<a id="acbc0e9741b6cc73ef9aa5d72e707d6b8" name="acbc0e9741b6cc73ef9aa5d72e707d6b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acbc0e9741b6cc73ef9aa5d72e707d6b8">&#9670;&#160;</a></span>set_quadratic_discriminant_analysis_priors()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Classifiers.Classifiers.set_quadratic_discriminant_analysis_priors </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>quadratic_discriminant_analysis_priors</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Define  a probabilidades de prios para QDA.
+
+Parâmetros:
+   - quadratic_discriminant_analysis_priors: Probabilidades de priors para QDA.
+</pre> 
+</div>
+</div>
+<a id="ab9208bd141ae4e79168df0215b62b2fa" name="ab9208bd141ae4e79168df0215b62b2fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9208bd141ae4e79168df0215b62b2fa">&#9670;&#160;</a></span>set_quadratic_discriminant_analysis_regularization()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Classifiers.Classifiers.set_quadratic_discriminant_analysis_regularization </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>quadratic_discriminant_analysis_regularization</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Define o parâmetro de regularização para QDA.
+
+Parâmetros:
+   - quadratic_discriminant_analysis_regularization: Parâmetro de regularização para QDA.
+</pre> 
+</div>
+</div>
+<a id="a16fa4fe6908b619a15c7956904ff5bb7" name="a16fa4fe6908b619a15c7956904ff5bb7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16fa4fe6908b619a15c7956904ff5bb7">&#9670;&#160;</a></span>set_quadratic_discriminant_threshold()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Classifiers.Classifiers.set_quadratic_discriminant_threshold </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>quadratic_discriminant_threshold</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Define o limiar de decisão para QDA.
+
+Parâmetros:
+   - quadratic_discriminant_threshold: Limiar de decisão para QDA.
+</pre> 
+</div>
+</div>
+<a id="a2db296e7c0dbeb5943e4bb6ec8b40a21" name="a2db296e7c0dbeb5943e4bb6ec8b40a21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2db296e7c0dbeb5943e4bb6ec8b40a21">&#9670;&#160;</a></span>set_random_forest_max_depth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Classifiers.Classifiers.set_random_forest_max_depth </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>random_forest_max_depth</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Define a profundidade máxima da árvore do Random Forest.
+
+Parâmetros:
+   - random_forest_max_depth : Profundidade máxima da árvore do Random Forest.
+</pre> 
+</div>
+</div>
+<a id="a7834904d41f8b2d1d8b1b685680094cd" name="a7834904d41f8b2d1d8b1b685680094cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7834904d41f8b2d1d8b1b685680094cd">&#9670;&#160;</a></span>set_random_forest_number_estimators()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Classifiers.Classifiers.set_random_forest_number_estimators </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>random_forest_number_estimators</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Define o número de estimadores para o Random Forest.
+
+Parâmetros:
+   - random_forest_number_estimators : Número de estimadores para o Random Forest.
+</pre> 
+</div>
+</div>
+<a id="a64e7fd480bc2a4deb8a0d121ddc3047a" name="a64e7fd480bc2a4deb8a0d121ddc3047a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64e7fd480bc2a4deb8a0d121ddc3047a">&#9670;&#160;</a></span>set_support_vector_machine_gamma()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Classifiers.Classifiers.set_support_vector_machine_gamma </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>support_vector_machine_gamma</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Define o coeficiente gamma para SVM.
+
+Parâmetros:
+   - support_vector_machine_gamma: Coeficiente gamma para SVM.
+</pre> 
+</div>
+</div>
+<a id="a68507bb9ce1d4839bd6eea967c633617" name="a68507bb9ce1d4839bd6eea967c633617"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68507bb9ce1d4839bd6eea967c633617">&#9670;&#160;</a></span>set_support_vector_machine_kernel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Classifiers.Classifiers.set_support_vector_machine_kernel </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>support_vector_machine_kernel</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Define o kernel usado pelo SVM.
+
+Parâmetros:
+   - support_vector_machine_kernel:  Kernel usado pelo SVM.
+</pre> 
+</div>
+</div>
+<a id="a605cebe20f7785919ebba03558dc2c88" name="a605cebe20f7785919ebba03558dc2c88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a605cebe20f7785919ebba03558dc2c88">&#9670;&#160;</a></span>set_support_vector_machine_kernel_degree()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Classifiers.Classifiers.set_support_vector_machine_kernel_degree </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>support_vector_machine_kernel_degree</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Define o grau do kernel para SVM.
+
+Parâmetros:
+   - support_vector_machine_kernel_degree:  Grau do kernel para SVM.
+</pre> 
+</div>
+</div>
+<a id="ae9b7ada879e0a08f4f516dc0bc01ec02" name="ae9b7ada879e0a08f4f516dc0bc01ec02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9b7ada879e0a08f4f516dc0bc01ec02">&#9670;&#160;</a></span>set_support_vector_machine_normalization()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Classifiers.Classifiers.set_support_vector_machine_normalization </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>support_vector_machine_normalization</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Define o parâmetro de regularização para SVM.
+
+Parâmetros:
+   - support_vector_machine_normalization: Parâmetro de regularização para SVM.
+</pre> 
+</div>
+</div>
+<hr/>A documentação para esta classe foi gerada a partir do seguinte ficheiro:<ul>
+<li>Models/<b>Classifiers.py</b></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

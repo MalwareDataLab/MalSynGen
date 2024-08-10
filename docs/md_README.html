@@ -1,0 +1,305 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.11.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MalSynGen: 1. Preparação e instalação</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">MalSynGen
+   </div>
+   <div id="projectbrief">teste</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.11.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Localizar',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('md_README.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrada</div>
+</div>
+</div>
+</div>
+</div>
+
+<div><div class="header">
+  <div class="headertitle"><div class="title">1. Preparação e instalação</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p><a class="anchor" id="autotoc_md9"></a></p><ol type="1">
+<li>Clonar o repositório e execute os seguintes comandos. <div class="fragment"><div class="line">git clone https://github.com/SBSegSF24/MalSynGen.git</div>
+<div class="line">cd MalSynGen</div>
+</div><!-- fragment --></li>
+<li><p class="startli">Instalação das dependências.</p>
+<p class="startli"><b>Opção 1</b>: Construir uma imagem Docker localmente a partir do Dockerfile.</p>
+<div class="fragment"><div class="line">./scripts/docker_build.sh</div>
+</div><!-- fragment --><p> <b>Opção 2</b>: Utilizar o script <b>pip_env_install.sh</b>.</p>
+<div class="fragment"><div class="line">./pip_env_install.sh</div>
+</div><!-- fragment --><p class="startli"><b>Opção 3</b>: Configurar o venv. </p><div class="fragment"><div class="line">python3 -m venv .venv</div>
+</div><!-- fragment --> <div class="fragment"><div class="line">source .venv/bin/activate</div>
+</div><!-- fragment --> <div class="fragment"><div class="line">pip3 install -r requirements.txt</div>
+</div><!-- fragment --><p class="startli"><b>Opção 4</b>: Configurar o pipenv. </p><div class="fragment"><div class="line">pip install pipenv</div>
+</div><!-- fragment --> <div class="fragment"><div class="line">pipenv install -r requirements.txt</div>
+</div><!-- fragment --><p> Obs: É necessário a instalação do pipenv através da opção 4 ou opção 2 para garantir o funcionamento da ferramenta. </p>
+</li>
+</ol>
+<h1><a class="anchor" id="autotoc_md10"></a>
+2. Execução</h1>
+<ol type="1">
+<li><p class="startli">Executar a demonstração de funcionamento da ferramenta:</p>
+<p class="startli"><b>Opção 1</b>: instalar as dependências e executar uma demonstração em um ambiente Linux. A execução leva em torno de 5 minutos numa máquina AMD Ryzen 7 5800x, 8 cores, 64 GB RAM. </p><div class="fragment"><div class="line">./run_demo_venv.sh</div>
+</div><!-- fragment --><p class="startli"><b>Opção 2</b>: Executar o docker demo que instancia uma versão reduzida do experimento. A execução leva em torno de 5 minutos numa máquina AMD Ryzen 7 5800x, 8 cores, 64 GB RAM. </p><div class="fragment"><div class="line">./run_demo_docker.sh</div>
+</div><!-- fragment --></li>
+<li><p class="startli">Executar os mesmos experimentos (campanhas) do paper. A execução leva em torno de 14 horas em um computador AMD Ryzen 7 5800x, 8 cores, 64 GB RAM.</p>
+<p class="startli"><b>Opção 1</b>: No ambiente local. </p><div class="fragment"><div class="line">./run_reproduce_sf24_venv.sh</div>
+</div><!-- fragment --><p class="startli"><b>Opção 2</b>: No ambiente Docker. </p><div class="fragment"><div class="line">./run_reproduce_sf24_docker.sh</div>
+</div><!-- fragment --></li>
+</ol>
+<h1><a class="anchor" id="autotoc_md11"></a>
+3. Outras opções de execução</h1>
+<p>O script <b>run_balanced_datasets.sh</b> é responsável pela execução dos datasets balanceaddos dos experimentos com base na entrada especificada pelo usuário. Executar o script:</p>
+<div class="fragment"><div class="line">./run_balanced_datasets.sh</div>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md12"></a>
+3.1. Executando outros experimentos</h3>
+<p>A ferramenta conta com o <b>run_campaign.py</b> para automatizar o treinamento e a avaliação da cGAN. O <b>run_campaign.py</b> permite executar várias campanhas de avaliação com diferentes parâmetros, registrando os resultados em arquivos de saída para análise posterior. O usuário poderá visualmente realizar uma análise comparativa das diferentes configurações em relação aos conjuntos de dados utilizados.</p>
+<p>Exemplo de execução de uma campanha pré-configurada com base na execução do Kronodroid R do artigo:</p>
+<div class="fragment"><div class="line">pipenv run python3 run_campaign.py -c Kronodroid_r</div>
+</div><!-- fragment --><p>Mesma campanha (Kronodroid_r) sendo executada diretamente na aplicação (<b>main.py</b>): </p><div class="fragment"><div class="line">pipenv run python main.py --verbosity 20 --input_dataset datasets/kronodroid_real_device-balanced.csv --dense_layer_sizes_g 4096 --dense_layer_sizes_d 2048 --number_epochs 500 --k_fold 10 --num_samples_class_benign 10000 --num_samples_class_malware 10000 --training_algorithm Adam</div>
+</div><!-- fragment --> <h3><a class="anchor" id="autotoc_md13"></a>
+3.2. Parâmetros dos testes automatizados:</h3>
+<hr  />
+<p>&ndash;campaign ou -c: Especifica a campanha de avaliação que você deseja executar. Você pode fornecer o nome de uma campanha específica ou uma <br  />
+ lista de campanhas separadas por vírgula. Por exemplo: &ndash;campaign SF24_4096_2048_10 ou &ndash;campaign Kronodroid_e,kronodroid_r.</p>
+<p>&ndash;demo ou -d: Ativa o modo demo. Quando presente, o script será executado no modo demo, o que pode ter comportamento reduzido ou exibir informações de teste. &ndash;verbosity ou -v: Especifica o nível de verbosidade do log. Pode ser INFO (1) ou DEBUG (2). Por padrão, o nível de verbosidade é definido como INFO.</p>
+<pre class="fragment"> Outros parâmetros de entrada são definidos dentro das campanhas de avaliação em 
+ campaigns_available. Cada campanha tem suas próprias configurações específicas, 
+ como input_dataset, number_epochs, training_algorithm, dense_layer_sizes_g, 
+ dense_layer_sizes_d, classifier, activation_function, dropout_decay_rate_g, 
+ dropout_decay_rate_d, e data_type. As configurações podem variar dependendo do 
+ objetivo e das configurações específicas de cada campanha.  
+
+
+ Em campaigns_available o script irá iterar sobre as combinações de configurações 
+ especificadas e executar os experimentos correspondentes.
+
+--------------------------------------------------------------
+</pre><h3><a class="anchor" id="autotoc_md15"></a>
+3.3. Executando a ferramenta no Google Colab</h3>
+<p>Google collab é uma ferramenta cloud que permite a execução de códigos Python no seu navegador.</p>
+<ol type="1">
+<li>Acesse o seguinte link para utilizar a ferramenta Google colab: <a href="https://colab.google/">https://colab.google/</a></li>
+<li>Crie um novo notebook, clicando no botão <b>New notebook</b> no topo direito da tela.</li>
+</ol>
+<p><img src="https://github.com/SBSegSF24/MalSynGen/assets/174879323/628010a5-f2e9-48dc-8044-178f7e9c2c37" alt="" style="max-width:100%;" class="inline"/></p>
+<ol type="1">
+<li>Faça o upload da pasta do MalSynGen no seu Google Drive.</li>
+<li>Adicione uma nova célula ao clicar no botão <b>+code</b> no topo esquerda da tela, contendo o seguinte trecho de código para acessar a pasta do Google Drive. <div class="fragment"><div class="line">from google.colab import drive</div>
+<div class="line">drive.mount(&#39;/content/drive&#39;)</div>
+</div><!-- fragment --></li>
+<li>Crie uma célula para acessar a pasta do MalSynGen (Exemplo): <div class="fragment"><div class="line">cd /content/drive/MyDrive/MalSynGen-main</div>
+</div><!-- fragment --></li>
+<li>Instale as dependências da ferramenta, criando uma célula com o seguinte código: <div class="fragment"><div class="line">!pip install -r requirements.txt</div>
+</div><!-- fragment --></li>
+<li>Crie uma célula para a execução da ferramenta (Exemplo): <div class="fragment"><div class="line">!python main.py --verbosity 20 --input_dataset datasets/kronodroid_real_device-balanced.csv --dense_layer_sizes_g 4096 --dense_layer_sizes_d 2048 --number_epochs 500 --k_fold 10 --num_samples_class_benign 10000 --num_samples_class_malware 10000 --training_algorithm Adam</div>
+</div><!-- fragment --></li>
+</ol>
+<h1><a class="anchor" id="autotoc_md16"></a>
+4. Fluxo de execução</h1>
+<p><img src="https://github.com/SBSegSF24/MalSynGen/assets/174879323/4d55117e-4203-4930-a0f5-2ed19c8857e3" alt="Screenshot from 2024-07-05 17-00-39" class="inline"/></p>
+<p>O fluxo de execução da ferramenta consiste de três etapas:</p>
+<p><b>Seleção de dataset</b>: Nesta etapa, realizamos o balanceamento pela classe minoritária, atravẽs do uso de técnicas de subamostragem. Os datasets balanceados e o código utilizado nesse processo se encontram em: <a href="https://github.com/SBSegSF24/MalSynGen/tree/accbe69f12bbf02d5d7f9c75291a60a5738bbb67/datasets">https://github.com/SBSegSF24/MalSynGen/tree/accbe69f12bbf02d5d7f9c75291a60a5738bbb67/datasets</a></p>
+<p>O dataset balanceado é então processado nas etapas de treinamento e avaliação, através validação cruzada por meio de k-dobras (do inglês k-folds) onde são criados dois subconjuntos: subconjunto de avaliação (Dataset r) e subconjunto de treino (Dataset R).</p>
+<p><b>Treinamento</b>: Nessa etapa, a cGANs é treinada e utilizada cGANs para gerar dados sintéticos, precisamos treinar classificadores para posteriormente verificarmos a utilidade dos dados sintéticos gerados: Dataset S (gerado a partir de R) e Dataset s (gerado a paritr de r). Os classificadores utilizados são denominados TR-As(Treinado com dataset R, avaliado com s) e TS-Ar(Treinado com S, avaliado com r).</p>
+<p><b>Avaliação</b>: Esta etapa consiste da execução e subsquente extração de métricas de utilidade dos classificadores, e fidelidade dos sintéticos atravês de uma comparação entre s e r. Por fim, verificamos se a utilidade dos dados sintéticos é fiel à utilidade dos dados reais através de testes como o de Wilcoxon no final da execução de dobras.</p>
+<h1><a class="anchor" id="autotoc_md17"></a>
+5. Parâmetros da Ferramenta</h1>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadCenter">Flag/ parametro   </th><th class="markdownTableHeadCenter">Descrição   </th><th class="markdownTableHeadCenter">Obrigatório    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">-i , &ndash;input_dataset   </td><td class="markdownTableBodyCenter">Caminho para o arquivo do dataset real de entrada   </td><td class="markdownTableBodyCenter">Sim    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">-o, &ndash;output_dir   </td><td class="markdownTableBodyCenter">Diretório para gravação dos arquivos de saída.   </td><td class="markdownTableBodyCenter">Não    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">&ndash;data_type   </td><td class="markdownTableBodyCenter">Tipo de dado para representar as características das amostras.   </td><td class="markdownTableBodyCenter">Não    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">&ndash;num_samples_class_malware   </td><td class="markdownTableBodyCenter">Número de amostras da Classe 1 (maligno).   </td><td class="markdownTableBodyCenter">Sim    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">&ndash;num_samples_class_benign   </td><td class="markdownTableBodyCenter">Número de amostras da Classe 0 (benigno).   </td><td class="markdownTableBodyCenter">Sim    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">&ndash;number_epochs   </td><td class="markdownTableBodyCenter">Número de épocas (iterações de treinamento) da cGAN.   </td><td class="markdownTableBodyCenter">Não    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">&ndash;k_fold   </td><td class="markdownTableBodyCenter">Número de subdivisões da validação cruzada   </td><td class="markdownTableBodyCenter">Não    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">&ndash;initializer_mean   </td><td class="markdownTableBodyCenter">Valor central da distribuição gaussiana do inicializador.   </td><td class="markdownTableBodyCenter">Não    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">&ndash;initializer_deviation   </td><td class="markdownTableBodyCenter">Desvio padrão da distribuição gaussiana do inicializador.   </td><td class="markdownTableBodyCenter">Não    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">&ndash;latent_dimension   </td><td class="markdownTableBodyCenter">Dimensão do espaço latente para treinamento cGAN.   </td><td class="markdownTableBodyCenter">Não    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">&ndash;training_algorithm   </td><td class="markdownTableBodyCenter">Algoritmo de treinamento para cGAN. Opções: 'Adam', 'RMSprop', 'Adadelta'.   </td><td class="markdownTableBodyCenter">Não    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">&ndash;activation_function   </td><td class="markdownTableBodyCenter">Função de ativação da cGAN. Opções: 'LeakyReLU', 'ReLU', 'PReLU'   </td><td class="markdownTableBodyCenter">Não    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">&ndash;dropout_decay_rate_g   </td><td class="markdownTableBodyCenter">Taxa de decaimento do dropout do gerador da cGAN.   </td><td class="markdownTableBodyCenter">Não    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">&ndash;dropout_decay_rate_d   </td><td class="markdownTableBodyCenter">Taxa de decaimento do dropout do discriminador da cGAN.   </td><td class="markdownTableBodyCenter">Não    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">&ndash;dense_layer_sizes_g   </td><td class="markdownTableBodyCenter">Valores das camadas densas do gerador.   </td><td class="markdownTableBodyCenter">Não    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">&ndash;dense_layer_sizes_d   </td><td class="markdownTableBodyCenter">Valores das camadas densas do discriminador.   </td><td class="markdownTableBodyCenter">Não    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">&ndash;batch_size   </td><td class="markdownTableBodyCenter">Tamanho do lote da cGAN.   </td><td class="markdownTableBodyCenter">Não    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">&ndash;verbosity   </td><td class="markdownTableBodyCenter">Nível de verbosidade.   </td><td class="markdownTableBodyCenter">Não    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">&ndash;save_models   </td><td class="markdownTableBodyCenter">Opção para salvar modelos treinados.   </td><td class="markdownTableBodyCenter">Não    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">&ndash;path_confusion_matrix   </td><td class="markdownTableBodyCenter">Diretório de saída das matrizes de confusão.   </td><td class="markdownTableBodyCenter">Não    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">&ndash;path_curve_loss   </td><td class="markdownTableBodyCenter">Diretório de saída dos gráficos de curva de treinamento.   </td><td class="markdownTableBodyCenter">Não    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">-a, &ndash;use_aim   </td><td class="markdownTableBodyCenter">Opção para utilizar a ferramenta de rastreamento Aimstack.   </td><td class="markdownTableBodyCenter">Não    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">-ml, &ndash;use_mlflow   </td><td class="markdownTableBodyCenter">Opção para utilizar a ferramenta de rastreamento mlflow.   </td><td class="markdownTableBodyCenter">Não    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">-rid, &ndash;run_id   </td><td class="markdownTableBodyCenter">Opção ligado ao mlflow, utilizada para resumir uma execução não terminada   </td><td class="markdownTableBodyCenter">Não    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">-tb, &ndash;use_tensorboard   </td><td class="markdownTableBodyCenter">Opção para utilizar a ferramenta de rastreamento Tensorb   </td><td class="markdownTableBodyCenter">Não   </td></tr>
+</table>
+<h1><a class="anchor" id="autotoc_md18"></a>
+6. Ambientes de teste</h1>
+<p>A ferramenta foi executada e testada com sucesso nos seguintes ambientes:</p>
+<ol type="1">
+<li><b>Hardware</b>: AMD Ryzen 7 5800x, 8 cores, 64 GB RAM. <b>Software</b>: Ubuntu Server 22.04.2 e 22.04.3, Python 3.8.10 e 3.10.12, Docker 24.07.</li>
+<li><b>Hardware</b>: Intel Core i7-9700 CPU 3.00GHz, 8 cores, 16 GB RAM. <b>Software</b>: Debian GNU 11 e 12, Python 3.9.2 e 3.11.2, Docker 20.10.5 e 24.07.</li>
+<li><b>Hardware</b>: AMD Ryzen 7 5800X 8-core, 64GB RAM (3200MHz), NVDIA RTX3090 24GB. <b>Software</b>: WSL: 2.2.4.0, Docker version 24.0.7 (build 24.0.7-0ubuntu2~22.04.1), Python 3.11.5</li>
+</ol>
+<h1><a class="anchor" id="autotoc_md19"></a>
+7. Ferramentas de rastreamento</h1>
+<h2><a class="anchor" id="autotoc_md20"></a>
+7.1. Aimstack</h2>
+<ol type="1">
+<li>Instalar a ferramenta:</li>
+</ol>
+<div class="fragment"><div class="line">pip install aim</div>
+</div><!-- fragment --><ol type="1">
+<li>Executar MalSynGen com a opção -a ou &ndash;use_aim (Exemplo): <div class="fragment"><div class="line">pipenv run python3 main.py -i datasets/kronodroid_real_device-balanced.csv  --num_samples_class_benign 10000 --num_samples_class_malware 10000 --batch_size 256 --number_epochs 300 --k_fold 10 -a</div>
+</div><!-- fragment --></li>
+<li>Após o final da execução, utilize o comando <b>aim up</b> na pasta do MalSynGen. <div class="fragment"><div class="line">aim up</div>
+</div><!-- fragment --> Documentação Aimstack: <a href="https://aimstack.readthedocs.io/en/latest/">https://aimstack.readthedocs.io/en/latest/</a></li>
+</ol>
+<h2><a class="anchor" id="autotoc_md21"></a>
+7.2. Mlflow</h2>
+<ol type="1">
+<li>Instalar a ferramenta:</li>
+</ol>
+<div class="fragment"><div class="line">pip install mlflow</div>
+</div><!-- fragment --><ol type="1">
+<li>Instanciar um servidor local na porta 6002:</li>
+</ol>
+<div class="fragment"><div class="line">mlflow server --port 6002</div>
+</div><!-- fragment --><ol type="1">
+<li>Executar MalSynGen com a opção -ml ou &ndash;use_mlflow (Exemplo): <div class="fragment"><div class="line">pipenv run python3 main.py -i datasets/kronodroid_real_device-balanced.csv  --num_samples_class_benign 10000 --num_samples_class_malware 10000 --batch_size 256 --number_epochs 300 --k_fold 10 -ml</div>
+</div><!-- fragment --></li>
+<li>Após o fim da execução, acesse o endereço <a href="http://localhost:6002/">http://localhost:6002/</a> no seu navegador para visualizar os resultados.</li>
+</ol>
+<p>Documentação Mlflow: <a href="https://mlflow.org/docs/latest/index.html">https://mlflow.org/docs/latest/index.html</a></p>
+<h2><a class="anchor" id="autotoc_md22"></a>
+7.3. Tensorboard</h2>
+<ol type="1">
+<li>Instalar a ferramenta:</li>
+</ol>
+<div class="fragment"><div class="line">pip install tensorboard</div>
+</div><!-- fragment --><ol type="1">
+<li>Executar MalSynGen com a opção -tb ou &ndash;use_tensorboard (Exemplo): <div class="fragment"><div class="line">pipenv run python3 main.py -i datasets/kronodroid_real_device-balanced.csv  --num_samples_class_benign 10000 --num_samples_class_malware 10000 --batch_size 256 --number_epochs 300 --k_fold 10 -tb</div>
+</div><!-- fragment --></li>
+<li>Visualizar os resultados com o comando:</li>
+</ol>
+<div class="fragment"><div class="line">tensorboard --logdir=tensorboardfolder/ --port=6002</div>
+</div><!-- fragment --><p>Documentação TensorBoard: <a href="https://www.tensorflow.org/tensorboard/get_started?hl=pt-br">https://www.tensorflow.org/tensorboard/get_started?hl=pt-br</a> </p>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0 </li>
+  </ul>
+</div>
+</body>
+</html>
