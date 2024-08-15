@@ -513,7 +513,7 @@ def p_value_test (TS_Ar_label,TR_As_label,type_of_metric,classifier_type):
     logging.info("  P_value of {}  {} and stats {} of {} \n".format(type_of_metric,p_value,estaticts,classifier_type))
     return p_value
 
-def show_and_export_results(dict_similarity, classifier_type, output_dir, title_output_label, dict_metrics, dict_TR_As_auc, dict_TS_Ar_auc):
+def show_and_export_results(dict_similarity, classifier_type, output_dir, title_output_label, dict_metrics, dict_TR_As_auc, dict_TS_Ar_auc,image_format):
     """
     Função para demonstrar e exportar resultados de métricas de fidelidade e utilidade, além da chamada de criação dos plots destas métricas.
     
@@ -554,8 +554,10 @@ def show_and_export_results(dict_similarity, classifier_type, output_dir, title_
         logging.info("  TR_As Standard Deviation of F1 Score: {} \n".format(np.std(dict_metrics["TR_As F1 score"][classifier_type[index]])))
         logging.info("  TR_As Standard Deviation of AUC: {} ".format(np.std(dict_TR_As_auc[classifier_type[index]])))
         ## Nome do plot
-        plot_filename = os.path.join(output_dir, f'{classifier_type[index]}_TS_Ar_(Treinado com sintético,avalia com dados reais)_.pdf')
-
+        if(img_format=='PDF'):
+            plot_filename = os.path.join(output_dir, f'{classifier_type[index]}_TS_Ar_(Treinado com sintético,avalia com dados reais)_.pdf')
+        else:
+            plot_filename = os.path.join(output_dir, f'{classifier_type[index]}_TS_Ar_(Treinado com sintético,avalia com dados reais)_.png')
         ## Plota e salva as métricas dos classificadores  TR_As
         plot_classifier_metrics.plot_classifier_metrics(
             classifier_type[index], 
@@ -638,8 +640,10 @@ def show_and_export_results(dict_similarity, classifier_type, output_dir, title_
         logging.info("  TS_Ar Standard Deviation of F1 Score: {} \n".format(np.std(dict_metrics["TS_Ar F1 score"][classifier_type[index]])))
         logging.info("  TS_Ar Standard Deviation of AUC: {} ".format(np.std(dict_TS_Ar_auc[classifier_type[index]])))
         ## Nome do plot
-        plot_filename = os.path.join(output_dir, f'{classifier_type[index]}_treiando_com_sint_testado_com_TS_Ar.pdf')
-
+        if (image_format=='PDF'):
+            plot_filename = os.path.join(output_dir, f'{classifier_type[index]}_treiando_com_sint_testado_com_TS_Ar.pdf')
+        else:
+            plot_filename = os.path.join(output_dir, f'{classifier_type[index]}_treiando_com_sint_testado_com_TS_Ar.png')
         ## Plota e salva as métricas dos classificadores  TS_Ar
         plot_classifier_metrics.plot_classifier_metrics(
             classifier_type[index], 
@@ -700,7 +704,10 @@ def show_and_export_results(dict_similarity, classifier_type, output_dir, title_
         p_value_test(dict_metrics["TS_Ar F1 score"], dict_metrics["TR_As F1 score"], "F1 score", classifier_type[index])
         p_value_test(dict_metrics["TS_Ar recall"], dict_metrics["TR_As recall"], "recall", classifier_type[index])
         p_value_test(dict_TS_Ar_auc, dict_TR_As_auc, "auc", classifier_type[index])
-        plot_filename = os.path.join(output_dir, f'{classifier_type[index]}_p_values.pdf')
+        if(image_format=="PDF"):
+            plot_filename = os.path.join(output_dir, f'{classifier_type[index]}_p_values.pdf')
+        else:
+            plot_filename= os.path.join(output_dir, f'{classifier_type[index]}_p_values.png')
 
     ## Plota e salva as métricas de fidelidade geradas
     plot_filename1 = os.path.join(output_dir, f'Comparison_TS_Ar_TR_As_positive.jpg')
@@ -820,12 +827,12 @@ def show_model(latent_dim, input_data_shape, activation_function, initializer_me
                                          last_layer_activation, dense_layer_sizes_g, dense_layer_sizes_d,
                                          dataset_type)
 def run_experiment(dataset, input_data_shape, k, classifier_list, output_dir, batch_size, training_algorithm,
-                   number_epochs, latent_dim, activation_function, dropout_decay_rate_g, dropout_decay_rate_d,
+                   number_epochs, latent_dim, activation_function, dropout_decay_rate_g, dropout_decay_rate_d,image_format,
                    dense_layer_sizes_g=None, dense_layer_sizes_d=None, dataset_type=None, title_output=None,
                    initializer_mean=None, initializer_deviation=None,
                    last_layer_activation=DEFAULT_CONDITIONAL_LAST_ACTIVATION_LAYER, save_models=False,
                    path_confusion_matrix=None, path_curve_loss=None, verbose_level=None,
-                   latent_mean_distribution=None, latent_stander_deviation=None, num_samples_class_malware=None, num_samples_class_benign=None):
+                   latent_mean_distribution=None, latent_stander_deviation=None, num_samples_class_malware=None, num_samples_class_benign=None ):
     """
    Responsável pelo principal fluxo de execução da cGAN, realiza as chamada das funções de:
        - Treino da cGAN.
@@ -870,7 +877,7 @@ def run_experiment(dataset, input_data_shape, k, classifier_list, output_dir, ba
                initializer_deviation, dropout_decay_rate_g, dropout_decay_rate_d,
                last_layer_activation, dense_layer_sizes_g, dense_layer_sizes_d,
                dataset_type, verbose_level)
-
+    image_format
     ## Criação do KFold estratificado
     stratified = StratifiedKFold(n_splits=k, shuffle=True)
 
@@ -1016,7 +1023,7 @@ def run_experiment(dataset, input_data_shape, k, classifier_list, output_dir, ba
         dict_similarity["list_maximum_mean_discrepancy"]["positive"].append(comparative_metrics2[2])
 
     ## Exibir e exportar os resultados finais
-    show_and_export_results(dict_similarity,classifier_list, output_dir, title_output,dict_metrics,dict_TR_As_auc,dict_TS_Ar_auc)
+    show_and_export_results(dict_similarity,classifier_list, output_dir, title_output,dict_metrics,dict_TR_As_auc,dict_TS_Ar_auc,image_format)
 
 def show_all_settings(arg_parsers):
         """
@@ -1171,6 +1178,10 @@ def create_argparse():
     parser.add_argument("--save_models", type=bool,
                         help='Salvar modelos treinados (Default {})'.format(DEFAULT_SAVE_MODELS),
                         default=DEFAULT_SAVE_MODELS)
+    parser.add_argument("--image_format", type=str,
+                        help='formato das imagens',
+                        choices=['PDF','PNG'],
+                        default='PDF')
 
     parser.add_argument("--path_confusion_matrix", type=str,
                         help='Diretório de saída das matrizes de confusão',
@@ -1255,6 +1266,7 @@ if __name__ == "__main__":
         USE_TENSORBOARD=True
     if arguments.use_mlflow:
          USE_MLFLOW= True
+    img_format=arguments.image_format
     ## Caso o uso da ferramento aimstack esteja sendo utilizado é necessário estabelecer o diretório e o nome do experimento
     if USE_AIM:
         output_dir = arguments.output_dir
@@ -1285,12 +1297,13 @@ if __name__ == "__main__":
                    latent_dim=arguments.latent_dimension, activation_function=arguments.activation_function,
                    dropout_decay_rate_g=arguments.dropout_decay_rate_g,
                    dropout_decay_rate_d=arguments.dropout_decay_rate_d,
+                   image_format=img_format,
                    dense_layer_sizes_g=arguments.dense_layer_sizes_g, dense_layer_sizes_d=arguments.dense_layer_sizes_d,
                    dataset_type=data_type, title_output=output_label, initializer_mean=arguments.initializer_mean,
                    initializer_deviation=arguments.initializer_deviation, save_models=arguments.save_models,
                    path_confusion_matrix=arguments.path_confusion_matrix, path_curve_loss=arguments.path_curve_loss,
                    verbose_level=arguments.verbosity, latent_mean_distribution=arguments.latent_mean_distribution,
-                   latent_stander_deviation=arguments.latent_stander_deviation, num_samples_class_malware=arguments.num_samples_class_malware, num_samples_class_benign=arguments.num_samples_class_benign )
+                   latent_stander_deviation=arguments.latent_stander_deviation, num_samples_class_malware=arguments.num_samples_class_malware, num_samples_class_benign=arguments.num_samples_class_benign)
     ##realiza a cronometrização do tempo de fim da execução
     time_end_campaign = datetime.datetime.now()
     if USE_TENSORBOARD:
