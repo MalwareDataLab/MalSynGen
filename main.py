@@ -1179,7 +1179,7 @@ def create_argparse():
                         help='Salvar modelos treinados (Default {})'.format(DEFAULT_SAVE_MODELS),
                         default=DEFAULT_SAVE_MODELS)
     parser.add_argument("--image_format", type=str,
-                        help='formato das imagens',
+                        help='formato das imagens PDF ou PNG',
                         choices=['PDF','PNG'],
                         default='PDF')
 
