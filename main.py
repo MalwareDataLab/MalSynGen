@@ -79,7 +79,7 @@ DEFAULT_ADVERSARIAL_ACTIVATION = "LeakyReLU"  # ['LeakyReLU', 'ReLU', 'PReLU']
 DEFAULT_ADVERSARIAL_DROPOUT_DECAY_RATE_G = 0.2
 DEFAULT_ADVERSARIAL_DROPOUT_DECAY_RATE_D = 0.4
 DEFAULT_ADVERSARIAL_INITIALIZER_MEAN = 0.0
-DEFAULT_ADVERSARIAL_INITIALIZER_DEVIATION = 0.02
+DEFAULT_ADVERSARIAL_INITIALIZER_DEVIATION = 0.5
 DEFAULT_ADVERSARIAL_BATCH_SIZE = 32
 DEFAULT_ADVERSARIAL_DENSE_LAYERS_SETTINGS_G = [128]
 DEFAULT_ADVERSARIAL_DENSE_LAYERS_SETTINGS_D = [128]
@@ -626,7 +626,7 @@ def create_argparse():
     parser.add_argument("--training_algorithm", type=str,
                         default=DEFAULT_ADVERSARIAL_TRAINING_ALGORITHM,
                         help="Algoritmo de treinamento para cGAN.",
-                        choices=['Adam'])
+                        choices=['Adam','Adadelta','RMSprop'])
 
     parser.add_argument("--activation_function",
                         type=str, default=DEFAULT_ADVERSARIAL_ACTIVATION,
@@ -650,7 +650,7 @@ def create_argparse():
                         help="valor das camadas densas do discriminador")
     parser.add_argument('--batch_size', type=int,
                         default=DEFAULT_ADVERSARIAL_BATCH_SIZE,
-                        choices=[16, 32, 64,128,256],
+                        choices=[16, 32, 64,128,256,512],
                         help='Tamanho do lote da cGAN.')
 
     parser.add_argument("--verbosity", type=int,
