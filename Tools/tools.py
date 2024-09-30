@@ -336,7 +336,7 @@ class PlotClassificationMetrics:
             - f1_score_list: Lista de valores de F1-Score.
             - plot_filename: Nome do arquivo para salvar o plot.
             - plot_title: Título do plot.
-            - type_of_classifier: Tipo de classificador sendo plotado (TR_As,TR_As) .
+            - type_of_classifier: Tipo de classificador sendo plotado (TR_As,TS_Ar) .
         """
         list_all_metrics = [accuracy_list, precision_list, recall_list, f1_score_list]
         new_plot_bars = go.Figure()

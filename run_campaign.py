@@ -46,7 +46,7 @@ PATH_LOG = 'logs'
 # Caminho para os dataset
 PATH_DATASETS = 'datasets'
 PATHS = [PATH_LOG]
-Parâmetros = None
+Parametros = None
 #Valores para os comandos de entrada o COMMAND não possuei a opção de rastreameto do mflow, enquanto que COMMAND2 possui
 COMMAND = "pipenv run python main.py   "
 COMMAND2 = "pipenv run python main.py -ml  "
@@ -121,19 +121,19 @@ campaigns_available = {
     },
 }
 
-def print_config(Parâmetros):
+def print_config(Parametros):
     """
     Imprime a configuração dos argumentos para fins de logging.
 
-    Parâmetros:
-        Parâmetros : Argumentos de linha de comando.
+    Parametros:
+        Parametros : Argumentos de linha de comando.
     """
     logging.info("Command:\n\t{0}\n".format(" ".join([x for x in sys.argv])))
     logging.info("Settings:")
-    lengths = [len(x) for x in vars(Parâmetros).keys()]
+    lengths = [len(x) for x in vars(Parametros).keys()]
     max_length = max(lengths)
 
-    for k, v in sorted(vars(Parâmetros).items()):
+    for k, v in sorted(vars(Parametros).items()):
         message = "\t" + k.ljust(max_length, " ") + " : {}".format(v)
         logging.info(message)
     logging.info("")
@@ -142,7 +142,7 @@ def convert_flot_to_int(value):
     """
     Converte um valor float para int multiplicando por 100.
 
-    Parâmetros:
+    Parametros:
         value: Valor a ser convertido.
 
     Retorno:
@@ -166,9 +166,9 @@ class IntRange:
         """
         Inicializa a classe IntRange com limites opcionais.
 
-        Parâmetros:
-            imin : Limite inferior do intervalo. Default é None.
-            imax : Limite superior do intervalo. Default é None.
+        Parametros:
+            imin : Limite inferior do intervalo. O valor padrão é None.
+            imax : Limite superior do intervalo. O valor padrão é None.
         """
         self.imin = imin
         self.imax = imax
@@ -177,7 +177,7 @@ class IntRange:
         """
         Converte o argumento fornecido para inteiro e verifica se está dentro do intervalo especificado.
 
-        Parâmetros:
+        Parametros:
             arg : O argumento fornecido na linha de comando.
 
         Retorno:
@@ -215,14 +215,14 @@ def run_cmd(cmd, shell=False):
     """
     A função executa um comando de shell especificado e registra a saída.
 
-    Parâmetros:
+    Parametros:
         cmd : Comando a ser executado.
         shell : Indica se deve usar o shell para executar o comando.
     """
     logging.info("Command line  : {}".format(cmd))
     cmd_array = shlex.split(cmd)
     logging.debug("Command array: {}".format(cmd_array))
-    if not Parâmetros.demo:
+    if not Parametros.demo:
         subprocess.run(cmd_array, check=True, shell=shell)
 
 class Campaign:
@@ -239,7 +239,7 @@ def check_files(files, error=False):
     """
     Verifica se os arquivos especificados existem.
 
-    Parâmetros:
+    Parametros:
         files: Arquivos a verificar.
         error: Indica se deve lançar erro se o arquivo não for encontrado.
 
@@ -277,18 +277,20 @@ def main():
     parser.add_argument("--dense_layer_sizes_g", type=list_of_ints,default=None,help=" Valor das camadas densas do gerador")
     parser.add_argument("--dense_layer_sizes_d", type=list_of_ints,default=None,help="valor das camadas densas do discriminador")
     parser.add_argument('--number_epochs', type=list_of_ints,help='Número de épocas (iterações de treinamento).')
-    parser.add_argument('--batch_size', type=int,default=64,choices=[16, 32, 64,128,256],help='Tamanho do lote da cGAN.')
+    parser.add_argument('--batch_size', type=int,default=256,choices=[16, 32, 64,128,256],help='Tamanho do lote da cGAN.')
     parser.add_argument("--optimizer_generator_learning", type=list_of_floats,default=None,help='Taxa de aprendizado do gerador')
     parser.add_argument("--optimizer_discriminator_learning", type=list_of_floats,default=None,help='Taxa de aprendizado do discriminador')
 
     parser.add_argument("--dropout_decay_rate_d",type=list_of_floats,default=None,help="Taxa de decaimento do dropout do discriminador da cGAN")
     parser.add_argument("--dropout_decay_rate_g",type=list_of_floats,default=None,help="Taxa de decaimento do dropout do gerador da cGAN")
 
-    parser.add_argument('--initializer_mean', type=list_of_floats,default=None,help='Valor central da distribuição gaussiana do inicializador.')
-    parser.add_argument('--initializer_deviation', type=list_of_floats,default=None,help='Desvio padrão da distribuição gaussiana do inicializador.')
+    parser.add_argument('--initializer_mean', type=list_of_floats,default=None,help='Valor central da distribuição gaussiana do inicializador')
+    parser.add_argument('--initializer_deviation', type=list_of_floats,default=None,help='Desvio padrão da distribuição gaussiana do inicializador')
+    parser.add_argument('-p_ml','--port_mlflow',type=int,help="porta para o servidor mlflow",default=6002) 
+    
 
-    global Parâmetros
-    Parâmetros = parser.parse_args()
+    global Parametros
+    Parametros = parser.parse_args()
     #cria a estrutura dos diretórios de saída
     print("Creating the structure of directories...")
     for p in PATHS:
@@ -299,27 +301,27 @@ def main():
     logging_filename = '{}/evaluation_campaigns.log'.format(output_dir)
 
     logging_format = '%(asctime)s\t***\t%(message)s'
-    if Parâmetros.verbosity == logging.DEBUG:
+    if Parametros.verbosity == logging.DEBUG:
         logging_format = '%(asctime)s\t***\t%(levelname)s {%(module)s} [%(funcName)s] %(message)s'
-    logging.basicConfig(format=logging_format, level=Parâmetros.verbosity)
+    logging.basicConfig(format=logging_format, level=Parametros.verbosity)
 
     rotatingFileHandler = RotatingFileHandler(filename=logging_filename, maxBytes=100000, backupCount=5)
-    rotatingFileHandler.setLevel(Parâmetros.verbosity)
+    rotatingFileHandler.setLevel(Parametros.verbosity)
     rotatingFileHandler.setFormatter(logging.Formatter(logging_format))
     logging.getLogger().addHandler(rotatingFileHandler)
 
-    print_config(Parâmetros)
+    print_config(Parametros)
     # Tratamento das campanhas escolhidas
     campaigns_chosen = []
-    if Parâmetros.campaign is None:
+    if Parametros.campaign is None:
         campaigns_chosen = campaigns_available.keys()
     else:
-        if Parâmetros.campaign in campaigns_available.keys():
-            campaigns_chosen.append(Parâmetros.campaign)
-        elif ',' in Parâmetros.campaign:
-            campaigns_chosen = Parâmetros.campaign.split(',')
+        if Parametros.campaign in campaigns_available.keys():
+            campaigns_chosen.append(Parametros.campaign)
+        elif ',' in Parametros.campaign:
+            campaigns_chosen = Parametros.campaign.split(',')
         else:
-            logging.error("Campaign '{}' not found".format(Parâmetros.campaign))
+            logging.error("Campaign '{}' not found".format(Parametros.campaign))
             sys.exit(-1)
     # Obtém o tempo de início da execução
     time_start_campaign = datetime.datetime.now()
@@ -330,11 +332,10 @@ def main():
     time_start_evaluation = datetime.datetime.now()
     count_campaign = 1
     aux=None
-           # "num_samples_class_benign":[3418,10170,9077,5222,5222,5222,5975,5555,36755,28745],
-       # "num_samples_class_malware":[3418,10170,9077,5222,5222,5222,5975,5555,36755,28745],
+
     USE_MLFLOW=False
-    #testa se o parâmetro do mlflow está ativado
-    if Parâmetros.use_mlflow:
+    #testa se o parametro do mlflow está ativado
+    if Parametros.use_mlflow:
          USE_MLFLOW= True
     if USE_MLFLOW==False:
         for c in campaigns_chosen:
@@ -342,46 +343,48 @@ def main():
 
                 logging.info("\tCampaign {} {}/{} ".format(c, count_campaign, len(campaigns_chosen)))
                 #para cada campanha aumentar o número de campanhas
-                count_campaign += 1
+                #count_campaign += 1
                 campaign = campaigns_available[c]
-                if(Parâmetros.dense_layer_sizes_g!=None):
-                    campaign['dense_layer_sizes_g']=Parâmetros.dense_layer_sizes_g
-                if(Parâmetros.dense_layer_sizes_d!=None):
-                    campaign['dense_layer_sizes_d']=Parâmetros.dense_layer_sizes_d
-                if(Parâmetros.number_epochs!=None):
-                    campaign['number_epochs']=Parâmetros.number_epochs
-                if(Parâmetros.optimizer_generator_learning!=None):
-                    campaign['optimizer_generator_learning']=Parâmetros.optimizer_generator_learning
-                if(Parâmetros.optimizer_discriminator_learning!=None):
-                    campaign["optimizer_discriminator_learning"]=Parâmetros.optimizer_discriminator_learning
-                if(Parâmetros.dropout_decay_rate_d!=None):
-                    campaign["dropout_decay_rate_d"]=Parâmetros.dropout_decay_rate_d
-                if(Parâmetros.dropout_decay_rate_g!=None):
-                    campaign["dropout_decay_rate_g"]=Parâmetros.dropout_decay_rate_g
-                if(Parâmetros.initializer_mean!=None):
-                    campaign["initializer_mean"]=Parâmetros.initializer_mean
-                if(Parâmetros.initializer_deviation!=None):
-                    campaign['initializer_deviation']=Parâmetros.initializer_deviation
+                if(Parametros.dense_layer_sizes_g!=None):
+                    campaign['dense_layer_sizes_g']=Parametros.dense_layer_sizes_g
+                if(Parametros.dense_layer_sizes_d!=None):
+                    campaign['dense_layer_sizes_d']=Parametros.dense_layer_sizes_d
+                if(Parametros.number_epochs!=None):
+                    campaign['number_epochs']=Parametros.number_epochs
+                if(Parametros.optimizer_generator_learning!=None):
+                    campaign['optimizer_generator_learning']=Parametros.optimizer_generator_learning
+                if(Parametros.optimizer_discriminator_learning!=None):
+                    campaign["optimizer_discriminator_learning"]=Parametros.optimizer_discriminator_learning
+                if(Parametros.dropout_decay_rate_d!=None):
+                    campaign["dropout_decay_rate_d"]=Parametros.dropout_decay_rate_d
+                if(Parametros.dropout_decay_rate_g!=None):
+                    campaign["dropout_decay_rate_g"]=Parametros.dropout_decay_rate_g
+                if(Parametros.initializer_mean!=None):
+                    campaign["initializer_mean"]=Parametros.initializer_mean
+                if(Parametros.initializer_deviation!=None):
+                    campaign['initializer_deviation']=Parametros.initializer_deviation
                 params, values = zip(*campaign.items())
                 combinations_dicts = [dict(zip(params, v)) for v in itertools.product(*values)]
                 #print(campaign["output_dir"][0])
 
-                campaign_dir = '{}/{}'.format(output_dir, c)
+                #campaign_dir = '{}/{}'.format(output_dir, c)
                 count_combination = 1
                 for combination in combinations_dicts:
                     logging.info("\t\tcombination {}/{} ".format(count_combination, len(combinations_dicts)))
                     logging.info("\t\t{}".format(combination))
                     # estabelece o comando de execução
                     cmd = COMMAND
-                    cmd += " --verbosity {}".format(Parâmetros.verbosity)
-                    cmd+=" --batch_size {}".format(Parâmetros.batch_size)
-                    count_combination += 2
-
+                    cmd += " --verbosity {}".format(Parametros.verbosity)
+                    cmd+=" --batch_size {}".format(Parametros.batch_size)
+                    #count_combination += 1
+                    count_combination=1
                     for param in combination.keys():
                         cmd += " --{} {}".format(param, combination[param])
                         if(param=="input_dataset"):
 
-                            cmd+=" --output_dir {}".format((c+"/"+(combination[param].split("/")[-1])))
+                            cmd+=" --output_dir {}".format((c+"/"+((combination[param].split("/")[-1]).split('.csv')[0])+'_'+str(datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S"))))
+
+                    count_combination += 1
                         
                     # cronometra o início do experimento da campanha
                     time_start_experiment = datetime.datetime.now()
@@ -400,66 +403,71 @@ def main():
         logging.info("Evaluation duration: {}".format(time_end_evaluation - time_start_evaluation))
     else:
         #caso o mlflow esteja habilitado, estabelece o endereço e nome da campanha
-        mlflow.set_tracking_uri("http://127.0.0.1:6002/")
-        mlflow.set_experiment("MalSynGEn")
-        with mlflow.start_run(run_name="campanhas"): 
-         for c in campaigns_chosen:
+        adress="http://127.0.0.1:{}".format(Parametros.port_mlflow)
+        mlflow.set_tracking_uri(adress)
+
+          
+        for c in campaigns_chosen:
+            mlflow.set_experiment(c)
+            #mlflow.set_experiment(c)
+
            #para cada execução da campanha é criada uma execução filha da execução original
-           with mlflow.start_run(run_name=c,nested=True) as run:
-            id=run.info.run_id
             logging.info("\tCampaign {} {}/{} ".format(c, count_campaign, len(campaigns_chosen)))
             count_campaign += 1
-
             campaign = campaigns_available[c]
-            if(Parâmetros.dense_layer_sizes_g!=None):
-                    campaign['dense_layer_sizes_g']=Parâmetros.dense_layer_sizes_g
-            if(Parâmetros.dense_layer_sizes_d!=None):
-                    campaign['dense_layer_sizes_d']=Parâmetros.dense_layer_sizes_d
-            if(Parâmetros.number_epochs!=None):
-                    campaign['number_epochs']=Parâmetros.number_epochs
-            if(Parâmetros.optimizer_generator_learning!=None):
-                    campaign['optimizer_generator_learning']=Parâmetros.optimizer_generator_learning
-            if(Parâmetros.optimizer_discriminator_learning!=None):
-                    campaign["optimizer_discriminator_learning"]=Parâmetros.optimizer_discriminator_learning
-            if(Parâmetros.dropout_decay_rate_d!=None):
-                    campaign["dropout_decay_rate_d"]=Parâmetros.dropout_decay_rate_d
-            if(Parâmetros.dropout_decay_rate_g!=None):
-                    campaign["dropout_decay_rate_g"]=Parâmetros.dropout_decay_rate_g
-            if(Parâmetros.initializer_mean!=None):
-                    campaign["initializer_mean"]=Parâmetros.initializer_mean
-            if(Parâmetros.initializer_deviation!=None):
-                    campaign['initializer_deviation']=Parâmetros.initializer_deviation
+            if(Parametros.dense_layer_sizes_g!=None):
+                    campaign['dense_layer_sizes_g']=Parametros.dense_layer_sizes_g
+            if(Parametros.dense_layer_sizes_d!=None):
+                    campaign['dense_layer_sizes_d']=Parametros.dense_layer_sizes_d
+            if(Parametros.number_epochs!=None):
+                    campaign['number_epochs']=Parametros.number_epochs
+            if(Parametros.optimizer_generator_learning!=None):
+                    campaign['optimizer_generator_learning']=Parametros.optimizer_generator_learning
+            if(Parametros.optimizer_discriminator_learning!=None):
+                    campaign["optimizer_discriminator_learning"]=Parametros.optimizer_discriminator_learning
+            if(Parametros.dropout_decay_rate_d!=None):
+                    campaign["dropout_decay_rate_d"]=Parametros.dropout_decay_rate_d
+            if(Parametros.dropout_decay_rate_g!=None):
+                    campaign["dropout_decay_rate_g"]=Parametros.dropout_decay_rate_g
+            if(Parametros.initializer_mean!=None):
+                    campaign["initializer_mean"]=Parametros.initializer_mean
+            if(Parametros.initializer_deviation!=None):
+                    campaign['initializer_deviation']=Parametros.initializer_deviation
             params, values = zip(*campaign.items())
             combinations_dicts = [dict(zip(params, v)) for v in itertools.product(*values)]
             campaign_dir = '{}/{}'.format(output_dir, c)
-
             count_combination = 1
             for combination in combinations_dicts:
-                logging.info("\t\tcombination {}/{} ".format(count_combination, len(combinations_dicts)))
-                logging.info("\t\t{}".format(combination))
-                #comando alternativo que possui a opção -ml
-                cmd = COMMAND2
-                cmd += " --verbosity {}".format(Parâmetros.verbosity)
-                cmd += " --run_id {}".format(id)
+                run_name="{}".format((c+"/"+((combination["input_dataset"].split("/")[-1]).split('.csv')[0])+'_'+str(datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S"))))
 
-                count_combination += 2
+                with mlflow.start_run(nested=True) as run:
+                    id=run.info.run_id    
+                    logging.info("\t\tcombination {}/{} ".format(count_combination, len(combinations_dicts)))
+                    logging.info("\t\t{}".format(combination))
+                    # estabelece o comando de execução
+                    cmd = COMMAND2
+                    cmd += " --verbosity {}".format(Parametros.verbosity)
+                    cmd+=" --batch_size {}".format(Parametros.batch_size)
+                    cmd += " --run_id {}".format(id)
+                    #count_combination += 1
+                    count_combination=1
+                    for param in combination.keys():
+                        cmd += " --{} {}".format(param, combination[param])
+                        if(param=="input_dataset"):
 
-                for param in combination.keys():
-                    cmd += " --{} {}".format(param, combination[param])
-                    if(param=="input_dataset"):
-
-                            cmd+=" --output_dir {}".format((c+"/"+(combination[param].split("/")[-1])))
-
-                # cronometra o início do experimento da campanha
-                time_start_experiment = datetime.datetime.now()
-                logging.info(
-                    "\t\t\t\t\tBegin: {}".format(time_start_experiment.strftime(TIME_FORMAT)))
-                run_cmd(cmd)
-                #cronometra o fim do experimento da campanha
-                time_end_experiment = datetime.datetime.now()
-                duration = time_end_experiment - time_start_experiment
-                logging.info("\t\t\t\t\tEnd                : {}".format(time_end_experiment.strftime(TIME_FORMAT)))
-                logging.info("\t\t\t\t\tExperiment duration: {}".format(duration))
+                            cmd+=" --output_dir {}".format((c+"/"+((combination[param].split("/")[-1]).split('.csv')[0])+'_'+str(datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S"))))
+                    cmd+= " --port_mlflow {}".format(Parametros.port_mlflow)
+                    count_combination += 1
+                    # cronometra o início do experimento da campanha
+                    time_start_experiment = datetime.datetime.now()
+                    logging.info(
+                        "\t\t\t\t\tBegin: {}".format(time_start_experiment.strftime(TIME_FORMAT)))
+                    run_cmd(cmd)
+                    #cronometra o fim do experimento da campanha
+                    time_end_experiment = datetime.datetime.now()
+                    duration = time_end_experiment - time_start_experiment
+                    logging.info("\t\t\t\t\tEnd                : {}".format(time_end_experiment.strftime(TIME_FORMAT)))
+                    logging.info("\t\t\t\t\tExperiment duration: {}".format(duration))
 
 
             time_end_campaign = datetime.datetime.now()
@@ -472,3 +480,4 @@ def main():
 
 if __name__ == '__main__':
     sys.exit(main())
+

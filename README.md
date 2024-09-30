@@ -1,3 +1,41 @@
+# MalSynGen: redes neurais artificiais na geração de dados tabulares sintéticos para detecção de malware
+## MalSynGen
+A MalSynGen  é uma ferramenta que utiliza redes neurais artificiais para gerar dados sintéticos tabulares para o domínio de malware Android. Para avaliar o seu desempenho foram aumentados os dados de dois datasets, considerando métricas de fidelidade estatística e utilidade. Os resultados indicam que MalSynGen é capaz de capturar padrões representativos para o aumento de dados tabulares.
+### informação importante
+Está é uma ferramenta pública, no entanto, caso usar esse material, por favor, referenciar os artigos:
+>@inproceedings{sbseg_estendido,<br/>
+ author = {Angelo Nogueira and Kayua Paim and Hendrio Bragança and Rodrigo Mansilha and Diego Kreutz},<br/>
+ title = { MalSynGen: redes neurais artificiais na geração de dados tabulares sintéticos para detecção de malware},<br/>
+ booktitle = {Anais Estendidos do XXIV Simpósio Brasileiro de Segurança da Informação e de Sistemas Computacionais},<br/>
+ location = {São José dos Campos/SP},<br/>
+ year = {2024},<br/>
+ keywords = {},<br/>
+ issn = {0000-0000},<br/>
+ pages = {129--136},<br/>
+ publisher = {SBC},<br/>
+ address = {Porto Alegre, RS, Brasil},<br/>
+ doi = {10.5753/sbseg_estendido.2024.243359},<br/>
+ url = {https://sol.sbc.org.br/index.php/sbseg_estendido/article/view/30126}}<br/>
+
+ 
+https://sol.sbc.org.br/index.php/sbseg_estendido/article/view/30126
+
+>@inproceedings{sbseg,<br/>
+ author = {Angelo Nogueira and Kayua Paim and Hendrio Bragança and Rodrigo Mansilha and Diego Kreutz},<br/>
+ title = { Geração de dados sintéticos tabulares para detecção de malware Android: um estudo de caso},<br/>
+ booktitle = {Anais do XXIV Simpósio Brasileiro de Segurança da Informação e de Sistemas Computacionais},<br/>
+ location = {São José dos Campos/SP},<br/>
+ year = {2024},<br/>
+ keywords = {},<br/>
+ issn = {0000-0000},<br/>
+ pages = {808--814},<br/>
+ publisher = {SBC},<br/>
+ address = {Porto Alegre, RS, Brasil},<br/>
+ doi = {10.5753/sbseg.2024.241731},<br/>
+ url = {https://sol.sbc.org.br/index.php/sbseg/article/view/30072}}<br/>
+
+
+https://sol.sbc.org.br/index.php/sbseg/article/view/30072
 ## 1. Preparação e instalação
 
 1. Clonar o repositório e execute os seguintes comandos.
@@ -5,7 +43,12 @@
     git clone https://github.com/SBSegSF24/MalSynGen.git
     cd MalSynGen
    ```
-2. Instalação das dependências.
+2. Instalação do Pipenv, necessário para a execução de vários comandos.
+   ```bash
+   pip install pipenv
+   ```
+    
+3. Instalação das dependências.
    
    **Opção 1**: Construir uma imagem Docker localmente a partir do Dockerfile.
       
@@ -30,13 +73,11 @@
    ```
 
    **Opção 4**: Configurar o pipenv.
-   ```
-   pip install pipenv
-   ```
+
    ```
    pipenv install -r requirements.txt
    ```
-   Obs: É necessário a instalação do pipenv através da opção 4 ou opção 2 para garantir o funcionamento da ferramenta.
+
 ## 2. Execução
 Executar a demonstração de funcionamento da ferramenta: 
 
@@ -49,7 +90,20 @@ Executar a demonstração de funcionamento da ferramenta:
    ```bash
    ./run_demo_docker.sh
    ```
+### 2.1. Dependências
+Testamos o código da ferramenta com as seguintes versões Python:
 
+1. Python 3.8.2 
+
+2. Python 3.8.10
+
+3. Python 3.9.2
+
+4. Python 3.10.12
+
+O código da MalSynGen possui dependências com diversos pacotes e bibliotecas Python, como 
+numpy 1.21.5, Keras 2.9.0, Tensorflow 2.9.1, pandas 1.4.4, scikit-learn 1.1.1. e mlflow 2.12.1.
+A lista completa e extensa das dependências está no arquivo [**requirements.txt**](https://github.com/SBSegSF24/MalSynGen/blob/880d39c70a8b6e6725acb7a6376f57268ac4ba11/requirements.txt). 
 ## 3. Reprodução 
 Para a reprodução dos mesmos experimentos (campanhas) do paper utilize uma das seguintes opções. A execução leva em torno de 14 horas em um computador AMD Ryzen 7 5800x, 8 cores, 64 GB RAM. 
 
@@ -224,7 +278,7 @@ A ferramenta foi executada e testada com sucesso nos seguintes ambientes:
 3. **Hardware**: AMD Ryzen 7 5800X 8-core, 64GB RAM (3200MHz), NVDIA RTX3090 24GB. **Software**:Python 3.11.5, WSL: 2.2.4.0, Docker version 24.0.7, 
 
 ## 8. Datasets
-O diretório **datasets** do GitHub contém os conjuntos de dados balanceados KronoDroid_emulator e KronoDroid_real_device utilizados nos experimentos do trabalho. O código utilizado para balancear os datasets originais também está disponível. O diretório **datasets** contém também os arquivos de validação de cada dataset e código de validação utilizado no subdiretório **validation**. As versões originais dos datasets tem como origem o repositório [https://github.com/aleguma/kronodroid](https://github.com/aleguma/kronodroid).
+O diretório **datasets** do GitHub contém os conjuntos de dados balanceados KronoDroid_emulator e KronoDroid_real_device utilizados nos experimentos do trabalho. O código utilizado para balancear os datasets originais também está disponível. O diretório **datasets** contém também os arquivos de validação de cada dataset e código de validação utilizado no subdiretório **validation**. As versões originais dos datasets tem como origem o repositório [https://github.com/aleguma/kronodroid](https://github.com/aleguma/kronodroid) do artigo [KronoDroid: Time-based Hybrid-featured Dataset for Effective Android Malware Detection and Characterization](https://www.sciencedirect.com/science/article/pii/S0167404821002236). 
 ![image](https://github.com/user-attachments/assets/534462b5-b0f2-4fe1-93c4-c0446d0d2fa4)
 
 
