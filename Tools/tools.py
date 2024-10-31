@@ -90,21 +90,20 @@ class PlotConfusionMatrix:
         self.title_confusion_matrix = title_confusion_matrix
         self.legend_rotation = legend_rotation
 
-    def plot_confusion_matrix(self, confusion_matrix, confusion_matrix_title=None, cmap=None):
+    def plot_confusion_matrix(self, confusion_matrix, cmap=None):
         """
         Plota a matriz de confusão.
 
         Parâmetros:
             - confusion_matrix: A matriz de confusão a ser plotada.
-            - confusion_matrix_title: Título da matriz de confusão.
             - cmap: Mapa de cores a ser usado no plot.
         """
         plt.imshow(confusion_matrix, interpolation='nearest', cmap=cmap)
 
-        if confusion_matrix_title is None:
-            confusion_matrix_title = self.title_confusion_matrix
+        #if confusion_matrix_title is None:
+           # confusion_matrix_title = self.title_confusion_matrix
 
-        plt.title(confusion_matrix_title)
+        #plt.title(confusion_matrix_title)
         plt.colorbar()
         tick_marks = np.arange(len(self.class_labels))
         plt.xticks(tick_marks, self.class_labels, rotation=self.legend_rotation)
@@ -324,7 +323,7 @@ class PlotClassificationMetrics:
         self.width_bar = width_bar
         self.font_size = font_size
 
-    def plot_classifier_metrics(self, classifier_type, accuracy_list, precision_list, recall_list, f1_score_list, plot_filename, plot_title, type_of_classifier):
+    def plot_classifier_metrics(self, classifier_type, accuracy_list, precision_list, recall_list, f1_score_list, plot_filename,type_of_classifier):
         """
         Plota as métricas de classificação.
 
@@ -374,7 +373,7 @@ class PlotClassificationMetrics:
         )
 
         new_plot_bars.update_layout(
-            barmode='group', title=plot_title, yaxis=y_label_dictionary,
+            barmode='group', yaxis=y_label_dictionary,
             xaxis=dict(title=f'Desempenho com {classifier_type}'), showlegend=False,
             plot_bgcolor='white'
         )
@@ -454,7 +453,7 @@ class PlotFidelityeMetrics:
         self.plot_title_axis_x = plot_title
         self.font_size = font_size
 
-    def plot_fidelity_metrics(self, mean_squared_error_list, list_cosine_similarity, list_max_mean_discrepancy, plot_filename, plot_title):
+    def plot_fidelity_metrics(self, mean_squared_error_list, list_cosine_similarity, list_max_mean_discrepancy, plot_filename):
         """
         Realiza o plot das métricas de fidelidade.
 
@@ -495,7 +494,7 @@ class PlotFidelityeMetrics:
         )
 
         new_plot_bars.update_layout(
-            barmode='group', title=plot_title, yaxis=y_label_dictionary,
+            barmode='group', yaxis=y_label_dictionary,
             xaxis=dict(title=self.plot_title_axis_x), showlegend=False,
             plot_bgcolor='white'
         )

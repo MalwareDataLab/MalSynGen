@@ -1,19 +1,28 @@
-FROM  ubuntu:22.04
-USER root
+FROM ubuntu:22.04
+
+
 WORKDIR /MalSynGen
-RUN apt-get update
-RUN apt-get -y install python3-pip
-RUN apt install unzip 
+
+
+RUN apt-get update && apt-get install -y \
+    python3 \
+    python3-pip \
+    unzip \
+    && rm -rf /var/lib/apt/lists/*
+
+
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
-COPY ./ /MalSynGen/
+
+
 RUN pip3 install pipenv
-RUN pipenv lock
-RUN pipenv install -r requirements.txt
-#CMD while true; do sleep 1000; done
+RUN pip install urllib3
 
-RUN mv /MalSynGen/scripts/run_app_in_docker.sh /usr/bin/docker_run.sh
-RUN chmod +x /usr/bin/docker_run.sh 
-CMD ["docker_run.sh"]
+COPY ./ /MalSynGen/
 
+# Install dependencies using pipenv and requirements.txt
 
+RUN pip3 install -r requirements.txt
+
+RUN chmod +x /MalSynGen/shared/app_run.sh
+CMD ["/MalSynGen/shared/app_run.sh"]
 

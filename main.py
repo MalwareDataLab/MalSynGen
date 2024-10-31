@@ -153,7 +153,7 @@ DEFAULT_PERCEPTRON_DENSE_LAYERS_SETTINGS = [512, 256, 256]
 DEFAULT_PERCEPTRON_DROPOUT_DECAY_RATE = 0.2
 DEFAULT_PERCEPTRON_METRIC = ["accuracy"]
 ## Valor padrão para a opção de salvar modelos: True ou False
-DEFAULT_SAVE_MODELS = True
+DEFAULT_SAVE_MODELS = False
 ##Caminhos para os arquivos de saida
 DEFAULT_OUTPUT_PATH_CONFUSION_MATRIX = "confusion_matrix"
 DEFAULT_OUTPUT_PATH_TRAINING_CURVE = "training_curve"
@@ -285,6 +285,7 @@ def evaluate_TR_As_data(list_classifiers, x_TR_As, y_TR_As, fold, k, generate_co
     - dict: dicionário atualizado com resultados
     - TR_As_aucs: lista atualizada com AUCs
     """
+    output_dir=output_dir+"/metrics/"
     instance_metrics = ProbabilisticMetrics()
     y_predict_prob=[]
     logging.info(f"TR_As Fold {fold + 1}/{k} results\n")
@@ -335,6 +336,7 @@ def evaluate_TR_As_data(list_classifiers, x_TR_As, y_TR_As, fold, k, generate_co
         fpr, tpr,thresholds=sklearn.metrics.roc_curve(y_TR_As,   y_predict_prob)
         ##plot da figura da curva de ROC
         plt.figure()  
+   
         Path(os.path.join(output_dir, path_confusion_matrix)).mkdir(parents=True, exist_ok=True)
         roc_file = os.path.join(output_dir, path_confusion_matrix,f'Roc_curve_TR_As_{classifier_type[index]}_k{fold + 1}.jpg')
         auc=metrics.roc_auc_score(y_TR_As,   y_predict_prob)
@@ -348,7 +350,9 @@ def evaluate_TR_As_data(list_classifiers, x_TR_As, y_TR_As, fold, k, generate_co
             plt.figure()
             selected_color_map = plt.colormaps.get_cmap(DEFAULT_COLOR_NAME[(fold + 2) % len(DEFAULT_COLOR_NAME)])
             confusion_matrix_instance = PlotConfusionMatrix()
-            confusion_matrix_instance.plot_confusion_matrix(confusion_matrix_TR_As, out_label, selected_color_map)
+
+
+            confusion_matrix_instance.plot_confusion_matrix(confusion_matrix_TR_As, selected_color_map)
             Path(os.path.join(output_dir, path_confusion_matrix)).mkdir(parents=True, exist_ok=True)
             matrix_file = os.path.join(output_dir, path_confusion_matrix,
                                        f'CM_TR_As_{classifier_type[index]}_k{fold + 1}.jpg')
@@ -402,7 +406,7 @@ def evaluate_TS_Ar_data(list_classifiers, x_TS_Ar, y_TS_Ar, fold, k, generate_co
   
     """
     logging.info(f"TS_Ar Fold {fold + 1}/{k} results")
-    
+    output_dir=output_dir+"/metrics/"
     instance_metrics = ProbabilisticMetrics()
     y_predict_prob=[]
     ## Itera sobre a lista dos classificadores
@@ -454,6 +458,7 @@ def evaluate_TS_Ar_data(list_classifiers, x_TS_Ar, y_TS_Ar, fold, k, generate_co
         fpr, tpr,thresholds=metrics.roc_curve(y_sample_TS_Ar, y_predict_prob)
         ##plot da figura da curva de ROC
         plt.figure()  
+
         Path(os.path.join(output_dir, path_confusion_matrix)).mkdir(parents=True, exist_ok=True)
         roc_file = os.path.join(output_dir, path_confusion_matrix,f'Roc_curve_TS_Ar_{classifier_type[index]}_k{fold + 1}.jpg')
         auc=metrics.roc_auc_score(y_sample_TS_Ar,  y_predict_prob)
@@ -466,7 +471,7 @@ def evaluate_TS_Ar_data(list_classifiers, x_TS_Ar, y_TS_Ar, fold, k, generate_co
             plt.figure()
             selected_color_map = plt.colormaps.get_cmap(DEFAULT_COLOR_NAME[(fold + 2) % len(DEFAULT_COLOR_NAME)])
             confusion_matrix_instance = PlotConfusionMatrix()
-            confusion_matrix_instance.plot_confusion_matrix(confusion_matrix_TS_Ar, out_label, selected_color_map)
+            confusion_matrix_instance.plot_confusion_matrix(confusion_matrix_TS_Ar, selected_color_map)
             Path(os.path.join(output_dir, path_confusion_matrix)).mkdir(parents=True, exist_ok=True)
             matrix_file = os.path.join(output_dir, path_confusion_matrix,
                                        f'CM_TS_Ar_{classifier_type[index]}_k{fold + 1}.jpg')
@@ -533,7 +538,6 @@ def show_and_export_results(dict_similarity, classifier_type, output_dir, title_
     ## Inicializa as classes para plotar métricas
     plot_classifier_metrics = PlotClassificationMetrics()
     plot_fidelity_metrics = PlotFidelityeMetrics()
-    
     ## Itera sobre os classificadores
     for index in range(len(classifier_type)):
         
@@ -557,7 +561,9 @@ def show_and_export_results(dict_similarity, classifier_type, output_dir, title_
         logging.info("  TR_As Standard Deviation of F1 Score: {} \n".format(np.std(dict_metrics["TR_As F1 score"][classifier_type[index]])))
         logging.info("  TR_As Standard Deviation of AUC: {} ".format(np.std(dict_TR_As_auc[classifier_type[index]])))
         ## Nome do plot
-        plot_filename = os.path.join(output_dir, f'{classifier_type[index]}_TS_Ar_(Treinado com sintético,avalia com dados reais)_.pdf')
+        output_dir_metrics=output_dir+"/metrics/"
+        Path(output_dir_metrics).mkdir(parents=True, exist_ok=True)
+        plot_filename = os.path.join(output_dir_metrics, f'{classifier_type[index]}_TR_As_(Treinado com  dados reais,avalia com dados sinteticos)_.pdf')
 
         ## Plota e salva as métricas dos classificadores  TR_As
         plot_classifier_metrics.plot_classifier_metrics(
@@ -566,8 +572,7 @@ def show_and_export_results(dict_similarity, classifier_type, output_dir, title_
             dict_metrics["TR_As precision"][classifier_type[index]], 
             dict_metrics["TR_As recall"][classifier_type[index]], 
             dict_metrics["TR_As F1 score"][classifier_type[index]], 
-            plot_filename,
-            f'{title_output_label}_TR_As', "TR_As"
+            plot_filename, "TR_As"
         )
 
         ## Define os nomes das métricas TR_As para as ferramentas de rastreamento
@@ -641,7 +646,7 @@ def show_and_export_results(dict_similarity, classifier_type, output_dir, title_
         logging.info("  TS_Ar Standard Deviation of F1 Score: {} \n".format(np.std(dict_metrics["TS_Ar F1 score"][classifier_type[index]])))
         logging.info("  TS_Ar Standard Deviation of AUC: {} ".format(np.std(dict_TS_Ar_auc[classifier_type[index]])))
         ## Nome do plot
-        plot_filename = os.path.join(output_dir, f'{classifier_type[index]}_treiando_com_sint_testado_com_TS_Ar.pdf')
+        plot_filename = os.path.join(output_dir_metrics, f'{classifier_type[index]}_TS_Ar_(Treiando com dados sinteticos, avaliado com reias).pdf')
 
         ## Plota e salva as métricas dos classificadores  TS_Ar
         plot_classifier_metrics.plot_classifier_metrics(
@@ -650,8 +655,7 @@ def show_and_export_results(dict_similarity, classifier_type, output_dir, title_
             dict_metrics["TS_Ar precision"][classifier_type[index]],
             dict_metrics["TS_Ar recall"][classifier_type[index]],
             dict_metrics["TS_Ar F1 score"][classifier_type[index]],
-            plot_filename,
-            f'{title_output_label}_TS_Ar', "TS_Ar"
+            plot_filename, "TS_Ar"
         )
 
         ## Define os nomes das métricas TS_Ar para as ferramentas de rastreamento
@@ -703,25 +707,25 @@ def show_and_export_results(dict_similarity, classifier_type, output_dir, title_
         p_value_test(dict_metrics["TS_Ar F1 score"], dict_metrics["TR_As F1 score"], "F1 score", classifier_type[index])
         p_value_test(dict_metrics["TS_Ar recall"], dict_metrics["TR_As recall"], "recall", classifier_type[index])
         p_value_test(dict_TS_Ar_auc, dict_TR_As_auc, "auc", classifier_type[index])
-        plot_filename = os.path.join(output_dir, f'{classifier_type[index]}_p_values.pdf')
+        plot_filename = os.path.join(output_dir_metrics, f'{classifier_type[index]}_p_values.pdf')
 
     ## Plota e salva as métricas de fidelidade geradas
-    plot_filename1 = os.path.join(output_dir, f'Comparison_TS_Ar_TR_As_positive.jpg')
-    plot_filename2 = os.path.join(output_dir, f'Comparison_TS_Ar_TR_As_false.jpg')
+    plot_filename1 = os.path.join(output_dir_metrics, f'Comparison_labels_positive.jpg')
+    plot_filename2 = os.path.join(output_dir_metrics, f'Comparison_labels_false.jpg')
 
     plot_fidelity_metrics.plot_fidelity_metrics(
         dict_similarity["list_mean_squared_error"]["positive"],
         dict_similarity["list_cosine_similarity"]["positive"],
         dict_similarity["list_maximum_mean_discrepancy"]["positive"],
         plot_filename1,
-        f'{title_output_label}'
+
     )
     plot_fidelity_metrics.plot_fidelity_metrics(
         dict_similarity["list_mean_squared_error"]["false"],
         dict_similarity["list_cosine_similarity"]["false"],
         dict_similarity["list_maximum_mean_discrepancy"]["false"],
         plot_filename2,
-        f'{title_output_label}'
+
     )
     
     ## Rastreamento das imagens utilizando Aimstack
@@ -930,13 +934,14 @@ def run_experiment(dataset, input_data_shape, k, classifier_list, output_dir, ba
 
         ## Salvar os modelos treinados, se solicitado
         if save_models:
-            adversarial_model.save_models(output_dir, i)
+           adversarial_model.save_models(output_dir, i)
 
         ## Plotar a curva de perda durante o treinamento
         generator_loss_list = training_history.history['loss_g']
         discriminator_loss_list = training_history.history['loss_d']
         plot_loss_curve_instance = PlotCurveLoss()
-        plot_loss_curve_instance.plot_training_loss_curve(generator_loss_list, discriminator_loss_list, output_dir, i,
+        output_dir1=output_dir+"/metrics/"
+        plot_loss_curve_instance.plot_training_loss_curve(generator_loss_list, discriminator_loss_list, output_dir1, i,
                                                           path_curve_loss)
 
         ## Preparação para a geração de dados sintéticos
@@ -964,7 +969,9 @@ def run_experiment(dataset, input_data_shape, k, classifier_list, output_dir, ba
 
             ## Salvar dados sintéticos em um arquivo CSV
         synthetic_filename = f'synthetic_data_fold_{i + 1}.csv'
-        synthetic_filepath = os.path.join(output_dir, synthetic_filename)
+        output_dir_folds=output_dir+"/datasets/"
+        Path(output_dir_folds).mkdir(parents=True, exist_ok=True)
+        synthetic_filepath = os.path.join(output_dir_folds, synthetic_filename)
         df_synthetic.to_csv(synthetic_filepath, index=False, sep=',', header=True)
 
         ## Realizar o transform sobre os dados de avaliação  para gerar o segundo conjunto sintético
@@ -1068,7 +1075,9 @@ def initial_step(initial_arguments, dataset_type):
     """
 
     ## Caminho para o arquivo onde os argumentos da linha de comando serão salvos
-    file_args = os.path.join(initial_arguments.output_dir, 'commandline_args.txt')
+    output_dir=initial_arguments.output_dir+"/metrics/"
+    Path(output_dir).mkdir(parents=True, exist_ok=True)
+    file_args = os.path.join(  output_dir, 'commandline_args.txt')
 
     ## Salva os argumentos da linha de comando em um arquivo JSON
     with open(file_args, 'w') as f:
@@ -1219,8 +1228,9 @@ if __name__ == "__main__":
         logging_format = '%(asctime)s\t***\t%(levelname)s {%(module)s} [%(funcName)s] %(message)s'
 
     ##Verifica se o caminho para o diretório de output existe
-    Path(arguments.output_dir).mkdir(parents=True, exist_ok=True)
-    logging_filename = os.path.join(arguments.output_dir, LOGGING_FILE_NAME)
+    output_dir=arguments.output_dir+"/metrics/"
+    Path(output_dir).mkdir(parents=True, exist_ok=True)
+    logging_filename = os.path.join(output_dir, LOGGING_FILE_NAME)
 
 
     logging.basicConfig(format=logging_format, level=arguments.verbosity)
