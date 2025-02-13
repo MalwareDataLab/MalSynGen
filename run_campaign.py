@@ -101,7 +101,7 @@ campaigns_available = {
         "num_samples_class_malware": ['10000'],
         'training_algorithm': ['Adam'],
     },
-    'kronodroid_r_sbseg_2025': {
+    'kronodroid_r_jbcs_2025': {
         'input_dataset': ['datasets/reduced_balanced_kronodroid_real_device.csv'],
         "dense_layer_sizes_g": ['512'],
         "dense_layer_sizes_d": ['256'],
@@ -111,7 +111,7 @@ campaigns_available = {
         'dropout_decay_rate_g': ['0.025'],
         'initializer_deviation': ['0.4'],
     },
-    'kronodroid_e_sbseg_2025': {
+    'kronodroid_e_jbcs_2025': {
         'input_dataset': ['datasets/reduced_balanced_kronodroid_emulator.csv'],       
         "dense_layer_sizes_g": ['512'],  
         "dense_layer_sizes_d": ['256'],
@@ -121,7 +121,7 @@ campaigns_available = {
         'dropout_decay_rate_g': ['0.025'],
         'initializer_deviation': ['0.4'],
     },
-    'android_p_sbseg_2025': {
+    'android_p_jbcs_2025': {
        'input_dataset': ['datasets/reduced_balanced_android_permissions.csv'],
        "dense_layer_sizes_g": ['1024'],
        "dense_layer_sizes_d": ['512'],
@@ -131,7 +131,7 @@ campaigns_available = {
        'dropout_decay_rate_g': ['0.2'],
        'initializer_deviation': ['0.5'],
      },
-     'adroit_sbseg_2025': {
+     'adroit_jbcs_2025': {
         'input_dataset': ['datasets/reduced_balanced_adroit.csv'],
         "dense_layer_sizes_g": ['64'],
         "dense_layer_sizes_d": ['32'],
@@ -141,7 +141,7 @@ campaigns_available = {
         'dropout_decay_rate_g': ['0.05'],
         'initializer_deviation': ['0.5'],
     },
-     'drebin_sbseg_2025': {
+     'drebin_jbcs_2025': {
         'input_dataset': ['datasets/reduced_balanced_drebin215.csv'],
         "dense_layer_sizes_g": ['2048'],
         "dense_layer_sizes_d": ['1024'],
@@ -151,7 +151,7 @@ campaigns_available = {
         'dropout_decay_rate_g': ['0.2'],
         'initializer_deviation': ['0.5'],
     },
-     'androcrawl_sbseg_2025': {
+     'androcrawl_jbcs_2025': {
         'input_dataset': ['datasets/reduced_balanced_androcrawl.csv'],
         "dense_layer_sizes_g": ['2048'],
         "dense_layer_sizes_d": ['512'],

@@ -1,0 +1,32 @@
+2025-02-13 11:03:24,702	***	Command:
+	run_campaign.py -c kronodroid_r_jbcs_2025,kronodroid_e_jbcs_2025,android_p_jbcs_2025,adroit_jbcs_2025,drebin_jbcs_2025,androcrawl_jbcs_2025
+
+2025-02-13 11:03:24,702	***	Settings:
+2025-02-13 11:03:24,702	***		batch_size                       : 256
+2025-02-13 11:03:24,702	***		campaign                         : kronodroid_r_jbcs_2025,kronodroid_e_jbcs_2025,android_p_jbcs_2025,adroit_jbcs_2025,drebin_jbcs_2025,androcrawl_jbcs_2025
+2025-02-13 11:03:24,702	***		demo                             : False
+2025-02-13 11:03:24,702	***		dense_layer_sizes_d              : None
+2025-02-13 11:03:24,702	***		dense_layer_sizes_g              : None
+2025-02-13 11:03:24,702	***		dropout_decay_rate_d             : None
+2025-02-13 11:03:24,702	***		dropout_decay_rate_g             : None
+2025-02-13 11:03:24,702	***		initializer_deviation            : None
+2025-02-13 11:03:24,702	***		initializer_mean                 : None
+2025-02-13 11:03:24,702	***		number_epochs                    : None
+2025-02-13 11:03:24,702	***		optimizer_discriminator_learning : None
+2025-02-13 11:03:24,702	***		optimizer_generator_learning     : None
+2025-02-13 11:03:24,702	***		port_mlflow                      : 6002
+2025-02-13 11:03:24,702	***		use_mlflow                       : False
+2025-02-13 11:03:24,703	***		verbosity                        : 20
+2025-02-13 11:03:24,703	***	
+2025-02-13 11:03:24,703	***	
+
+
+
+2025-02-13 11:03:24,703	***	##########################################
+2025-02-13 11:03:24,703	***	 EVALUATION 
+2025-02-13 11:03:24,703	***	##########################################
+2025-02-13 11:03:24,703	***		Campaign kronodroid_r_jbcs_2025 1/6 
+2025-02-13 11:03:24,703	***			combination 1/1 
+2025-02-13 11:03:24,703	***			{'input_dataset': 'datasets/reduced_balanced_kronodroid_real_device.csv', 'dense_layer_sizes_g': '512', 'dense_layer_sizes_d': '256', 'number_epochs': '5000', 'k_fold': '10', 'dropout_decay_rate_d': '0.05', 'dropout_decay_rate_g': '0.025', 'initializer_deviation': '0.4'}
+2025-02-13 11:03:24,703	***						Begin: 2025-02-13_11:03:24
+2025-02-13 11:03:24,703	***	Command line  : pipenv run python main.py    --verbosity 20 --batch_size 256 --input_dataset datasets/reduced_balanced_kronodroid_real_device.csv --output_dir kronodroid_r_jbcs_2025/reduced_balanced_kronodroid_real_device_2025-02-13_11-03-24 --dense_layer_sizes_g 512 --dense_layer_sizes_d 256 --number_epochs 5000 --k_fold 10 --dropout_decay_rate_d 0.05 --dropout_decay_rate_g 0.025 --initializer_deviation 0.4
