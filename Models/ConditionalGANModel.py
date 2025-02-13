@@ -170,18 +170,18 @@ class ConditionalGAN:
         Retorno:
            - Model: Modelo do discriminador.
         """
-        neural_model_input = Input(shape=(self.output_shape//16,), dtype=self.dataset_type)
+        neural_model_input = Input(shape=(self.output_shape,), dtype=self.dataset_type)
         discriminator_shape_input = Input(shape=(self.output_shape,))
         label_input = Input(shape=(1,), dtype=self.dataset_type)
 
-        discriminator_model = Dense(self.dense_layer_sizes_d[0]//2,name="pesado")(neural_model_input)
+        discriminator_model = Dense(self.dense_layer_sizes_d[0],name="pesado")(neural_model_input)
         discriminator_model = Dropout(self.dropout_decay_rate_d)(discriminator_model)
         #discriminator_model = BatchNormalization(momentum=0.8)(discriminator_model)
         discriminator_model = self.add_activation_layer(discriminator_model)
 
         for layer_size in self.dense_layer_sizes_d[1:]:
 
-            discriminator_model = Dense(layer_size//2,)(discriminator_model)
+            discriminator_model = Dense(layer_size,)(discriminator_model)
             #discriminator_model = BatchNormalization(momentum=0.8)(discriminator_model)
             discriminator_model = Dropout(self.dropout_decay_rate_d)(discriminator_model)
             discriminator_model = self.add_activation_layer(discriminator_model)
@@ -191,7 +191,7 @@ class ConditionalGAN:
         self.discriminator_model_dense = discriminator_model
         concatenate_output = Concatenate()([discriminator_shape_input, label_input])
         label_embedding = Flatten()(concatenate_output)
-        model_input = Dense(self.output_shape//16)(label_embedding)
+        model_input = Dense(self.output_shape)(label_embedding)
         model_input = self.add_activation_layer(model_input)
         validity = discriminator_model(model_input)
         return Model(inputs=[discriminator_shape_input, label_input], outputs=validity, name='Discriminator')

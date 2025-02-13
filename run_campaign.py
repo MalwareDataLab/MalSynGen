@@ -101,24 +101,66 @@ campaigns_available = {
         "num_samples_class_malware": ['10000'],
         'training_algorithm': ['Adam'],
     },
-    'campanhas_SF24': {
-        'input_dataset': ['datasets/kronodroid_real_device-balanced.csv', 'datasets/kronodroid_emulador-balanced.csv'],
-        "dense_layer_sizes_g": ['4096'],
-        "dense_layer_sizes_d": ['2048'],
-        'number_epochs': ['500'],
+    'kronodroid_r_sbseg_2025': {
+        'input_dataset': ['datasets/reduced_balanced_kronodroid_real_device.csv'],
+        "dense_layer_sizes_g": ['512'],
+        "dense_layer_sizes_d": ['256'],
+        'number_epochs': ['5000'],
         'k_fold': ['10'],
-        "num_samples_class_benign": ['10000'],
-        "num_samples_class_malware": ['10000'],
-        'training_algorithm': ['Adam'],
+        'dropout_decay_rate_d': ['0.05'],
+        'dropout_decay_rate_g': ['0.025'],
+        'initializer_deviation': ['0.4'],
     },
-     'demo2': {
-        'input_dataset': ['datasets/kronodroid_real_device-balanced.csv', 'datasets/kronodroid_emulador-balanced.csv'],
-        'number_epochs': ['100'],
-        'k_fold': ['2'],
-        "num_samples_class_benign": ['10000'],
-        "num_samples_class_malware": ['10000'],
-        'training_algorithm': ['Adam'],
+    'kronodroid_e_sbseg_2025': {
+        'input_dataset': ['datasets/reduced_balanced_kronodroid_emulator.csv'],       
+        "dense_layer_sizes_g": ['512'],  
+        "dense_layer_sizes_d": ['256'],
+        'number_epochs': ['5000'],
+        'k_fold': ['10'], 
+        'dropout_decay_rate_d': ['0.05'],
+        'dropout_decay_rate_g': ['0.025'],
+        'initializer_deviation': ['0.4'],
     },
+    'android_p_sbseg_2025': {
+       'input_dataset': ['datasets/reduced_balanced_android_permissions.csv'],
+       "dense_layer_sizes_g": ['1024'],
+       "dense_layer_sizes_d": ['512'],
+       'number_epochs': ['1000'],
+       'k_fold': ['10'],
+       'dropout_decay_rate_d': ['0.4'],
+       'dropout_decay_rate_g': ['0.2'],
+       'initializer_deviation': ['0.5'],
+     },
+     'adroit_sbseg_2025': {
+        'input_dataset': ['datasets/reduced_balanced_adroit.csv'],
+        "dense_layer_sizes_g": ['64'],
+        "dense_layer_sizes_d": ['32'],
+        'number_epochs': ['5000'],
+        'k_fold': ['10'],
+        'dropout_decay_rate_d' : ['0.1'],
+        'dropout_decay_rate_g': ['0.05'],
+        'initializer_deviation': ['0.5'],
+    },
+     'drebin_sbseg_2025': {
+        'input_dataset': ['datasets/reduced_balanced_drebin215.csv'],
+        "dense_layer_sizes_g": ['2048'],
+        "dense_layer_sizes_d": ['1024'],
+        'number_epochs': ['5000'],
+        'k_fold': ['10'],
+        'dropout_decay_rate_d' : ['0.4'],
+        'dropout_decay_rate_g': ['0.2'],
+        'initializer_deviation': ['0.5'],
+    },
+     'androcrawl_sbseg_2025': {
+        'input_dataset': ['datasets/reduced_balanced_androcrawl.csv'],
+        "dense_layer_sizes_g": ['2048'],
+        "dense_layer_sizes_d": ['512'],
+        'number_epochs': ['2000'],
+        'k_fold': ['10'],
+        'dropout_decay_rate_d' : ['0.4'],
+        'dropout_decay_rate_g': ['0.2'],
+        'initializer_deviation': ['0.5'],
+      },
 }
 
 def print_config(Parametros):
@@ -455,7 +497,7 @@ def main():
                         cmd += " --{} {}".format(param, combination[param])
                         if(param=="input_dataset"):
 
-                            cmd+=" --output_dir {}".format((c+"/"+((combination[param].split("/")[-1]).split('.csv')[0])+'_'+str(datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S"))))
+                            cmd+=" --output_dir {}".format(run_name)
                     cmd+= " --port_mlflow {}".format(Parametros.port_mlflow)
                     count_combination += 1
                     # cronometra o início do experimento da campanha

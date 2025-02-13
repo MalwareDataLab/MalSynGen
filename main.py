@@ -129,7 +129,7 @@ DEFAULT_ADVERSARIAL_DROPOUT_DECAY_RATE_D = 0.4
 ##Valor padrão para a central da distribuição gaussiana do inicializador.
 DEFAULT_ADVERSARIAL_INITIALIZER_MEAN = 0.0
 ## Valor padrão para desvio padrão da distribuição gaussiana do inicializador.
-DEFAULT_ADVERSARIAL_INITIALIZER_DEVIATION = 0.5 
+DEFAULT_ADVERSARIAL_INITIALIZER_DEVIATION = 0.5
 ##Tamanho de lota padrão da cGAN. Opções: 16, 32, 64,128,256
 DEFAULT_ADVERSARIAL_BATCH_SIZE = 32
 ##Valor padrão para número de neurônios das camadas densas do gerador.
@@ -169,7 +169,7 @@ DEFAULT_VERBOSE_LIST = {logging.INFO: 2, logging.DEBUG: 1, logging.WARNING: 2,
 Novo do arquivo onde serão salvos os logs de execução
 """
 LOGGING_FILE_NAME = "logging.log"
-
+os.environ["MLFLOW_ENABLE_SYSTEM_METRICS_LOGGING"] = "true"
 aim_run = None
 callbacks = None
 file_writer = None
@@ -1116,11 +1116,11 @@ def create_argparse():
                         choices=['int8', 'float16', 'float32'],
                         help='Tipo de dado para representar as características das amostras.')
 
-    parser.add_argument('--num_samples_class_malware', type=int,required=True,
+    parser.add_argument('--num_samples_class_malware', type=int,
                         default=DEFAULT_NUMBER_GENERATE_MALWARE_SAMPLES,
                         help='Número de amostras da Classe 1 (maligno).')
 
-    parser.add_argument('--num_samples_class_benign', type=int,required=True,
+    parser.add_argument('--num_samples_class_benign', type=int,
                         default=DEFAULT_NUMBER_GENERATE_BENIGN_SAMPLES,
                         help='Número de amostras da Classe 0 (benigno).')
 
@@ -1208,7 +1208,7 @@ def create_argparse():
     
     
     parser.add_argument("-tb",'--use_tensorboard',action='store_true',help="Uso ou não da ferramenta tensorboard para monitoramento")
-
+    parser.add_argument("-sls",'--same_layer_size',action='store_true',help="Mesmo número de camadas para o gerador e discriminador")
     return parser.parse_args()
 
 
@@ -1234,7 +1234,8 @@ if __name__ == "__main__":
 
 
     logging.basicConfig(format=logging_format, level=arguments.verbosity)
-
+    if arguments.same_layer_size:
+        arguments.dense_layer_sizes_d = arguments.dense_layer_sizes_g
     ## Adiciona o arquivo de log com os valores de logging estabelecidos nos parâmetros de entrada
     rotatingFileHandler = RotatingFileHandler(filename=logging_filename, maxBytes=100000, backupCount=5)
     rotatingFileHandler.setLevel(arguments.verbosity)
@@ -1260,7 +1261,8 @@ if __name__ == "__main__":
 
     if arguments.dense_layer_sizes_d != DEFAULT_ADVERSARIAL_DENSE_LAYERS_SETTINGS_D:
         arguments.dense_layer_sizes_d = arguments.dense_layer_sizes_d[0]
-
+    if arguments.same_layer_size:
+        arguments.dense_layer_sizes_d = arguments.dense_layer_sizes_g
     if arguments.classifier != DEFAULT_CLASSIFIER_LIST:
         arguments.classifier = arguments.classifier[0]
     if arguments.use_aim == True:

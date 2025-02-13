@@ -1,0 +1,32 @@
+2025-02-13 10:36:53,477	***	Command:
+	run_campaign.py -c adroit_sbseg_2025
+
+2025-02-13 10:36:53,477	***	Settings:
+2025-02-13 10:36:53,478	***		batch_size                       : 256
+2025-02-13 10:36:53,478	***		campaign                         : adroit_sbseg_2025
+2025-02-13 10:36:53,478	***		demo                             : False
+2025-02-13 10:36:53,478	***		dense_layer_sizes_d              : None
+2025-02-13 10:36:53,478	***		dense_layer_sizes_g              : None
+2025-02-13 10:36:53,478	***		dropout_decay_rate_d             : None
+2025-02-13 10:36:53,478	***		dropout_decay_rate_g             : None
+2025-02-13 10:36:53,478	***		initializer_deviation            : None
+2025-02-13 10:36:53,478	***		initializer_mean                 : None
+2025-02-13 10:36:53,478	***		number_epochs                    : None
+2025-02-13 10:36:53,478	***		optimizer_discriminator_learning : None
+2025-02-13 10:36:53,478	***		optimizer_generator_learning     : None
+2025-02-13 10:36:53,478	***		port_mlflow                      : 6002
+2025-02-13 10:36:53,478	***		use_mlflow                       : False
+2025-02-13 10:36:53,478	***		verbosity                        : 20
+2025-02-13 10:36:53,478	***	
+2025-02-13 10:36:53,478	***	
+
+
+
+2025-02-13 10:36:53,478	***	##########################################
+2025-02-13 10:36:53,478	***	 EVALUATION 
+2025-02-13 10:36:53,478	***	##########################################
+2025-02-13 10:36:53,478	***		Campaign adroit_sbseg_2025 1/1 
+2025-02-13 10:36:53,479	***			combination 1/1 
+2025-02-13 10:36:53,479	***			{'input_dataset': 'datasets/reduced_balanced_adroit.csv', 'dense_layer_sizes_g': '64', 'dense_layer_sizes_d': '32', 'number_epochs': '5000', 'k_fold': '10', 'dropout_decay_rate_d': '0.1', 'dropout_decay_rate_g': '0.05', 'initializer_deviation': '0.5'}
+2025-02-13 10:36:53,479	***						Begin: 2025-02-13_10:36:53
+2025-02-13 10:36:53,479	***	Command line  : pipenv run python main.py    --verbosity 20 --batch_size 256 --input_dataset datasets/reduced_balanced_adroit.csv --output_dir adroit_sbseg_2025/reduced_balanced_adroit_2025-02-13_10-36-53 --dense_layer_sizes_g 64 --dense_layer_sizes_d 32 --number_epochs 5000 --k_fold 10 --dropout_decay_rate_d 0.1 --dropout_decay_rate_g 0.05 --initializer_deviation 0.5

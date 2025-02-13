@@ -1,0 +1,30 @@
+2025-02-13 10:30:09,566	***	Command:
+	run_campaign.py -c adroit_sbseg_2025
+
+2025-02-13 10:30:09,566	***	Settings:
+2025-02-13 10:30:09,566	***		batch_size                       : 256
+2025-02-13 10:30:09,566	***		campaign                         : adroit_sbseg_2025
+2025-02-13 10:30:09,566	***		demo                             : False
+2025-02-13 10:30:09,566	***		dense_layer_sizes_d              : None
+2025-02-13 10:30:09,566	***		dense_layer_sizes_g              : None
+2025-02-13 10:30:09,566	***		dropout_decay_rate_d             : None
+2025-02-13 10:30:09,566	***		dropout_decay_rate_g             : None
+2025-02-13 10:30:09,566	***		initializer_deviation            : None
+2025-02-13 10:30:09,566	***		initializer_mean                 : None
+2025-02-13 10:30:09,567	***		number_epochs                    : None
+2025-02-13 10:30:09,567	***		optimizer_discriminator_learning : None
+2025-02-13 10:30:09,567	***		optimizer_generator_learning     : None
+2025-02-13 10:30:09,567	***		port_mlflow                      : 6002
+2025-02-13 10:30:09,567	***		use_mlflow                       : False
+2025-02-13 10:30:09,567	***		verbosity                        : 20
+2025-02-13 10:30:09,567	***	
+2025-02-13 10:30:09,567	***	
+
+
+
+2025-02-13 10:30:09,567	***	##########################################
+2025-02-13 10:30:09,567	***	 EVALUATION 
+2025-02-13 10:30:09,567	***	##########################################
+2025-02-13 10:30:09,567	***		Campaign adroit_sbseg_2025 1/1 
+2025-02-13 10:30:09,567	***			combination 1/1 
+2025-02-13 10:30:09,567	***			{'input_dataset': 'datasets/reduced_balanced_adroit.csv', 'dense_layer_sizes_g': '64', 'dense_layer_sizes_d': '32', 'number_epochs': '5000', 'k_fold': '10', 'dropout_decay_rate_d': '0.1', 'dropout_decay_rate_g': '0.05', 'initializer_deviation': '0.5'}
