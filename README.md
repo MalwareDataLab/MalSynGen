@@ -257,7 +257,7 @@ The balanced dataset is then processed in the training and evaluation steps, thr
 |    --dense_layer_sizes_d    |             Values of the dense layers of the discriminator.             |    no    |
 | --latent_mean_distribution" |              Mean of the distribution of random input noise              |    no    |
 | --latent_stander_deviation" |                 Standard deviation of random input noise                 |    no    |
-|         --batch_size        |               cGAN batch size. Opções: 16, 32, 64, 128, 256              |    no    |
+|         --batch_size        |               cGAN batch size. Options: 16, 32, 64, 128, 256             |    no    |
 |         --verbosity         |                             Verbosity level;                             |    no    |
 |        --save_models        |                       Option for saving the models.                      |    no    |
 |   --path_confusion_matrix   |                  Output directory of confusion matrices.                 |    no    |
