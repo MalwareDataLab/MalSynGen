@@ -48,7 +48,7 @@ DEFAULT_LOSS_CURVE_LEGEND_NAME = "Legenda"
 DEFAULT_LOSS_CURVE_PREFIX_FILE = "curve_training_error"
 DEFAULT_TITLE_COMPARATIVE_PLOTS = "Comparativo entre dados sintéticos e reais (Média)"
 DEFAULT_PLOT_CLASSIFIER_METRICS_LABELS = ['Acurácia', 'Precisão', 'Recall', 'F1-Score']
-DEFAULT_PLOT_FIDELITY_METRICS_LABELS = ['Similaridade de Cossenos', 'Erro Médio Quadrático', 'Máxima Discrepância Média']
+DEFAULT_PLOT_FIDELITY_METRICS_LABELS = ['Similaridade de Cossenos', 'Erro Médio Quadrático', 'distância euclidiana ao quadrado']
 
 # Cores padrão para gráficos
 DEFAULT_COLOR_MAP = ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd', '#8c564b', '#e377c2', '#7f7f7f', '#bcbd22','#17becf']
@@ -546,7 +546,7 @@ class ProbabilisticMetrics:
         - get_mean_squared_error: Calcula o erro quadrático médio.
         - get_cosine_similarity: Calcula a similaridade de cossenos.
         - get_kl_divergence: Calcula a divergência de Kullback-Leibler.
-        - get_maximum_mean_discrepancy: Calcula a discrepância média máxima.
+        - get_squared_euclidean_distance: Calcula a discrepância média máxima.
         - get_accuracy: Calcula a acurácia.
         - get_precision: Calcula a precisão.
         - get_recall: Calcula o recall.
@@ -607,7 +607,7 @@ class ProbabilisticMetrics:
         return sum(rel_entr(real_label, predicted_label))
 
     @staticmethod
-    def get_maximum_mean_discrepancy(real_label, predicted_label):
+    def get_squared_euclidean_distance(real_label, predicted_label):
         """
         Calcula a discrepância média máxima entre os rótulos reais e previstos.
 
