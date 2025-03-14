@@ -62,7 +62,7 @@ pip install pipenv
 ```
 
 **Option 3**: Configure venv.
-```
+   ```
    python3 -m venv .venv
    ```
    ```
