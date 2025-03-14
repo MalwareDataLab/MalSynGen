@@ -219,7 +219,8 @@ cd /content/drive/MyDrive/MalSynGen-main
 
 
 ## 5. Execution flux
-![Screenshot from 2024-07-05 17-00-39](https://github.com/SBSegSF24/MalSynGen/assets/174879323/4d55117e-4203-4930-a0f5-2ed19c8857e3)
+![image](https://github.com/user-attachments/assets/b125a6d8-10c8-4b85-a214-4596c52c48fc)
+
 
 The tool's execution flow consists of three steps:
 
