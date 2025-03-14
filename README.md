@@ -1,8 +1,8 @@
 # MalSynGen: redes neurais artificiais na geração de dados tabulares sintéticos para detecção de malware
 ## MalSynGen
-A MalSynGen  é uma ferramenta que utiliza redes neurais artificiais para gerar dados sintéticos tabulares para o domínio de malware Android. Para avaliar o seu desempenho foram aumentados os dados de dois datasets, considerando métricas de fidelidade estatística e utilidade. Os resultados indicam que MalSynGen é capaz de capturar padrões representativos para o aumento de dados tabulares.
-### informação importante
-Está é uma ferramenta pública, no entanto, caso usar esse material, por favor, referenciar os artigos:
+MalSynGen is a tool that uses artificial neural networks to generate synthetic tabular data for the Android malware domain. To evaluate evaluated the effectiveness of this approach using various datasets and metrics that assess the fidelity of the generated data, its utility in classification, and the computational efficiency of the process.  The results indicate that MalSynGen is capable of capturing representative patterns for tabular data augmentation.
+### important information
+This is a public tool, however, if you use this material, please reference the articles:
 >@inproceedings{sbseg_estendido,<br/>
  author = {Angelo Nogueira and Kayua Paim and Hendrio Bragança and Rodrigo Mansilha and Diego Kreutz},<br/>
  title = { MalSynGen: redes neurais artificiais na geração de dados tabulares sintéticos para detecção de malware},<br/>
@@ -36,33 +36,33 @@ https://sol.sbc.org.br/index.php/sbseg_estendido/article/view/30126
 
 
 https://sol.sbc.org.br/index.php/sbseg/article/view/30072
-## 1. Preparação e instalação
+## 1. Preparation and installation
 
-1. Clonar o repositório e execute os seguintes comandos.
-   ```bash
-    git clone https://github.com/SBSegSF24/MalSynGen.git
-    cd MalSynGen
-   ```
-2. Instalação do Pipenv, necessário para a execução de vários comandos.
-   ```bash
-   pip install pipenv
-   ```
-    
-3. Instalação das dependências.
-   
-   **Opção 1**: Construir uma imagem Docker localmente a partir do Dockerfile.
-      
-      ```bash
-      ./scripts/docker_build.sh
-      ```
-   **Opção 2**: Utilizar o script **pip_env_install.sh**.
-      
-      ```bash
-   ./pip_env_install.sh
-      ```
+1. Clone the repository and run the following commands.
+```bash
+git clone https://github.com/MalwareDataLab/MalSynGen.git
+cd MalSynGen
+```
+2. Install Pipenv, which is necessary to run several commands.
+```bash
+pip install pipenv
+```
 
-   **Opção 3**: Configurar o venv.
-   ```
+3. Install the dependencies.
+
+**Option 1**: Build a Docker image locally from the Dockerfile.
+
+```bash
+./scripts/docker_build.sh
+```
+**Option 2**: Use the **pip_env_install.sh** script.
+
+```bash
+./pip_env_install.sh
+```
+
+**Option 3**: Configure venv.
+```
    python3 -m venv .venv
    ```
    ```
@@ -72,26 +72,31 @@ https://sol.sbc.org.br/index.php/sbseg/article/view/30072
    pip3 install -r requirements.txt
    ```
 
-   **Opção 4**: Configurar o pipenv.
+   **Option 4**: Configure pipenv.
 
    ```
    pipenv install -r requirements.txt
    ```
 
-## 2. Execução
-Executar a demonstração de funcionamento da ferramenta: 
+## 2. Executiom
+Run the demo of the tool: 
 
-   **Opção 1**: instalar as dependências e executar uma demonstração em um ambiente Linux. A execução leva em torno de 5 minutos numa máquina AMD Ryzen 7 5800x, 8 cores, 64 GB RAM. 
-   ```bash
-   ./run_demo_venv.sh
-   ```
+**Option 1**: Install the dependencies and run a demo in a Linux environment. The execution takes about 5 minutes on an AMD Ryzen 7 5800x, 8 cores, 64 GB RAM machine. 
+```bash
+./run_demo_venv.sh
+```
 
-   **Opção 2**: Executar o docker demo que instancia uma versão reduzida do experimento.  A execução leva em torno de 5 minutos numa máquina AMD Ryzen 7 5800x, 8 cores, 64 GB RAM. 
-   ```bash
-   ./run_demo_docker.sh
-   ```
-### 2.1. Dependências
-Testamos o código da ferramenta com as seguintes versões Python:
+**Option 2**: Run the docker demo that instantiates a reduced version of the experiment. The execution takes about 5 minutes on an AMD Ryzen 7 5800x, 8 cores, 64 GB RAM machine. 
+```bash
+./run_demo_docker.sh
+```
+
+
+
+
+### 2.1. Dependencies
+We tested the tool code with the following Python versions:
+
 
 1. Python 3.8.2 
 
@@ -101,38 +106,26 @@ Testamos o código da ferramenta com as seguintes versões Python:
 
 4. Python 3.10.12
 
-O código da MalSynGen possui dependências com diversos pacotes e bibliotecas Python, como 
-numpy 1.21.5, Keras 2.9.0, Tensorflow 2.9.1, pandas 1.4.4, scikit-learn 1.1.1. e mlflow 2.12.1.
-A lista completa e extensa das dependências está no arquivo [**requirements.txt**](https://github.com/SBSegSF24/MalSynGen/blob/880d39c70a8b6e6725acb7a6376f57268ac4ba11/requirements.txt). 
-## 3. Reprodução 
-Para a reprodução dos mesmos experimentos (campanhas) do paper utilize uma das seguintes opções. A execução leva em torno de 14 horas em um computador AMD Ryzen 7 5800x, 8 cores, 64 GB RAM. 
+The MalSynGen code has dependencies on several Python packages and libraries, such as numpy 1.21.5, Keras 2.9.0, Tensorflow 2.9.1, pandas 1.4.4, scikit-learn 1.1.1. and mlflow 2.12.1. The complete and extensive list of dependencies is in the [**requirements.txt**](https://github.com/MalwareDataLab/MalSynGen/blob/171bd57290467a85566f3a5193a2f540ac44a2d9/requirements.txt) file.
 
-   **Opção 1**: No ambiente local.
+
+## 3. Reproduction
+To reproduce the same experiments (campaigns) as in the paper, use one of the following options. The execution takes around 14 hours on an AMD Ryzen 7 5800x, 8 cores, 64 GB RAM computer.
+
+   **Opção 1**: On the local enviroment
    ```bash
    ./run_reproduce_sf24_venv.sh
    ```
 
  
-   **Opção 2**: No ambiente Docker.
+   **Opção 2**:  On the docker enviroment
    ```bash
    ./run_reproduce_sf24_docker.sh
    ```
-### 3.1. Geração dos gráficos do paper
-Ao final da execução do script de reprodução é aberto um notebook jupyter com o código de geração dos gráficos do paper, este é feito com base nos arquivos logging.log nas pastas do diretório campanhas_SF24 criada ao final da execução. Para realizar a execução do notebook clique na aba run e na opção run all cells conforme demonstrado na imagem:
-![image](https://github.com/user-attachments/assets/43f2b8ba-ae3a-4a23-9e3c-62a3cb01ece3)
-
-Ademais, caso já tenha realizado a execução das campanhas anteriormente basta executar o comando:
-
-   ```bash
- pip install notebook
- jupyter notebook plots.ipynb
-   ```
-
-Ao fim da execução serão gerados três plots com duas versões cada: plot_3-v2,plot_2-v2 e plot_1-v2; todos estão no diretório MalSynGen
-
-## 4. Outras opções de execução
-   O script **run_balanced_datasets.sh** é responsável pela execução dos datasets balanceaddos dos experimentos com base na entrada especificada pelo usuário.
-   Executar o script: 
+ 
+## 4. Other execution options
+The **run_balanced_datasets.sh** script is responsible for executing the balanced datasets of the experiments based on the input specified by the user.
+Run the script:
 
 
    ```bash
@@ -140,22 +133,26 @@ Ao fim da execução serão gerados três plots com duas versões cada: plot_3-v
    ```
 
 
-#### 4.1. Executando outros experimentos
+#### 4.1. Running other experiments
 
-A ferramenta conta com o **run_campaign.py** para automatizar o treinamento e a avaliação da cGAN. O **run_campaign.py** permite executar várias campanhas de avaliação com diferentes parâmetros, registrando os resultados em arquivos de saída para análise posterior. O usuário poderá visualmente realizar uma análise comparativa das diferentes configurações em relação aos conjuntos de dados utilizados.
+The tool relies on **run_campaign.py** to automate the training and evaluation of cGAN. **run_campaign.py** allows you to run multiple evaluation campaigns with different parameters, recording the results in output files for later analysis. The user will be able to visually perform a comparative analysis of the different configurations in relation to the datasets used.
 
-Exemplo de execução de uma campanha pré-configurada com base na execução do Kronodroid R do artigo:
+Example of running a pre-configured campaign based on the Kronodroid R execution from the article:
 
 ```
 pipenv run python3 run_campaign.py -c Kronodroid_r
 ```
 
 
-Mesma campanha (Kronodroid_r) sendo executada diretamente na aplicação (**main.py**):
+Same campaign (Kronodroid_r) running directly in the application (**main.py**):
+
+
 ```
 pipenv run python main.py --verbosity 20 --input_dataset datasets/kronodroid_real_device-balanced.csv --dense_layer_sizes_g 4096 --dense_layer_sizes_d 2048 --number_epochs 500 --k_fold 10 --num_samples_class_benign 10000 --num_samples_class_malware 10000 --training_algorithm Adam
 ```
-#### 4.2. Parâmetros dos testes automatizados:
+
+
+#### 4.2. Automated test parameters:
 
       --------------------------------------------------------------
 
@@ -188,54 +185,58 @@ pipenv run python main.py --verbosity 20 --input_dataset datasets/kronodroid_rea
     --------------------------------------------------------------
 
 
-#### 4.3. Executando a ferramenta no Google Colab
-Google collab é uma ferramenta cloud que permite a execução de códigos Python no seu navegador.
+#### 4.3. Running the tool in Google Colab
+Google collab is a cloud tool that allows you to run Python code in your browser.
 
-1. Acesse o seguinte link para utilizar a ferramenta Google colab: https://colab.google/
-   
-2. Crie um novo notebook, clicando no botão **New notebook** no topo direito da tela.
-   
+1. Access the following link to use the Google colab tool: https://colab.google/
+
+2. Create a new notebook by clicking the **New notebook** button at the top right of the screen.
+
 <td><img src= https://github.com/SBSegSF24/MalSynGen/assets/174879323/628010a5-f2e9-48dc-8044-178f7e9c2c37 style="max-width:100%;"></td>
 
-3. Faça o upload da pasta do MalSynGen no seu Google Drive.
+3. Upload the MalSynGen folder to your Google Drive.
 
-4. Adicione uma nova célula ao clicar no botão **+code** no topo esquerda da tela, contendo o seguinte  trecho de código para acessar a pasta do Google Drive.
+4. Add a new cell by clicking the **+code** button at the top left of the screen, containing the following code snippet to access the Google Drive folder.
+
+
 ```
 from google.colab import drive
 drive.mount('/content/drive')
 ```
-5. Crie uma célula para acessar a pasta do MalSynGen (Exemplo):
+5. Create a cell to access the MalSynGen folder (Example):
+
 ```
 cd /content/drive/MyDrive/MalSynGen-main
 ```
-6. Instale as dependências da ferramenta, criando uma célula com o seguinte código:
+6. Install the tool dependencies by creating a cell with the following code:
 ```
 !pip install -r requirements.txt
 ```
-7. Crie uma célula para a execução da ferramenta (Exemplo):
+7. Create a cell to run the tool (Example):
 ```
 !python main.py --verbosity 20 --input_dataset datasets/kronodroid_real_device-balanced.csv --dense_layer_sizes_g 4096 --dense_layer_sizes_d 2048 --number_epochs 500 --k_fold 10 --num_samples_class_benign 10000 --num_samples_class_malware 10000 --training_algorithm Adam
 ```
 
 
-## 5. Fluxo de execução 
+## 5. Execution flux
 ![Screenshot from 2024-07-05 17-00-39](https://github.com/SBSegSF24/MalSynGen/assets/174879323/4d55117e-4203-4930-a0f5-2ed19c8857e3)
 
-O fluxo de execução da ferramenta consiste de três etapas:
+The tool's execution flow consists of three steps:
 
-   **Seleção de dataset**: Nesta etapa,  realizamos o balanceamento pela classe minoritária, atravẽs do uso de técnicas de subamostragem. Os datasets balanceados e o código utilizado nesse processo se encontram em: https://github.com/SBSegSF24/MalSynGen/tree/accbe69f12bbf02d5d7f9c75291a60a5738bbb67/datasets
+**Dataset selection**: In this step, we perform balancing by the minority class, through the use of subsampling techniques. The balanced datasets and the code used in this process can be found at: https://github.com/SBSegSF24/MalSynGen/tree/accbe69f12bbf02d5d7f9c75291a60a5738bbb67/datasets
 
- O dataset balanceado é então processado nas etapas de treinamento e avaliação, através validação cruzada por meio de k-dobras (do inglês k-folds) onde são criados dois subconjuntos: subconjunto de avaliação (Dataset r) e subconjunto de treino (Dataset R).
+The balanced dataset is then processed in the training and evaluation steps, through k-fold cross-validation, where two subsets are created: evaluation subset (Dataset r) and training subset (Dataset R).
 
-  **Treinamento**: Nessa etapa, a cGANs é treinada  e utilizada cGANs para gerar dados sintéticos, precisamos treinar classificadores para posteriormente verificarmos a utilidade dos dados sintéticos gerados: Dataset S (gerado a partir de R) e Dataset s (gerado a paritr de r).  Os classificadores utilizados são denominados TR-As(Treinado com dataset R, avaliado com s) e TS-Ar(Treinado com S, avaliado com r).
+**Training**: In this step, cGANs are trained and used to generate synthetic data. We need to train classifiers to later verify the usefulness of the generated synthetic data: Dataset S (generated from R) and Dataset s (generated from r). The classifiers used are called TRTS (Trained with dataset R, evaluated with s) and TSTR (Trained with S, evaluated with r).
 
-   **Avaliação**: Esta etapa consiste da  execução e subsquente extração de métricas de utilidade dos classificadores, e fidelidade dos sintéticos atravês de uma comparação entre s e r. Por fim, verificamos se a utilidade dos dados sintéticos é fiel à utilidade dos dados reais através de testes como o de Wilcoxon no final da execução de dobras.
-
-
+**Evaluation**:n the evaluation stage, we execute the classifiers and compute the primary metrics, utility and fidelity.
 
 
 
-## 6. Parâmetros da Ferramenta
+
+
+
+## 6.Tool Parameters
 |       Flag/ parametro       |                                  Descrição                                 | Obrigatório |
 |:---------------------------:|:--------------------------------------------------------------------------:|:-----------:|
 |     -i , --input_dataset    |              Caminho para o arquivo do dataset real de entrada             |     Sim     |
@@ -266,41 +267,41 @@ O fluxo de execução da ferramenta consiste de três etapas:
 |        -rid, --run_id       |  Opção ligado ao mlflow, utilizada para resumir uma execução não terminada |     Não     |
 |    -tb, --use_tensorboard   |          Opção para utilizar a ferramenta de rastreamento Tensorb          |     Não     |
 
-## 7. Ambientes de teste
+## 7. Testing Environments
 
-A ferramenta foi executada e testada com sucesso nos seguintes ambientes:
+The tool has been successfully run and tested on the following environments:
 
+1. **Hardware**: AMD Ryzen 7 5800x, 8 cores, 64 GB RAM. **Software**: Ubuntu Server 22.04.2 and 22.04.3, Python 3.8.10 and 3.10.12, Docker 24.07.
 
-1. **Hardware**: AMD Ryzen 7 5800x, 8 cores, 64 GB RAM. **Software**: Ubuntu Server 22.04.2 e 22.04.3, Python 3.8.10 e 3.10.12, Docker 24.07.
+2. **Hardware**: Intel Core i7-9700 CPU 3.00GHz, 8 cores, 16 GB RAM. **Software**: Debian GNU 11 and 12, Python 3.9.2 and 3.11.2, Docker 20.10.5 and 24.07.
 
-2. **Hardware**: Intel Core i7-9700 CPU 3.00GHz, 8 cores, 16 GB RAM. **Software**: Debian GNU 11 e 12, Python 3.9.2 e 3.11.2, Docker 20.10.5 e 24.07.
-
-3. **Hardware**: AMD Ryzen 7 5800X 8-core, 64GB RAM (3200MHz), NVDIA RTX3090 24GB. **Software**:Python 3.11.5, WSL: 2.2.4.0, Docker version 24.0.7, 
+3. **Hardware**: AMD Ryzen 7 5800X 8-core, 64GB RAM (3200MHz), NVDIA RTX3090 24GB. **Software**: Python 3.11.5, WSL: 2.2.4.0, Docker version 24.0.7, 
 
 ## 8. Datasets
-O diretório **datasets** do GitHub contém os conjuntos de dados balanceados KronoDroid_emulator e KronoDroid_real_device utilizados nos experimentos do trabalho. O código utilizado para balancear os datasets originais também está disponível. O diretório **datasets** contém também os arquivos de validação de cada dataset e código de validação utilizado no subdiretório **validation**. As versões originais dos datasets tem como origem o repositório [https://github.com/aleguma/kronodroid](https://github.com/aleguma/kronodroid) do artigo [KronoDroid: Time-based Hybrid-featured Dataset for Effective Android Malware Detection and Characterization](https://www.sciencedirect.com/science/article/pii/S0167404821002236). 
-![image](https://github.com/user-attachments/assets/534462b5-b0f2-4fe1-93c4-c0446d0d2fa4)
+ The datasets used in this study were obtained from the Malware-Hunter project [public repository](https://
+github.com/MalwareDataLab/Datasets/tree/
+44b14d78f1361a2300daa42b3d4127df8fad7068/JBCS_2025)
+ 
 
 
-
-## 9. Ferramentas de rastreamento
+## 9. Tracking tools
 ### 9.1. Aimstack
 
-1. Instalar a ferramenta:
+1. Install the tool:
 
 ```bash
 pip install aim
 ```
 
-2. Executar MalSynGen com a opção -a ou --use_aim (Exemplo):
+2. Run MalSynGen with the -a or --use_aim option (Example):
 ```bash
-pipenv run python3 main.py -i datasets/kronodroid_real_device-balanced.csv  --num_samples_class_benign 10000 --num_samples_class_malware 10000 --batch_size 256 --number_epochs 300 --k_fold 10 -a
+pipenv run python3 main.py -i datasets/kronodroid_real_device-balanced.csv --num_samples_class_benign 10000 --num_samples_class_malware 10000 --batch_size 256 --number_epochs 300 --k_fold 10 -a
 ```
-3. Após o final da execução, utilize o comando **aim up** na pasta do MalSynGen.
+3. After the execution is complete, use the **aim up** command in the MalSynGen folder.
 ```bash
 aim up
 ```
-Documentação Aimstack: https://aimstack.readthedocs.io/en/latest/
+Aimstack Documentation: https://aimstack.readthedocs.io/en/latest/
 
 
 ### 9.2. Mlflow
@@ -321,48 +322,45 @@ mlflow server --port 6002
 pipenv run python3 main.py -i datasets/kronodroid_real_device-balanced.csv  --num_samples_class_benign 10000 --num_samples_class_malware 10000 --batch_size 256 --number_epochs 300 --k_fold 10 -ml
 ```
 
-4. Após o fim da execução, acesse o endereço http://localhost:6002/ no seu navegador para visualizar os resultados.
+4. After the execution is complete, access the address http://localhost:6002/ in your browser to view the results.
 
-
-Documentação Mlflow: https://mlflow.org/docs/latest/index.html
-
+Mlflow documentation: https://mlflow.org/docs/latest/index.html
 
 ### 9.3. Tensorboard
 
-1. Instalar a ferramenta:
+1. Install the tool:
 
 ```bash
 pip install tensorboard
 ```
 
-2. Executar MalSynGen com a opção -tb ou --use_tensorboard (Exemplo):
+2. Run MalSynGen with the -tb or --use_tensorboard option (Example):
 ```bash
-pipenv run python3 main.py -i datasets/kronodroid_real_device-balanced.csv  --num_samples_class_benign 10000 --num_samples_class_malware 10000 --batch_size 256 --number_epochs 300 --k_fold 10 -tb
+pipenv run python3 main.py -i datasets/kronodroid_real_device-balanced.csv --num_samples_class_benign 10000 --num_samples_class_malware 10000 --batch_size 256 --number_epochs 300 --k_fold 10 -tb
 ```
 
-3. Visualizar os resultados com o comando:
-   
+3. View the results with the command:
+
 ```bash
 tensorboard --logdir=tensorboardfolder/ --port=6002
 ```
 
-Documentação TensorBoard: https://www.tensorflow.org/tensorboard/get_started?hl=pt-br
-## 10. Overview da documentação do código
-A documentação do código está disponivel no formato html na pasta [docs](https://github.com/SBSegSF24/MalSynGen/tree/f89ddcd20f1dc4531bff671cc3a08a8d5e7c411d/docs), para acessar a documentação abra o arquivo [index.html](https://github.com/SBSegSF24/MalSynGen/blob/f89ddcd20f1dc4531bff671cc3a08a8d5e7c411d/docs/index.html) no seu ambiente local.
 
-A página princial apresenta a documentação do README.md
+TensorBoard Documentation: https://www.tensorflow.org/tensorboard/get_started?hl=en
+## 10. Code Documentation Overview
+The code documentation is available in html format in the [docs](https://github.com/SBSegSF24/MalSynGen/tree/f89ddcd20f1dc4531bff671cc3a08a8d5e7c411d/docs) folder, to access the documentation open the [index.html](https://github.com/SBSegSF24/MalSynGen/blob/f89ddcd20f1dc4531bff671cc3a08a8d5e7c411d/docs/index.html) file in your local environment.
+
+The main page contains the README.md documentation
 ![image](https://github.com/SBSegSF24/MalSynGen/assets/174879323/4a738e53-ebae-4e5b-99ad-9de269139cc7)
 
-### 10.1. Páginas relacionadas
+### 10.1. Related pages
 ![image](https://github.com/SBSegSF24/MalSynGen/assets/174879323/23ad1214-4644-49f7-ba60-a574575a8cc3)
-A aba **Páginas relacionadas** contém as informaçẽs do artefatos apêndice.
+The **Related pages** tab contains the appendix artifact information.
 ### 10.2. Namespace
 ![image](https://github.com/SBSegSF24/MalSynGen/assets/174879323/8fb63e75-ff4e-482f-855e-52e471fa90fb)
-A aba **namespace** descreve os módulos e funções do código da ferramenta.
+The **namespace** tab describes the modules and functions of the tool code.
 ### 10.3. Classes
 ![image](https://github.com/SBSegSF24/MalSynGen/assets/174879323/84f66aa6-ec28-4894-8c3a-e5d6e5f0226b)
-A aba **Classes** contém as classes utilizadas, suas hierarquias, variáveis e implementações na implementação da ferramenta.
-
-
+The **Classes** tab contains the classes used, their hierarchies, variables and implementations in the tool implementation.
 
 
