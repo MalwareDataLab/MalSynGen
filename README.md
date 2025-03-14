@@ -237,35 +237,35 @@ The balanced dataset is then processed in the training and evaluation steps, thr
 
 
 ## 6.Tool Parameters
-|       Flag/ parametro       |                                  Descrição                                 | Obrigatório |
-|:---------------------------:|:--------------------------------------------------------------------------:|:-----------:|
-|     -i , --input_dataset    |              Caminho para o arquivo do dataset real de entrada             |     Sim     |
-|       -o, --output_dir      |               Diretório para gravação dos arquivos de saída.               |     Não     |
-|         --data_type         |       Tipo de dado para representar as características das amostras.       |     Não     |
-| --num_samples_class_malware |                  Número de amostras da Classe 1 (maligno).                 |     Sim     |
-|  --num_samples_class_benign |                  Número de amostras da Classe 0 (benigno).                 |     Sim     |
-|       --number_epochs       |            Número de épocas (iterações de treinamento) da cGAN.            |     Não     |
-|           --k_fold          |                 Número de subdivisões da validação cruzada                 |     Não     |
-|      --initializer_mean     |          Valor central da distribuição gaussiana do inicializador.         |     Não     |
-|   --initializer_deviation   |          Desvio padrão da distribuição gaussiana do inicializador.         |     Não     |
-|      --latent_dimension     |              Dimensão do espaço latente para treinamento cGAN.             |     Não     |
-|     --training_algorithm    | Algoritmo de treinamento para cGAN. Opções: 'Adam', 'RMSprop', 'Adadelta'. |     Não     |
-|    --activation_function    |      Função de ativação da cGAN. Opções: 'LeakyReLU', 'ReLU', 'PReLU'      |     Não     |
-|    --dropout_decay_rate_g   |              Taxa de decaimento do dropout do gerador da cGAN.             |     Não     |
-|    --dropout_decay_rate_d   |           Taxa de decaimento do dropout do discriminador da cGAN.          |     Não     |
-|    --dense_layer_sizes_g    |                   Valores das camadas densas do gerador.                   |     Não     |
-|    --dense_layer_sizes_d    |                Valores das camadas densas do discriminador.                |     Não     |
-| --latent_mean_distribution" |             Média da distribuição do ruído aleatório de entrada            |      Não    |
-| --latent_stander_deviation" |                 Desvio padrão do ruído aleatório de entrada                |      Não    |
-|         --batch_size        |            Tamanho do lote da cGAN. Opções: 16, 32, 64, 128, 256           |     Não     |
-|         --verbosity         |                            Nível de verbosidade.                           |     Não     |
-|        --save_models        |                    Opção para salvar modelos treinados.                    |     Não     |
-|   --path_confusion_matrix   |                Diretório de saída das matrizes de confusão.                |     Não     |
-|      --path_curve_loss      |          Diretório de saída dos gráficos de curva de treinamento.          |     Não     |
-|        -a, --use_aim        |         Opção para utilizar a ferramenta de rastreamento Aimstack.         |     Não     |
-|      -ml, --use_mlflow      |          Opção para utilizar a ferramenta de rastreamento mlflow.          |     Não     |
-|        -rid, --run_id       |  Opção ligado ao mlflow, utilizada para resumir uma execução não terminada |     Não     |
-|    -tb, --use_tensorboard   |          Opção para utilizar a ferramenta de rastreamento Tensorb          |     Não     |
+|       Flag/ parameter       |                                 Description                              | Required |
+|:---------------------------:|:------------------------------------------------------------------------:|:--------:|
+|     -i , --input_dataset    |                         Path to the input dataset                        |    yes   |
+|       -o, --output_dir      |                    Directory for saving output files.                    |    no    |
+|         --data_type         |              Data type to represent sample characteristics.              |    no    |
+| --num_samples_class_malware |                  Number of Class 1 (malignant) samples.                  |    yes   |
+|  --num_samples_class_benign |                    Number of Class 0 (benign) samples.                   |    yes   |
+|       --number_epochs       |           Number of epochs (training interaction) for the cGAN.          |    no    |
+|           --k_fold          |                    Number of cross-validation k folds                    |    no    |
+|      --initializer_mean     |         Central value of the initializer's Gaussian distribution.        |    no    |
+|   --initializer_deviation   |      Standard deviation of the initializer's Gaussian distribution.      |    no    |
+|      --latent_dimension     |                 Latent space dimension for cGAN training.                |    no    |
+|     --training_algorithm    | Training algorithm for the cGAN. Options: 'Adam', 'RMSprop', 'Adadelta'. |    no    |
+|    --activation_function    |      cGAN activation function. Options: 'LeakyReLU', 'ReLU', 'PReLU'     |    no    |
+|    --dropout_decay_rate_g   |                    cGAN generator dropout decay rate.                    |    no    |
+|    --dropout_decay_rate_d   |                   cGAN discriminator dropout decay rate.                 |    no    |
+|    --dense_layer_sizes_g    |               Values of the dense layers of the generator.               |    no    |
+|    --dense_layer_sizes_d    |             Values of the dense layers of the discriminator.             |    no    |
+| --latent_mean_distribution" |              Mean of the distribution of random input noise              |    no    |
+| --latent_stander_deviation" |                 Standard deviation of random input noise                 |    no    |
+|         --batch_size        |               cGAN batch size. Opções: 16, 32, 64, 128, 256              |    no    |
+|         --verbosity         |                             Verbosity level;                             |    no    |
+|        --save_models        |                       Option for saving the models.                      |    no    |
+|   --path_confusion_matrix   |                  Output directory of confusion matrices.                 |    no    |
+|      --path_curve_loss      |                Output directory for training curve graphs.               |    no    |
+|        -a, --use_aim        |                   Option to use Aimstack tracking tool.                  |    no    |
+|      -ml, --use_mlflow      |                  Option to use the mlflow tracking tool.                 |    no    |
+|        -rid, --run_id       |      Option linked to mlflow, used to resume an unfinished execution     |    no    |
+|    -tb, --use_tensorboard   |                  Option to use Tensorboard tracking tool                 |    no    |
 
 ## 7. Testing Environments
 
@@ -278,9 +278,7 @@ The tool has been successfully run and tested on the following environments:
 3. **Hardware**: AMD Ryzen 7 5800X 8-core, 64GB RAM (3200MHz), NVDIA RTX3090 24GB. **Software**: Python 3.11.5, WSL: 2.2.4.0, Docker version 24.0.7, 
 
 ## 8. Datasets
- The datasets used in this study were obtained from the Malware-Hunter project [public repository](https://
-github.com/MalwareDataLab/Datasets/tree/
-44b14d78f1361a2300daa42b3d4127df8fad7068/JBCS_2025)
+ The datasets used in this study were obtained from the Malware-Hunter project public repository, which can be found at https://github.com/MalwareDataLab/Datasetstree/44b14d78f1361a2300daa42b3d4127df8fad7068/JBCS_2025
  
 
 
