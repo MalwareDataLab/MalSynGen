@@ -251,14 +251,14 @@ def comparative_data(fold, x_synthetic, real_data, label):
     instance_metrics = ProbabilisticMetrics()
     synthetic_mean_squared_error = instance_metrics.get_mean_squared_error(real_data, x_synthetic)
     synthetic_cosine_similarity = instance_metrics.get_cosine_similarity(real_data, x_synthetic)
-    synthetic_maximum_mean_discrepancy = instance_metrics.get_maximum_mean_discrepancy(real_data, x_synthetic)
+    synthetic_squared_euclidean_distance = instance_metrics.get_squared_euclidean_distance(real_data, x_synthetic)
     logging.info(f"Similarity Metrics")
     logging.info(f"  Synthetic Fold {fold + 1} {label} - Mean Squared Error: " + str(synthetic_mean_squared_error))
     logging.info(f"  Synthetic Fold {fold + 1} {label} - Cosine Similarity: " + str(synthetic_cosine_similarity))
-    logging.info(f"  Synthetic Fold {fold + 1} {label} - Maximum Mean Discrepancy: " + str(synthetic_maximum_mean_discrepancy))
+    logging.info(f"  Synthetic Fold {fold + 1} {label} - Squared Euclidean distance: " + str(synthetic_squared_euclidean_distance))
     logging.info("")
 
-    return [synthetic_mean_squared_error,synthetic_cosine_similarity,synthetic_maximum_mean_discrepancy]
+    return [synthetic_mean_squared_error,synthetic_cosine_similarity,synthetic_squared_euclidean_distance]
 
 def evaluate_TR_As_data(list_classifiers, x_TR_As, y_TR_As, fold, k, generate_confusion_matrix,
                        output_dir, classifier_type, out_label, path_confusion_matrix, verbose_level, dict, TR_As_aucs):
@@ -690,7 +690,7 @@ def show_and_export_results(dict_similarity, classifier_type, output_dir, title_
 
     ## Logging das métricas fidelidade entre os dados sintéticos e reais
     comparative_metrics = ['Mean Squared Error', 'Cosine Similarity', 'Max Mean Discrepancy']
-    comparative_lists = ["list_mean_squared_error", "list_cosine_similarity", "list_maximum_mean_discrepancy"]
+    comparative_lists = ["list_mean_squared_error", "list_cosine_similarity", "list_squared_euclidean_distance"]
     logging.info(f"Comparative Metrics:")
     for metric, comparative_list in zip(comparative_metrics, comparative_lists):
         logging.info("\t{}".format(metric))
@@ -716,14 +716,14 @@ def show_and_export_results(dict_similarity, classifier_type, output_dir, title_
     plot_fidelity_metrics.plot_fidelity_metrics(
         dict_similarity["list_mean_squared_error"]["positive"],
         dict_similarity["list_cosine_similarity"]["positive"],
-        dict_similarity["list_maximum_mean_discrepancy"]["positive"],
+        dict_similarity["list_squared_euclidean_distance"]["positive"],
         plot_filename1,
 
     )
     plot_fidelity_metrics.plot_fidelity_metrics(
         dict_similarity["list_mean_squared_error"]["false"],
         dict_similarity["list_cosine_similarity"]["false"],
-        dict_similarity["list_maximum_mean_discrepancy"]["false"],
+        dict_similarity["list_squared_euclidean_distance"]["false"],
         plot_filename2,
 
     )
@@ -886,7 +886,7 @@ def run_experiment(dataset, input_data_shape, k, classifier_list, output_dir, ba
         "list_mean_squared_error": {"positive": [], "false": []},
         "list_cosine_similarity": {"positive": [], "false": []},
         "list_kl_divergence": {"positive": [], "false": []},
-        "list_maximum_mean_discrepancy": {"positive": [], "false": []}
+        "list_squared_euclidean_distance": {"positive": [], "false": []}
     }
     ## Definição dos dicionários utilizados para armazenar as métricas de utilidade
     dict_TR_As_auc={"RandomForest":[],"AdaBoost":[],"DecisionTree":[], "Perceptron":[],"SupportVectorMachine":[],"SGDRegressor":[],"XGboost":[]}
@@ -1020,10 +1020,10 @@ def run_experiment(dataset, input_data_shape, k, classifier_list, output_dir, ba
         ## Armazenar as métricas de fidelidade entre os dados
         dict_similarity["list_mean_squared_error"]["false"].append(comparative_metrics1[0])
         dict_similarity["list_cosine_similarity"]["false"].append(comparative_metrics1[1])
-        dict_similarity["list_maximum_mean_discrepancy"]["false"].append(comparative_metrics1[2])
+        dict_similarity["list_squared_euclidean_distance"]["false"].append(comparative_metrics1[2])
         dict_similarity["list_mean_squared_error"]["positive"].append(comparative_metrics2[0])
         dict_similarity["list_cosine_similarity"]["positive"].append(comparative_metrics2[1])
-        dict_similarity["list_maximum_mean_discrepancy"]["positive"].append(comparative_metrics2[2])
+        dict_similarity["list_squared_euclidean_distance"]["positive"].append(comparative_metrics2[2])
 
     ## Exibir e exportar os resultados finais
     show_and_export_results(dict_similarity,classifier_list, output_dir, title_output,dict_metrics,dict_TR_As_auc,dict_TS_Ar_auc)
