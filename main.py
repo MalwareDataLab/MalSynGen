@@ -689,7 +689,7 @@ def show_and_export_results(dict_similarity, classifier_type, output_dir, title_
                 tf.summary.scalar(f1t, data=np.std(dict_metrics["TS_Ar F1 score"][classifier_type[index]]), step=0)
 
     ## Logging das métricas fidelidade entre os dados sintéticos e reais
-    comparative_metrics = ['Mean Squared Error', 'Cosine Similarity', 'Max Mean Discrepancy']
+    comparative_metrics = ['Mean Squared Error', 'Cosine Similarity', 'Squared Euclidean distance']
     comparative_lists = ["list_mean_squared_error", "list_cosine_similarity", "list_squared_euclidean_distance"]
     logging.info(f"Comparative Metrics:")
     for metric, comparative_list in zip(comparative_metrics, comparative_lists):
