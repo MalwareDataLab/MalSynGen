@@ -106,8 +106,8 @@ class PlotConfusionMatrix:
         #plt.title(confusion_matrix_title)
         plt.colorbar()
         tick_marks = np.arange(len(self.class_labels))
-        plt.xticks(tick_marks, self.class_labels, rotation=self.legend_rotation,fontsize=15)
-        plt.yticks(tick_marks, self.class_labels, rotation=90,fontsize=15)
+        plt.xticks(tick_marks, self.class_labels, rotation=self.legend_rotation,fontsize=18)
+        plt.yticks(tick_marks, self.class_labels, rotation=90,fontsize=18, )
         thresh = confusion_matrix.max() / 2.
 
         norm = plt.Normalize(vmin=confusion_matrix.min(), vmax=confusion_matrix.max())
@@ -124,7 +124,7 @@ class PlotConfusionMatrix:
                 j, i, cell_value,
                 horizontalalignment="center",
                 color=text_color,  # Auto-contrast
-                fontsize=15
+                fontsize=17
             )
 
         plt.ylabel(self.titles_confusion_matrix[0], fontsize=15, color='black')  
