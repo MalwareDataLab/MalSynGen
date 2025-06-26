@@ -110,13 +110,30 @@ class PlotConfusionMatrix:
         plt.yticks(tick_marks, self.class_labels)
         thresh = confusion_matrix.max() / 2.
 
+        norm = plt.Normalize(vmin=confusion_matrix.min(), vmax=confusion_matrix.max())
+    
         for i, j in itertools.product(range(confusion_matrix.shape[0]), range(confusion_matrix.shape[1])):
-            plt.text(j, i, confusion_matrix[i, j], horizontalalignment="center",
-                     color="white" if confusion_matrix[i, j] > thresh else "black")
+            cell_value = confusion_matrix[i, j]
+            rgba = cmap(norm(cell_value))  # Get RGBA color of the cell
+            
+            # Check if the color is "dark" (brightness < 0.5)
+            brightness = 0.299 * rgba[0] + 0.587 * rgba[1] + 0.114 * rgba[2]  # Perceived brightness formula
+            text_color = "white" if brightness < 0.5 else "black"
+            
+            plt.text(
+                j, i, cell_value,
+                horizontalalignment="center",
+                color=text_color,  # Auto-contrast
+                fontsize=15
+            )
 
+        plt.ylabel(self.titles_confusion_matrix[0], fontsize=15, color='black')  
+        plt.xlabel(self.titles_confusion_matrix[1], fontsize=15, color='black')   
         plt.tight_layout()
-        plt.ylabel(self.titles_confusion_matrix[0], fontsize=12)
-        plt.xlabel(self.titles_confusion_matrix[1], fontsize=12)
+
+       # plt.tight_layout()
+       # plt.ylabel(self.titles_confusion_matrix[0], fontsize=15)
+       # plt.xlabel(self.titles_confusion_matrix[1], fontsize=15)
 
     def set_class_labels(self, class_labels):
         """
