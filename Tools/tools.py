@@ -37,7 +37,7 @@ DEFAULT_WIDTH_BAR = 0.2
 # Valor padrão para a fonte dos plots
 DEFAULT_FONT_SIZE = 12
 # Valor padrão para o declínio das legendas do plot
-DEFAULT_MATRIX_CONFUSION_ROTATION_LEGENDS = 45
+DEFAULT_MATRIX_CONFUSION_ROTATION_LEGENDS = 0
 #Valores padrões ara as legendas dos plots
 DEFAULT_LOSS_CURVE_LEGEND_GENERATOR = "Gerador"
 DEFAULT_LOSS_CURVE_LEGEND_DISCRIMINATOR = "Discriminador"
@@ -106,8 +106,8 @@ class PlotConfusionMatrix:
         #plt.title(confusion_matrix_title)
         plt.colorbar()
         tick_marks = np.arange(len(self.class_labels))
-        plt.xticks(tick_marks, self.class_labels, rotation=self.legend_rotation)
-        plt.yticks(tick_marks, self.class_labels)
+        plt.xticks(tick_marks, self.class_labels, rotation=self.legend_rotation,fontsize=15)
+        plt.yticks(tick_marks, self.class_labels, rotation=90,fontsize=15)
         thresh = confusion_matrix.max() / 2.
 
         norm = plt.Normalize(vmin=confusion_matrix.min(), vmax=confusion_matrix.max())
