@@ -281,7 +281,9 @@ The tool has been successfully run and tested on the following environments:
 ## 8. Datasets
  The datasets used in this study were obtained from the Malware-Hunter project public repository, which can be found at https://github.com/MalwareDataLab/Datasetstree/44b14d78f1361a2300daa42b3d4127df8fad7068/JBCS_2025
  
+## 8.1 JBCS Results
 
+The experiment results as well as the graphics and images present in the JBCS publication can be found at the [experiments_result directory](https://github.com/MalwareDataLab/MalSynGen/tree/33671a26cd321f6d29a428a875df6c554dd5b4b5/Experiment_results) seperated by dataset.
 
 ## 9. Tracking tools
 ### 9.1. Aimstack
