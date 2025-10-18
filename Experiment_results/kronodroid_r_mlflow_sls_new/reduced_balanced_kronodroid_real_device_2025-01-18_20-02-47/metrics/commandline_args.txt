@@ -1,0 +1,44 @@
+{
+  "input_dataset": "datasets/reduced_balanced_kronodroid_real_device.csv",
+  "classifier": [
+    "RandomForest",
+    "SupportVectorMachine",
+    "DecisionTree",
+    "AdaBoost",
+    "Perceptron",
+    "SGDRegressor",
+    "XGboost"
+  ],
+  "output_dir": "kronodroid_r_mlflow_sls_new2/reduced_balanced_kronodroid_real_device_2025-01-18_20-02-47",
+  "data_type": "float32",
+  "num_samples_class_malware": 2000,
+  "num_samples_class_benign": 2000,
+  "number_epochs": 5000,
+  "k_fold": 10,
+  "initializer_mean": 0.0,
+  "initializer_deviation": 0.4,
+  "latent_dimension": 128,
+  "training_algorithm": "Adam",
+  "activation_function": "LeakyReLU",
+  "dropout_decay_rate_g": 0.025,
+  "dropout_decay_rate_d": 0.05,
+  "dense_layer_sizes_g": [
+    512
+  ],
+  "dense_layer_sizes_d": [
+    512
+  ],
+  "batch_size": 256,
+  "verbosity": 20,
+  "save_models": false,
+  "path_confusion_matrix": "confusion_matrix",
+  "path_curve_loss": "training_curve",
+  "latent_mean_distribution": 0.0,
+  "latent_stander_deviation": 1.0,
+  "use_aim": false,
+  "use_mlflow": true,
+  "run_id": "e2ad8a8c796b459785505e1fe6c7a021",
+  "port_mlflow": 5000,
+  "use_tensorboard": false,
+  "same_layer_size": true
+}

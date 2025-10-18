@@ -1,0 +1,2114 @@
+2025-01-18 09:12:22,498	***	Command:
+	main.py -ml -sls --verbosity 20 --batch_size 256 --run_id cd93815244024a818c4a9159cfd11aec -sls --input_dataset datasets/reduced_balanced_drebin215.csv --output_dir drebin_mlflow_expe/reduced_balanced_drebin215_2025-01-18_09-12-18 --dense_layer_sizes_g 512 --dense_layer_sizes_d 512 --dropout_decay_rate_g 0.2 --dropout_decay_rate_d 0.4 --initializer_deviation 0.5 --number_epochs 5000 --k_fold 10 --port_mlflow 5000
+
+2025-01-18 09:12:22,498	***	Settings:
+2025-01-18 09:12:22,498	***		activation_function       : LeakyReLU
+2025-01-18 09:12:22,499	***		batch_size                : 256
+2025-01-18 09:12:22,499	***		classifier                : ['RandomForest', 'SupportVectorMachine', 'DecisionTree', 'AdaBoost', 'Perceptron', 'SGDRegressor', 'XGboost']
+2025-01-18 09:12:22,499	***		data_type                 : float32
+2025-01-18 09:12:22,499	***		dense_layer_sizes_d       : [[512]]
+2025-01-18 09:12:22,499	***		dense_layer_sizes_g       : [[512]]
+2025-01-18 09:12:22,499	***		dropout_decay_rate_d      : 0.4
+2025-01-18 09:12:22,499	***		dropout_decay_rate_g      : 0.2
+2025-01-18 09:12:22,499	***		initializer_deviation     : 0.5
+2025-01-18 09:12:22,499	***		initializer_mean          : 0.0
+2025-01-18 09:12:22,499	***		input_dataset             : datasets/reduced_balanced_drebin215.csv
+2025-01-18 09:12:22,499	***		k_fold                    : 10
+2025-01-18 09:12:22,499	***		latent_dimension          : 128
+2025-01-18 09:12:22,499	***		latent_mean_distribution  : 0.0
+2025-01-18 09:12:22,499	***		latent_stander_deviation  : 1.0
+2025-01-18 09:12:22,499	***		num_samples_class_benign  : 2000
+2025-01-18 09:12:22,499	***		num_samples_class_malware : 2000
+2025-01-18 09:12:22,499	***		number_epochs             : 5000
+2025-01-18 09:12:22,500	***		output_dir                : drebin_mlflow_expe/reduced_balanced_drebin215_2025-01-18_09-12-18
+2025-01-18 09:12:22,500	***		path_confusion_matrix     : confusion_matrix
+2025-01-18 09:12:22,500	***		path_curve_loss           : training_curve
+2025-01-18 09:12:22,500	***		port_mlflow               : 5000
+2025-01-18 09:12:22,500	***		run_id                    : cd93815244024a818c4a9159cfd11aec
+2025-01-18 09:12:22,500	***		same_layer_size           : True
+2025-01-18 09:12:22,500	***		save_models               : False
+2025-01-18 09:12:22,500	***		training_algorithm        : Adam
+2025-01-18 09:12:22,500	***		use_aim                   : False
+2025-01-18 09:12:22,500	***		use_mlflow                : True
+2025-01-18 09:12:22,500	***		use_tensorboard           : False
+2025-01-18 09:12:22,500	***		verbosity                 : 20
+2025-01-18 09:12:22,500	***	
+2025-01-18 09:12:22,714	***	Iniciando treinamento do modelo adversarial.
+2025-01-18 09:25:24,948	***	Treinamento concluído.
+2025-01-18 09:25:27,696	***	
+Starting training classifier
+
+2025-01-18 09:25:27,696	***	    Starting training classifier: RANDOM FOREST
+2025-01-18 09:25:28,541	***	    Finished training
+
+2025-01-18 09:25:28,541	***	    Starting training classifier: SUPPORT VECTOR MACHINE
+2025-01-18 09:25:41,799	***	    Finished training
+
+2025-01-18 09:25:41,800	***	    Starting training classifier: DECISION TREE
+2025-01-18 09:25:41,911	***	    Finished training
+
+2025-01-18 09:25:41,911	***	    Starting training classifier: ADA BOOST
+2025-01-18 09:25:42,565	***	    Finished training
+
+2025-01-18 09:25:42,565	***	    Starting training classifier: MULTILAYER PERCEPTRON
+2025-01-18 09:25:44,370	***	    Finished training
+
+2025-01-18 09:25:44,370	***	    Starting training classifier: SDG
+2025-01-18 09:25:44,621	***	    Finished training
+
+2025-01-18 09:25:44,621	***	    Starting training classifier: GAUSSIAN PROCESS
+2025-01-18 09:25:44,819	***	    Finished training
+
+2025-01-18 09:25:44,819	***	
+Starting training classifier
+
+2025-01-18 09:25:44,819	***	    Starting training classifier: RANDOM FOREST
+2025-01-18 09:25:45,597	***	    Finished training
+
+2025-01-18 09:25:45,598	***	    Starting training classifier: SUPPORT VECTOR MACHINE
+2025-01-18 09:25:54,287	***	    Finished training
+
+2025-01-18 09:25:54,287	***	    Starting training classifier: DECISION TREE
+2025-01-18 09:25:54,399	***	    Finished training
+
+2025-01-18 09:25:54,399	***	    Starting training classifier: ADA BOOST
+2025-01-18 09:25:55,387	***	    Finished training
+
+2025-01-18 09:25:55,387	***	    Starting training classifier: MULTILAYER PERCEPTRON
+2025-01-18 09:25:57,204	***	    Finished training
+
+2025-01-18 09:25:57,204	***	    Starting training classifier: SDG
+2025-01-18 09:25:57,339	***	    Finished training
+
+2025-01-18 09:25:57,340	***	    Starting training classifier: GAUSSIAN PROCESS
+2025-01-18 09:25:57,538	***	    Finished training
+
+2025-01-18 09:25:57,538	***	TR_As Fold 1/10 results
+
+2025-01-18 09:25:57,582	***	 Classifier Model: RandomForest
+2025-01-18 09:25:57,582	***	   TR_As Fold 1 - Confusion Matrix:
+2025-01-18 09:25:57,582	***	[[551   5]
+ [ 72 483]]
+2025-01-18 09:25:57,582	***	
+   Classifier Metrics:
+2025-01-18 09:25:57,582	***	     TR_As Fold 1 - Accuracy: 0.9306930693069307
+2025-01-18 09:25:57,582	***	     TR_As Fold 1 - Precision: 0.9897540983606558
+2025-01-18 09:25:57,582	***	     TR_As Fold 1 - Recall: 0.8702702702702703
+2025-01-18 09:25:57,582	***	     TR_As Fold 1 - F1 Score: 0.9261744966442954
+
+2025-01-18 09:25:58,296	***	 Classifier Model: SupportVectorMachine
+2025-01-18 09:25:58,296	***	   TR_As Fold 1 - Confusion Matrix:
+2025-01-18 09:25:58,296	***	[[546  10]
+ [ 43 512]]
+2025-01-18 09:25:58,296	***	
+   Classifier Metrics:
+2025-01-18 09:25:58,297	***	     TR_As Fold 1 - Accuracy: 0.9522952295229523
+2025-01-18 09:25:58,297	***	     TR_As Fold 1 - Precision: 0.9808429118773946
+2025-01-18 09:25:58,297	***	     TR_As Fold 1 - Recall: 0.9225225225225225
+2025-01-18 09:25:58,297	***	     TR_As Fold 1 - F1 Score: 0.9507892293407614
+
+2025-01-18 09:25:58,529	***	 Classifier Model: DecisionTree
+2025-01-18 09:25:58,529	***	   TR_As Fold 1 - Confusion Matrix:
+2025-01-18 09:25:58,529	***	[[522  34]
+ [ 71 484]]
+2025-01-18 09:25:58,529	***	
+   Classifier Metrics:
+2025-01-18 09:25:58,529	***	     TR_As Fold 1 - Accuracy: 0.9054905490549054
+2025-01-18 09:25:58,529	***	     TR_As Fold 1 - Precision: 0.9343629343629344
+2025-01-18 09:25:58,529	***	     TR_As Fold 1 - Recall: 0.872072072072072
+2025-01-18 09:25:58,529	***	     TR_As Fold 1 - F1 Score: 0.9021435228331781
+
+2025-01-18 09:25:58,796	***	 Classifier Model: AdaBoost
+2025-01-18 09:25:58,796	***	   TR_As Fold 1 - Confusion Matrix:
+2025-01-18 09:25:58,797	***	[[539  17]
+ [ 32 523]]
+2025-01-18 09:25:58,797	***	
+   Classifier Metrics:
+2025-01-18 09:25:58,797	***	     TR_As Fold 1 - Accuracy: 0.9558955895589559
+2025-01-18 09:25:58,797	***	     TR_As Fold 1 - Precision: 0.9685185185185186
+2025-01-18 09:25:58,797	***	     TR_As Fold 1 - Recall: 0.9423423423423424
+2025-01-18 09:25:58,797	***	     TR_As Fold 1 - F1 Score: 0.9552511415525116
+
+2025-01-18 09:25:59,181	***	 Classifier Model: Perceptron
+2025-01-18 09:25:59,181	***	   TR_As Fold 1 - Confusion Matrix:
+2025-01-18 09:25:59,181	***	[[527  29]
+ [ 24 531]]
+2025-01-18 09:25:59,182	***	
+   Classifier Metrics:
+2025-01-18 09:25:59,182	***	     TR_As Fold 1 - Accuracy: 0.9522952295229523
+2025-01-18 09:25:59,182	***	     TR_As Fold 1 - Precision: 0.9482142857142857
+2025-01-18 09:25:59,182	***	     TR_As Fold 1 - Recall: 0.9567567567567568
+2025-01-18 09:25:59,182	***	     TR_As Fold 1 - F1 Score: 0.9524663677130045
+
+2025-01-18 09:25:59,411	***	 Classifier Model: SGDRegressor
+2025-01-18 09:25:59,411	***	   TR_As Fold 1 - Confusion Matrix:
+2025-01-18 09:25:59,411	***	[[534  22]
+ [ 62 493]]
+2025-01-18 09:25:59,411	***	
+   Classifier Metrics:
+2025-01-18 09:25:59,411	***	     TR_As Fold 1 - Accuracy: 0.9243924392439244
+2025-01-18 09:25:59,411	***	     TR_As Fold 1 - Precision: 0.9572815533980582
+2025-01-18 09:25:59,411	***	     TR_As Fold 1 - Recall: 0.8882882882882883
+2025-01-18 09:25:59,411	***	     TR_As Fold 1 - F1 Score: 0.9214953271028037
+
+2025-01-18 09:25:59,839	***	 Classifier Model: XGboost
+2025-01-18 09:25:59,840	***	   TR_As Fold 1 - Confusion Matrix:
+2025-01-18 09:25:59,840	***	[[542  14]
+ [ 49 506]]
+2025-01-18 09:25:59,840	***	
+   Classifier Metrics:
+2025-01-18 09:25:59,840	***	     TR_As Fold 1 - Accuracy: 0.9432943294329433
+2025-01-18 09:25:59,840	***	     TR_As Fold 1 - Precision: 0.9730769230769231
+2025-01-18 09:25:59,840	***	     TR_As Fold 1 - Recall: 0.9117117117117117
+2025-01-18 09:25:59,840	***	     TR_As Fold 1 - F1 Score: 0.9413953488372093
+
+2025-01-18 09:26:00,065	***	TS_Ar Fold 1/10 results
+2025-01-18 09:26:00,101	***	 Classifier Model: RandomForest
+2025-01-18 09:26:00,101	***	   TS_Ar Fold 1 - Confusion Matrix:
+2025-01-18 09:26:00,101	***	[[510  46]
+ [ 29 526]]
+2025-01-18 09:26:00,102	***	
+   Classifier Metrics:
+2025-01-18 09:26:00,102	***	     TS_Ar Fold 1 - Accuracy: 0.9324932493249325
+2025-01-18 09:26:00,102	***	     TS_Ar Fold 1 - Precision: 0.9195804195804196
+2025-01-18 09:26:00,102	***	     TS_Ar Fold 1 - Recall: 0.9477477477477477
+2025-01-18 09:26:00,102	***	     TS_Ar Fold 1 - F1 Score: 0.9334516415261757
+
+2025-01-18 09:26:00,102	***	
+2025-01-18 09:26:00,664	***	 Classifier Model: SupportVectorMachine
+2025-01-18 09:26:00,664	***	   TS_Ar Fold 1 - Confusion Matrix:
+2025-01-18 09:26:00,664	***	[[507  49]
+ [ 32 523]]
+2025-01-18 09:26:00,664	***	
+   Classifier Metrics:
+2025-01-18 09:26:00,664	***	     TS_Ar Fold 1 - Accuracy: 0.9270927092709271
+2025-01-18 09:26:00,664	***	     TS_Ar Fold 1 - Precision: 0.9143356643356644
+2025-01-18 09:26:00,664	***	     TS_Ar Fold 1 - Recall: 0.9423423423423424
+2025-01-18 09:26:00,664	***	     TS_Ar Fold 1 - F1 Score: 0.9281277728482699
+
+2025-01-18 09:26:00,664	***	
+2025-01-18 09:26:00,972	***	 Classifier Model: DecisionTree
+2025-01-18 09:26:00,972	***	   TS_Ar Fold 1 - Confusion Matrix:
+2025-01-18 09:26:00,972	***	[[480  76]
+ [ 77 478]]
+2025-01-18 09:26:00,972	***	
+   Classifier Metrics:
+2025-01-18 09:26:00,973	***	     TS_Ar Fold 1 - Accuracy: 0.8622862286228623
+2025-01-18 09:26:00,973	***	     TS_Ar Fold 1 - Precision: 0.8628158844765343
+2025-01-18 09:26:00,973	***	     TS_Ar Fold 1 - Recall: 0.8612612612612612
+2025-01-18 09:26:00,973	***	     TS_Ar Fold 1 - F1 Score: 0.8620378719567179
+
+2025-01-18 09:26:00,973	***	
+2025-01-18 09:26:01,316	***	 Classifier Model: AdaBoost
+2025-01-18 09:26:01,316	***	   TS_Ar Fold 1 - Confusion Matrix:
+2025-01-18 09:26:01,316	***	[[504  52]
+ [ 82 473]]
+2025-01-18 09:26:01,316	***	
+   Classifier Metrics:
+2025-01-18 09:26:01,316	***	     TS_Ar Fold 1 - Accuracy: 0.8793879387938794
+2025-01-18 09:26:01,316	***	     TS_Ar Fold 1 - Precision: 0.900952380952381
+2025-01-18 09:26:01,316	***	     TS_Ar Fold 1 - Recall: 0.8522522522522522
+2025-01-18 09:26:01,316	***	     TS_Ar Fold 1 - F1 Score: 0.8759259259259259
+
+2025-01-18 09:26:01,316	***	
+2025-01-18 09:26:01,755	***	 Classifier Model: Perceptron
+2025-01-18 09:26:01,755	***	   TS_Ar Fold 1 - Confusion Matrix:
+2025-01-18 09:26:01,755	***	[[507  49]
+ [ 32 523]]
+2025-01-18 09:26:01,756	***	
+   Classifier Metrics:
+2025-01-18 09:26:01,756	***	     TS_Ar Fold 1 - Accuracy: 0.9270927092709271
+2025-01-18 09:26:01,756	***	     TS_Ar Fold 1 - Precision: 0.9143356643356644
+2025-01-18 09:26:01,756	***	     TS_Ar Fold 1 - Recall: 0.9423423423423424
+2025-01-18 09:26:01,756	***	     TS_Ar Fold 1 - F1 Score: 0.9281277728482699
+
+2025-01-18 09:26:01,756	***	
+2025-01-18 09:26:02,064	***	 Classifier Model: SGDRegressor
+2025-01-18 09:26:02,065	***	   TS_Ar Fold 1 - Confusion Matrix:
+2025-01-18 09:26:02,065	***	[[515  41]
+ [ 44 511]]
+2025-01-18 09:26:02,065	***	
+   Classifier Metrics:
+2025-01-18 09:26:02,065	***	     TS_Ar Fold 1 - Accuracy: 0.9234923492349235
+2025-01-18 09:26:02,065	***	     TS_Ar Fold 1 - Precision: 0.9257246376811594
+2025-01-18 09:26:02,065	***	     TS_Ar Fold 1 - Recall: 0.9207207207207208
+2025-01-18 09:26:02,065	***	     TS_Ar Fold 1 - F1 Score: 0.9232158988256549
+
+2025-01-18 09:26:02,065	***	
+2025-01-18 09:26:02,379	***	 Classifier Model: XGboost
+2025-01-18 09:26:02,379	***	   TS_Ar Fold 1 - Confusion Matrix:
+2025-01-18 09:26:02,379	***	[[499  57]
+ [ 36 519]]
+2025-01-18 09:26:02,380	***	
+   Classifier Metrics:
+2025-01-18 09:26:02,380	***	     TS_Ar Fold 1 - Accuracy: 0.9162916291629163
+2025-01-18 09:26:02,380	***	     TS_Ar Fold 1 - Precision: 0.9010416666666666
+2025-01-18 09:26:02,380	***	     TS_Ar Fold 1 - Recall: 0.9351351351351351
+2025-01-18 09:26:02,380	***	     TS_Ar Fold 1 - F1 Score: 0.9177718832891245
+
+2025-01-18 09:26:02,380	***	
+2025-01-18 09:26:02,682	***	Similarity Metrics
+2025-01-18 09:26:02,683	***	  Synthetic Fold 1 falses - Mean Squared Error: 0.16955857
+2025-01-18 09:26:02,683	***	  Synthetic Fold 1 falses - Cosine Similarity: 0.3815576448768109
+2025-01-18 09:26:02,683	***	  Synthetic Fold 1 falses - Maximum Mean Discrepancy: 0.23454265
+2025-01-18 09:26:02,683	***	
+2025-01-18 09:26:02,685	***	Similarity Metrics
+2025-01-18 09:26:02,685	***	  Synthetic Fold 1 true - Mean Squared Error: 0.15025225
+2025-01-18 09:26:02,685	***	  Synthetic Fold 1 true - Cosine Similarity: 0.3463980345709904
+2025-01-18 09:26:02,685	***	  Synthetic Fold 1 true - Maximum Mean Discrepancy: 0.5371577
+2025-01-18 09:26:02,685	***	
+2025-01-18 09:26:02,824	***	Iniciando treinamento do modelo adversarial.
+2025-01-18 09:39:05,025	***	Treinamento concluído.
+2025-01-18 09:39:07,242	***	
+Starting training classifier
+
+2025-01-18 09:39:07,242	***	    Starting training classifier: RANDOM FOREST
+2025-01-18 09:39:08,096	***	    Finished training
+
+2025-01-18 09:39:08,096	***	    Starting training classifier: SUPPORT VECTOR MACHINE
+2025-01-18 09:39:21,672	***	    Finished training
+
+2025-01-18 09:39:21,672	***	    Starting training classifier: DECISION TREE
+2025-01-18 09:39:21,780	***	    Finished training
+
+2025-01-18 09:39:21,780	***	    Starting training classifier: ADA BOOST
+2025-01-18 09:39:22,436	***	    Finished training
+
+2025-01-18 09:39:22,437	***	    Starting training classifier: MULTILAYER PERCEPTRON
+2025-01-18 09:39:24,174	***	    Finished training
+
+2025-01-18 09:39:24,174	***	    Starting training classifier: SDG
+2025-01-18 09:39:24,413	***	    Finished training
+
+2025-01-18 09:39:24,413	***	    Starting training classifier: GAUSSIAN PROCESS
+2025-01-18 09:39:24,720	***	    Finished training
+
+2025-01-18 09:39:24,720	***	
+Starting training classifier
+
+2025-01-18 09:39:24,720	***	    Starting training classifier: RANDOM FOREST
+2025-01-18 09:39:25,534	***	    Finished training
+
+2025-01-18 09:39:25,534	***	    Starting training classifier: SUPPORT VECTOR MACHINE
+2025-01-18 09:39:37,705	***	    Finished training
+
+2025-01-18 09:39:37,705	***	    Starting training classifier: DECISION TREE
+2025-01-18 09:39:37,811	***	    Finished training
+
+2025-01-18 09:39:37,811	***	    Starting training classifier: ADA BOOST
+2025-01-18 09:39:38,758	***	    Finished training
+
+2025-01-18 09:39:38,758	***	    Starting training classifier: MULTILAYER PERCEPTRON
+2025-01-18 09:39:41,358	***	    Finished training
+
+2025-01-18 09:39:41,358	***	    Starting training classifier: SDG
+2025-01-18 09:39:41,552	***	    Finished training
+
+2025-01-18 09:39:41,552	***	    Starting training classifier: GAUSSIAN PROCESS
+2025-01-18 09:39:41,775	***	    Finished training
+
+2025-01-18 09:39:41,776	***	TR_As Fold 2/10 results
+
+2025-01-18 09:39:41,814	***	 Classifier Model: RandomForest
+2025-01-18 09:39:41,815	***	   TR_As Fold 2 - Confusion Matrix:
+2025-01-18 09:39:41,815	***	[[530  26]
+ [ 54 501]]
+2025-01-18 09:39:41,815	***	
+   Classifier Metrics:
+2025-01-18 09:39:41,815	***	     TR_As Fold 2 - Accuracy: 0.927992799279928
+2025-01-18 09:39:41,815	***	     TR_As Fold 2 - Precision: 0.9506641366223909
+2025-01-18 09:39:41,815	***	     TR_As Fold 2 - Recall: 0.9027027027027027
+2025-01-18 09:39:41,815	***	     TR_As Fold 2 - F1 Score: 0.9260628465804066
+
+2025-01-18 09:39:42,517	***	 Classifier Model: SupportVectorMachine
+2025-01-18 09:39:42,517	***	   TR_As Fold 2 - Confusion Matrix:
+2025-01-18 09:39:42,517	***	[[537  19]
+ [ 31 524]]
+2025-01-18 09:39:42,518	***	
+   Classifier Metrics:
+2025-01-18 09:39:42,518	***	     TR_As Fold 2 - Accuracy: 0.954995499549955
+2025-01-18 09:39:42,518	***	     TR_As Fold 2 - Precision: 0.9650092081031307
+2025-01-18 09:39:42,518	***	     TR_As Fold 2 - Recall: 0.9441441441441442
+2025-01-18 09:39:42,518	***	     TR_As Fold 2 - F1 Score: 0.9544626593806923
+
+2025-01-18 09:39:42,751	***	 Classifier Model: DecisionTree
+2025-01-18 09:39:42,751	***	   TR_As Fold 2 - Confusion Matrix:
+2025-01-18 09:39:42,751	***	[[512  44]
+ [ 75 480]]
+2025-01-18 09:39:42,751	***	
+   Classifier Metrics:
+2025-01-18 09:39:42,751	***	     TR_As Fold 2 - Accuracy: 0.8928892889288929
+2025-01-18 09:39:42,751	***	     TR_As Fold 2 - Precision: 0.916030534351145
+2025-01-18 09:39:42,752	***	     TR_As Fold 2 - Recall: 0.8648648648648649
+2025-01-18 09:39:42,752	***	     TR_As Fold 2 - F1 Score: 0.8897126969416127
+
+2025-01-18 09:39:43,011	***	 Classifier Model: AdaBoost
+2025-01-18 09:39:43,011	***	   TR_As Fold 2 - Confusion Matrix:
+2025-01-18 09:39:43,011	***	[[522  34]
+ [ 25 530]]
+2025-01-18 09:39:43,011	***	
+   Classifier Metrics:
+2025-01-18 09:39:43,011	***	     TR_As Fold 2 - Accuracy: 0.946894689468947
+2025-01-18 09:39:43,011	***	     TR_As Fold 2 - Precision: 0.9397163120567376
+2025-01-18 09:39:43,011	***	     TR_As Fold 2 - Recall: 0.954954954954955
+2025-01-18 09:39:43,012	***	     TR_As Fold 2 - F1 Score: 0.9472743521000894
+
+2025-01-18 09:39:43,368	***	 Classifier Model: Perceptron
+2025-01-18 09:39:43,368	***	   TR_As Fold 2 - Confusion Matrix:
+2025-01-18 09:39:43,368	***	[[544  12]
+ [ 48 507]]
+2025-01-18 09:39:43,368	***	
+   Classifier Metrics:
+2025-01-18 09:39:43,368	***	     TR_As Fold 2 - Accuracy: 0.945994599459946
+2025-01-18 09:39:43,368	***	     TR_As Fold 2 - Precision: 0.976878612716763
+2025-01-18 09:39:43,369	***	     TR_As Fold 2 - Recall: 0.9135135135135135
+2025-01-18 09:39:43,369	***	     TR_As Fold 2 - F1 Score: 0.9441340782122906
+
+2025-01-18 09:39:43,604	***	 Classifier Model: SGDRegressor
+2025-01-18 09:39:43,604	***	   TR_As Fold 2 - Confusion Matrix:
+2025-01-18 09:39:43,604	***	[[527  29]
+ [ 38 517]]
+2025-01-18 09:39:43,605	***	
+   Classifier Metrics:
+2025-01-18 09:39:43,605	***	     TR_As Fold 2 - Accuracy: 0.9396939693969397
+2025-01-18 09:39:43,605	***	     TR_As Fold 2 - Precision: 0.9468864468864469
+2025-01-18 09:39:43,605	***	     TR_As Fold 2 - Recall: 0.9315315315315316
+2025-01-18 09:39:43,605	***	     TR_As Fold 2 - F1 Score: 0.9391462306993642
+
+2025-01-18 09:39:43,839	***	 Classifier Model: XGboost
+2025-01-18 09:39:43,839	***	   TR_As Fold 2 - Confusion Matrix:
+2025-01-18 09:39:43,839	***	[[532  24]
+ [ 39 516]]
+2025-01-18 09:39:43,840	***	
+   Classifier Metrics:
+2025-01-18 09:39:43,840	***	     TR_As Fold 2 - Accuracy: 0.9432943294329433
+2025-01-18 09:39:43,840	***	     TR_As Fold 2 - Precision: 0.9555555555555556
+2025-01-18 09:39:43,840	***	     TR_As Fold 2 - Recall: 0.9297297297297298
+2025-01-18 09:39:43,840	***	     TR_As Fold 2 - F1 Score: 0.9424657534246577
+
+2025-01-18 09:39:44,058	***	TS_Ar Fold 2/10 results
+2025-01-18 09:39:44,097	***	 Classifier Model: RandomForest
+2025-01-18 09:39:44,097	***	   TS_Ar Fold 2 - Confusion Matrix:
+2025-01-18 09:39:44,097	***	[[518  38]
+ [ 29 526]]
+2025-01-18 09:39:44,097	***	
+   Classifier Metrics:
+2025-01-18 09:39:44,097	***	     TS_Ar Fold 2 - Accuracy: 0.9396939693969397
+2025-01-18 09:39:44,097	***	     TS_Ar Fold 2 - Precision: 0.9326241134751773
+2025-01-18 09:39:44,097	***	     TS_Ar Fold 2 - Recall: 0.9477477477477477
+2025-01-18 09:39:44,097	***	     TS_Ar Fold 2 - F1 Score: 0.9401251117068812
+
+2025-01-18 09:39:44,097	***	
+2025-01-18 09:39:44,802	***	 Classifier Model: SupportVectorMachine
+2025-01-18 09:39:44,802	***	   TS_Ar Fold 2 - Confusion Matrix:
+2025-01-18 09:39:44,802	***	[[529  27]
+ [ 35 520]]
+2025-01-18 09:39:44,803	***	
+   Classifier Metrics:
+2025-01-18 09:39:44,803	***	     TS_Ar Fold 2 - Accuracy: 0.9441944194419442
+2025-01-18 09:39:44,803	***	     TS_Ar Fold 2 - Precision: 0.9506398537477148
+2025-01-18 09:39:44,803	***	     TS_Ar Fold 2 - Recall: 0.9369369369369369
+2025-01-18 09:39:44,803	***	     TS_Ar Fold 2 - F1 Score: 0.9437386569872959
+
+2025-01-18 09:39:44,803	***	
+2025-01-18 09:39:45,098	***	 Classifier Model: DecisionTree
+2025-01-18 09:39:45,098	***	   TS_Ar Fold 2 - Confusion Matrix:
+2025-01-18 09:39:45,098	***	[[489  67]
+ [ 80 475]]
+2025-01-18 09:39:45,098	***	
+   Classifier Metrics:
+2025-01-18 09:39:45,098	***	     TS_Ar Fold 2 - Accuracy: 0.8676867686768677
+2025-01-18 09:39:45,099	***	     TS_Ar Fold 2 - Precision: 0.8763837638376384
+2025-01-18 09:39:45,099	***	     TS_Ar Fold 2 - Recall: 0.8558558558558559
+2025-01-18 09:39:45,099	***	     TS_Ar Fold 2 - F1 Score: 0.8659981768459436
+
+2025-01-18 09:39:45,099	***	
+2025-01-18 09:39:45,434	***	 Classifier Model: AdaBoost
+2025-01-18 09:39:45,434	***	   TS_Ar Fold 2 - Confusion Matrix:
+2025-01-18 09:39:45,434	***	[[534  22]
+ [ 36 519]]
+2025-01-18 09:39:45,434	***	
+   Classifier Metrics:
+2025-01-18 09:39:45,434	***	     TS_Ar Fold 2 - Accuracy: 0.9477947794779478
+2025-01-18 09:39:45,434	***	     TS_Ar Fold 2 - Precision: 0.9593345656192237
+2025-01-18 09:39:45,434	***	     TS_Ar Fold 2 - Recall: 0.9351351351351351
+2025-01-18 09:39:45,434	***	     TS_Ar Fold 2 - F1 Score: 0.9470802919708029
+
+2025-01-18 09:39:45,434	***	
+2025-01-18 09:39:45,867	***	 Classifier Model: Perceptron
+2025-01-18 09:39:45,867	***	   TS_Ar Fold 2 - Confusion Matrix:
+2025-01-18 09:39:45,867	***	[[532  24]
+ [ 23 532]]
+2025-01-18 09:39:45,867	***	
+   Classifier Metrics:
+2025-01-18 09:39:45,867	***	     TS_Ar Fold 2 - Accuracy: 0.9576957695769577
+2025-01-18 09:39:45,867	***	     TS_Ar Fold 2 - Precision: 0.9568345323741008
+2025-01-18 09:39:45,868	***	     TS_Ar Fold 2 - Recall: 0.9585585585585585
+2025-01-18 09:39:45,868	***	     TS_Ar Fold 2 - F1 Score: 0.9576957695769577
+
+2025-01-18 09:39:45,868	***	
+2025-01-18 09:39:46,170	***	 Classifier Model: SGDRegressor
+2025-01-18 09:39:46,170	***	   TS_Ar Fold 2 - Confusion Matrix:
+2025-01-18 09:39:46,170	***	[[519  37]
+ [ 22 533]]
+2025-01-18 09:39:46,170	***	
+   Classifier Metrics:
+2025-01-18 09:39:46,170	***	     TS_Ar Fold 2 - Accuracy: 0.946894689468947
+2025-01-18 09:39:46,170	***	     TS_Ar Fold 2 - Precision: 0.9350877192982456
+2025-01-18 09:39:46,170	***	     TS_Ar Fold 2 - Recall: 0.9603603603603603
+2025-01-18 09:39:46,170	***	     TS_Ar Fold 2 - F1 Score: 0.9475555555555555
+
+2025-01-18 09:39:46,170	***	
+2025-01-18 09:39:46,473	***	 Classifier Model: XGboost
+2025-01-18 09:39:46,473	***	   TS_Ar Fold 2 - Confusion Matrix:
+2025-01-18 09:39:46,473	***	[[527  29]
+ [ 34 521]]
+2025-01-18 09:39:46,474	***	
+   Classifier Metrics:
+2025-01-18 09:39:46,474	***	     TS_Ar Fold 2 - Accuracy: 0.9432943294329433
+2025-01-18 09:39:46,474	***	     TS_Ar Fold 2 - Precision: 0.9472727272727273
+2025-01-18 09:39:46,474	***	     TS_Ar Fold 2 - Recall: 0.9387387387387387
+2025-01-18 09:39:46,474	***	     TS_Ar Fold 2 - F1 Score: 0.9429864253393665
+
+2025-01-18 09:39:46,474	***	
+2025-01-18 09:39:46,770	***	Similarity Metrics
+2025-01-18 09:39:46,770	***	  Synthetic Fold 2 falses - Mean Squared Error: 0.1696937
+2025-01-18 09:39:46,770	***	  Synthetic Fold 2 falses - Cosine Similarity: 0.6254065156654195
+2025-01-18 09:39:46,770	***	  Synthetic Fold 2 falses - Maximum Mean Discrepancy: 0.1416638
+2025-01-18 09:39:46,770	***	
+2025-01-18 09:39:46,772	***	Similarity Metrics
+2025-01-18 09:39:46,772	***	  Synthetic Fold 2 true - Mean Squared Error: 0.14286487
+2025-01-18 09:39:46,772	***	  Synthetic Fold 2 true - Cosine Similarity: 0.476261438697845
+2025-01-18 09:39:46,772	***	  Synthetic Fold 2 true - Maximum Mean Discrepancy: 0.31037092
+2025-01-18 09:39:46,772	***	
+2025-01-18 09:39:46,873	***	Iniciando treinamento do modelo adversarial.
+2025-01-18 09:52:34,113	***	Treinamento concluído.
+2025-01-18 09:52:36,295	***	
+Starting training classifier
+
+2025-01-18 09:52:36,296	***	    Starting training classifier: RANDOM FOREST
+2025-01-18 09:52:37,147	***	    Finished training
+
+2025-01-18 09:52:37,147	***	    Starting training classifier: SUPPORT VECTOR MACHINE
+2025-01-18 09:52:50,511	***	    Finished training
+
+2025-01-18 09:52:50,512	***	    Starting training classifier: DECISION TREE
+2025-01-18 09:52:50,625	***	    Finished training
+
+2025-01-18 09:52:50,625	***	    Starting training classifier: ADA BOOST
+2025-01-18 09:52:51,281	***	    Finished training
+
+2025-01-18 09:52:51,281	***	    Starting training classifier: MULTILAYER PERCEPTRON
+2025-01-18 09:52:53,372	***	    Finished training
+
+2025-01-18 09:52:53,373	***	    Starting training classifier: SDG
+2025-01-18 09:52:53,642	***	    Finished training
+
+2025-01-18 09:52:53,642	***	    Starting training classifier: GAUSSIAN PROCESS
+2025-01-18 09:52:53,825	***	    Finished training
+
+2025-01-18 09:52:53,825	***	
+Starting training classifier
+
+2025-01-18 09:52:53,825	***	    Starting training classifier: RANDOM FOREST
+2025-01-18 09:52:54,671	***	    Finished training
+
+2025-01-18 09:52:54,671	***	    Starting training classifier: SUPPORT VECTOR MACHINE
+2025-01-18 09:53:07,223	***	    Finished training
+
+2025-01-18 09:53:07,224	***	    Starting training classifier: DECISION TREE
+2025-01-18 09:53:07,320	***	    Finished training
+
+2025-01-18 09:53:07,320	***	    Starting training classifier: ADA BOOST
+2025-01-18 09:53:08,307	***	    Finished training
+
+2025-01-18 09:53:08,308	***	    Starting training classifier: MULTILAYER PERCEPTRON
+2025-01-18 09:53:10,027	***	    Finished training
+
+2025-01-18 09:53:10,028	***	    Starting training classifier: SDG
+2025-01-18 09:53:10,243	***	    Finished training
+
+2025-01-18 09:53:10,243	***	    Starting training classifier: GAUSSIAN PROCESS
+2025-01-18 09:53:10,436	***	    Finished training
+
+2025-01-18 09:53:10,437	***	TR_As Fold 3/10 results
+
+2025-01-18 09:53:10,482	***	 Classifier Model: RandomForest
+2025-01-18 09:53:10,482	***	   TR_As Fold 3 - Confusion Matrix:
+2025-01-18 09:53:10,482	***	[[522  34]
+ [ 73 482]]
+2025-01-18 09:53:10,482	***	
+   Classifier Metrics:
+2025-01-18 09:53:10,482	***	     TR_As Fold 3 - Accuracy: 0.9036903690369037
+2025-01-18 09:53:10,482	***	     TR_As Fold 3 - Precision: 0.9341085271317829
+2025-01-18 09:53:10,482	***	     TR_As Fold 3 - Recall: 0.8684684684684685
+2025-01-18 09:53:10,483	***	     TR_As Fold 3 - F1 Score: 0.9000933706816061
+
+2025-01-18 09:53:11,199	***	 Classifier Model: SupportVectorMachine
+2025-01-18 09:53:11,199	***	   TR_As Fold 3 - Confusion Matrix:
+2025-01-18 09:53:11,199	***	[[519  37]
+ [ 50 505]]
+2025-01-18 09:53:11,199	***	
+   Classifier Metrics:
+2025-01-18 09:53:11,199	***	     TR_As Fold 3 - Accuracy: 0.9216921692169217
+2025-01-18 09:53:11,199	***	     TR_As Fold 3 - Precision: 0.9317343173431735
+2025-01-18 09:53:11,199	***	     TR_As Fold 3 - Recall: 0.9099099099099099
+2025-01-18 09:53:11,199	***	     TR_As Fold 3 - F1 Score: 0.9206927985414768
+
+2025-01-18 09:53:11,422	***	 Classifier Model: DecisionTree
+2025-01-18 09:53:11,423	***	   TR_As Fold 3 - Confusion Matrix:
+2025-01-18 09:53:11,423	***	[[499  57]
+ [ 73 482]]
+2025-01-18 09:53:11,423	***	
+   Classifier Metrics:
+2025-01-18 09:53:11,423	***	     TR_As Fold 3 - Accuracy: 0.882988298829883
+2025-01-18 09:53:11,423	***	     TR_As Fold 3 - Precision: 0.8942486085343229
+2025-01-18 09:53:11,423	***	     TR_As Fold 3 - Recall: 0.8684684684684685
+2025-01-18 09:53:11,423	***	     TR_As Fold 3 - F1 Score: 0.8811700182815357
+
+2025-01-18 09:53:11,682	***	 Classifier Model: AdaBoost
+2025-01-18 09:53:11,682	***	   TR_As Fold 3 - Confusion Matrix:
+2025-01-18 09:53:11,682	***	[[513  43]
+ [ 38 517]]
+2025-01-18 09:53:11,682	***	
+   Classifier Metrics:
+2025-01-18 09:53:11,682	***	     TR_As Fold 3 - Accuracy: 0.9270927092709271
+2025-01-18 09:53:11,682	***	     TR_As Fold 3 - Precision: 0.9232142857142858
+2025-01-18 09:53:11,682	***	     TR_As Fold 3 - Recall: 0.9315315315315316
+2025-01-18 09:53:11,682	***	     TR_As Fold 3 - F1 Score: 0.9273542600896861
+
+2025-01-18 09:53:12,045	***	 Classifier Model: Perceptron
+2025-01-18 09:53:12,045	***	   TR_As Fold 3 - Confusion Matrix:
+2025-01-18 09:53:12,045	***	[[510  46]
+ [ 28 527]]
+2025-01-18 09:53:12,045	***	
+   Classifier Metrics:
+2025-01-18 09:53:12,045	***	     TR_As Fold 3 - Accuracy: 0.9333933393339334
+2025-01-18 09:53:12,045	***	     TR_As Fold 3 - Precision: 0.9197207678883071
+2025-01-18 09:53:12,046	***	     TR_As Fold 3 - Recall: 0.9495495495495495
+2025-01-18 09:53:12,046	***	     TR_As Fold 3 - F1 Score: 0.9343971631205673
+
+2025-01-18 09:53:12,273	***	 Classifier Model: SGDRegressor
+2025-01-18 09:53:12,273	***	   TR_As Fold 3 - Confusion Matrix:
+2025-01-18 09:53:12,273	***	[[520  36]
+ [ 51 504]]
+2025-01-18 09:53:12,273	***	
+   Classifier Metrics:
+2025-01-18 09:53:12,273	***	     TR_As Fold 3 - Accuracy: 0.9216921692169217
+2025-01-18 09:53:12,273	***	     TR_As Fold 3 - Precision: 0.9333333333333333
+2025-01-18 09:53:12,273	***	     TR_As Fold 3 - Recall: 0.9081081081081082
+2025-01-18 09:53:12,273	***	     TR_As Fold 3 - F1 Score: 0.9205479452054796
+
+2025-01-18 09:53:12,503	***	 Classifier Model: XGboost
+2025-01-18 09:53:12,503	***	   TR_As Fold 3 - Confusion Matrix:
+2025-01-18 09:53:12,503	***	[[517  39]
+ [ 58 497]]
+2025-01-18 09:53:12,504	***	
+   Classifier Metrics:
+2025-01-18 09:53:12,504	***	     TR_As Fold 3 - Accuracy: 0.9126912691269127
+2025-01-18 09:53:12,504	***	     TR_As Fold 3 - Precision: 0.9272388059701493
+2025-01-18 09:53:12,504	***	     TR_As Fold 3 - Recall: 0.8954954954954955
+2025-01-18 09:53:12,504	***	     TR_As Fold 3 - F1 Score: 0.9110907424381302
+
+2025-01-18 09:53:12,720	***	TS_Ar Fold 3/10 results
+2025-01-18 09:53:12,760	***	 Classifier Model: RandomForest
+2025-01-18 09:53:12,760	***	   TS_Ar Fold 3 - Confusion Matrix:
+2025-01-18 09:53:12,760	***	[[503  53]
+ [ 27 528]]
+2025-01-18 09:53:12,760	***	
+   Classifier Metrics:
+2025-01-18 09:53:12,760	***	     TS_Ar Fold 3 - Accuracy: 0.927992799279928
+2025-01-18 09:53:12,760	***	     TS_Ar Fold 3 - Precision: 0.9087779690189329
+2025-01-18 09:53:12,761	***	     TS_Ar Fold 3 - Recall: 0.9513513513513514
+2025-01-18 09:53:12,761	***	     TS_Ar Fold 3 - F1 Score: 0.9295774647887325
+
+2025-01-18 09:53:12,761	***	
+2025-01-18 09:53:13,473	***	 Classifier Model: SupportVectorMachine
+2025-01-18 09:53:13,473	***	   TS_Ar Fold 3 - Confusion Matrix:
+2025-01-18 09:53:13,473	***	[[500  56]
+ [ 31 524]]
+2025-01-18 09:53:13,473	***	
+   Classifier Metrics:
+2025-01-18 09:53:13,473	***	     TS_Ar Fold 3 - Accuracy: 0.9216921692169217
+2025-01-18 09:53:13,473	***	     TS_Ar Fold 3 - Precision: 0.903448275862069
+2025-01-18 09:53:13,473	***	     TS_Ar Fold 3 - Recall: 0.9441441441441442
+2025-01-18 09:53:13,473	***	     TS_Ar Fold 3 - F1 Score: 0.9233480176211454
+
+2025-01-18 09:53:13,473	***	
+2025-01-18 09:53:13,772	***	 Classifier Model: DecisionTree
+2025-01-18 09:53:13,772	***	   TS_Ar Fold 3 - Confusion Matrix:
+2025-01-18 09:53:13,772	***	[[486  70]
+ [ 62 493]]
+2025-01-18 09:53:13,772	***	
+   Classifier Metrics:
+2025-01-18 09:53:13,772	***	     TS_Ar Fold 3 - Accuracy: 0.8811881188118812
+2025-01-18 09:53:13,772	***	     TS_Ar Fold 3 - Precision: 0.8756660746003553
+2025-01-18 09:53:13,772	***	     TS_Ar Fold 3 - Recall: 0.8882882882882883
+2025-01-18 09:53:13,772	***	     TS_Ar Fold 3 - F1 Score: 0.8819320214669052
+
+2025-01-18 09:53:13,772	***	
+2025-01-18 09:53:14,110	***	 Classifier Model: AdaBoost
+2025-01-18 09:53:14,110	***	   TS_Ar Fold 3 - Confusion Matrix:
+2025-01-18 09:53:14,110	***	[[488  68]
+ [ 24 531]]
+2025-01-18 09:53:14,110	***	
+   Classifier Metrics:
+2025-01-18 09:53:14,110	***	     TS_Ar Fold 3 - Accuracy: 0.9171917191719172
+2025-01-18 09:53:14,110	***	     TS_Ar Fold 3 - Precision: 0.8864774624373957
+2025-01-18 09:53:14,110	***	     TS_Ar Fold 3 - Recall: 0.9567567567567568
+2025-01-18 09:53:14,110	***	     TS_Ar Fold 3 - F1 Score: 0.9202772963604853
+
+2025-01-18 09:53:14,110	***	
+2025-01-18 09:53:14,534	***	 Classifier Model: Perceptron
+2025-01-18 09:53:14,534	***	   TS_Ar Fold 3 - Confusion Matrix:
+2025-01-18 09:53:14,534	***	[[481  75]
+ [ 18 537]]
+2025-01-18 09:53:14,535	***	
+   Classifier Metrics:
+2025-01-18 09:53:14,535	***	     TS_Ar Fold 3 - Accuracy: 0.9162916291629163
+2025-01-18 09:53:14,535	***	     TS_Ar Fold 3 - Precision: 0.8774509803921569
+2025-01-18 09:53:14,535	***	     TS_Ar Fold 3 - Recall: 0.9675675675675676
+2025-01-18 09:53:14,535	***	     TS_Ar Fold 3 - F1 Score: 0.9203084832904884
+
+2025-01-18 09:53:14,535	***	
+2025-01-18 09:53:14,836	***	 Classifier Model: SGDRegressor
+2025-01-18 09:53:14,836	***	   TS_Ar Fold 3 - Confusion Matrix:
+2025-01-18 09:53:14,836	***	[[501  55]
+ [ 54 501]]
+2025-01-18 09:53:14,836	***	
+   Classifier Metrics:
+2025-01-18 09:53:14,836	***	     TS_Ar Fold 3 - Accuracy: 0.9018901890189019
+2025-01-18 09:53:14,836	***	     TS_Ar Fold 3 - Precision: 0.9010791366906474
+2025-01-18 09:53:14,836	***	     TS_Ar Fold 3 - Recall: 0.9027027027027027
+2025-01-18 09:53:14,837	***	     TS_Ar Fold 3 - F1 Score: 0.9018901890189017
+
+2025-01-18 09:53:14,837	***	
+2025-01-18 09:53:15,166	***	 Classifier Model: XGboost
+2025-01-18 09:53:15,166	***	   TS_Ar Fold 3 - Confusion Matrix:
+2025-01-18 09:53:15,166	***	[[491  65]
+ [ 35 520]]
+2025-01-18 09:53:15,166	***	
+   Classifier Metrics:
+2025-01-18 09:53:15,166	***	     TS_Ar Fold 3 - Accuracy: 0.90999099909991
+2025-01-18 09:53:15,166	***	     TS_Ar Fold 3 - Precision: 0.8888888888888888
+2025-01-18 09:53:15,166	***	     TS_Ar Fold 3 - Recall: 0.9369369369369369
+2025-01-18 09:53:15,166	***	     TS_Ar Fold 3 - F1 Score: 0.9122807017543859
+
+2025-01-18 09:53:15,166	***	
+2025-01-18 09:53:15,457	***	Similarity Metrics
+2025-01-18 09:53:15,457	***	  Synthetic Fold 3 falses - Mean Squared Error: 0.17071171
+2025-01-18 09:53:15,457	***	  Synthetic Fold 3 falses - Cosine Similarity: 0.37043330570062
+2025-01-18 09:53:15,458	***	  Synthetic Fold 3 falses - Maximum Mean Discrepancy: 0.2589303
+2025-01-18 09:53:15,458	***	
+2025-01-18 09:53:15,459	***	Similarity Metrics
+2025-01-18 09:53:15,459	***	  Synthetic Fold 3 true - Mean Squared Error: 0.13618919
+2025-01-18 09:53:15,459	***	  Synthetic Fold 3 true - Cosine Similarity: 0.4685426892192514
+2025-01-18 09:53:15,459	***	  Synthetic Fold 3 true - Maximum Mean Discrepancy: 0.57259315
+2025-01-18 09:53:15,459	***	
+2025-01-18 09:53:15,562	***	Iniciando treinamento do modelo adversarial.
+2025-01-18 10:06:03,859	***	Treinamento concluído.
+2025-01-18 10:06:06,646	***	
+Starting training classifier
+
+2025-01-18 10:06:06,646	***	    Starting training classifier: RANDOM FOREST
+2025-01-18 10:06:07,489	***	    Finished training
+
+2025-01-18 10:06:07,489	***	    Starting training classifier: SUPPORT VECTOR MACHINE
+2025-01-18 10:06:20,697	***	    Finished training
+
+2025-01-18 10:06:20,697	***	    Starting training classifier: DECISION TREE
+2025-01-18 10:06:20,814	***	    Finished training
+
+2025-01-18 10:06:20,814	***	    Starting training classifier: ADA BOOST
+2025-01-18 10:06:21,455	***	    Finished training
+
+2025-01-18 10:06:21,456	***	    Starting training classifier: MULTILAYER PERCEPTRON
+2025-01-18 10:06:23,227	***	    Finished training
+
+2025-01-18 10:06:23,227	***	    Starting training classifier: SDG
+2025-01-18 10:06:23,468	***	    Finished training
+
+2025-01-18 10:06:23,468	***	    Starting training classifier: GAUSSIAN PROCESS
+2025-01-18 10:06:23,637	***	    Finished training
+
+2025-01-18 10:06:23,638	***	
+Starting training classifier
+
+2025-01-18 10:06:23,638	***	    Starting training classifier: RANDOM FOREST
+2025-01-18 10:06:24,486	***	    Finished training
+
+2025-01-18 10:06:24,486	***	    Starting training classifier: SUPPORT VECTOR MACHINE
+2025-01-18 10:06:36,185	***	    Finished training
+
+2025-01-18 10:06:36,185	***	    Starting training classifier: DECISION TREE
+2025-01-18 10:06:36,310	***	    Finished training
+
+2025-01-18 10:06:36,310	***	    Starting training classifier: ADA BOOST
+2025-01-18 10:06:37,270	***	    Finished training
+
+2025-01-18 10:06:37,270	***	    Starting training classifier: MULTILAYER PERCEPTRON
+2025-01-18 10:06:39,015	***	    Finished training
+
+2025-01-18 10:06:39,016	***	    Starting training classifier: SDG
+2025-01-18 10:06:39,216	***	    Finished training
+
+2025-01-18 10:06:39,216	***	    Starting training classifier: GAUSSIAN PROCESS
+2025-01-18 10:06:39,417	***	    Finished training
+
+2025-01-18 10:06:39,418	***	TR_As Fold 4/10 results
+
+2025-01-18 10:06:39,461	***	 Classifier Model: RandomForest
+2025-01-18 10:06:39,461	***	   TR_As Fold 4 - Confusion Matrix:
+2025-01-18 10:06:39,461	***	[[533  23]
+ [ 94 461]]
+2025-01-18 10:06:39,461	***	
+   Classifier Metrics:
+2025-01-18 10:06:39,461	***	     TR_As Fold 4 - Accuracy: 0.8946894689468947
+2025-01-18 10:06:39,461	***	     TR_As Fold 4 - Precision: 0.9524793388429752
+2025-01-18 10:06:39,461	***	     TR_As Fold 4 - Recall: 0.8306306306306306
+2025-01-18 10:06:39,461	***	     TR_As Fold 4 - F1 Score: 0.8873917228103945
+
+2025-01-18 10:06:40,200	***	 Classifier Model: SupportVectorMachine
+2025-01-18 10:06:40,200	***	   TR_As Fold 4 - Confusion Matrix:
+2025-01-18 10:06:40,200	***	[[533  23]
+ [ 73 482]]
+2025-01-18 10:06:40,200	***	
+   Classifier Metrics:
+2025-01-18 10:06:40,200	***	     TR_As Fold 4 - Accuracy: 0.9135913591359136
+2025-01-18 10:06:40,201	***	     TR_As Fold 4 - Precision: 0.9544554455445544
+2025-01-18 10:06:40,201	***	     TR_As Fold 4 - Recall: 0.8684684684684685
+2025-01-18 10:06:40,201	***	     TR_As Fold 4 - F1 Score: 0.909433962264151
+
+2025-01-18 10:06:40,432	***	 Classifier Model: DecisionTree
+2025-01-18 10:06:40,432	***	   TR_As Fold 4 - Confusion Matrix:
+2025-01-18 10:06:40,432	***	[[502  54]
+ [103 452]]
+2025-01-18 10:06:40,432	***	
+   Classifier Metrics:
+2025-01-18 10:06:40,432	***	     TR_As Fold 4 - Accuracy: 0.8586858685868587
+2025-01-18 10:06:40,432	***	     TR_As Fold 4 - Precision: 0.8932806324110671
+2025-01-18 10:06:40,432	***	     TR_As Fold 4 - Recall: 0.8144144144144144
+2025-01-18 10:06:40,432	***	     TR_As Fold 4 - F1 Score: 0.8520263901979266
+
+2025-01-18 10:06:40,705	***	 Classifier Model: AdaBoost
+2025-01-18 10:06:40,705	***	   TR_As Fold 4 - Confusion Matrix:
+2025-01-18 10:06:40,705	***	[[519  37]
+ [ 61 494]]
+2025-01-18 10:06:40,705	***	
+   Classifier Metrics:
+2025-01-18 10:06:40,705	***	     TR_As Fold 4 - Accuracy: 0.9117911791179117
+2025-01-18 10:06:40,705	***	     TR_As Fold 4 - Precision: 0.9303201506591338
+2025-01-18 10:06:40,705	***	     TR_As Fold 4 - Recall: 0.8900900900900901
+2025-01-18 10:06:40,705	***	     TR_As Fold 4 - F1 Score: 0.9097605893186004
+
+2025-01-18 10:06:41,062	***	 Classifier Model: Perceptron
+2025-01-18 10:06:41,062	***	   TR_As Fold 4 - Confusion Matrix:
+2025-01-18 10:06:41,062	***	[[537  19]
+ [ 83 472]]
+2025-01-18 10:06:41,063	***	
+   Classifier Metrics:
+2025-01-18 10:06:41,063	***	     TR_As Fold 4 - Accuracy: 0.9081908190819082
+2025-01-18 10:06:41,063	***	     TR_As Fold 4 - Precision: 0.9613034623217923
+2025-01-18 10:06:41,063	***	     TR_As Fold 4 - Recall: 0.8504504504504504
+2025-01-18 10:06:41,063	***	     TR_As Fold 4 - F1 Score: 0.9024856596558317
+
+2025-01-18 10:06:41,288	***	 Classifier Model: SGDRegressor
+2025-01-18 10:06:41,288	***	   TR_As Fold 4 - Confusion Matrix:
+2025-01-18 10:06:41,288	***	[[531  25]
+ [ 77 478]]
+2025-01-18 10:06:41,288	***	
+   Classifier Metrics:
+2025-01-18 10:06:41,288	***	     TR_As Fold 4 - Accuracy: 0.9081908190819082
+2025-01-18 10:06:41,288	***	     TR_As Fold 4 - Precision: 0.9502982107355865
+2025-01-18 10:06:41,288	***	     TR_As Fold 4 - Recall: 0.8612612612612612
+2025-01-18 10:06:41,288	***	     TR_As Fold 4 - F1 Score: 0.9035916824196597
+
+2025-01-18 10:06:41,520	***	 Classifier Model: XGboost
+2025-01-18 10:06:41,520	***	   TR_As Fold 4 - Confusion Matrix:
+2025-01-18 10:06:41,520	***	[[528  28]
+ [ 71 484]]
+2025-01-18 10:06:41,520	***	
+   Classifier Metrics:
+2025-01-18 10:06:41,520	***	     TR_As Fold 4 - Accuracy: 0.9108910891089109
+2025-01-18 10:06:41,520	***	     TR_As Fold 4 - Precision: 0.9453125
+2025-01-18 10:06:41,520	***	     TR_As Fold 4 - Recall: 0.872072072072072
+2025-01-18 10:06:41,520	***	     TR_As Fold 4 - F1 Score: 0.9072164948453608
+
+2025-01-18 10:06:41,741	***	TS_Ar Fold 4/10 results
+2025-01-18 10:06:41,781	***	 Classifier Model: RandomForest
+2025-01-18 10:06:41,781	***	   TS_Ar Fold 4 - Confusion Matrix:
+2025-01-18 10:06:41,781	***	[[501  55]
+ [ 30 525]]
+2025-01-18 10:06:41,782	***	
+   Classifier Metrics:
+2025-01-18 10:06:41,782	***	     TS_Ar Fold 4 - Accuracy: 0.9234923492349235
+2025-01-18 10:06:41,782	***	     TS_Ar Fold 4 - Precision: 0.9051724137931034
+2025-01-18 10:06:41,782	***	     TS_Ar Fold 4 - Recall: 0.9459459459459459
+2025-01-18 10:06:41,782	***	     TS_Ar Fold 4 - F1 Score: 0.9251101321585904
+
+2025-01-18 10:06:41,782	***	
+2025-01-18 10:06:42,460	***	 Classifier Model: SupportVectorMachine
+2025-01-18 10:06:42,460	***	   TS_Ar Fold 4 - Confusion Matrix:
+2025-01-18 10:06:42,460	***	[[497  59]
+ [ 43 512]]
+2025-01-18 10:06:42,460	***	
+   Classifier Metrics:
+2025-01-18 10:06:42,460	***	     TS_Ar Fold 4 - Accuracy: 0.9081908190819082
+2025-01-18 10:06:42,460	***	     TS_Ar Fold 4 - Precision: 0.8966725043782837
+2025-01-18 10:06:42,460	***	     TS_Ar Fold 4 - Recall: 0.9225225225225225
+2025-01-18 10:06:42,460	***	     TS_Ar Fold 4 - F1 Score: 0.9094138543516874
+
+2025-01-18 10:06:42,460	***	
+2025-01-18 10:06:42,760	***	 Classifier Model: DecisionTree
+2025-01-18 10:06:42,760	***	   TS_Ar Fold 4 - Confusion Matrix:
+2025-01-18 10:06:42,760	***	[[459  97]
+ [ 86 469]]
+2025-01-18 10:06:42,760	***	
+   Classifier Metrics:
+2025-01-18 10:06:42,760	***	     TS_Ar Fold 4 - Accuracy: 0.8352835283528353
+2025-01-18 10:06:42,760	***	     TS_Ar Fold 4 - Precision: 0.8286219081272085
+2025-01-18 10:06:42,760	***	     TS_Ar Fold 4 - Recall: 0.8450450450450451
+2025-01-18 10:06:42,760	***	     TS_Ar Fold 4 - F1 Score: 0.8367528991971455
+
+2025-01-18 10:06:42,760	***	
+2025-01-18 10:06:43,100	***	 Classifier Model: AdaBoost
+2025-01-18 10:06:43,100	***	   TS_Ar Fold 4 - Confusion Matrix:
+2025-01-18 10:06:43,100	***	[[507  49]
+ [ 40 515]]
+2025-01-18 10:06:43,101	***	
+   Classifier Metrics:
+2025-01-18 10:06:43,101	***	     TS_Ar Fold 4 - Accuracy: 0.9198919891989199
+2025-01-18 10:06:43,101	***	     TS_Ar Fold 4 - Precision: 0.9131205673758865
+2025-01-18 10:06:43,101	***	     TS_Ar Fold 4 - Recall: 0.9279279279279279
+2025-01-18 10:06:43,101	***	     TS_Ar Fold 4 - F1 Score: 0.9204647006255585
+
+2025-01-18 10:06:43,101	***	
+2025-01-18 10:06:43,526	***	 Classifier Model: Perceptron
+2025-01-18 10:06:43,526	***	   TS_Ar Fold 4 - Confusion Matrix:
+2025-01-18 10:06:43,526	***	[[516  40]
+ [ 39 516]]
+2025-01-18 10:06:43,526	***	
+   Classifier Metrics:
+2025-01-18 10:06:43,526	***	     TS_Ar Fold 4 - Accuracy: 0.9288928892889289
+2025-01-18 10:06:43,527	***	     TS_Ar Fold 4 - Precision: 0.9280575539568345
+2025-01-18 10:06:43,527	***	     TS_Ar Fold 4 - Recall: 0.9297297297297298
+2025-01-18 10:06:43,527	***	     TS_Ar Fold 4 - F1 Score: 0.9288928892889289
+
+2025-01-18 10:06:43,527	***	
+2025-01-18 10:06:43,848	***	 Classifier Model: SGDRegressor
+2025-01-18 10:06:43,848	***	   TS_Ar Fold 4 - Confusion Matrix:
+2025-01-18 10:06:43,848	***	[[503  53]
+ [ 47 508]]
+2025-01-18 10:06:43,849	***	
+   Classifier Metrics:
+2025-01-18 10:06:43,849	***	     TS_Ar Fold 4 - Accuracy: 0.90999099909991
+2025-01-18 10:06:43,849	***	     TS_Ar Fold 4 - Precision: 0.9055258467023173
+2025-01-18 10:06:43,849	***	     TS_Ar Fold 4 - Recall: 0.9153153153153153
+2025-01-18 10:06:43,849	***	     TS_Ar Fold 4 - F1 Score: 0.9103942652329748
+
+2025-01-18 10:06:43,849	***	
+2025-01-18 10:06:44,163	***	 Classifier Model: XGboost
+2025-01-18 10:06:44,163	***	   TS_Ar Fold 4 - Confusion Matrix:
+2025-01-18 10:06:44,163	***	[[507  49]
+ [ 48 507]]
+2025-01-18 10:06:44,163	***	
+   Classifier Metrics:
+2025-01-18 10:06:44,164	***	     TS_Ar Fold 4 - Accuracy: 0.9126912691269127
+2025-01-18 10:06:44,164	***	     TS_Ar Fold 4 - Precision: 0.9118705035971223
+2025-01-18 10:06:44,164	***	     TS_Ar Fold 4 - Recall: 0.9135135135135135
+2025-01-18 10:06:44,164	***	     TS_Ar Fold 4 - F1 Score: 0.9126912691269128
+
+2025-01-18 10:06:44,164	***	
+2025-01-18 10:06:44,458	***	Similarity Metrics
+2025-01-18 10:06:44,458	***	  Synthetic Fold 4 falses - Mean Squared Error: 0.17234235
+2025-01-18 10:06:44,458	***	  Synthetic Fold 4 falses - Cosine Similarity: 0.5913766416343482
+2025-01-18 10:06:44,458	***	  Synthetic Fold 4 falses - Maximum Mean Discrepancy: 0.21489164
+2025-01-18 10:06:44,458	***	
+2025-01-18 10:06:44,460	***	Similarity Metrics
+2025-01-18 10:06:44,460	***	  Synthetic Fold 4 true - Mean Squared Error: 0.14861262
+2025-01-18 10:06:44,460	***	  Synthetic Fold 4 true - Cosine Similarity: 0.34204033155430547
+2025-01-18 10:06:44,461	***	  Synthetic Fold 4 true - Maximum Mean Discrepancy: 0.66118
+2025-01-18 10:06:44,461	***	
+2025-01-18 10:06:44,564	***	Iniciando treinamento do modelo adversarial.
+2025-01-18 10:19:32,900	***	Treinamento concluído.
+2025-01-18 10:19:35,600	***	
+Starting training classifier
+
+2025-01-18 10:19:35,600	***	    Starting training classifier: RANDOM FOREST
+2025-01-18 10:19:36,450	***	    Finished training
+
+2025-01-18 10:19:36,451	***	    Starting training classifier: SUPPORT VECTOR MACHINE
+2025-01-18 10:19:49,377	***	    Finished training
+
+2025-01-18 10:19:49,378	***	    Starting training classifier: DECISION TREE
+2025-01-18 10:19:49,490	***	    Finished training
+
+2025-01-18 10:19:49,490	***	    Starting training classifier: ADA BOOST
+2025-01-18 10:19:50,148	***	    Finished training
+
+2025-01-18 10:19:50,148	***	    Starting training classifier: MULTILAYER PERCEPTRON
+2025-01-18 10:19:51,920	***	    Finished training
+
+2025-01-18 10:19:51,921	***	    Starting training classifier: SDG
+2025-01-18 10:19:52,189	***	    Finished training
+
+2025-01-18 10:19:52,190	***	    Starting training classifier: GAUSSIAN PROCESS
+2025-01-18 10:19:52,382	***	    Finished training
+
+2025-01-18 10:19:52,382	***	
+Starting training classifier
+
+2025-01-18 10:19:52,382	***	    Starting training classifier: RANDOM FOREST
+2025-01-18 10:19:53,130	***	    Finished training
+
+2025-01-18 10:19:53,130	***	    Starting training classifier: SUPPORT VECTOR MACHINE
+2025-01-18 10:20:00,078	***	    Finished training
+
+2025-01-18 10:20:00,079	***	    Starting training classifier: DECISION TREE
+2025-01-18 10:20:00,157	***	    Finished training
+
+2025-01-18 10:20:00,157	***	    Starting training classifier: ADA BOOST
+2025-01-18 10:20:00,844	***	    Finished training
+
+2025-01-18 10:20:00,844	***	    Starting training classifier: MULTILAYER PERCEPTRON
+2025-01-18 10:20:02,281	***	    Finished training
+
+2025-01-18 10:20:02,281	***	    Starting training classifier: SDG
+2025-01-18 10:20:02,438	***	    Finished training
+
+2025-01-18 10:20:02,438	***	    Starting training classifier: GAUSSIAN PROCESS
+2025-01-18 10:20:07,390	***	    Finished training
+
+2025-01-18 10:20:07,390	***	TR_As Fold 5/10 results
+
+2025-01-18 10:20:07,431	***	 Classifier Model: RandomForest
+2025-01-18 10:20:07,431	***	   TR_As Fold 5 - Confusion Matrix:
+2025-01-18 10:20:07,431	***	[[529  27]
+ [ 52 503]]
+2025-01-18 10:20:07,431	***	
+   Classifier Metrics:
+2025-01-18 10:20:07,431	***	     TR_As Fold 5 - Accuracy: 0.9288928892889289
+2025-01-18 10:20:07,431	***	     TR_As Fold 5 - Precision: 0.9490566037735849
+2025-01-18 10:20:07,431	***	     TR_As Fold 5 - Recall: 0.9063063063063063
+2025-01-18 10:20:07,431	***	     TR_As Fold 5 - F1 Score: 0.9271889400921658
+
+2025-01-18 10:20:08,147	***	 Classifier Model: SupportVectorMachine
+2025-01-18 10:20:08,147	***	   TR_As Fold 5 - Confusion Matrix:
+2025-01-18 10:20:08,147	***	[[525  31]
+ [ 44 511]]
+2025-01-18 10:20:08,148	***	
+   Classifier Metrics:
+2025-01-18 10:20:08,148	***	     TR_As Fold 5 - Accuracy: 0.9324932493249325
+2025-01-18 10:20:08,148	***	     TR_As Fold 5 - Precision: 0.9428044280442804
+2025-01-18 10:20:08,148	***	     TR_As Fold 5 - Recall: 0.9207207207207208
+2025-01-18 10:20:08,148	***	     TR_As Fold 5 - F1 Score: 0.9316317228805834
+
+2025-01-18 10:20:08,335	***	 Classifier Model: DecisionTree
+2025-01-18 10:20:08,335	***	   TR_As Fold 5 - Confusion Matrix:
+2025-01-18 10:20:08,335	***	[[505  51]
+ [ 99 456]]
+2025-01-18 10:20:08,335	***	
+   Classifier Metrics:
+2025-01-18 10:20:08,335	***	     TR_As Fold 5 - Accuracy: 0.864986498649865
+2025-01-18 10:20:08,335	***	     TR_As Fold 5 - Precision: 0.8994082840236687
+2025-01-18 10:20:08,335	***	     TR_As Fold 5 - Recall: 0.8216216216216217
+2025-01-18 10:20:08,335	***	     TR_As Fold 5 - F1 Score: 0.8587570621468927
+
+2025-01-18 10:20:08,546	***	 Classifier Model: AdaBoost
+2025-01-18 10:20:08,546	***	   TR_As Fold 5 - Confusion Matrix:
+2025-01-18 10:20:08,546	***	[[516  40]
+ [ 32 523]]
+2025-01-18 10:20:08,546	***	
+   Classifier Metrics:
+2025-01-18 10:20:08,546	***	     TR_As Fold 5 - Accuracy: 0.9351935193519352
+2025-01-18 10:20:08,546	***	     TR_As Fold 5 - Precision: 0.9289520426287744
+2025-01-18 10:20:08,546	***	     TR_As Fold 5 - Recall: 0.9423423423423424
+2025-01-18 10:20:08,546	***	     TR_As Fold 5 - F1 Score: 0.9355992844364937
+
+2025-01-18 10:20:08,938	***	 Classifier Model: Perceptron
+2025-01-18 10:20:08,938	***	   TR_As Fold 5 - Confusion Matrix:
+2025-01-18 10:20:08,938	***	[[530  26]
+ [ 32 523]]
+2025-01-18 10:20:08,939	***	
+   Classifier Metrics:
+2025-01-18 10:20:08,939	***	     TR_As Fold 5 - Accuracy: 0.9477947794779478
+2025-01-18 10:20:08,939	***	     TR_As Fold 5 - Precision: 0.9526411657559198
+2025-01-18 10:20:08,939	***	     TR_As Fold 5 - Recall: 0.9423423423423424
+2025-01-18 10:20:08,939	***	     TR_As Fold 5 - F1 Score: 0.947463768115942
+
+2025-01-18 10:20:09,136	***	 Classifier Model: SGDRegressor
+2025-01-18 10:20:09,136	***	   TR_As Fold 5 - Confusion Matrix:
+2025-01-18 10:20:09,136	***	[[513  43]
+ [ 60 495]]
+2025-01-18 10:20:09,136	***	
+   Classifier Metrics:
+2025-01-18 10:20:09,136	***	     TR_As Fold 5 - Accuracy: 0.9072907290729073
+2025-01-18 10:20:09,136	***	     TR_As Fold 5 - Precision: 0.9200743494423792
+2025-01-18 10:20:09,137	***	     TR_As Fold 5 - Recall: 0.8918918918918919
+2025-01-18 10:20:09,137	***	     TR_As Fold 5 - F1 Score: 0.9057639524245196
+
+2025-01-18 10:20:09,402	***	 Classifier Model: XGboost
+2025-01-18 10:20:09,402	***	   TR_As Fold 5 - Confusion Matrix:
+2025-01-18 10:20:09,402	***	[[519  37]
+ [ 42 513]]
+2025-01-18 10:20:09,402	***	
+   Classifier Metrics:
+2025-01-18 10:20:09,402	***	     TR_As Fold 5 - Accuracy: 0.9288928892889289
+2025-01-18 10:20:09,402	***	     TR_As Fold 5 - Precision: 0.9327272727272727
+2025-01-18 10:20:09,402	***	     TR_As Fold 5 - Recall: 0.9243243243243243
+2025-01-18 10:20:09,402	***	     TR_As Fold 5 - F1 Score: 0.9285067873303167
+
+2025-01-18 10:20:09,585	***	TS_Ar Fold 5/10 results
+2025-01-18 10:20:09,617	***	 Classifier Model: RandomForest
+2025-01-18 10:20:09,617	***	   TS_Ar Fold 5 - Confusion Matrix:
+2025-01-18 10:20:09,618	***	[[517  39]
+ [ 31 524]]
+2025-01-18 10:20:09,618	***	
+   Classifier Metrics:
+2025-01-18 10:20:09,618	***	     TS_Ar Fold 5 - Accuracy: 0.936993699369937
+2025-01-18 10:20:09,618	***	     TS_Ar Fold 5 - Precision: 0.9307282415630551
+2025-01-18 10:20:09,618	***	     TS_Ar Fold 5 - Recall: 0.9441441441441442
+2025-01-18 10:20:09,618	***	     TS_Ar Fold 5 - F1 Score: 0.9373881932021467
+
+2025-01-18 10:20:09,618	***	
+2025-01-18 10:20:10,141	***	 Classifier Model: SupportVectorMachine
+2025-01-18 10:20:10,141	***	   TS_Ar Fold 5 - Confusion Matrix:
+2025-01-18 10:20:10,141	***	[[523  33]
+ [ 31 524]]
+2025-01-18 10:20:10,141	***	
+   Classifier Metrics:
+2025-01-18 10:20:10,141	***	     TS_Ar Fold 5 - Accuracy: 0.9423942394239424
+2025-01-18 10:20:10,141	***	     TS_Ar Fold 5 - Precision: 0.940754039497307
+2025-01-18 10:20:10,141	***	     TS_Ar Fold 5 - Recall: 0.9441441441441442
+2025-01-18 10:20:10,141	***	     TS_Ar Fold 5 - F1 Score: 0.9424460431654675
+
+2025-01-18 10:20:10,141	***	
+2025-01-18 10:20:10,399	***	 Classifier Model: DecisionTree
+2025-01-18 10:20:10,399	***	   TS_Ar Fold 5 - Confusion Matrix:
+2025-01-18 10:20:10,399	***	[[494  62]
+ [132 423]]
+2025-01-18 10:20:10,399	***	
+   Classifier Metrics:
+2025-01-18 10:20:10,399	***	     TS_Ar Fold 5 - Accuracy: 0.8253825382538253
+2025-01-18 10:20:10,399	***	     TS_Ar Fold 5 - Precision: 0.8721649484536083
+2025-01-18 10:20:10,399	***	     TS_Ar Fold 5 - Recall: 0.7621621621621621
+2025-01-18 10:20:10,400	***	     TS_Ar Fold 5 - F1 Score: 0.8134615384615385
+
+2025-01-18 10:20:10,400	***	
+2025-01-18 10:20:10,692	***	 Classifier Model: AdaBoost
+2025-01-18 10:20:10,692	***	   TS_Ar Fold 5 - Confusion Matrix:
+2025-01-18 10:20:10,692	***	[[503  53]
+ [ 76 479]]
+2025-01-18 10:20:10,692	***	
+   Classifier Metrics:
+2025-01-18 10:20:10,692	***	     TS_Ar Fold 5 - Accuracy: 0.8838883888388839
+2025-01-18 10:20:10,692	***	     TS_Ar Fold 5 - Precision: 0.900375939849624
+2025-01-18 10:20:10,692	***	     TS_Ar Fold 5 - Recall: 0.863063063063063
+2025-01-18 10:20:10,692	***	     TS_Ar Fold 5 - F1 Score: 0.8813247470101196
+
+2025-01-18 10:20:10,692	***	
+2025-01-18 10:20:11,074	***	 Classifier Model: Perceptron
+2025-01-18 10:20:11,075	***	   TS_Ar Fold 5 - Confusion Matrix:
+2025-01-18 10:20:11,075	***	[[536  20]
+ [ 61 494]]
+2025-01-18 10:20:11,075	***	
+   Classifier Metrics:
+2025-01-18 10:20:11,075	***	     TS_Ar Fold 5 - Accuracy: 0.9270927092709271
+2025-01-18 10:20:11,075	***	     TS_Ar Fold 5 - Precision: 0.9610894941634242
+2025-01-18 10:20:11,076	***	     TS_Ar Fold 5 - Recall: 0.8900900900900901
+2025-01-18 10:20:11,076	***	     TS_Ar Fold 5 - F1 Score: 0.9242282507015903
+
+2025-01-18 10:20:11,076	***	
+2025-01-18 10:20:11,349	***	 Classifier Model: SGDRegressor
+2025-01-18 10:20:11,349	***	   TS_Ar Fold 5 - Confusion Matrix:
+2025-01-18 10:20:11,349	***	[[521  35]
+ [100 455]]
+2025-01-18 10:20:11,350	***	
+   Classifier Metrics:
+2025-01-18 10:20:11,350	***	     TS_Ar Fold 5 - Accuracy: 0.8784878487848785
+2025-01-18 10:20:11,350	***	     TS_Ar Fold 5 - Precision: 0.9285714285714286
+2025-01-18 10:20:11,350	***	     TS_Ar Fold 5 - Recall: 0.8198198198198198
+2025-01-18 10:20:11,350	***	     TS_Ar Fold 5 - F1 Score: 0.8708133971291867
+
+2025-01-18 10:20:11,350	***	
+2025-01-18 10:20:11,699	***	 Classifier Model: XGboost
+2025-01-18 10:20:11,699	***	   TS_Ar Fold 5 - Confusion Matrix:
+2025-01-18 10:20:11,699	***	[[519  37]
+ [ 40 515]]
+2025-01-18 10:20:11,699	***	
+   Classifier Metrics:
+2025-01-18 10:20:11,699	***	     TS_Ar Fold 5 - Accuracy: 0.9306930693069307
+2025-01-18 10:20:11,699	***	     TS_Ar Fold 5 - Precision: 0.9329710144927537
+2025-01-18 10:20:11,699	***	     TS_Ar Fold 5 - Recall: 0.9279279279279279
+2025-01-18 10:20:11,700	***	     TS_Ar Fold 5 - F1 Score: 0.9304426377597109
+
+2025-01-18 10:20:11,700	***	
+2025-01-18 10:20:11,964	***	Similarity Metrics
+2025-01-18 10:20:11,964	***	  Synthetic Fold 5 falses - Mean Squared Error: 0.16852254
+2025-01-18 10:20:11,964	***	  Synthetic Fold 5 falses - Cosine Similarity: 0.5994096444399507
+2025-01-18 10:20:11,964	***	  Synthetic Fold 5 falses - Maximum Mean Discrepancy: 0.19626328
+2025-01-18 10:20:11,964	***	
+2025-01-18 10:20:11,968	***	Similarity Metrics
+2025-01-18 10:20:11,968	***	  Synthetic Fold 5 true - Mean Squared Error: 0.14007206
+2025-01-18 10:20:11,968	***	  Synthetic Fold 5 true - Cosine Similarity: 0.3710736245722384
+2025-01-18 10:20:11,968	***	  Synthetic Fold 5 true - Maximum Mean Discrepancy: 0.3576853
+2025-01-18 10:20:11,968	***	
+2025-01-18 10:20:12,103	***	Iniciando treinamento do modelo adversarial.
+2025-01-18 10:32:57,395	***	Treinamento concluído.
+2025-01-18 10:32:59,588	***	
+Starting training classifier
+
+2025-01-18 10:32:59,588	***	    Starting training classifier: RANDOM FOREST
+2025-01-18 10:33:00,439	***	    Finished training
+
+2025-01-18 10:33:00,439	***	    Starting training classifier: SUPPORT VECTOR MACHINE
+2025-01-18 10:33:13,971	***	    Finished training
+
+2025-01-18 10:33:13,972	***	    Starting training classifier: DECISION TREE
+2025-01-18 10:33:14,084	***	    Finished training
+
+2025-01-18 10:33:14,085	***	    Starting training classifier: ADA BOOST
+2025-01-18 10:33:14,754	***	    Finished training
+
+2025-01-18 10:33:14,755	***	    Starting training classifier: MULTILAYER PERCEPTRON
+2025-01-18 10:33:17,022	***	    Finished training
+
+2025-01-18 10:33:17,022	***	    Starting training classifier: SDG
+2025-01-18 10:33:17,260	***	    Finished training
+
+2025-01-18 10:33:17,260	***	    Starting training classifier: GAUSSIAN PROCESS
+2025-01-18 10:33:17,486	***	    Finished training
+
+2025-01-18 10:33:17,487	***	
+Starting training classifier
+
+2025-01-18 10:33:17,487	***	    Starting training classifier: RANDOM FOREST
+2025-01-18 10:33:18,227	***	    Finished training
+
+2025-01-18 10:33:18,227	***	    Starting training classifier: SUPPORT VECTOR MACHINE
+2025-01-18 10:33:27,290	***	    Finished training
+
+2025-01-18 10:33:27,290	***	    Starting training classifier: DECISION TREE
+2025-01-18 10:33:27,380	***	    Finished training
+
+2025-01-18 10:33:27,380	***	    Starting training classifier: ADA BOOST
+2025-01-18 10:33:28,327	***	    Finished training
+
+2025-01-18 10:33:28,327	***	    Starting training classifier: MULTILAYER PERCEPTRON
+2025-01-18 10:33:30,076	***	    Finished training
+
+2025-01-18 10:33:30,077	***	    Starting training classifier: SDG
+2025-01-18 10:33:30,249	***	    Finished training
+
+2025-01-18 10:33:30,249	***	    Starting training classifier: GAUSSIAN PROCESS
+2025-01-18 10:33:30,438	***	    Finished training
+
+2025-01-18 10:33:30,439	***	TR_As Fold 6/10 results
+
+2025-01-18 10:33:30,474	***	 Classifier Model: RandomForest
+2025-01-18 10:33:30,474	***	   TR_As Fold 6 - Confusion Matrix:
+2025-01-18 10:33:30,474	***	[[542  13]
+ [ 60 496]]
+2025-01-18 10:33:30,475	***	
+   Classifier Metrics:
+2025-01-18 10:33:30,475	***	     TR_As Fold 6 - Accuracy: 0.9342934293429342
+2025-01-18 10:33:30,475	***	     TR_As Fold 6 - Precision: 0.9744597249508841
+2025-01-18 10:33:30,475	***	     TR_As Fold 6 - Recall: 0.8920863309352518
+2025-01-18 10:33:30,475	***	     TR_As Fold 6 - F1 Score: 0.9314553990610329
+
+2025-01-18 10:33:31,170	***	 Classifier Model: SupportVectorMachine
+2025-01-18 10:33:31,170	***	   TR_As Fold 6 - Confusion Matrix:
+2025-01-18 10:33:31,170	***	[[538  17]
+ [ 47 509]]
+2025-01-18 10:33:31,171	***	
+   Classifier Metrics:
+2025-01-18 10:33:31,171	***	     TR_As Fold 6 - Accuracy: 0.9423942394239424
+2025-01-18 10:33:31,171	***	     TR_As Fold 6 - Precision: 0.967680608365019
+2025-01-18 10:33:31,171	***	     TR_As Fold 6 - Recall: 0.9154676258992805
+2025-01-18 10:33:31,171	***	     TR_As Fold 6 - F1 Score: 0.9408502772643254
+
+2025-01-18 10:33:31,392	***	 Classifier Model: DecisionTree
+2025-01-18 10:33:31,392	***	   TR_As Fold 6 - Confusion Matrix:
+2025-01-18 10:33:31,393	***	[[517  38]
+ [109 447]]
+2025-01-18 10:33:31,393	***	
+   Classifier Metrics:
+2025-01-18 10:33:31,393	***	     TR_As Fold 6 - Accuracy: 0.8676867686768677
+2025-01-18 10:33:31,393	***	     TR_As Fold 6 - Precision: 0.9216494845360824
+2025-01-18 10:33:31,393	***	     TR_As Fold 6 - Recall: 0.8039568345323741
+2025-01-18 10:33:31,393	***	     TR_As Fold 6 - F1 Score: 0.8587896253602305
+
+2025-01-18 10:33:31,644	***	 Classifier Model: AdaBoost
+2025-01-18 10:33:31,644	***	   TR_As Fold 6 - Confusion Matrix:
+2025-01-18 10:33:31,644	***	[[525  30]
+ [ 39 517]]
+2025-01-18 10:33:31,645	***	
+   Classifier Metrics:
+2025-01-18 10:33:31,645	***	     TR_As Fold 6 - Accuracy: 0.9378937893789379
+2025-01-18 10:33:31,645	***	     TR_As Fold 6 - Precision: 0.9451553930530164
+2025-01-18 10:33:31,645	***	     TR_As Fold 6 - Recall: 0.9298561151079137
+2025-01-18 10:33:31,645	***	     TR_As Fold 6 - F1 Score: 0.9374433363553945
+
+2025-01-18 10:33:31,997	***	 Classifier Model: Perceptron
+2025-01-18 10:33:31,998	***	   TR_As Fold 6 - Confusion Matrix:
+2025-01-18 10:33:31,998	***	[[519  36]
+ [ 33 523]]
+2025-01-18 10:33:31,998	***	
+   Classifier Metrics:
+2025-01-18 10:33:31,998	***	     TR_As Fold 6 - Accuracy: 0.9378937893789379
+2025-01-18 10:33:31,998	***	     TR_As Fold 6 - Precision: 0.9355992844364938
+2025-01-18 10:33:31,998	***	     TR_As Fold 6 - Recall: 0.9406474820143885
+2025-01-18 10:33:31,998	***	     TR_As Fold 6 - F1 Score: 0.9381165919282511
+
+2025-01-18 10:33:32,223	***	 Classifier Model: SGDRegressor
+2025-01-18 10:33:32,223	***	   TR_As Fold 6 - Confusion Matrix:
+2025-01-18 10:33:32,223	***	[[527  28]
+ [ 57 499]]
+2025-01-18 10:33:32,223	***	
+   Classifier Metrics:
+2025-01-18 10:33:32,223	***	     TR_As Fold 6 - Accuracy: 0.9234923492349235
+2025-01-18 10:33:32,223	***	     TR_As Fold 6 - Precision: 0.9468690702087287
+2025-01-18 10:33:32,223	***	     TR_As Fold 6 - Recall: 0.8974820143884892
+2025-01-18 10:33:32,223	***	     TR_As Fold 6 - F1 Score: 0.9215143120960296
+
+2025-01-18 10:33:32,455	***	 Classifier Model: XGboost
+2025-01-18 10:33:32,455	***	   TR_As Fold 6 - Confusion Matrix:
+2025-01-18 10:33:32,456	***	[[533  22]
+ [ 51 505]]
+2025-01-18 10:33:32,456	***	
+   Classifier Metrics:
+2025-01-18 10:33:32,456	***	     TR_As Fold 6 - Accuracy: 0.9342934293429342
+2025-01-18 10:33:32,456	***	     TR_As Fold 6 - Precision: 0.9582542694497154
+2025-01-18 10:33:32,456	***	     TR_As Fold 6 - Recall: 0.908273381294964
+2025-01-18 10:33:32,456	***	     TR_As Fold 6 - F1 Score: 0.9325946445060017
+
+2025-01-18 10:33:32,673	***	TS_Ar Fold 6/10 results
+2025-01-18 10:33:32,710	***	 Classifier Model: RandomForest
+2025-01-18 10:33:32,710	***	   TS_Ar Fold 6 - Confusion Matrix:
+2025-01-18 10:33:32,710	***	[[510  45]
+ [ 52 504]]
+2025-01-18 10:33:32,710	***	
+   Classifier Metrics:
+2025-01-18 10:33:32,710	***	     TS_Ar Fold 6 - Accuracy: 0.9126912691269127
+2025-01-18 10:33:32,710	***	     TS_Ar Fold 6 - Precision: 0.9180327868852459
+2025-01-18 10:33:32,710	***	     TS_Ar Fold 6 - Recall: 0.9064748201438849
+2025-01-18 10:33:32,711	***	     TS_Ar Fold 6 - F1 Score: 0.9122171945701357
+
+2025-01-18 10:33:32,711	***	
+2025-01-18 10:33:33,280	***	 Classifier Model: SupportVectorMachine
+2025-01-18 10:33:33,280	***	   TS_Ar Fold 6 - Confusion Matrix:
+2025-01-18 10:33:33,281	***	[[520  35]
+ [ 52 504]]
+2025-01-18 10:33:33,281	***	
+   Classifier Metrics:
+2025-01-18 10:33:33,281	***	     TS_Ar Fold 6 - Accuracy: 0.9216921692169217
+2025-01-18 10:33:33,281	***	     TS_Ar Fold 6 - Precision: 0.935064935064935
+2025-01-18 10:33:33,281	***	     TS_Ar Fold 6 - Recall: 0.9064748201438849
+2025-01-18 10:33:33,281	***	     TS_Ar Fold 6 - F1 Score: 0.9205479452054794
+
+2025-01-18 10:33:33,281	***	
+2025-01-18 10:33:33,577	***	 Classifier Model: DecisionTree
+2025-01-18 10:33:33,577	***	   TS_Ar Fold 6 - Confusion Matrix:
+2025-01-18 10:33:33,578	***	[[506  49]
+ [ 73 483]]
+2025-01-18 10:33:33,578	***	
+   Classifier Metrics:
+2025-01-18 10:33:33,578	***	     TS_Ar Fold 6 - Accuracy: 0.8901890189018902
+2025-01-18 10:33:33,578	***	     TS_Ar Fold 6 - Precision: 0.9078947368421053
+2025-01-18 10:33:33,578	***	     TS_Ar Fold 6 - Recall: 0.8687050359712231
+2025-01-18 10:33:33,578	***	     TS_Ar Fold 6 - F1 Score: 0.8878676470588235
+
+2025-01-18 10:33:33,578	***	
+2025-01-18 10:33:33,905	***	 Classifier Model: AdaBoost
+2025-01-18 10:33:33,905	***	   TS_Ar Fold 6 - Confusion Matrix:
+2025-01-18 10:33:33,905	***	[[498  57]
+ [ 50 506]]
+2025-01-18 10:33:33,906	***	
+   Classifier Metrics:
+2025-01-18 10:33:33,906	***	     TS_Ar Fold 6 - Accuracy: 0.9036903690369037
+2025-01-18 10:33:33,906	***	     TS_Ar Fold 6 - Precision: 0.8987566607460036
+2025-01-18 10:33:33,906	***	     TS_Ar Fold 6 - Recall: 0.9100719424460432
+2025-01-18 10:33:33,906	***	     TS_Ar Fold 6 - F1 Score: 0.90437890974084
+
+2025-01-18 10:33:33,906	***	
+2025-01-18 10:33:34,337	***	 Classifier Model: Perceptron
+2025-01-18 10:33:34,337	***	   TS_Ar Fold 6 - Confusion Matrix:
+2025-01-18 10:33:34,337	***	[[496  59]
+ [ 26 530]]
+2025-01-18 10:33:34,337	***	
+   Classifier Metrics:
+2025-01-18 10:33:34,337	***	     TS_Ar Fold 6 - Accuracy: 0.9234923492349235
+2025-01-18 10:33:34,338	***	     TS_Ar Fold 6 - Precision: 0.8998302207130731
+2025-01-18 10:33:34,338	***	     TS_Ar Fold 6 - Recall: 0.9532374100719424
+2025-01-18 10:33:34,338	***	     TS_Ar Fold 6 - F1 Score: 0.9257641921397379
+
+2025-01-18 10:33:34,338	***	
+2025-01-18 10:33:34,638	***	 Classifier Model: SGDRegressor
+2025-01-18 10:33:34,638	***	   TS_Ar Fold 6 - Confusion Matrix:
+2025-01-18 10:33:34,638	***	[[519  36]
+ [ 69 487]]
+2025-01-18 10:33:34,638	***	
+   Classifier Metrics:
+2025-01-18 10:33:34,638	***	     TS_Ar Fold 6 - Accuracy: 0.9054905490549054
+2025-01-18 10:33:34,638	***	     TS_Ar Fold 6 - Precision: 0.9311663479923518
+2025-01-18 10:33:34,638	***	     TS_Ar Fold 6 - Recall: 0.8758992805755396
+2025-01-18 10:33:34,638	***	     TS_Ar Fold 6 - F1 Score: 0.9026876737720112
+
+2025-01-18 10:33:34,638	***	
+2025-01-18 10:33:34,944	***	 Classifier Model: XGboost
+2025-01-18 10:33:34,944	***	   TS_Ar Fold 6 - Confusion Matrix:
+2025-01-18 10:33:34,944	***	[[507  48]
+ [ 46 510]]
+2025-01-18 10:33:34,944	***	
+   Classifier Metrics:
+2025-01-18 10:33:34,944	***	     TS_Ar Fold 6 - Accuracy: 0.9153915391539154
+2025-01-18 10:33:34,944	***	     TS_Ar Fold 6 - Precision: 0.9139784946236559
+2025-01-18 10:33:34,944	***	     TS_Ar Fold 6 - Recall: 0.9172661870503597
+2025-01-18 10:33:34,944	***	     TS_Ar Fold 6 - F1 Score: 0.9156193895870736
+
+2025-01-18 10:33:34,944	***	
+2025-01-18 10:33:35,241	***	Similarity Metrics
+2025-01-18 10:33:35,241	***	  Synthetic Fold 6 falses - Mean Squared Error: 0.16840541
+2025-01-18 10:33:35,241	***	  Synthetic Fold 6 falses - Cosine Similarity: 0.6580861495287569
+2025-01-18 10:33:35,241	***	  Synthetic Fold 6 falses - Maximum Mean Discrepancy: 0.28579825
+2025-01-18 10:33:35,241	***	
+2025-01-18 10:33:35,243	***	Similarity Metrics
+2025-01-18 10:33:35,243	***	  Synthetic Fold 6 true - Mean Squared Error: 0.14633334
+2025-01-18 10:33:35,243	***	  Synthetic Fold 6 true - Cosine Similarity: 0.4592679616030272
+2025-01-18 10:33:35,243	***	  Synthetic Fold 6 true - Maximum Mean Discrepancy: 0.17906664
+2025-01-18 10:33:35,243	***	
+2025-01-18 10:33:35,344	***	Iniciando treinamento do modelo adversarial.
+2025-01-18 10:46:29,388	***	Treinamento concluído.
+2025-01-18 10:46:31,576	***	
+Starting training classifier
+
+2025-01-18 10:46:31,576	***	    Starting training classifier: RANDOM FOREST
+2025-01-18 10:46:32,419	***	    Finished training
+
+2025-01-18 10:46:32,419	***	    Starting training classifier: SUPPORT VECTOR MACHINE
+2025-01-18 10:46:46,050	***	    Finished training
+
+2025-01-18 10:46:46,050	***	    Starting training classifier: DECISION TREE
+2025-01-18 10:46:46,165	***	    Finished training
+
+2025-01-18 10:46:46,165	***	    Starting training classifier: ADA BOOST
+2025-01-18 10:46:46,819	***	    Finished training
+
+2025-01-18 10:46:46,819	***	    Starting training classifier: MULTILAYER PERCEPTRON
+2025-01-18 10:46:48,547	***	    Finished training
+
+2025-01-18 10:46:48,548	***	    Starting training classifier: SDG
+2025-01-18 10:46:48,750	***	    Finished training
+
+2025-01-18 10:46:48,750	***	    Starting training classifier: GAUSSIAN PROCESS
+2025-01-18 10:46:49,062	***	    Finished training
+
+2025-01-18 10:46:49,062	***	
+Starting training classifier
+
+2025-01-18 10:46:49,062	***	    Starting training classifier: RANDOM FOREST
+2025-01-18 10:46:49,869	***	    Finished training
+
+2025-01-18 10:46:49,869	***	    Starting training classifier: SUPPORT VECTOR MACHINE
+2025-01-18 10:47:02,149	***	    Finished training
+
+2025-01-18 10:47:02,149	***	    Starting training classifier: DECISION TREE
+2025-01-18 10:47:02,252	***	    Finished training
+
+2025-01-18 10:47:02,252	***	    Starting training classifier: ADA BOOST
+2025-01-18 10:47:03,191	***	    Finished training
+
+2025-01-18 10:47:03,191	***	    Starting training classifier: MULTILAYER PERCEPTRON
+2025-01-18 10:47:04,931	***	    Finished training
+
+2025-01-18 10:47:04,931	***	    Starting training classifier: SDG
+2025-01-18 10:47:05,124	***	    Finished training
+
+2025-01-18 10:47:05,124	***	    Starting training classifier: GAUSSIAN PROCESS
+2025-01-18 10:47:05,375	***	    Finished training
+
+2025-01-18 10:47:05,375	***	TR_As Fold 7/10 results
+
+2025-01-18 10:47:05,420	***	 Classifier Model: RandomForest
+2025-01-18 10:47:05,420	***	   TR_As Fold 7 - Confusion Matrix:
+2025-01-18 10:47:05,420	***	[[526  29]
+ [ 58 498]]
+2025-01-18 10:47:05,420	***	
+   Classifier Metrics:
+2025-01-18 10:47:05,420	***	     TR_As Fold 7 - Accuracy: 0.9216921692169217
+2025-01-18 10:47:05,420	***	     TR_As Fold 7 - Precision: 0.9449715370018975
+2025-01-18 10:47:05,420	***	     TR_As Fold 7 - Recall: 0.89568345323741
+2025-01-18 10:47:05,420	***	     TR_As Fold 7 - F1 Score: 0.9196675900277008
+
+2025-01-18 10:47:06,700	***	 Classifier Model: SupportVectorMachine
+2025-01-18 10:47:06,701	***	   TR_As Fold 7 - Confusion Matrix:
+2025-01-18 10:47:06,701	***	[[528  27]
+ [ 39 517]]
+2025-01-18 10:47:06,701	***	
+   Classifier Metrics:
+2025-01-18 10:47:06,701	***	     TR_As Fold 7 - Accuracy: 0.9405940594059405
+2025-01-18 10:47:06,701	***	     TR_As Fold 7 - Precision: 0.9503676470588235
+2025-01-18 10:47:06,701	***	     TR_As Fold 7 - Recall: 0.9298561151079137
+2025-01-18 10:47:06,701	***	     TR_As Fold 7 - F1 Score: 0.94
+
+2025-01-18 10:47:06,925	***	 Classifier Model: DecisionTree
+2025-01-18 10:47:06,926	***	   TR_As Fold 7 - Confusion Matrix:
+2025-01-18 10:47:06,926	***	[[508  47]
+ [ 83 473]]
+2025-01-18 10:47:06,926	***	
+   Classifier Metrics:
+2025-01-18 10:47:06,926	***	     TR_As Fold 7 - Accuracy: 0.882988298829883
+2025-01-18 10:47:06,926	***	     TR_As Fold 7 - Precision: 0.9096153846153846
+2025-01-18 10:47:06,926	***	     TR_As Fold 7 - Recall: 0.8507194244604317
+2025-01-18 10:47:06,926	***	     TR_As Fold 7 - F1 Score: 0.879182156133829
+
+2025-01-18 10:47:07,184	***	 Classifier Model: AdaBoost
+2025-01-18 10:47:07,184	***	   TR_As Fold 7 - Confusion Matrix:
+2025-01-18 10:47:07,184	***	[[518  37]
+ [ 30 526]]
+2025-01-18 10:47:07,184	***	
+   Classifier Metrics:
+2025-01-18 10:47:07,184	***	     TR_As Fold 7 - Accuracy: 0.9396939693969397
+2025-01-18 10:47:07,184	***	     TR_As Fold 7 - Precision: 0.9342806394316163
+2025-01-18 10:47:07,184	***	     TR_As Fold 7 - Recall: 0.9460431654676259
+2025-01-18 10:47:07,184	***	     TR_As Fold 7 - F1 Score: 0.9401251117068813
+
+2025-01-18 10:47:07,551	***	 Classifier Model: Perceptron
+2025-01-18 10:47:07,551	***	   TR_As Fold 7 - Confusion Matrix:
+2025-01-18 10:47:07,551	***	[[532  23]
+ [ 43 513]]
+2025-01-18 10:47:07,552	***	
+   Classifier Metrics:
+2025-01-18 10:47:07,552	***	     TR_As Fold 7 - Accuracy: 0.9405940594059405
+2025-01-18 10:47:07,552	***	     TR_As Fold 7 - Precision: 0.957089552238806
+2025-01-18 10:47:07,552	***	     TR_As Fold 7 - Recall: 0.9226618705035972
+2025-01-18 10:47:07,552	***	     TR_As Fold 7 - F1 Score: 0.9395604395604397
+
+2025-01-18 10:47:07,781	***	 Classifier Model: SGDRegressor
+2025-01-18 10:47:07,782	***	   TR_As Fold 7 - Confusion Matrix:
+2025-01-18 10:47:07,782	***	[[525  30]
+ [ 52 504]]
+2025-01-18 10:47:07,782	***	
+   Classifier Metrics:
+2025-01-18 10:47:07,782	***	     TR_As Fold 7 - Accuracy: 0.9261926192619262
+2025-01-18 10:47:07,782	***	     TR_As Fold 7 - Precision: 0.9438202247191011
+2025-01-18 10:47:07,782	***	     TR_As Fold 7 - Recall: 0.9064748201438849
+2025-01-18 10:47:07,782	***	     TR_As Fold 7 - F1 Score: 0.9247706422018349
+
+2025-01-18 10:47:08,044	***	 Classifier Model: XGboost
+2025-01-18 10:47:08,044	***	   TR_As Fold 7 - Confusion Matrix:
+2025-01-18 10:47:08,044	***	[[521  34]
+ [ 45 511]]
+2025-01-18 10:47:08,045	***	
+   Classifier Metrics:
+2025-01-18 10:47:08,045	***	     TR_As Fold 7 - Accuracy: 0.9288928892889289
+2025-01-18 10:47:08,045	***	     TR_As Fold 7 - Precision: 0.9376146788990826
+2025-01-18 10:47:08,045	***	     TR_As Fold 7 - Recall: 0.9190647482014388
+2025-01-18 10:47:08,045	***	     TR_As Fold 7 - F1 Score: 0.9282470481380563
+
+2025-01-18 10:47:08,261	***	TS_Ar Fold 7/10 results
+2025-01-18 10:47:08,300	***	 Classifier Model: RandomForest
+2025-01-18 10:47:08,300	***	   TS_Ar Fold 7 - Confusion Matrix:
+2025-01-18 10:47:08,300	***	[[532  23]
+ [ 38 518]]
+2025-01-18 10:47:08,300	***	
+   Classifier Metrics:
+2025-01-18 10:47:08,300	***	     TS_Ar Fold 7 - Accuracy: 0.9450945094509451
+2025-01-18 10:47:08,300	***	     TS_Ar Fold 7 - Precision: 0.9574861367837338
+2025-01-18 10:47:08,300	***	     TS_Ar Fold 7 - Recall: 0.9316546762589928
+2025-01-18 10:47:08,301	***	     TS_Ar Fold 7 - F1 Score: 0.9443938012762078
+
+2025-01-18 10:47:08,301	***	
+2025-01-18 10:47:09,015	***	 Classifier Model: SupportVectorMachine
+2025-01-18 10:47:09,015	***	   TS_Ar Fold 7 - Confusion Matrix:
+2025-01-18 10:47:09,015	***	[[532  23]
+ [ 45 511]]
+2025-01-18 10:47:09,016	***	
+   Classifier Metrics:
+2025-01-18 10:47:09,016	***	     TS_Ar Fold 7 - Accuracy: 0.9387938793879388
+2025-01-18 10:47:09,016	***	     TS_Ar Fold 7 - Precision: 0.9569288389513109
+2025-01-18 10:47:09,016	***	     TS_Ar Fold 7 - Recall: 0.9190647482014388
+2025-01-18 10:47:09,016	***	     TS_Ar Fold 7 - F1 Score: 0.9376146788990825
+
+2025-01-18 10:47:09,016	***	
+2025-01-18 10:47:09,311	***	 Classifier Model: DecisionTree
+2025-01-18 10:47:09,311	***	   TS_Ar Fold 7 - Confusion Matrix:
+2025-01-18 10:47:09,311	***	[[480  75]
+ [ 81 475]]
+2025-01-18 10:47:09,311	***	
+   Classifier Metrics:
+2025-01-18 10:47:09,312	***	     TS_Ar Fold 7 - Accuracy: 0.8595859585958596
+2025-01-18 10:47:09,312	***	     TS_Ar Fold 7 - Precision: 0.8636363636363636
+2025-01-18 10:47:09,312	***	     TS_Ar Fold 7 - Recall: 0.85431654676259
+2025-01-18 10:47:09,312	***	     TS_Ar Fold 7 - F1 Score: 0.8589511754068717
+
+2025-01-18 10:47:09,312	***	
+2025-01-18 10:47:09,652	***	 Classifier Model: AdaBoost
+2025-01-18 10:47:09,652	***	   TS_Ar Fold 7 - Confusion Matrix:
+2025-01-18 10:47:09,652	***	[[533  22]
+ [ 54 502]]
+2025-01-18 10:47:09,653	***	
+   Classifier Metrics:
+2025-01-18 10:47:09,653	***	     TS_Ar Fold 7 - Accuracy: 0.9315931593159316
+2025-01-18 10:47:09,653	***	     TS_Ar Fold 7 - Precision: 0.9580152671755725
+2025-01-18 10:47:09,653	***	     TS_Ar Fold 7 - Recall: 0.9028776978417267
+2025-01-18 10:47:09,653	***	     TS_Ar Fold 7 - F1 Score: 0.9296296296296297
+
+2025-01-18 10:47:09,653	***	
+2025-01-18 10:47:10,083	***	 Classifier Model: Perceptron
+2025-01-18 10:47:10,083	***	   TS_Ar Fold 7 - Confusion Matrix:
+2025-01-18 10:47:10,083	***	[[518  37]
+ [ 31 525]]
+2025-01-18 10:47:10,083	***	
+   Classifier Metrics:
+2025-01-18 10:47:10,083	***	     TS_Ar Fold 7 - Accuracy: 0.9387938793879388
+2025-01-18 10:47:10,083	***	     TS_Ar Fold 7 - Precision: 0.9341637010676157
+2025-01-18 10:47:10,083	***	     TS_Ar Fold 7 - Recall: 0.9442446043165468
+2025-01-18 10:47:10,083	***	     TS_Ar Fold 7 - F1 Score: 0.9391771019677997
+
+2025-01-18 10:47:10,083	***	
+2025-01-18 10:47:10,380	***	 Classifier Model: SGDRegressor
+2025-01-18 10:47:10,380	***	   TS_Ar Fold 7 - Confusion Matrix:
+2025-01-18 10:47:10,380	***	[[523  32]
+ [ 38 518]]
+2025-01-18 10:47:10,380	***	
+   Classifier Metrics:
+2025-01-18 10:47:10,380	***	     TS_Ar Fold 7 - Accuracy: 0.936993699369937
+2025-01-18 10:47:10,380	***	     TS_Ar Fold 7 - Precision: 0.9418181818181818
+2025-01-18 10:47:10,381	***	     TS_Ar Fold 7 - Recall: 0.9316546762589928
+2025-01-18 10:47:10,381	***	     TS_Ar Fold 7 - F1 Score: 0.9367088607594936
+
+2025-01-18 10:47:10,381	***	
+2025-01-18 10:47:10,695	***	 Classifier Model: XGboost
+2025-01-18 10:47:10,696	***	   TS_Ar Fold 7 - Confusion Matrix:
+2025-01-18 10:47:10,696	***	[[523  32]
+ [ 47 509]]
+2025-01-18 10:47:10,696	***	
+   Classifier Metrics:
+2025-01-18 10:47:10,696	***	     TS_Ar Fold 7 - Accuracy: 0.9288928892889289
+2025-01-18 10:47:10,696	***	     TS_Ar Fold 7 - Precision: 0.9408502772643254
+2025-01-18 10:47:10,696	***	     TS_Ar Fold 7 - Recall: 0.9154676258992805
+2025-01-18 10:47:10,696	***	     TS_Ar Fold 7 - F1 Score: 0.9279854147675478
+
+2025-01-18 10:47:10,696	***	
+2025-01-18 10:47:10,992	***	Similarity Metrics
+2025-01-18 10:47:10,992	***	  Synthetic Fold 7 falses - Mean Squared Error: 0.16653152
+2025-01-18 10:47:10,992	***	  Synthetic Fold 7 falses - Cosine Similarity: 0.49083260351473146
+2025-01-18 10:47:10,992	***	  Synthetic Fold 7 falses - Maximum Mean Discrepancy: 0.14391366
+2025-01-18 10:47:10,992	***	
+2025-01-18 10:47:10,995	***	Similarity Metrics
+2025-01-18 10:47:10,995	***	  Synthetic Fold 7 true - Mean Squared Error: 0.13924325
+2025-01-18 10:47:10,995	***	  Synthetic Fold 7 true - Cosine Similarity: 0.4017035657489622
+2025-01-18 10:47:10,995	***	  Synthetic Fold 7 true - Maximum Mean Discrepancy: 0.21907963
+2025-01-18 10:47:10,995	***	
+2025-01-18 10:47:11,100	***	Iniciando treinamento do modelo adversarial.
+2025-01-18 10:59:54,002	***	Treinamento concluído.
+2025-01-18 10:59:56,213	***	
+Starting training classifier
+
+2025-01-18 10:59:56,213	***	    Starting training classifier: RANDOM FOREST
+2025-01-18 10:59:57,087	***	    Finished training
+
+2025-01-18 10:59:57,088	***	    Starting training classifier: SUPPORT VECTOR MACHINE
+2025-01-18 11:00:10,678	***	    Finished training
+
+2025-01-18 11:00:10,678	***	    Starting training classifier: DECISION TREE
+2025-01-18 11:00:10,799	***	    Finished training
+
+2025-01-18 11:00:10,799	***	    Starting training classifier: ADA BOOST
+2025-01-18 11:00:11,468	***	    Finished training
+
+2025-01-18 11:00:11,468	***	    Starting training classifier: MULTILAYER PERCEPTRON
+2025-01-18 11:00:13,224	***	    Finished training
+
+2025-01-18 11:00:13,224	***	    Starting training classifier: SDG
+2025-01-18 11:00:13,442	***	    Finished training
+
+2025-01-18 11:00:13,442	***	    Starting training classifier: GAUSSIAN PROCESS
+2025-01-18 11:00:13,787	***	    Finished training
+
+2025-01-18 11:00:13,788	***	
+Starting training classifier
+
+2025-01-18 11:00:13,788	***	    Starting training classifier: RANDOM FOREST
+2025-01-18 11:00:14,601	***	    Finished training
+
+2025-01-18 11:00:14,601	***	    Starting training classifier: SUPPORT VECTOR MACHINE
+2025-01-18 11:00:26,076	***	    Finished training
+
+2025-01-18 11:00:26,076	***	    Starting training classifier: DECISION TREE
+2025-01-18 11:00:26,175	***	    Finished training
+
+2025-01-18 11:00:26,175	***	    Starting training classifier: ADA BOOST
+2025-01-18 11:00:26,996	***	    Finished training
+
+2025-01-18 11:00:26,996	***	    Starting training classifier: MULTILAYER PERCEPTRON
+2025-01-18 11:00:28,617	***	    Finished training
+
+2025-01-18 11:00:28,618	***	    Starting training classifier: SDG
+2025-01-18 11:00:28,792	***	    Finished training
+
+2025-01-18 11:00:28,792	***	    Starting training classifier: GAUSSIAN PROCESS
+2025-01-18 11:00:28,992	***	    Finished training
+
+2025-01-18 11:00:28,992	***	TR_As Fold 8/10 results
+
+2025-01-18 11:00:29,029	***	 Classifier Model: RandomForest
+2025-01-18 11:00:29,029	***	   TR_As Fold 8 - Confusion Matrix:
+2025-01-18 11:00:29,029	***	[[537  18]
+ [ 70 486]]
+2025-01-18 11:00:29,030	***	
+   Classifier Metrics:
+2025-01-18 11:00:29,030	***	     TR_As Fold 8 - Accuracy: 0.9207920792079208
+2025-01-18 11:00:29,030	***	     TR_As Fold 8 - Precision: 0.9642857142857143
+2025-01-18 11:00:29,030	***	     TR_As Fold 8 - Recall: 0.8741007194244604
+2025-01-18 11:00:29,030	***	     TR_As Fold 8 - F1 Score: 0.9169811320754717
+
+2025-01-18 11:00:29,667	***	 Classifier Model: SupportVectorMachine
+2025-01-18 11:00:29,667	***	   TR_As Fold 8 - Confusion Matrix:
+2025-01-18 11:00:29,667	***	[[531  24]
+ [ 51 505]]
+2025-01-18 11:00:29,668	***	
+   Classifier Metrics:
+2025-01-18 11:00:29,668	***	     TR_As Fold 8 - Accuracy: 0.9324932493249325
+2025-01-18 11:00:29,668	***	     TR_As Fold 8 - Precision: 0.9546313799621928
+2025-01-18 11:00:29,668	***	     TR_As Fold 8 - Recall: 0.908273381294964
+2025-01-18 11:00:29,668	***	     TR_As Fold 8 - F1 Score: 0.9308755760368664
+
+2025-01-18 11:00:29,892	***	 Classifier Model: DecisionTree
+2025-01-18 11:00:29,892	***	   TR_As Fold 8 - Confusion Matrix:
+2025-01-18 11:00:29,892	***	[[514  41]
+ [ 82 474]]
+2025-01-18 11:00:29,892	***	
+   Classifier Metrics:
+2025-01-18 11:00:29,892	***	     TR_As Fold 8 - Accuracy: 0.8892889288928892
+2025-01-18 11:00:29,892	***	     TR_As Fold 8 - Precision: 0.920388349514563
+2025-01-18 11:00:29,892	***	     TR_As Fold 8 - Recall: 0.8525179856115108
+2025-01-18 11:00:29,892	***	     TR_As Fold 8 - F1 Score: 0.8851540616246498
+
+2025-01-18 11:00:30,142	***	 Classifier Model: AdaBoost
+2025-01-18 11:00:30,143	***	   TR_As Fold 8 - Confusion Matrix:
+2025-01-18 11:00:30,143	***	[[527  28]
+ [ 56 500]]
+2025-01-18 11:00:30,143	***	
+   Classifier Metrics:
+2025-01-18 11:00:30,143	***	     TR_As Fold 8 - Accuracy: 0.9243924392439244
+2025-01-18 11:00:30,143	***	     TR_As Fold 8 - Precision: 0.946969696969697
+2025-01-18 11:00:30,143	***	     TR_As Fold 8 - Recall: 0.8992805755395683
+2025-01-18 11:00:30,143	***	     TR_As Fold 8 - F1 Score: 0.9225092250922509
+
+2025-01-18 11:00:30,500	***	 Classifier Model: Perceptron
+2025-01-18 11:00:30,501	***	   TR_As Fold 8 - Confusion Matrix:
+2025-01-18 11:00:30,501	***	[[518  37]
+ [ 35 521]]
+2025-01-18 11:00:30,501	***	
+   Classifier Metrics:
+2025-01-18 11:00:30,501	***	     TR_As Fold 8 - Accuracy: 0.9351935193519352
+2025-01-18 11:00:30,501	***	     TR_As Fold 8 - Precision: 0.9336917562724014
+2025-01-18 11:00:30,501	***	     TR_As Fold 8 - Recall: 0.9370503597122302
+2025-01-18 11:00:30,501	***	     TR_As Fold 8 - F1 Score: 0.9353680430879713
+
+2025-01-18 11:00:30,732	***	 Classifier Model: SGDRegressor
+2025-01-18 11:00:30,732	***	   TR_As Fold 8 - Confusion Matrix:
+2025-01-18 11:00:30,732	***	[[531  24]
+ [ 52 504]]
+2025-01-18 11:00:30,733	***	
+   Classifier Metrics:
+2025-01-18 11:00:30,733	***	     TR_As Fold 8 - Accuracy: 0.9315931593159316
+2025-01-18 11:00:30,733	***	     TR_As Fold 8 - Precision: 0.9545454545454546
+2025-01-18 11:00:30,733	***	     TR_As Fold 8 - Recall: 0.9064748201438849
+2025-01-18 11:00:30,733	***	     TR_As Fold 8 - F1 Score: 0.9298892988929889
+
+2025-01-18 11:00:30,964	***	 Classifier Model: XGboost
+2025-01-18 11:00:30,964	***	   TR_As Fold 8 - Confusion Matrix:
+2025-01-18 11:00:30,964	***	[[531  24]
+ [ 52 504]]
+2025-01-18 11:00:30,965	***	
+   Classifier Metrics:
+2025-01-18 11:00:30,965	***	     TR_As Fold 8 - Accuracy: 0.9315931593159316
+2025-01-18 11:00:30,965	***	     TR_As Fold 8 - Precision: 0.9545454545454546
+2025-01-18 11:00:30,965	***	     TR_As Fold 8 - Recall: 0.9064748201438849
+2025-01-18 11:00:30,965	***	     TR_As Fold 8 - F1 Score: 0.9298892988929889
+
+2025-01-18 11:00:31,182	***	TS_Ar Fold 8/10 results
+2025-01-18 11:00:31,221	***	 Classifier Model: RandomForest
+2025-01-18 11:00:31,221	***	   TS_Ar Fold 8 - Confusion Matrix:
+2025-01-18 11:00:31,221	***	[[522  33]
+ [ 46 510]]
+2025-01-18 11:00:31,221	***	
+   Classifier Metrics:
+2025-01-18 11:00:31,221	***	     TS_Ar Fold 8 - Accuracy: 0.9288928892889289
+2025-01-18 11:00:31,221	***	     TS_Ar Fold 8 - Precision: 0.9392265193370166
+2025-01-18 11:00:31,221	***	     TS_Ar Fold 8 - Recall: 0.9172661870503597
+2025-01-18 11:00:31,222	***	     TS_Ar Fold 8 - F1 Score: 0.9281164695177434
+
+2025-01-18 11:00:31,222	***	
+2025-01-18 11:00:31,968	***	 Classifier Model: SupportVectorMachine
+2025-01-18 11:00:31,968	***	   TS_Ar Fold 8 - Confusion Matrix:
+2025-01-18 11:00:31,968	***	[[529  26]
+ [ 44 512]]
+2025-01-18 11:00:31,968	***	
+   Classifier Metrics:
+2025-01-18 11:00:31,968	***	     TS_Ar Fold 8 - Accuracy: 0.936993699369937
+2025-01-18 11:00:31,968	***	     TS_Ar Fold 8 - Precision: 0.9516728624535316
+2025-01-18 11:00:31,968	***	     TS_Ar Fold 8 - Recall: 0.920863309352518
+2025-01-18 11:00:31,968	***	     TS_Ar Fold 8 - F1 Score: 0.9360146252285192
+
+2025-01-18 11:00:31,968	***	
+2025-01-18 11:00:32,264	***	 Classifier Model: DecisionTree
+2025-01-18 11:00:32,265	***	   TS_Ar Fold 8 - Confusion Matrix:
+2025-01-18 11:00:32,265	***	[[483  72]
+ [ 64 492]]
+2025-01-18 11:00:32,265	***	
+   Classifier Metrics:
+2025-01-18 11:00:32,265	***	     TS_Ar Fold 8 - Accuracy: 0.8775877587758776
+2025-01-18 11:00:32,265	***	     TS_Ar Fold 8 - Precision: 0.8723404255319149
+2025-01-18 11:00:32,265	***	     TS_Ar Fold 8 - Recall: 0.8848920863309353
+2025-01-18 11:00:32,265	***	     TS_Ar Fold 8 - F1 Score: 0.8785714285714286
+
+2025-01-18 11:00:32,265	***	
+2025-01-18 11:00:32,604	***	 Classifier Model: AdaBoost
+2025-01-18 11:00:32,604	***	   TS_Ar Fold 8 - Confusion Matrix:
+2025-01-18 11:00:32,604	***	[[522  33]
+ [ 38 518]]
+2025-01-18 11:00:32,604	***	
+   Classifier Metrics:
+2025-01-18 11:00:32,604	***	     TS_Ar Fold 8 - Accuracy: 0.9360936093609361
+2025-01-18 11:00:32,604	***	     TS_Ar Fold 8 - Precision: 0.9401088929219601
+2025-01-18 11:00:32,604	***	     TS_Ar Fold 8 - Recall: 0.9316546762589928
+2025-01-18 11:00:32,604	***	     TS_Ar Fold 8 - F1 Score: 0.935862691960253
+
+2025-01-18 11:00:32,604	***	
+2025-01-18 11:00:33,033	***	 Classifier Model: Perceptron
+2025-01-18 11:00:33,033	***	   TS_Ar Fold 8 - Confusion Matrix:
+2025-01-18 11:00:33,033	***	[[497  58]
+ [ 21 535]]
+2025-01-18 11:00:33,034	***	
+   Classifier Metrics:
+2025-01-18 11:00:33,034	***	     TS_Ar Fold 8 - Accuracy: 0.9288928892889289
+2025-01-18 11:00:33,034	***	     TS_Ar Fold 8 - Precision: 0.9021922428330523
+2025-01-18 11:00:33,034	***	     TS_Ar Fold 8 - Recall: 0.9622302158273381
+2025-01-18 11:00:33,034	***	     TS_Ar Fold 8 - F1 Score: 0.9312445604873804
+
+2025-01-18 11:00:33,034	***	
+2025-01-18 11:00:33,332	***	 Classifier Model: SGDRegressor
+2025-01-18 11:00:33,332	***	   TS_Ar Fold 8 - Confusion Matrix:
+2025-01-18 11:00:33,332	***	[[524  31]
+ [ 42 514]]
+2025-01-18 11:00:33,332	***	
+   Classifier Metrics:
+2025-01-18 11:00:33,332	***	     TS_Ar Fold 8 - Accuracy: 0.9342934293429342
+2025-01-18 11:00:33,332	***	     TS_Ar Fold 8 - Precision: 0.9431192660550459
+2025-01-18 11:00:33,332	***	     TS_Ar Fold 8 - Recall: 0.9244604316546763
+2025-01-18 11:00:33,332	***	     TS_Ar Fold 8 - F1 Score: 0.9336966394187104
+
+2025-01-18 11:00:33,333	***	
+2025-01-18 11:00:33,639	***	 Classifier Model: XGboost
+2025-01-18 11:00:33,639	***	   TS_Ar Fold 8 - Confusion Matrix:
+2025-01-18 11:00:33,639	***	[[529  26]
+ [ 44 512]]
+2025-01-18 11:00:33,640	***	
+   Classifier Metrics:
+2025-01-18 11:00:33,640	***	     TS_Ar Fold 8 - Accuracy: 0.936993699369937
+2025-01-18 11:00:33,640	***	     TS_Ar Fold 8 - Precision: 0.9516728624535316
+2025-01-18 11:00:33,640	***	     TS_Ar Fold 8 - Recall: 0.920863309352518
+2025-01-18 11:00:33,640	***	     TS_Ar Fold 8 - F1 Score: 0.9360146252285192
+
+2025-01-18 11:00:33,640	***	
+2025-01-18 11:00:33,937	***	Similarity Metrics
+2025-01-18 11:00:33,937	***	  Synthetic Fold 8 falses - Mean Squared Error: 0.16894597
+2025-01-18 11:00:33,937	***	  Synthetic Fold 8 falses - Cosine Similarity: 0.6193897231742068
+2025-01-18 11:00:33,937	***	  Synthetic Fold 8 falses - Maximum Mean Discrepancy: 0.14372534
+2025-01-18 11:00:33,937	***	
+2025-01-18 11:00:33,939	***	Similarity Metrics
+2025-01-18 11:00:33,939	***	  Synthetic Fold 8 true - Mean Squared Error: 0.13842343
+2025-01-18 11:00:33,939	***	  Synthetic Fold 8 true - Cosine Similarity: 0.4845850517486667
+2025-01-18 11:00:33,939	***	  Synthetic Fold 8 true - Maximum Mean Discrepancy: 0.4163461
+2025-01-18 11:00:33,939	***	
+2025-01-18 11:00:34,045	***	Iniciando treinamento do modelo adversarial.
+2025-01-18 11:13:34,065	***	Treinamento concluído.
+2025-01-18 11:13:36,246	***	
+Starting training classifier
+
+2025-01-18 11:13:36,247	***	    Starting training classifier: RANDOM FOREST
+2025-01-18 11:13:37,108	***	    Finished training
+
+2025-01-18 11:13:37,108	***	    Starting training classifier: SUPPORT VECTOR MACHINE
+2025-01-18 11:13:50,190	***	    Finished training
+
+2025-01-18 11:13:50,190	***	    Starting training classifier: DECISION TREE
+2025-01-18 11:13:50,300	***	    Finished training
+
+2025-01-18 11:13:50,300	***	    Starting training classifier: ADA BOOST
+2025-01-18 11:13:50,966	***	    Finished training
+
+2025-01-18 11:13:50,966	***	    Starting training classifier: MULTILAYER PERCEPTRON
+2025-01-18 11:13:52,743	***	    Finished training
+
+2025-01-18 11:13:52,743	***	    Starting training classifier: SDG
+2025-01-18 11:13:52,983	***	    Finished training
+
+2025-01-18 11:13:52,983	***	    Starting training classifier: GAUSSIAN PROCESS
+2025-01-18 11:13:53,189	***	    Finished training
+
+2025-01-18 11:13:53,189	***	
+Starting training classifier
+
+2025-01-18 11:13:53,189	***	    Starting training classifier: RANDOM FOREST
+2025-01-18 11:13:54,019	***	    Finished training
+
+2025-01-18 11:13:54,020	***	    Starting training classifier: SUPPORT VECTOR MACHINE
+2025-01-18 11:14:07,020	***	    Finished training
+
+2025-01-18 11:14:07,021	***	    Starting training classifier: DECISION TREE
+2025-01-18 11:14:07,122	***	    Finished training
+
+2025-01-18 11:14:07,123	***	    Starting training classifier: ADA BOOST
+2025-01-18 11:14:08,097	***	    Finished training
+
+2025-01-18 11:14:08,097	***	    Starting training classifier: MULTILAYER PERCEPTRON
+2025-01-18 11:14:10,404	***	    Finished training
+
+2025-01-18 11:14:10,405	***	    Starting training classifier: SDG
+2025-01-18 11:14:10,635	***	    Finished training
+
+2025-01-18 11:14:10,635	***	    Starting training classifier: GAUSSIAN PROCESS
+2025-01-18 11:14:10,838	***	    Finished training
+
+2025-01-18 11:14:10,838	***	TR_As Fold 9/10 results
+
+2025-01-18 11:14:10,880	***	 Classifier Model: RandomForest
+2025-01-18 11:14:10,880	***	   TR_As Fold 9 - Confusion Matrix:
+2025-01-18 11:14:10,880	***	[[536  19]
+ [ 93 463]]
+2025-01-18 11:14:10,880	***	
+   Classifier Metrics:
+2025-01-18 11:14:10,880	***	     TR_As Fold 9 - Accuracy: 0.8991899189918992
+2025-01-18 11:14:10,880	***	     TR_As Fold 9 - Precision: 0.9605809128630706
+2025-01-18 11:14:10,880	***	     TR_As Fold 9 - Recall: 0.8327338129496403
+2025-01-18 11:14:10,880	***	     TR_As Fold 9 - F1 Score: 0.8921001926782274
+
+2025-01-18 11:14:11,596	***	 Classifier Model: SupportVectorMachine
+2025-01-18 11:14:11,596	***	   TR_As Fold 9 - Confusion Matrix:
+2025-01-18 11:14:11,596	***	[[537  18]
+ [ 67 489]]
+2025-01-18 11:14:11,596	***	
+   Classifier Metrics:
+2025-01-18 11:14:11,596	***	     TR_As Fold 9 - Accuracy: 0.9234923492349235
+2025-01-18 11:14:11,596	***	     TR_As Fold 9 - Precision: 0.9644970414201184
+2025-01-18 11:14:11,597	***	     TR_As Fold 9 - Recall: 0.8794964028776978
+2025-01-18 11:14:11,597	***	     TR_As Fold 9 - F1 Score: 0.9200376293508937
+
+2025-01-18 11:14:11,825	***	 Classifier Model: DecisionTree
+2025-01-18 11:14:11,825	***	   TR_As Fold 9 - Confusion Matrix:
+2025-01-18 11:14:11,825	***	[[499  56]
+ [146 410]]
+2025-01-18 11:14:11,825	***	
+   Classifier Metrics:
+2025-01-18 11:14:11,825	***	     TR_As Fold 9 - Accuracy: 0.8181818181818182
+2025-01-18 11:14:11,825	***	     TR_As Fold 9 - Precision: 0.8798283261802575
+2025-01-18 11:14:11,825	***	     TR_As Fold 9 - Recall: 0.737410071942446
+2025-01-18 11:14:11,825	***	     TR_As Fold 9 - F1 Score: 0.8023483365949119
+
+2025-01-18 11:14:12,084	***	 Classifier Model: AdaBoost
+2025-01-18 11:14:12,085	***	   TR_As Fold 9 - Confusion Matrix:
+2025-01-18 11:14:12,085	***	[[522  33]
+ [ 56 500]]
+2025-01-18 11:14:12,085	***	
+   Classifier Metrics:
+2025-01-18 11:14:12,085	***	     TR_As Fold 9 - Accuracy: 0.9198919891989199
+2025-01-18 11:14:12,085	***	     TR_As Fold 9 - Precision: 0.9380863039399625
+2025-01-18 11:14:12,085	***	     TR_As Fold 9 - Recall: 0.8992805755395683
+2025-01-18 11:14:12,085	***	     TR_As Fold 9 - F1 Score: 0.9182736455463729
+
+2025-01-18 11:14:12,440	***	 Classifier Model: Perceptron
+2025-01-18 11:14:12,440	***	   TR_As Fold 9 - Confusion Matrix:
+2025-01-18 11:14:12,440	***	[[535  20]
+ [ 68 488]]
+2025-01-18 11:14:12,440	***	
+   Classifier Metrics:
+2025-01-18 11:14:12,440	***	     TR_As Fold 9 - Accuracy: 0.9207920792079208
+2025-01-18 11:14:12,440	***	     TR_As Fold 9 - Precision: 0.9606299212598425
+2025-01-18 11:14:12,440	***	     TR_As Fold 9 - Recall: 0.8776978417266187
+2025-01-18 11:14:12,441	***	     TR_As Fold 9 - F1 Score: 0.9172932330827067
+
+2025-01-18 11:14:12,671	***	 Classifier Model: SGDRegressor
+2025-01-18 11:14:12,671	***	   TR_As Fold 9 - Confusion Matrix:
+2025-01-18 11:14:12,671	***	[[532  23]
+ [ 67 489]]
+2025-01-18 11:14:12,671	***	
+   Classifier Metrics:
+2025-01-18 11:14:12,671	***	     TR_As Fold 9 - Accuracy: 0.918991899189919
+2025-01-18 11:14:12,671	***	     TR_As Fold 9 - Precision: 0.955078125
+2025-01-18 11:14:12,671	***	     TR_As Fold 9 - Recall: 0.8794964028776978
+2025-01-18 11:14:12,671	***	     TR_As Fold 9 - F1 Score: 0.9157303370786517
+
+2025-01-18 11:14:12,903	***	 Classifier Model: XGboost
+2025-01-18 11:14:12,903	***	   TR_As Fold 9 - Confusion Matrix:
+2025-01-18 11:14:12,903	***	[[531  24]
+ [ 73 483]]
+2025-01-18 11:14:12,904	***	
+   Classifier Metrics:
+2025-01-18 11:14:12,904	***	     TR_As Fold 9 - Accuracy: 0.9126912691269127
+2025-01-18 11:14:12,904	***	     TR_As Fold 9 - Precision: 0.9526627218934911
+2025-01-18 11:14:12,904	***	     TR_As Fold 9 - Recall: 0.8687050359712231
+2025-01-18 11:14:12,904	***	     TR_As Fold 9 - F1 Score: 0.9087488240827847
+
+2025-01-18 11:14:13,123	***	TS_Ar Fold 9/10 results
+2025-01-18 11:14:13,163	***	 Classifier Model: RandomForest
+2025-01-18 11:14:13,163	***	   TS_Ar Fold 9 - Confusion Matrix:
+2025-01-18 11:14:13,163	***	[[514  41]
+ [ 47 509]]
+2025-01-18 11:14:13,163	***	
+   Classifier Metrics:
+2025-01-18 11:14:13,163	***	     TS_Ar Fold 9 - Accuracy: 0.9207920792079208
+2025-01-18 11:14:13,163	***	     TS_Ar Fold 9 - Precision: 0.9254545454545454
+2025-01-18 11:14:13,163	***	     TS_Ar Fold 9 - Recall: 0.9154676258992805
+2025-01-18 11:14:13,163	***	     TS_Ar Fold 9 - F1 Score: 0.9204339963833634
+
+2025-01-18 11:14:13,163	***	
+2025-01-18 11:14:13,910	***	 Classifier Model: SupportVectorMachine
+2025-01-18 11:14:13,910	***	   TS_Ar Fold 9 - Confusion Matrix:
+2025-01-18 11:14:13,910	***	[[514  41]
+ [ 39 517]]
+2025-01-18 11:14:13,910	***	
+   Classifier Metrics:
+2025-01-18 11:14:13,910	***	     TS_Ar Fold 9 - Accuracy: 0.927992799279928
+2025-01-18 11:14:13,910	***	     TS_Ar Fold 9 - Precision: 0.9265232974910395
+2025-01-18 11:14:13,910	***	     TS_Ar Fold 9 - Recall: 0.9298561151079137
+2025-01-18 11:14:13,910	***	     TS_Ar Fold 9 - F1 Score: 0.9281867145421903
+
+2025-01-18 11:14:13,910	***	
+2025-01-18 11:14:14,209	***	 Classifier Model: DecisionTree
+2025-01-18 11:14:14,209	***	   TS_Ar Fold 9 - Confusion Matrix:
+2025-01-18 11:14:14,209	***	[[470  85]
+ [129 427]]
+2025-01-18 11:14:14,210	***	
+   Classifier Metrics:
+2025-01-18 11:14:14,210	***	     TS_Ar Fold 9 - Accuracy: 0.8073807380738074
+2025-01-18 11:14:14,210	***	     TS_Ar Fold 9 - Precision: 0.833984375
+2025-01-18 11:14:14,210	***	     TS_Ar Fold 9 - Recall: 0.7679856115107914
+2025-01-18 11:14:14,210	***	     TS_Ar Fold 9 - F1 Score: 0.7996254681647941
+
+2025-01-18 11:14:14,210	***	
+2025-01-18 11:14:14,545	***	 Classifier Model: AdaBoost
+2025-01-18 11:14:14,545	***	   TS_Ar Fold 9 - Confusion Matrix:
+2025-01-18 11:14:14,545	***	[[497  58]
+ [ 56 500]]
+2025-01-18 11:14:14,545	***	
+   Classifier Metrics:
+2025-01-18 11:14:14,545	***	     TS_Ar Fold 9 - Accuracy: 0.8973897389738974
+2025-01-18 11:14:14,545	***	     TS_Ar Fold 9 - Precision: 0.8960573476702509
+2025-01-18 11:14:14,545	***	     TS_Ar Fold 9 - Recall: 0.8992805755395683
+2025-01-18 11:14:14,545	***	     TS_Ar Fold 9 - F1 Score: 0.8976660682226212
+
+2025-01-18 11:14:14,545	***	
+2025-01-18 11:14:15,012	***	 Classifier Model: Perceptron
+2025-01-18 11:14:15,012	***	   TS_Ar Fold 9 - Confusion Matrix:
+2025-01-18 11:14:15,012	***	[[495  60]
+ [ 32 524]]
+2025-01-18 11:14:15,012	***	
+   Classifier Metrics:
+2025-01-18 11:14:15,012	***	     TS_Ar Fold 9 - Accuracy: 0.9171917191719172
+2025-01-18 11:14:15,012	***	     TS_Ar Fold 9 - Precision: 0.8972602739726028
+2025-01-18 11:14:15,012	***	     TS_Ar Fold 9 - Recall: 0.9424460431654677
+2025-01-18 11:14:15,012	***	     TS_Ar Fold 9 - F1 Score: 0.9192982456140351
+
+2025-01-18 11:14:15,012	***	
+2025-01-18 11:14:15,309	***	 Classifier Model: SGDRegressor
+2025-01-18 11:14:15,309	***	   TS_Ar Fold 9 - Confusion Matrix:
+2025-01-18 11:14:15,309	***	[[511  44]
+ [ 60 496]]
+2025-01-18 11:14:15,309	***	
+   Classifier Metrics:
+2025-01-18 11:14:15,309	***	     TS_Ar Fold 9 - Accuracy: 0.9063906390639064
+2025-01-18 11:14:15,309	***	     TS_Ar Fold 9 - Precision: 0.9185185185185185
+2025-01-18 11:14:15,309	***	     TS_Ar Fold 9 - Recall: 0.8920863309352518
+2025-01-18 11:14:15,310	***	     TS_Ar Fold 9 - F1 Score: 0.9051094890510949
+
+2025-01-18 11:14:15,310	***	
+2025-01-18 11:14:15,617	***	 Classifier Model: XGboost
+2025-01-18 11:14:15,617	***	   TS_Ar Fold 9 - Confusion Matrix:
+2025-01-18 11:14:15,617	***	[[511  44]
+ [ 47 509]]
+2025-01-18 11:14:15,618	***	
+   Classifier Metrics:
+2025-01-18 11:14:15,618	***	     TS_Ar Fold 9 - Accuracy: 0.918091809180918
+2025-01-18 11:14:15,618	***	     TS_Ar Fold 9 - Precision: 0.9204339963833634
+2025-01-18 11:14:15,618	***	     TS_Ar Fold 9 - Recall: 0.9154676258992805
+2025-01-18 11:14:15,618	***	     TS_Ar Fold 9 - F1 Score: 0.9179440937781785
+
+2025-01-18 11:14:15,618	***	
+2025-01-18 11:14:15,916	***	Similarity Metrics
+2025-01-18 11:14:15,917	***	  Synthetic Fold 9 falses - Mean Squared Error: 0.16481084
+2025-01-18 11:14:15,917	***	  Synthetic Fold 9 falses - Cosine Similarity: 0.6151895206253808
+2025-01-18 11:14:15,917	***	  Synthetic Fold 9 falses - Maximum Mean Discrepancy: 0.105283655
+2025-01-18 11:14:15,917	***	
+2025-01-18 11:14:15,918	***	Similarity Metrics
+2025-01-18 11:14:15,918	***	  Synthetic Fold 9 true - Mean Squared Error: 0.13566665
+2025-01-18 11:14:15,919	***	  Synthetic Fold 9 true - Cosine Similarity: 0.3223618481207538
+2025-01-18 11:14:15,919	***	  Synthetic Fold 9 true - Maximum Mean Discrepancy: 0.31331548
+2025-01-18 11:14:15,919	***	
+2025-01-18 11:14:16,028	***	Iniciando treinamento do modelo adversarial.
+2025-01-18 11:27:05,035	***	Treinamento concluído.
+2025-01-18 11:27:06,804	***	
+Starting training classifier
+
+2025-01-18 11:27:06,804	***	    Starting training classifier: RANDOM FOREST
+2025-01-18 11:27:07,395	***	    Finished training
+
+2025-01-18 11:27:07,395	***	    Starting training classifier: SUPPORT VECTOR MACHINE
+2025-01-18 11:27:15,935	***	    Finished training
+
+2025-01-18 11:27:15,936	***	    Starting training classifier: DECISION TREE
+2025-01-18 11:27:16,000	***	    Finished training
+
+2025-01-18 11:27:16,000	***	    Starting training classifier: ADA BOOST
+2025-01-18 11:27:16,440	***	    Finished training
+
+2025-01-18 11:27:16,441	***	    Starting training classifier: MULTILAYER PERCEPTRON
+2025-01-18 11:27:17,803	***	    Finished training
+
+2025-01-18 11:27:17,804	***	    Starting training classifier: SDG
+2025-01-18 11:27:17,946	***	    Finished training
+
+2025-01-18 11:27:17,946	***	    Starting training classifier: GAUSSIAN PROCESS
+2025-01-18 11:27:18,769	***	    Finished training
+
+2025-01-18 11:27:18,770	***	
+Starting training classifier
+
+2025-01-18 11:27:18,770	***	    Starting training classifier: RANDOM FOREST
+2025-01-18 11:27:19,372	***	    Finished training
+
+2025-01-18 11:27:19,372	***	    Starting training classifier: SUPPORT VECTOR MACHINE
+2025-01-18 11:27:30,049	***	    Finished training
+
+2025-01-18 11:27:30,049	***	    Starting training classifier: DECISION TREE
+2025-01-18 11:27:30,154	***	    Finished training
+
+2025-01-18 11:27:30,154	***	    Starting training classifier: ADA BOOST
+2025-01-18 11:27:31,149	***	    Finished training
+
+2025-01-18 11:27:31,149	***	    Starting training classifier: MULTILAYER PERCEPTRON
+2025-01-18 11:27:33,660	***	    Finished training
+
+2025-01-18 11:27:33,660	***	    Starting training classifier: SDG
+2025-01-18 11:27:33,883	***	    Finished training
+
+2025-01-18 11:27:33,883	***	    Starting training classifier: GAUSSIAN PROCESS
+2025-01-18 11:27:34,057	***	    Finished training
+
+2025-01-18 11:27:34,058	***	TR_As Fold 10/10 results
+
+2025-01-18 11:27:34,098	***	 Classifier Model: RandomForest
+2025-01-18 11:27:34,098	***	   TR_As Fold 10 - Confusion Matrix:
+2025-01-18 11:27:34,099	***	[[527  28]
+ [ 50 506]]
+2025-01-18 11:27:34,099	***	
+   Classifier Metrics:
+2025-01-18 11:27:34,099	***	     TR_As Fold 10 - Accuracy: 0.9297929792979298
+2025-01-18 11:27:34,099	***	     TR_As Fold 10 - Precision: 0.947565543071161
+2025-01-18 11:27:34,099	***	     TR_As Fold 10 - Recall: 0.9100719424460432
+2025-01-18 11:27:34,099	***	     TR_As Fold 10 - F1 Score: 0.928440366972477
+
